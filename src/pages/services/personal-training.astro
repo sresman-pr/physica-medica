@@ -51,6 +51,28 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Hero Image -->
+  <section class="hero-image-section">
+    <div class="container">
+      <img src="/images/Baltimore-Physical-Therapist-strength-training.jpg" alt="Personal training at Physica Medica" loading="eager" />
+    </div>
+  </section>
+
+  <!-- Trainer Section -->
+  <section class="trainer-section section-spacing">
+    <div class="container-narrow">
+      <div class="trainer-grid">
+        <div class="trainer-image">
+          <img src="/images/Ryan Head Shot.jpg" alt="Personal trainer" loading="lazy" />
+        </div>
+        <div class="trainer-content">
+          <h2>Expert Training</h2>
+          <p>Work one-on-one with experienced trainers who understand biomechanics, movement patterns, and how to optimize your body as an integrated system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Philosophy Section -->
   <section class="philosophy-highlight section-spacing">
     <div class="container-narrow">
@@ -152,10 +174,46 @@ const faqs = [
 
 <style>
   .service-hero {
-    background: var(--color-background-light);
+    background: white;
     color: var(--color-text-primary);
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 1rem;
     text-align: center;
+  }
+
+  .hero-image-section {
+    padding: 0 2rem 2rem;
+    background: white;
+  }
+
+  .hero-image-section img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+  }
+
+  .trainer-section {
+    background: var(--color-background-light);
+  }
+
+  .trainer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .trainer-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .trainer-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .service-hero h1 {
