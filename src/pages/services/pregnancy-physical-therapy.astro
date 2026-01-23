@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
+import pregnancyImg from '../../images/Baltimore-Physical-Therapist-pregnancy.jpg';
 
 const pageTitle = "Baltimore Pregnancy Physical Therapy | Prenatal & Postpartum | Physica Medica";
 const pageDescription = "Expert pregnancy and postpartum physical therapy in Baltimore. $200 out-of-network premium care. Group seminars and 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT.";
@@ -60,7 +62,16 @@ const faqs = [
   <!-- Hero Image -->
   <section class="hero-image-section">
     <div class="container">
-      <img src="/images/Baltimore-Physical-Therapist-pregnancy.jpg" alt="Pregnancy physical therapy" loading="eager" />
+      <Image 
+        src={pregnancyImg}
+        alt="Pregnancy physical therapy"
+        width={351}
+        height={220}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        quality={90}
+      />
     </div>
   </section>
 

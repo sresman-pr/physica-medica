@@ -1,5 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+// Import Wim Hof images
+import wimHofLogoImg from '../images/whm_certified_instructor_logo.jpg';
+import wmarCertImg from '../images/AsSeenOnWMAR2-Wim-Hof-Cert-fied-Instructor.png';
+import wimHofMethodImg from '../images/Baltimore-Physical-Therapist-wim-holf-method.jpg';
+import meditationImg from '../images/Baltimore-Physical-Therapist-meditation-mindset.jpg';
+import coldExposureImg from '../images/Baltimore-Physical-Therapist-progressive-cold-exposure.jpg';
+import coldTherapyImg from '../images/Cold-Therapy-Techniques-for-Wim-Hof-Method-Baltimore-Maryland.png';
+import peopleImg from '../images/Baltimore-Physical-Therapist-people.jpg';
 
 const pageTitle = "Wim Hof Method Baltimore | Certified Instructor | Physica Medica";
 const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. Maksim Birikov in Baltimore. Breathing techniques, cold therapy, and mental conditioning.";
@@ -11,8 +21,24 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
       <h1>WIM HOF METHOD</h1>
       <p class="lead">Certified Wim Hof Method Instruction in Baltimore</p>
       <div class="certification-badges">
-        <img src="/images/whm_certified_instructor_logo.jpg" alt="Wim Hof Method Certified Instructor" width="150" height="150" />
-        <img src="/images/AsSeenOnWMAR2-Wim-Hof-Cert-fied-Instructor.png" alt="As Seen on WMAR - Wim Hof Certified" width="200" height="100" />
+        <Image 
+          src={wimHofLogoImg}
+          alt="Wim Hof Method Certified Instructor"
+          width={405}
+          height={81}
+          format="webp"
+          loading="eager"
+          quality={90}
+        />
+        <Image 
+          src={wmarCertImg}
+          alt="As Seen on WMAR - Wim Hof Certified"
+          width={184}
+          height={238}
+          format="webp"
+          loading="eager"
+          quality={90}
+        />
       </div>
     </div>
   </section>
@@ -20,7 +46,16 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
   <!-- Hero Image -->
   <section class="hero-image-section">
     <div class="container">
-      <img src="/images/Baltimore-Physical-Therapist-wim-holf-method.jpg" alt="Wim Hof Method training with Dr. Maks" loading="eager" />
+      <Image 
+        src={wimHofMethodImg}
+        alt="Wim Hof Method training with Dr. Maks"
+        width={382}
+        height={378}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        quality={90}
+      />
     </div>
   </section>
 
@@ -43,24 +78,56 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
       <h2>The Three Pillars</h2>
       <div class="pillars-grid">
         <div class="pillar">
-          <img src="/images/Baltimore-Physical-Therapist-meditation-mindset.jpg" alt="Breathing techniques" loading="lazy" />
+          <Image 
+            src={meditationImg}
+            alt="Breathing techniques"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h3>🌬️ Breathing</h3>
           <p>Specific breathing patterns that influence your autonomic nervous system, increase oxygen levels, and reduce stress.</p>
         </div>
         <div class="pillar">
-          <img src="/images/Baltimore-Physical-Therapist-progressive-cold-exposure.jpg" alt="Cold therapy" loading="lazy" />
+          <Image 
+            src={coldExposureImg}
+            alt="Cold therapy"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h3>❄️ Cold Therapy</h3>
           <p>Controlled exposure to cold that strengthens your immune system, improves circulation, and builds mental resilience.</p>
         </div>
         <div class="pillar">
-          <img src="/images/Cold-Therapy-Techniques-for-Wim-Hof-Method-Baltimore-Maryland.png" alt="Mental commitment" loading="lazy" />
+          <Image 
+            src={coldTherapyImg}
+            alt="Mental commitment"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h3>🧠 Commitment</h3>
           <p>Mental conditioning and mindset training that empowers you to control your body's responses.</p>
         </div>
       </div>
 
       <div class="community-image">
-        <img src="/images/Baltimore-Physical-Therapist-people.jpg" alt="Wim Hof Method community" loading="lazy" />
+        <Image 
+          src={peopleImg}
+          alt="Wim Hof Method community"
+          width={412}
+          height={264}
+          format="webp"
+          loading="lazy"
+          quality={85}
+        />
         <p class="image-caption">Join our Wim Hof Method community in Baltimore</p>
       </div>
 

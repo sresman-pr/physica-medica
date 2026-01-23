@@ -1,5 +1,7 @@
 ---
 // Header Component - Navigation matching original Wix site
+import { Image } from 'astro:assets';
+import logoImg from '../images/Physica-Medica-logo.jpg';
 ---
 
 <header class="site-header">
@@ -7,7 +9,15 @@
     <div class="header-content">
       <div class="logo">
         <a href="/">
-          <img src="/images/Physica-Medica-logo.jpg" alt="Physica Medica" height="60" />
+          <Image 
+            src={logoImg}
+            alt="Physica Medica"
+            width={354}
+            height={161}
+            format="webp"
+            loading="eager"
+            quality={90}
+          />
         </a>
       </div>
       
@@ -134,7 +144,8 @@
     align-items: center;
   }
 
-  .logo img {
+  .logo img,
+  .logo :global(img) {
     height: 50px;
     width: auto;
   }
@@ -341,7 +352,8 @@
   }
 
   @media (min-width: 1025px) {
-    .logo img {
+    .logo img,
+    .logo :global(img) {
       height: 60px;
     }
     

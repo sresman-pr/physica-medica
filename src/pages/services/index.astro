@@ -1,5 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+// Import service images
+import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
+import dryNeedlingImg from '../../images/Baltimore-Physical-Therapist-dry-needling.jpg';
+import cuppingImg from '../../images/Baltimore-Physical-Therapist-myofascial-cupping.jpg';
+import deepTissueImg from '../../images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg';
+import iastmImg from '../../images/Baltimore-Physical-Therapist-instrument-tissue-mobilization.jpg';
+import pregnancyImg from '../../images/Baltimore-Physical-Therapist-pregnancy.jpg';
 
 const pageTitle = "Physical Therapy Services in Baltimore | Physica Medica";
 const pageDescription = "Comprehensive physical therapy services including Pancafit, personal training, specialty techniques, scoliosis treatment, and pregnancy care in Baltimore, MD.";
@@ -17,42 +26,90 @@ const pageDescription = "Comprehensive physical therapy services including Panca
     <div class="container">
       <div class="services-grid">
         <div class="service-card">
-          <img src="/images/Baltimore-Physical-Therapist-strength-training.jpg" alt="Personal Training" loading="lazy" />
+          <Image 
+            src={strengthTrainingImg}
+            alt="Personal Training"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h2>Personal Training</h2>
           <p>One-on-one training that integrates your body as a system, optimizing biomechanics for evolutionary movement requirements.</p>
           <a href="/services/personal-training" class="service-link">Learn More →</a>
         </div>
 
         <div class="service-card">
-          <img src="/images/Baltimore-Physical-Therapist-dry-needling.jpg" alt="Dry Needling" loading="lazy" />
+          <Image 
+            src={dryNeedlingImg}
+            alt="Dry Needling"
+            width={355}
+            height={224}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h2>Specialty Techniques</h2>
           <p>Advanced therapeutic techniques including dry needling, cupping, and trigger point therapy for targeted pain relief.</p>
           <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
         </div>
 
         <div class="service-card">
-          <img src="/images/Baltimore-Physical-Therapist-myofascial-cupping.jpg" alt="Myofascial Cupping" loading="lazy" />
+          <Image 
+            src={cuppingImg}
+            alt="Myofascial Cupping"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h2>Myofascial Cupping</h2>
           <p>Advanced cupping therapy to release fascial restrictions and improve tissue mobility.</p>
           <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
         </div>
 
         <div class="service-card">
-          <img src="/images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg" alt="Deep Tissue Massage" loading="lazy" />
+          <Image 
+            src={deepTissueImg}
+            alt="Deep Tissue Massage"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h2>Deep Tissue & Sports Massage</h2>
           <p>Therapeutic massage techniques for athletes and active individuals.</p>
           <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
         </div>
 
         <div class="service-card">
-          <img src="/images/Baltimore-Physical-Therapist-instrument-tissue-mobilization.jpg" alt="Instrument Assisted Tissue Mobilization" loading="lazy" />
+          <Image 
+            src={iastmImg}
+            alt="Instrument Assisted Tissue Mobilization"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h2>Instrument Tissue Mobilization</h2>
           <p>Advanced IASTM techniques for breaking down scar tissue and improving mobility.</p>
           <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
         </div>
 
         <div class="service-card">
-          <img src="/images/Baltimore-Physical-Therapist-pregnancy.jpg" alt="Pregnancy Care" loading="lazy" />
+          <Image 
+            src={pregnancyImg}
+            alt="Pregnancy Care"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
           <h2>Pregnancy Physical Therapy</h2>
           <p>Expert care for expecting mothers through group seminars or one-on-one treatments for pregnancy-related conditions.</p>
           <a href="/services/pregnancy-physical-therapy" class="service-link">Learn More →</a>

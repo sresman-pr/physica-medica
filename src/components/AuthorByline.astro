@@ -1,10 +1,20 @@
 ---
 // Author Byline Component for E-E-A-T signals
+import { Image } from 'astro:assets';
+import drMaksImg from '../images/Baltimore-Physical-Therapist-maksim-birikov.jpg';
 ---
 
 <div class="author-byline">
   <div class="author-image">
-    <img src="/images/dr-maks-headshot.jpg" alt="Dr. Maksim Birikov" width="80" height="80" />
+    <Image 
+      src={drMaksImg}
+      alt="Dr. Maksim Birikov"
+      width={80}
+      height={80}
+      format="webp"
+      loading="lazy"
+      quality={85}
+    />
   </div>
   <div class="author-info">
     <p class="author-name">
