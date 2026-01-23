@@ -59,7 +59,7 @@ const physicianSchema = {
     <div class="container">
       <div class="about-hero-grid">
         <div class="hero-image">
-          <img src="/images/Baltimore-Physical-Therapist-maksim-birikov.jpg" alt="Dr. Maksim Birikov, DPT" width="600" height="600" loading="eager" />
+          <img src="/images/Baltimore-Physical-Therapist-maksim-birikov.jpg" alt="Dr. Maksim Birikov, DPT" width="600" height="600" loading="eager" class="professional-image" />
         </div>
         <div class="hero-content">
           <h1>Dr. Maksim Birikov</h1>
@@ -73,7 +73,7 @@ const physicianSchema = {
   <!-- Training Image Section -->
   <section class="training-image-section">
     <div class="container">
-      <img src="/images/Baltimore-Physical-Therapist-maksim-birikov-training.jpg" alt="Dr. Maks training with client" loading="lazy" />
+      <img src="/images/Baltimore-Physical-Therapist-maksim-birikov-training.jpg" alt="Dr. Maks training with client" loading="lazy" class="professional-image" />
     </div>
   </section>
 
@@ -93,8 +93,27 @@ const physicianSchema = {
         <li>Building genuine rapport to understand your particular issues</li>
       </ul>
 
+      <h2>Professional Credentials</h2>
+      <div class="credentials-showcase">
+        <div class="credential-item">
+          <div class="credential-icon">🎓</div>
+          <h3>Doctor of Physical Therapy (DPT)</h3>
+          <p>Advanced clinical doctorate in physical therapy</p>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">❄️</div>
+          <h3>Wim Hof Method Certified</h3>
+          <p>One of few certified instructors in Baltimore</p>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">🏆</div>
+          <h3>Specialized Training</h3>
+          <p>Pancafit, Dry Needling, Cupping, Biomechanics</p>
+        </div>
+      </div>
+
       <h2>Education & Expertise</h2>
-      <p>Dr. Maks earned his Doctor of Physical Therapy (DPT) degree and has pursued advanced training in multiple specialized techniques:</p>
+      <p>Dr. Maks has pursued advanced training in multiple specialized techniques:</p>
       <ul>
         <li><strong>Pancafit Method:</strong> Revolutionary postural correction technique from Italy</li>
         <li><strong>Dry Needling & Cupping:</strong> Advanced myofascial pain treatment</li>
@@ -236,6 +255,46 @@ const physicianSchema = {
     color: var(--color-primary);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+  }
+
+  .credentials-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+  }
+
+  .credential-item {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+  }
+
+  .credential-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+  }
+
+  .credential-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .credential-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+  }
+
+  .credential-item p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
   }
 
   .about-content ul {
