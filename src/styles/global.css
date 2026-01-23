@@ -266,3 +266,8 @@ button:focus-visible {
     padding-bottom: 64px; /* Reserve space for sticky CTA bar */
   }
 }
+
+/* Mobile menu body lock - prevents forced reflow */
+body.menu-open {
+  overflow: hidden;
+}

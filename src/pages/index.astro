@@ -1,5 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+// Import all images for optimization
+import heroLocationImg from '../images/physica-medica-location.png';
+import heroLockupImg from '../images/Physica+Medica-Lockup-01-White.png';
+import logoWatermarkImg from '../images/Physica-Medica-logo.jpg';
+import dryNeedlingImg from '../images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png';
+import wimHofImg from '../images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png';
+import fitnessEquipImg from '../images/Baltimore-Physical-Therapist-fitness-equipment.png';
+import clinicImg from '../images/Baltimore-Physical-Therapist-clinic-2023.png';
+import maksAnthonyImg from '../images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg';
+import pregnancyImg from '../images/Baltimore-Physical-Therapist-physica-medica therapy-.png';
+import cuppingImg from '../images/Baltimore-Physical-Therapist-cupping.png';
+import sessionImg from '../images/Baltimore-Physical-Therapist-session.png';
 
 const pageTitle = "Physical Therapy Boutique & Postural Correction Studio | Physica Medica Baltimore";
 const pageDescription = "Baltimore's premier physical therapy boutique specializing in postural correction, dry needling, scoliosis treatment, and the Wim Hof Method. One-on-one treatments with Dr. Maksim Birikov, DPT.";
@@ -8,9 +22,32 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 <BaseLayout title={pageTitle} description={pageDescription}>
   <!-- Hero Section -->
   <section class="hero">
+    <Image 
+      src={heroLocationImg}
+      alt=""
+      width={708}
+      height={460}
+      widths={[400, 700]}
+      format="webp"
+      loading="eager"
+      fetchpriority="high"
+      quality={60}
+      class="hero-bg-image"
+    />
     <div class="hero-content">
       <div class="hero-logo-container">
-        <img src="/images/Physica+Medica-Lockup-01-White.png" alt="Physica Medica" class="hero-lockup" />
+        <Image 
+          src={heroLockupImg}
+          alt="Physica Medica"
+          width={354}
+          height={161}
+          widths={[220, 280]}
+          format="webp"
+          loading="eager"
+          fetchpriority="high"
+          quality={65}
+          class="hero-lockup"
+        />
       </div>
       
       <h1 class="hero-title">
@@ -28,11 +65,29 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   <section class="gallery-section">
     <!-- Fixed Watermark Logos -->
     <div class="watermark watermark-left">
-      <img src="/images/Physica-Medica-logo.jpg" alt="" aria-hidden="true" />
+      <Image 
+        src={logoWatermarkImg}
+        alt=""
+        width={354}
+        height={161}
+        format="webp"
+        loading="lazy"
+        quality={65}
+        aria-hidden="true"
+      />
       <span class="watermark-text">PHYSICA<br/>MEDICA</span>
     </div>
     <div class="watermark watermark-right">
-      <img src="/images/Physica-Medica-logo.jpg" alt="" aria-hidden="true" />
+      <Image 
+        src={logoWatermarkImg}
+        alt=""
+        width={354}
+        height={161}
+        format="webp"
+        loading="lazy"
+        quality={65}
+        aria-hidden="true"
+      />
       <span class="watermark-text">PHYSICA<br/>MEDICA</span>
     </div>
 
@@ -40,11 +95,27 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       <!-- Row 1: Two small images with green buttons -->
       <div class="gallery-row row-small">
         <a href="/services/specialty-techniques/dry-needling-cupping" class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Dry needling therapy" loading="lazy" />
+          <Image 
+            src={dryNeedlingImg}
+            alt="Dry needling therapy"
+            width={330}
+            height={202}
+            format="webp"
+            loading="lazy"
+            quality={60}
+          />
           <span class="gallery-label">Dry Needling & Cupping</span>
         </a>
         <a href="/wim-hof-method" class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png" alt="Wim Hof Method instruction" loading="lazy" />
+          <Image 
+            src={wimHofImg}
+            alt="Wim Hof Method instruction"
+            width={330}
+            height={202}
+            format="webp"
+            loading="lazy"
+            quality={60}
+          />
           <span class="gallery-label">Wim Hof Method</span>
         </a>
       </div>
@@ -52,11 +123,27 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       <!-- Row 2: Two medium clinic images -->
       <div class="gallery-row row-medium">
         <a href="/services/personal-training" class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-fitness-equipment.png" alt="Personal training equipment" loading="lazy" />
+          <Image 
+            src={fitnessEquipImg}
+            alt="Personal training equipment"
+            width={453}
+            height={342}
+            format="webp"
+            loading="lazy"
+            quality={60}
+          />
           <span class="gallery-label">Personal Training</span>
         </a>
         <a href="/about" class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-clinic-2023.png" alt="Physica Medica clinic interior" loading="lazy" />
+          <Image 
+            src={clinicImg}
+            alt="Physica Medica clinic interior"
+            width={453}
+            height={342}
+            format="webp"
+            loading="lazy"
+            quality={65}
+          />
           <span class="gallery-label">Our Clinic</span>
         </a>
       </div>
@@ -64,7 +151,16 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       <!-- Row 3: One large training image -->
       <div class="gallery-row row-large">
         <div class="gallery-item gallery-item-full">
-          <img src="/images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg" alt="Dr. Maks training with client" loading="lazy" />
+          <Image 
+            src={maksAnthonyImg}
+            alt="Dr. Maks training with client"
+            width={928}
+            height={700}
+            widths={[400, 700]}
+            format="webp"
+            loading="lazy"
+            quality={60}
+          />
           <div class="gallery-cta-stack">
             <a href="/services" class="gallery-cta">One-on-One Treatments</a>
             <a href="/schedule" class="gallery-cta">Schedule Your First Appointment</a>
@@ -83,38 +179,30 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     <p class="value-prop">Unlike traditional PT clinics, we provide undivided attention throughout your entire session—combining hands-on manual therapy, dry needling, and personalized care tailored to your unique needs.</p>
   </section>
 
-  <!-- Authority Section -->
-  <section class="authority-section">
-    <div class="container-narrow">
-      <h2>Why Dr. Maks is Different</h2>
-      <div class="authority-grid">
-        <div class="authority-card">
-          <span class="authority-badge">DPT</span>
-          <h3>Doctor of Physical Therapy</h3>
-          <p>Advanced clinical doctorate, not just a PT degree</p>
-        </div>
-        <div class="authority-card">
-          <span class="authority-badge">WHM</span>
-          <h3>Wim Hof Certified</h3>
-          <p>One of few certified instructors in the region</p>
-        </div>
-        <div class="authority-card">
-          <span class="authority-badge">10+</span>
-          <h3>Years Experience</h3>
-          <p>Over a decade serving Baltimore's elite</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Treatment Images Section -->
   <section class="treatment-section">
     <div class="treatment-grid">
       <a href="/services/pregnancy-physical-therapy" class="treatment-item">
-        <img src="/images/Baltimore-Physical-Therapist-physica-medica therapy-.png" alt="Pregnancy physical therapy" loading="lazy" />
+        <Image 
+          src={pregnancyImg}
+          alt="Pregnancy physical therapy"
+          width={272}
+          height={272}
+          format="webp"
+          loading="lazy"
+          quality={70}
+        />
       </a>
       <a href="/services/specialty-techniques" class="treatment-item">
-        <img src="/images/Baltimore-Physical-Therapist-cupping.png" alt="Cupping therapy" loading="lazy" />
+        <Image 
+          src={cuppingImg}
+          alt="Cupping therapy"
+          width={275}
+          height={268}
+          format="webp"
+          loading="lazy"
+          quality={70}
+        />
       </a>
       <a href="/services" class="treatment-cta">
         <span>See All Treatments</span>
@@ -126,38 +214,20 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     </div>
   </section>
 
-  <!-- Comparison Section -->
-  <section class="comparison-section">
-    <div class="container-narrow">
-      <h2>Not Your Typical PT Clinic</h2>
-      <div class="comparison-grid">
-        <div class="comparison-column other">
-          <h3>Insurance Mill Clinics</h3>
-          <ul class="comparison-list negative">
-            <li>15-30 minute rushed sessions</li>
-            <li>Split attention between 2-3 patients</li>
-            <li>PT assistants do most treatment</li>
-            <li>Cookie-cutter protocols</li>
-          </ul>
-        </div>
-        <div class="comparison-column physica">
-          <h3>Physica Medica</h3>
-          <ul class="comparison-list positive">
-            <li>Full 60-minute dedicated sessions</li>
-            <li>100% one-on-one with Dr. Maks (DPT)</li>
-            <li>Doctor-level care every visit</li>
-            <li>Fully customized to your needs</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Personal Training Section -->
   <section class="training-section">
     <div class="training-wrapper">
       <div class="training-image">
-        <img src="/images/physica-medica-location.png" alt="Physica Medica location" loading="lazy" class="professional-image" />
+        <Image 
+          src={heroLocationImg}
+          alt="Physica Medica location"
+          width={708}
+          height={460}
+          widths={[400, 700]}
+          format="webp"
+          loading="lazy"
+          quality={60}
+        />
       </div>
       <div class="training-content">
         <p class="training-title">Our Exclusive Approach to Personal Training:</p>
@@ -178,7 +248,16 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     <h2>300+ 5-STAR REVIEWS</h2>
     <div class="review-card">
       <div class="review-image">
-        <img src="/images/Baltimore-Physical-Therapist-session.png" alt="Physical therapy session" loading="lazy" class="professional-image" />
+        <Image 
+          src={sessionImg}
+          alt="Physical therapy session"
+          width={412}
+          height={264}
+          format="webp"
+          loading="lazy"
+          quality={70}
+          class="professional-image"
+        />
       </div>
       <div class="review-content">
         <h3>Stefan Pearson</h3>
@@ -191,6 +270,17 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Visit Us Section -->
   <section class="visit-section">
+    <Image 
+      src={heroLocationImg}
+      alt=""
+      width={708}
+      height={460}
+      widths={[400, 700]}
+      format="webp"
+      loading="lazy"
+      quality={60}
+      class="visit-bg-image"
+    />
     <div class="visit-overlay">
       <h2>VISIT<br/>US</h2>
       <p>M W F: 8:00 AM - 7:30 PM</p>
@@ -227,15 +317,31 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   /* ========== HERO SECTION ========== */
   .hero {
     position: relative;
-    background: linear-gradient(rgba(61, 122, 107, 0.75), rgba(61, 122, 107, 0.75)), 
-                url('/images/physica-medica-location.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Parallax effect */
-    padding: var(--spacing-section-xl) 20px 100px;
+    padding: 80px 20px 100px;
     text-align: center;
-    color: var(--color-text-on-dark);
+    color: white;
     overflow: hidden;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(61, 122, 107, 0.75), rgba(61, 122, 107, 0.75));
+    z-index: 1;
   }
 
   .hero-content {
@@ -262,14 +368,14 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 24px;
-    color: var(--color-text-on-dark);
+    color: white;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
   .hero-cta-text {
     font-size: 1.25rem;
     margin: 0 0 20px;
-    color: var(--color-text-on-dark);
+    opacity: 0.95;
     font-weight: 400;
     letter-spacing: 0.01em;
   }
@@ -304,41 +410,34 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0.25;
+    opacity: 0.15;
     pointer-events: none;
     z-index: 1;
     text-align: center;
-    mix-blend-mode: normal;
   }
 
   .watermark-left {
-    left: 40px;
+    left: 30px;
   }
 
   .watermark-right {
-    right: 40px;
+    right: 30px;
   }
 
   .watermark img {
-    width: 500px;
+    width: 200px;
     height: auto;
-    filter: grayscale(100%) contrast(2) brightness(0.5) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.8));
-    margin-bottom: 15px;
+    filter: grayscale(100%);
+    margin-bottom: 10px;
   }
 
   .watermark-text {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 300;
-    color: #444;
-    letter-spacing: 0.15em;
+    color: #999;
+    letter-spacing: 0.1em;
     line-height: 1.2;
-    text-shadow: 
-      -1px -1px 0 rgba(255, 255, 255, 0.5),
-      1px -1px 0 rgba(255, 255, 255, 0.5),
-      -1px 1px 0 rgba(255, 255, 255, 0.5),
-      1px 1px 0 rgba(255, 255, 255, 0.5),
-      0 0 3px rgba(255, 255, 255, 0.6);
   }
 
   .gallery-container {
@@ -449,7 +548,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   /* ========== QUOTE SECTION ========== */
   .quote-section {
     background: white;
-    padding: var(--spacing-section);
+    padding: 80px 20px;
     text-align: center;
   }
 
@@ -484,67 +583,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     background: var(--color-background-light);
     border-radius: 8px;
     border-left: 4px solid var(--color-accent);
-  }
-
-  /* ========== AUTHORITY SECTION ========== */
-  .authority-section {
-    background: var(--color-background-light);
-    padding: var(--spacing-section);
-  }
-
-  .authority-section h2 {
-    text-align: center;
-    color: var(--color-primary);
-    margin-bottom: 3rem;
-    font-size: 2.25rem;
-  }
-
-  .authority-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2.5rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .authority-card {
-    background: white;
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal);
-    border: 2px solid transparent;
-  }
-
-  .authority-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-accent);
-  }
-
-  .authority-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 12px 24px;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .authority-card h3 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    font-size: 1.35rem;
-  }
-
-  .authority-card p {
-    color: var(--color-text-secondary);
-    line-height: 1.7;
-    margin: 0;
   }
 
   /* ========== TREATMENT SECTION ========== */
@@ -622,85 +660,10 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     font-weight: 500;
   }
 
-  /* ========== COMPARISON SECTION ========== */
-  .comparison-section {
-    background: white;
-    padding: var(--spacing-section);
-  }
-
-  .comparison-section h2 {
-    text-align: center;
-    color: var(--color-primary);
-    margin-bottom: 3.5rem;
-    font-size: 2.25rem;
-  }
-
-  .comparison-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .comparison-column {
-    padding: 3rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-  }
-
-  .comparison-column.other {
-    background: #f5f5f5;
-    border: 2px solid #e0e0e0;
-  }
-
-  .comparison-column.physica {
-    background: linear-gradient(135deg, rgba(61, 184, 159, 0.05) 0%, rgba(45, 109, 95, 0.05) 100%);
-    border: 2px solid var(--color-accent);
-  }
-
-  .comparison-column h3 {
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .comparison-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .comparison-list li {
-    padding: 0.75rem 0 0.75rem 2.5rem;
-    position: relative;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  .comparison-list.negative li::before {
-    content: '✗';
-    position: absolute;
-    left: 0;
-    color: #d32f2f;
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-
-  .comparison-list.positive li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-
   /* ========== TRAINING SECTION ========== */
   .training-section {
     background: var(--color-background-light);
-    padding: var(--spacing-section);
+    padding: 80px 20px;
     text-align: center;
   }
 
@@ -732,7 +695,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   .training-content {
     background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
-    color: var(--color-text-on-dark);
+    color: white;
     padding: 32px;
     text-align: left;
     border-radius: 8px;
@@ -743,7 +706,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     font-weight: 600;
     margin: 0 0 20px;
     font-size: 1.125rem;
-    color: var(--color-text-on-dark);
   }
 
   .training-content ul {
@@ -751,7 +713,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     padding-left: 24px;
     font-size: 0.95rem;
     line-height: 1.7;
-    color: var(--color-text-on-dark);
   }
 
   .training-content li {
@@ -781,13 +742,13 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   /* ========== REVIEWS SECTION ========== */
   .reviews-section {
     background: var(--color-primary);
-    color: var(--color-text-on-dark);
-    padding: var(--spacing-section);
+    color: white;
+    padding: 80px 20px;
     text-align: center;
   }
 
   .reviews-section h2 {
-    color: var(--color-text-on-dark);
+    color: white;
     letter-spacing: 0.15em;
     margin: 0 0 48px;
     font-size: 2rem;
@@ -819,7 +780,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .review-content h3 {
-    color: var(--color-text-on-dark);
+    color: white;
     margin: 0 0 12px;
     font-size: 1.5rem;
   }
@@ -835,7 +796,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     font-size: 1.05rem;
     line-height: 1.8;
     margin: 0 0 28px;
-    color: var(--color-text-on-dark);
+    color: rgba(255, 255, 255, 0.95);
   }
 
   .review-link {
@@ -859,39 +820,51 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== VISIT SECTION ========== */
   .visit-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('/images/physica-medica-location.png');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     padding: 80px 20px;
     text-align: center;
     color: white;
+    overflow: hidden;
+  }
+
+  .visit-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    z-index: 1;
+  }
+
+  .visit-section .visit-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
   .visit-overlay {
-    max-width: 600px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
 
   .visit-overlay h2 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
-    margin: 0 0 48px;
+    letter-spacing: 0.2em;
+    margin: 0 0 30px;
     color: white;
-    line-height: 1.2;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    line-height: 1;
   }
 
   .visit-overlay p {
-    font-size: 1.5rem;
-    margin: 12px 0;
-    font-weight: 600;
-    line-height: 1.8;
-    color: white;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 
-                 0 1px 3px rgba(0, 0, 0, 1);
-    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+    margin: 5px 0;
   }
 
   /* ========== CONTACT SECTION ========== */
@@ -996,7 +969,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   @media (max-width: 768px) {
     .hero {
       padding: 60px 20px 70px;
-      background-attachment: scroll; /* Disable parallax on mobile */
     }
 
     .hero-title {
@@ -1057,16 +1029,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       gap: 16px;
     }
 
-    .comparison-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .authority-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
     .training-section {
       padding: 60px 20px;
     }
@@ -1102,13 +1064,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     }
 
     .visit-overlay h2 {
-      font-size: 2rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 36px;
-    }
-
-    .visit-overlay p {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -1133,14 +1089,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
     .watermark-right {
       right: 60px;
-    }
-
-    .watermark img {
-      width: 600px;
-    }
-
-    .watermark-text {
-      font-size: 3rem;
     }
   }
 </style>

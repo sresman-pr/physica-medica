@@ -3,6 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import '../../styles/service-pages.css';
+import { Image } from 'astro:assets';
+
+// Import pancafit images
+import pancafitImg from '../../images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv2.png';
+import scoliosisImg from '../../images/Baltimore-Physical-Therapist-scoliosis.jpg';
+import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
 
 const pageTitle = "Baltimore Pancafit Postural Correction | Physical Therapy | Physica Medica";
 const pageDescription = "Revolutionary Pancafit postural correction in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maks Birikov, DPT for lasting pain relief.";
@@ -54,7 +60,16 @@ const faqs = [
   <section class="service-hero-modern">
     <div class="hero-overlay"></div>
     <div class="hero-image-bg">
-      <img src="/images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv2.png" alt="Pancafit postural correction" loading="eager" />
+      <Image 
+        src={pancafitImg}
+        alt="Pancafit postural correction"
+        width={117}
+        height={105}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        quality={75}
+      />
     </div>
     <div class="container-narrow hero-content-modern">
       <h1>Pancafit Class</h1>
@@ -160,7 +175,15 @@ const faqs = [
       <div class="related-grid-modern">
         <a href="/services/scoliosis" class="related-card-modern">
           <div class="related-card-image">
-            <img src="/images/Baltimore-Physical-Therapist-scoliosis.jpg" alt="Scoliosis treatment" loading="lazy" />
+            <Image 
+              src={scoliosisImg}
+              alt="Scoliosis treatment"
+              width={417}
+              height={268}
+              format="webp"
+              loading="lazy"
+              quality={80}
+            />
           </div>
           <div class="related-card-content">
             <h3>Scoliosis Treatment</h3>
@@ -170,7 +193,15 @@ const faqs = [
         </a>
         <a href="/services/personal-training" class="related-card-modern">
           <div class="related-card-image">
-            <img src="/images/Baltimore-Physical-Therapist-strength-training.jpg" alt="Personal training" loading="lazy" />
+            <Image 
+              src={strengthTrainingImg}
+              alt="Personal training"
+              width={351}
+              height={220}
+              format="webp"
+              loading="lazy"
+              quality={80}
+            />
           </div>
           <div class="related-card-content">
             <h3>Personal Training</h3>

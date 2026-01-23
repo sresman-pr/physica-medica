@@ -105,6 +105,10 @@ const allSchemas = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     
+    <!-- Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="https://physicamedica.net">
+    <link rel="preconnect" href="https://physicamedica.net" crossorigin>
+    
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -129,9 +133,6 @@ const allSchemas = {
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
-    <!-- Preload critical image (will be overridden per page if needed) -->
-    <link rel="preload" as="image" href="/images/hero-desktop.webp" type="image/webp" />
   </head>
   <body>
     <Header />

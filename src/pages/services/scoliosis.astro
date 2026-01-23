@@ -2,7 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
-import '../../styles/service-pages.css';
+import { Image } from 'astro:assets';
+
+// Import scoliosis images
+import scoliosisHeroImg from '../../images/Baltimore-Physical-Therapist-scoliosis.jpg';
+import scoliosisApproachImg from '../../images/Baltimore-Physical-Therapist-scoliosis-approach.jpg';
+import scoliosisBackViewImg from '../../images/Baltimore-Physical-Therapist-scoliosis-approach-back-view.jpg';
+import scoliosisDiagnosisImg from '../../images/Baltimore-Physical-Therapist-diagnosis-scoliosis.jpg';
+import scoliosisSymptomsImg from '../../images/Baltimore-Physical-Therapist-signs-symptoms-scoliosis.jpg';
+import scoliosisTreatmentImg from '../../images/Baltimore-Physical-Therapist-scoliosis-treatment.jpg';
 
 const pageTitle = "Baltimore Scoliosis Physical Therapy | Spinal Curve Treatment | Physica Medica";
 const pageDescription = "Expert scoliosis treatment in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 DPT sessions combining Pancafit postural correction with Dr. Maksim Birikov.";
@@ -61,7 +69,16 @@ const faqs = [
   <!-- Hero Image -->
   <section class="hero-image-section">
     <div class="container">
-      <img src="/images/Baltimore-Physical-Therapist-scoliosis.jpg" alt="Scoliosis treatment at Physica Medica" loading="eager" />
+      <Image 
+        src={scoliosisHeroImg}
+        alt="Scoliosis treatment at Physica Medica"
+        width={417}
+        height={268}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        quality={75}
+      />
     </div>
   </section>
 
@@ -72,8 +89,24 @@ const faqs = [
       <p>Scoliosis physical therapy focuses on managing spinal curvature through targeted postural correction, therapeutic exercises, and manual therapy techniques. At Physica Medica, we specialize in treating both adolescent and adult scoliosis, addressing not just the curve itself but the compensatory patterns and pain that often accompany it. Our approach targets the root cause of scoliosis-related dysfunction, not just surface symptoms.</p>
       
       <div class="scoliosis-images-grid">
-        <img src="/images/Baltimore-Physical-Therapist-scoliosis-approach.jpg" alt="Scoliosis treatment approach" loading="lazy" />
-        <img src="/images/Baltimore-Physical-Therapist-scoliosis-approach-back-view.jpg" alt="Scoliosis back view assessment" loading="lazy" />
+        <Image 
+          src={scoliosisApproachImg}
+          alt="Scoliosis treatment approach"
+          width={518}
+          height={379}
+          format="webp"
+          loading="lazy"
+          quality={80}
+        />
+        <Image 
+          src={scoliosisBackViewImg}
+          alt="Scoliosis back view assessment"
+          width={447}
+          height={396}
+          format="webp"
+          loading="lazy"
+          quality={80}
+        />
       </div>
 
       <h2>How We Deliver Results: The 60-Minute 1-on-1 DPT Difference</h2>
@@ -99,15 +132,39 @@ const faqs = [
 
       <div class="scoliosis-info-grid">
         <div class="info-image">
-          <img src="/images/Baltimore-Physical-Therapist-diagnosis-scoliosis.jpg" alt="Scoliosis diagnosis" loading="lazy" />
+          <Image 
+            src={scoliosisDiagnosisImg}
+            alt="Scoliosis diagnosis"
+            width={378}
+            height={283}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
           <p class="image-caption">Understanding Your Diagnosis</p>
         </div>
         <div class="info-image">
-          <img src="/images/Baltimore-Physical-Therapist-signs-symptoms-scoliosis.jpg" alt="Signs and symptoms of scoliosis" loading="lazy" />
+          <Image 
+            src={scoliosisSymptomsImg}
+            alt="Signs and symptoms of scoliosis"
+            width={380}
+            height={284}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
           <p class="image-caption">Signs & Symptoms</p>
         </div>
         <div class="info-image">
-          <img src="/images/Baltimore-Physical-Therapist-scoliosis-treatment.jpg" alt="Scoliosis treatment options" loading="lazy" />
+          <Image 
+            src={scoliosisTreatmentImg}
+            alt="Scoliosis treatment options"
+            width={378}
+            height={282}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
           <p class="image-caption">Treatment Approach</p>
         </div>
       </div>
@@ -126,15 +183,6 @@ const faqs = [
       <div class="highlight-box">
         <h3>Evidence-Based Approach</h3>
         <p>Our scoliosis treatment integrates the latest research in postural correction, manual therapy, and therapeutic exercise. We focus on what works: improving function, reducing pain, and enhancing quality of life.</p>
-      </div>
-
-      <div class="service-testimonial">
-        <div class="testimonial-quote">
-          Dr. Maks' scoliosis treatment gave me my life back. After years of trying everything, his Pancafit approach finally addressed my curve and eliminated the constant back pain.
-        </div>
-        <div class="testimonial-author">
-          <strong>Jennifer M.</strong> - Canton Nurse Practitioner
-        </div>
       </div>
 
       <div class="cta-box">

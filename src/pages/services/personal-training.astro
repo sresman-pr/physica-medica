@@ -3,9 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import '../../styles/service-pages.css';
+import { Image } from 'astro:assets';
 
-const pageTitle = "Clinical Biomechanics & Performance Training Baltimore | DPT-Led | Physica Medica";
-const pageDescription = "Clinical performance training from a Doctor of Physical Therapy. Not typical personal training—DPT-level biomechanics optimization. $200 premium out-of-network care. 60-minute 1-on-1 sessions with Dr. Maksim Birikov in Baltimore.";
+// Import images for optimization
+import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
+import ryanHeadShotImg from '../../images/Ryan Head Shot.jpg';
+import pancafitImg from '../../images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv2.png';
+import dryNeedlingImg from '../../images/Baltimore-Physical-Therapist-dry-needling.jpg';
+
+const pageTitle = "Baltimore Personal Training | Biomechanics & Movement | Physica Medica";
+const pageDescription = "Unique personal training integrating biomechanics, fascia, and evolutionary movement. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT in Baltimore.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -15,8 +22,8 @@ const breadcrumbs = [
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
-  "name": "Clinical Biomechanics & Performance Training",
-  "description": "DPT-led clinical performance training integrating biomechanics, fascia, and evolutionary movement requirements. Not typical personal training—doctor-level care from a physical therapist.",
+  "name": "Personal Training - Biomechanics Focus",
+  "description": "Unique approach to personal training that integrates your body as a system, optimizing biomechanics with respect to evolutionary movement requirements",
   "provider": { "@id": "https://physicamedica.net/#business" },
   "areaServed": {
     "@type": "City",
@@ -54,11 +61,21 @@ const faqs = [
   <section class="service-hero-modern">
     <div class="hero-overlay"></div>
     <div class="hero-image-bg">
-      <img src="/images/Baltimore-Physical-Therapist-strength-training.jpg" alt="Personal training at Physica Medica" loading="eager" />
+      <Image 
+        src={strengthTrainingImg}
+        alt="Personal training at Physica Medica"
+        width={351}
+        height={220}
+        widths={[400, 700]}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        quality={65}
+      />
     </div>
     <div class="container-narrow hero-content-modern">
-      <h1>Clinical Biomechanics & Performance Training</h1>
-      <p class="hero-subtitle-modern">DPT-Led Movement Optimization for Athletes & Professionals</p>
+      <h1>Personal Training</h1>
+      <p class="hero-subtitle-modern">Biomechanics-Based Movement Optimization</p>
       <a href="/schedule" class="hero-cta-button">Start Your Training</a>
     </div>
   </section>
@@ -66,28 +83,27 @@ const faqs = [
   <!-- Benefits Section -->
   <section class="benefits-section">
     <div class="container-narrow">
-      <h2 class="section-title-center">Why a DPT for Performance Training?</h2>
-      <p class="section-intro">This isn't typical personal training—it's clinical performance training from a Doctor of Physical Therapy.</p>
+      <h2 class="section-title-center">Why Train With Us?</h2>
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-icon">🎯</div>
-          <h3>Clinical Biomechanics</h3>
-          <p>DPT-level movement analysis to optimize performance and prevent injury</p>
+          <h3>Systems-Based Approach</h3>
+          <p>Integrate biomechanics, fascia, and gravity for optimal movement</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">⏱️</div>
           <h3>Full 60 Minutes</h3>
-          <p>Complete attention from a Doctor of Physical Therapy, not a gym trainer</p>
+          <p>Complete attention from a Doctor of Physical Therapy</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">💪</div>
           <h3>Pain-Free Performance</h3>
-          <p>Build strength while eliminating movement dysfunctions that trainers miss</p>
+          <p>Build strength while eliminating movement dysfunctions</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">🔬</div>
-          <h3>Medical-Grade Assessment</h3>
-          <p>Identify and correct issues before they become injuries</p>
+          <h3>DPT-Level Assessment</h3>
+          <p>Identify and correct issues before they cause injury</p>
         </div>
       </div>
     </div>
@@ -97,9 +113,18 @@ const faqs = [
   <section class="trainer-section section-spacing">
     <div class="container-narrow">
       <div class="trainer-grid">
-      <div class="trainer-image">
-        <img src="/images/Ryan Head Shot.jpg" alt="Personal trainer" loading="lazy" class="professional-image" />
-      </div>
+        <div class="trainer-image">
+          <Image 
+            src={ryanHeadShotImg}
+            alt="Personal trainer"
+            width={242}
+            height={538}
+            format="webp"
+            loading="lazy"
+            quality={60}
+            class="professional-image"
+          />
+        </div>
         <div class="trainer-content">
           <h2>Expert Training</h2>
           <p>Work one-on-one with experienced trainers who understand biomechanics, movement patterns, and how to optimize your body as an integrated system.</p>
@@ -140,21 +165,11 @@ const faqs = [
   <!-- Main Content -->
   <section class="service-content section-spacing">
     <div class="container-narrow">
-      <h2>What is Clinical Performance Training?</h2>
-      <p>Clinical Biomechanics & Performance Training combines the expertise of a Doctor of Physical Therapy with advanced movement science. This isn't a trainer counting reps—it's a DPT analyzing your movement patterns, correcting dysfunctions, and optimizing your body as an integrated system. We address how your body moves in relation to gravity, fascia, and your evolutionary design.</p>
+      <h2>What is Biomechanics-Based Training?</h2>
+      <p>Biomechanics-based training goes beyond traditional personal training by addressing how your body moves as an integrated system. Rather than isolating muscles, we optimize movement patterns that respect your body's evolutionary design, improve fascial connections, and enhance communication between all body systems.</p>
 
-      <h2>Why a DPT for Training?</h2>
-      <p>Dr. Maks isn't just a personal trainer—he's a Doctor of Physical Therapy with advanced clinical training. This means:</p>
-      <ul>
-        <li><strong>Medical-Grade Assessment:</strong> Identify movement dysfunctions that typical trainers miss</li>
-        <li><strong>Pain Prevention:</strong> Correct biomechanical issues before they cause injury</li>
-        <li><strong>Clinical Integration:</strong> Combine strength training with manual therapy, dry needling, and postural correction</li>
-        <li><strong>Evidence-Based Programming:</strong> Not cookie-cutter workouts—scientifically designed for your body</li>
-        <li><strong>Injury Recovery:</strong> Return to performance safely after injury with expert guidance</li>
-      </ul>
-
-      <h2>The Out-of-Network Advantage</h2>
-      <p>As a premium out-of-network provider ($200 per session), Dr. Maks provides:</p>
+      <h2>How Physica Medica is Different</h2>
+      <p>Dr. Maks brings a unique combination of physical therapy expertise and movement science to every personal training session:</p>
       <ul>
         <li><strong>60 Full Minutes:</strong> Unlike 30-minute sessions at corporate gyms, you get Dr. Maks's complete attention</li>
         <li><strong>DPT-Level Assessment:</strong> Identify and correct movement dysfunctions before they cause injury</li>
@@ -183,15 +198,6 @@ const faqs = [
         <li><strong>Education:</strong> Understand how to move optimally in daily life and sport</li>
       </ol>
 
-      <div class="service-testimonial">
-        <div class="testimonial-quote">
-          Unlike trainers who just count reps, Dr. Maks uses his DPT expertise to fix my movement patterns. My chronic shoulder pain is gone and I'm lifting heavier than ever.
-        </div>
-        <div class="testimonial-author">
-          <strong>Michael R.</strong> - Federal Hill Attorney
-        </div>
-      </div>
-
       <div class="cta-box-modern">
         <div class="cta-icon">💫</div>
         <h3>Transform Your Movement</h3>
@@ -216,7 +222,15 @@ const faqs = [
       <div class="related-grid-modern">
         <a href="/services/pancafit-class" class="related-card-modern">
           <div class="related-card-image">
-            <img src="/images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv2.png" alt="Pancafit class" loading="lazy" />
+            <Image 
+              src={pancafitImg}
+              alt="Pancafit class"
+              width={117}
+              height={105}
+              format="webp"
+              loading="lazy"
+              quality={60}
+            />
           </div>
           <div class="related-card-content">
             <h3>Pancafit Class</h3>
@@ -226,7 +240,15 @@ const faqs = [
         </a>
         <a href="/services/specialty-techniques" class="related-card-modern">
           <div class="related-card-image">
-            <img src="/images/Baltimore-Physical-Therapist-dry-needling.jpg" alt="Specialty techniques" loading="lazy" />
+            <Image 
+              src={dryNeedlingImg}
+              alt="Specialty techniques"
+              width={355}
+              height={224}
+              format="webp"
+              loading="lazy"
+              quality={60}
+            />
           </div>
           <div class="related-card-content">
             <h3>Specialty Techniques</h3>

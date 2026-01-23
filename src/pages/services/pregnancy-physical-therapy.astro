@@ -2,7 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
-import '../../styles/service-pages.css';
+import { Image } from 'astro:assets';
+import pregnancyImg from '../../images/Baltimore-Physical-Therapist-pregnancy.jpg';
 
 const pageTitle = "Baltimore Pregnancy Physical Therapy | Prenatal & Postpartum | Physica Medica";
 const pageDescription = "Expert pregnancy and postpartum physical therapy in Baltimore. $200 out-of-network premium care. Group seminars and 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT.";
@@ -61,7 +62,16 @@ const faqs = [
   <!-- Hero Image -->
   <section class="hero-image-section">
     <div class="container">
-      <img src="/images/Baltimore-Physical-Therapist-pregnancy.jpg" alt="Pregnancy physical therapy" loading="eager" />
+      <Image 
+        src={pregnancyImg}
+        alt="Pregnancy physical therapy"
+        width={351}
+        height={220}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        quality={75}
+      />
     </div>
   </section>
 
@@ -108,15 +118,6 @@ const faqs = [
         <li><strong>Labor Preparation:</strong> Exercises and positions to facilitate easier delivery</li>
         <li><strong>Postpartum Recovery:</strong> Safe return to activity and core restoration</li>
       </ol>
-
-      <div class="service-testimonial">
-        <div class="testimonial-quote">
-          Dr. Maks helped me through both my pregnancies. His expertise in postpartum recovery and core restoration was life-changing. The one-on-one attention made all the difference.
-        </div>
-        <div class="testimonial-author">
-          <strong>Amanda K.</strong> - Canton New Mother
-        </div>
-      </div>
 
       <div class="cta-box">
         <h3>Start Your Pregnancy Journey with Expert Care</h3>
