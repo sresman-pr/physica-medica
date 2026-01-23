@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Insurance & Superbills | Out-of-Network Benefits | Physica Medica";
+const pageDescription = "Learn how to use your out-of-network insurance benefits at Physica Medica. Many patients receive 60-80% reimbursement through superbills.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="insurance-hero">
+    <div class="container-narrow">
+      <h1>How We Work With Your Insurance</h1>
+      <p class="lead">Get premium care without insurance restrictions</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="insurance-content section-spacing">
+    <div class="container-narrow">
+      <div class="oon-explainer">
+        <h2>Why Out-of-Network?</h2>
+        <p>Physica Medica is an Out-of-Network (OON) provider. This allows Dr. Maks to provide the elite, 1-on-1, 60-minute care that high-performance patients deserve—without the restrictions imposed by insurance "mills".</p>
+        
+        <div class="oon-benefits">
+          <div class="oon-benefit-item">
+            <span class="benefit-check">✓</span>
+            <p><strong>Full 60-minute sessions</strong> instead of rushed 15-30 minute visits</p>
+          </div>
+          <div class="oon-benefit-item">
+            <span class="benefit-check">✓</span>
+            <p><strong>100% attention from Dr. Maks (DPT)</strong> not split between multiple patients</p>
+          </div>
+          <div class="oon-benefit-item">
+            <span class="benefit-check">✓</span>
+            <p><strong>Customized treatment plans</strong> not restricted by insurance protocols</p>
+          </div>
+          <div class="oon-benefit-item">
+            <span class="benefit-check">✓</span>
+            <p><strong>Advanced techniques</strong> like dry needling and Pancafit without prior authorization</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>The Superbill Process</h2>
+      <p class="process-intro">Getting reimbursed is simple. Here's how it works:</p>
+      
+      <div class="superbill-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Pay at Time of Service</h3>
+          <p>You pay the $200 evaluation or session fee upfront.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Receive Your Superbill</h3>
+          <p>We provide a detailed medical receipt (Superbill) after your visit.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Get Reimbursed</h3>
+          <p>You submit this to your insurance provider. Many of our patients receive 60% to 80% reimbursement directly to their bank accounts, depending on their OON benefits.</p>
+        </div>
+      </div>
+
+      <div class="reimbursement-example">
+        <h3>Typical Reimbursement Example</h3>
+        <div class="example-calc">
+          <div class="calc-row">
+            <span class="calc-label">Session Cost:</span>
+            <span class="calc-value">$200</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Typical OON Reimbursement (70%):</span>
+            <span class="calc-value highlight">-$140</span>
+          </div>
+          <div class="calc-row total">
+            <span class="calc-label">Your Net Cost:</span>
+            <span class="calc-value">$60</span>
+          </div>
+        </div>
+        <p class="disclaimer">*Reimbursement rates vary by insurance plan. Contact your provider to verify your out-of-network benefits.</p>
+      </div>
+
+      <div class="insurance-cta-box">
+        <h3>Questions About Your Benefits?</h3>
+        <p>Call us to discuss how your specific plan's out-of-network benefits work. We're here to help you maximize your insurance coverage.</p>
+        <a href="tel:443-228-8029" class="cta-button">Call 443-228-8029</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .insurance-hero {
+    background: var(--color-background-light);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .insurance-hero h1 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .insurance-content {
+    background: white;
+  }
+
+  .oon-explainer {
+    background: linear-gradient(135deg, rgba(61, 184, 159, 0.05) 0%, rgba(45, 109, 95, 0.05) 100%);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 2px solid var(--color-accent);
+    margin-bottom: 4rem;
+  }
+
+  .oon-explainer h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .oon-explainer > p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .oon-benefits {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .oon-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .benefit-check {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .oon-benefit-item p {
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .insurance-content h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .process-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+  }
+
+  .superbill-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+  }
+
+  .step-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-background-light);
+    transition: all var(--transition-normal);
+  }
+
+  .step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+  }
+
+  .step-number {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .step-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+  }
+
+  .step-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .reimbursement-example {
+    background: var(--color-background-light);
+    padding: 3rem;
+    border-radius: 12px;
+    margin: 4rem 0;
+  }
+
+  .reimbursement-example h3 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .example-calc {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .calc-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .calc-row.total {
+    border-bottom: none;
+    border-top: 2px solid var(--color-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .calc-label {
+    color: var(--color-text-secondary);
+  }
+
+  .calc-value {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .calc-value.highlight {
+    color: var(--color-accent);
+  }
+
+  .disclaimer {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+  }
+
+  .insurance-cta-box {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 4rem 0 0;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    color: var(--color-text-on-dark);
+  }
+
+  .insurance-cta-box h3 {
+    color: var(--color-text-on-dark);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .insurance-cta-box p {
+    color: var(--color-text-on-dark);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .superbill-steps {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .oon-explainer {
+      padding: 2rem;
+    }
+
+    .reimbursement-example {
+      padding: 2rem;
+    }
+
+    .example-calc {
+      padding: 1.5rem;
+    }
+  }
+</style>
