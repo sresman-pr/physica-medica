@@ -1,0 +1,92 @@
+---
+// Footer Component
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>
+          800 S Bond St<br />
+          Baltimore, MD 21231
+        </p>
+        <p>
+          <a href="tel:443-228-8029">443-228-8029</a><br />
+          <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Hours</h3>
+        <p>
+          M W F: 8:00 AM - 7:30 PM<br />
+          Tuesday: 10:00 AM - 7:30 PM<br />
+          Thurs Sat Sun: Closed
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Visit Us</h3>
+        <p>
+          <a href="https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD+21231" target="_blank" rel="noopener">
+            View on Google Maps
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-text-primary);
+    color: white;
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3 {
+    color: var(--color-accent);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section p {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+  }
+
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-section a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+</style>

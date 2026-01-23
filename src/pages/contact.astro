@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Contact Physica Medica | Physical Therapy Baltimore | 443-228-8029";
+const pageDescription = "Contact Physica Medica physical therapy in Baltimore. Call 443-228-8029 or visit us at 800 S Bond St, Baltimore, MD 21231.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="contact-hero">
+    <div class="container-narrow text-center">
+      <h1>CONTACT</h1>
+      <p class="lead">Get in touch to schedule your appointment</p>
+    </div>
+  </section>
+
+  <section class="contact-content section-spacing">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>PHYSICA MEDICA</h2>
+          
+          <div class="info-section">
+            <h3>Location</h3>
+            <p>
+              800 S Bond St,<br />
+              Baltimore, MD 21231
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3>Hours</h3>
+            <p>
+              <strong>M W F:</strong> 8:00 AM - 7:30 PM<br />
+              <strong>Tuesday:</strong> 10:00 AM - 7:30 PM<br />
+              <strong>Thurs Sat Sun:</strong> Closed
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3>Contact</h3>
+            <p>
+              <a href="tel:443-228-8029">443-228-8029</a><br />
+              <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
+            </p>
+          </div>
+
+          <div class="cta-buttons">
+            <a href="tel:443-228-8029" class="cta-button">Call Now</a>
+            <a href="/schedule" class="cta-button">Schedule Online</a>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.8373!2d-76.6012!3d39.2784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDE2JzQyLjIiTiA3NsKwMzYnMDQuMyJX!5e0!3m2!1sen!2sus!4v1234567890"
+            width="100%" 
+            height="450" 
+            style="border:0; border-radius: 0.5rem;" 
+            allowfullscreen="" 
+            loading="lazy"
+            title="Physica Medica Location Map"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+  }
+
+  .contact-hero h1 {
+    color: var(--color-text-primary);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+  }
+
+  .info-section {
+    margin-bottom: 2rem;
+  }
+
+  .info-section h3 {
+    color: var(--color-primary);
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-section p {
+    line-height: 1.8;
+  }
+
+  .info-section a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .info-section a:hover {
+    text-decoration: underline;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+  }
+</style>

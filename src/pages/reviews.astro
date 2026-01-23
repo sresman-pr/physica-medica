@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Patient Reviews | Physica Medica Baltimore | 5-Star Physical Therapy";
+const pageDescription = "Read 300+ five-star reviews from Physica Medica patients. Discover why Baltimore residents choose Dr. Maks for physical therapy.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="reviews-hero">
+    <div class="container-narrow text-center">
+      <h1>5-STAR REVIEWS</h1>
+      <p class="lead">Over 300 Five-Star Reviews from Satisfied Patients</p>
+    </div>
+  </section>
+
+  <section class="reviews-content section-spacing">
+    <div class="container-narrow">
+      <div class="review-featured">
+        <h2>Stefan Pearson</h2>
+        <div class="star-rating">★★★★★</div>
+        <p>"Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan."</p>
+      </div>
+
+      <div class="google-reviews-cta">
+        <h2>Read More Reviews</h2>
+        <p>See what other Baltimore patients are saying about their experience at Physica Medica.</p>
+        <a href="https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review" target="_blank" rel="noopener" class="cta-button">View All Google Reviews</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .reviews-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+  }
+
+  .reviews-hero h1 {
+    color: var(--color-text-primary);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+
+  .review-featured {
+    background: var(--color-background-light);
+    padding: 3rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin-bottom: 3rem;
+  }
+
+  .review-featured h2 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .star-rating {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .google-reviews-cta {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .google-reviews-cta h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+</style>

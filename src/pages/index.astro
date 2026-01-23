@@ -1,0 +1,405 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Physical Therapy Boutique & Postural Correction Studio | Physica Medica Baltimore";
+const pageDescription = "Baltimore's premier physical therapy boutique specializing in postural correction, dry needling, scoliosis treatment, and the Wim Hof Method. One-on-one treatments with Dr. Maksim Birikov, DPT.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background-image"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="/images/Physica-Medica-logo.jpg" alt="Physica Medica Logo" class="hero-logo" width="300" height="120" />
+      
+      <h1 class="hero-title">
+        Physical Therapy Boutique<br />
+        Postural Correction Studio
+      </h1>
+      
+      <p class="hero-cta-text">Call to book an appointment today!</p>
+      <a href="tel:443-228-8029" class="cta-button">Call Now</a>
+    </div>
+  </section>
+
+  <!-- Image Gallery Section -->
+  <section class="image-gallery">
+    <div class="container">
+      <div class="gallery-grid">
+        <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Dr. Maks performing dry needling therapy" loading="lazy" />
+        <img src="/images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png" alt="Dr. Maks - Wim Hof Method Certified" loading="lazy" />
+        <img src="/images/Baltimore-Physical-Therapist-fitness-equipment.png" alt="Physical therapy fitness equipment" loading="lazy" />
+        <img src="/images/Baltimore-Physical-Therapist-clinic-2023.png" alt="Physica Medica clinic interior" loading="lazy" />
+        <img src="/images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg" alt="Dr. Maks with patient" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule CTA Section -->
+  <section class="schedule-cta-section">
+    <div class="container text-center">
+      <h2>Schedule Your First Appointment</h2>
+      <p class="lead">One-on-One Treatments</p>
+      <a href="/schedule" class="cta-button">Schedule Evaluation</a>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <div class="container-narrow text-center">
+      <blockquote>
+        <h2>"The human body is an incredible machine."</h2>
+        <cite>Maksim Birikov - Doctor of Physical Therapy</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Treatment Images Section -->
+  <section class="treatment-images">
+    <div class="container">
+      <div class="treatment-grid">
+        <div class="treatment-image">
+          <img src="/images/Baltimore-Physical-Therapist-physica-medica therapy-.png" alt="Physical therapy session" loading="lazy" />
+        </div>
+        <div class="treatment-image">
+          <img src="/images/Baltimore-Physical-Therapist-cupping.png" alt="Cupping therapy" loading="lazy" />
+        </div>
+      </div>
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="/services" class="cta-button">See All Treatments</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pregnancy Services Section -->
+  <section class="pregnancy-section section-spacing">
+    <div class="container-narrow text-center">
+      <h2>Pregnancy Knowledge and Experience</h2>
+      <p class="lead">Group Seminars or One-on-One</p>
+      <img src="/images/physica-medica-location.png" alt="Physica Medica location" loading="lazy" style="max-width: 400px; margin: 2rem auto; display: block;" />
+    </div>
+  </section>
+
+  <!-- Personal Training Philosophy Section -->
+  <section class="philosophy-section section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">Unique approach to personal training:</h2>
+      <ul class="philosophy-list">
+        <li>Optimize your biomechanics with respects to our evolutionary movement requirements</li>
+        <li>Integrates your body as a system</li>
+        <li>Improve communication between the muscles, fascia and gravity</li>
+        <li>Correct movement dysfunctions that contribute to pain, improve posture, improve body aesthetics</li>
+        <li>Move with minimal wear and tear on the body</li>
+      </ul>
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="/services/personal-training" class="cta-button">One on One Personal Training</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section section-spacing">
+    <div class="container">
+      <h2 class="text-center">5-STAR REVIEWS</h2>
+      
+      <div class="review-featured">
+        <div class="review-image">
+          <img src="/images/Baltimore-Physical-Therapist-session.png" alt="Physical therapy session" loading="lazy" />
+        </div>
+        <div class="review-content">
+          <h3>Stefan Pearson</h3>
+          <div class="star-rating">★★★★★</div>
+          <p>"Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan."</p>
+          <a href="/reviews" class="reviews-link">More Reviews Here</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Contact Section -->
+  <section class="hours-contact-section section-spacing">
+    <div class="container">
+      <div class="hours-contact-grid">
+        <div class="hours-box">
+          <h2>Hours</h2>
+          <p><strong>M W F:</strong> 8:00 AM - 7:30 PM</p>
+          <p><strong>Tuesday:</strong> 10:00 AM - 7:30 PM</p>
+          <p><strong>Thurs Sat Sun:</strong> Closed</p>
+        </div>
+
+        <div class="contact-box">
+          <h2>VISIT US</h2>
+          <h3>PHYSICA MEDICA</h3>
+          <p>
+            800 S Bond St,<br />
+            Baltimore, MD 21231
+          </p>
+          <p>
+            <a href="tel:443-228-8029">443-228-8029</a><br />
+            <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    color: white;
+    padding: 3rem 2rem;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Baltimore-Physical-Therapist-clinic-2023.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(45, 109, 95, 0.92) 0%, rgba(45, 109, 95, 0.85) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .hero-cta-text {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    color: white;
+  }
+
+  /* Gallery */
+  .image-gallery {
+    padding: 3rem 0;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+  }
+
+  /* Schedule CTA */
+  .schedule-cta-section {
+    background: var(--color-background-light);
+    padding: 3rem 2rem;
+  }
+
+  .schedule-cta-section h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Quote */
+  .quote-section {
+    padding: 3rem 2rem;
+    background: var(--color-background-light);
+    border-top: 2px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .quote-section blockquote {
+    margin: 0;
+  }
+
+  .quote-section h2 {
+    color: var(--color-text-primary);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .quote-section cite {
+    font-style: normal;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+  }
+
+  /* Treatment Images */
+  .treatment-images {
+    padding: 3rem 0;
+  }
+
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .treatment-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+  }
+
+  /* Philosophy List */
+  .philosophy-list {
+    list-style: disc;
+    padding-left: 2rem;
+    margin: 2rem 0;
+  }
+
+  .philosophy-list li {
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Reviews */
+  .reviews-section {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .reviews-section h2 {
+    color: white;
+    letter-spacing: 0.1em;
+  }
+
+  .review-featured {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+  }
+
+  .review-image img {
+    width: 100%;
+    border-radius: 0.25rem;
+  }
+
+  .review-content h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .review-content p {
+    color: white;
+  }
+
+  .star-rating {
+    color: #ffa500;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .reviews-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .reviews-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Hours & Contact */
+  .hours-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .hours-box,
+  .contact-box {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .hours-box h2,
+  .contact-box h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .contact-box h3 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-box a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .contact-box a:hover {
+    text-decoration: underline;
+  }
+
+  /* Utility */
+  .text-center {
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .review-featured {
+      grid-template-columns: 1fr;
+    }
+
+    .hours-contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+// Author Byline Component for E-E-A-T signals
+---
+
+<div class="author-byline">
+  <div class="author-image">
+    <img src="/images/dr-maks-headshot.jpg" alt="Dr. Maksim Birikov" width="80" height="80" />
+  </div>
+  <div class="author-info">
+    <p class="author-name">
+      <strong>Written by <a href="/about/">Dr. Maksim Birikov, DPT</a></strong>
+    </p>
+    <p class="author-credentials">
+      Wim Hof Method Certified | 10+ years serving Baltimore
+    </p>
+  </div>
+</div>
+
+<style>
+  .author-byline {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--color-background-light);
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    border-radius: 0.5rem;
+  }
+
+  .author-image img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .author-info p {
+    margin: 0.25rem 0;
+  }
+
+  .author-name {
+    font-size: 1.125rem;
+  }
+
+  .author-name a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .author-name a:hover {
+    color: var(--color-accent);
+  }
+
+  .author-credentials {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 640px) {
+    .author-byline {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

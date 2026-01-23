@@ -1,0 +1,59 @@
+{
+  "redirects": [
+    {
+      "source": "/services-4",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/pancafit-1",
+      "destination": "/services/pancafit-class",
+      "permanent": true
+    },
+    {
+      "source": "/personal-training-1",
+      "destination": "/services/personal-training",
+      "permanent": true
+    },
+    {
+      "source": "/scoliosis-1",
+      "destination": "/services/scoliosis",
+      "permanent": true
+    },
+    {
+      "source": "/specialty-techniques-1",
+      "destination": "/services/specialty-techniques",
+      "permanent": true
+    },
+    {
+      "source": "/wim-hof-method-1",
+      "destination": "/wim-hof-method",
+      "permanent": true
+    },
+    {
+      "source": "/about-1",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-1",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/reviews-1",
+      "destination": "/reviews",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

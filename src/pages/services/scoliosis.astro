@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const pageTitle = "Scoliosis Physical Therapy Baltimore | Spinal Curve Treatment | Physica Medica";
+const pageDescription = "Expert scoliosis treatment combining postural correction and therapeutic exercises. Specialized care for spinal curvature in Baltimore with Dr. Maksim Birikov, DPT.";
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Scoliosis Physical Therapy",
+  "description": "Specialized scoliosis management combining postural correction, Pancafit therapy, and therapeutic exercise programs",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How effective is physical therapy for scoliosis in Baltimore?",
+    answer: "Physical therapy can significantly help manage scoliosis by improving posture, reducing pain, and preventing curve progression. At Physica Medica, we use specialized techniques including Pancafit to address the postural imbalances associated with scoliosis."
+  },
+  {
+    question: "Can adults with scoliosis benefit from physical therapy?",
+    answer: "Yes. Adult scoliosis patients often experience significant improvement in pain levels, posture, and quality of life through targeted physical therapy. While the curve may not reverse, we can improve compensatory patterns and reduce symptoms."
+  },
+  {
+    question: "How long does scoliosis treatment take at Physica Medica?",
+    answer: "Treatment duration varies by individual and curve severity. Most patients see improvement within 6-12 sessions, with ongoing maintenance recommended. Each session is a full 60 minutes focused on your specific needs."
+  },
+  {
+    question: "What makes Physica Medica's scoliosis treatment different?",
+    answer: "We combine Pancafit postural correction with DPT-level assessment and one-on-one attention. This boutique approach allows us to address the root cause of scoliosis-related pain rather than just treating symptoms."
+  },
+  {
+    question: "Is scoliosis treatment painful?",
+    answer: "No. Our treatment approach is gentle and progressive. While you may feel muscles working during exercises, the goal is always to reduce pain, not create it. We work within your comfort level."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="container-narrow">
+      <h1>Scoliosis Specialty</h1>
+      <p class="hero-subtitle">Expert Spinal Curve Management</p>
+    </div>
+  </section>
+
+  <!-- Hero Image -->
+  <section class="hero-image-section">
+    <div class="container">
+      <img src="/images/Baltimore-Physical-Therapist-scoliosis.jpg" alt="Scoliosis treatment at Physica Medica" loading="eager" />
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="service-content section-spacing">
+    <div class="container-narrow">
+      <h2>What is Scoliosis Physical Therapy?</h2>
+      <p>Scoliosis physical therapy focuses on managing spinal curvature through targeted postural correction, therapeutic exercises, and manual therapy techniques. At Physica Medica, we specialize in treating both adolescent and adult scoliosis, addressing not just the curve itself but the compensatory patterns and pain that often accompany it.</p>
+      
+      <div class="scoliosis-images-grid">
+        <img src="/images/Baltimore-Physical-Therapist-scoliosis-approach.jpg" alt="Scoliosis treatment approach" loading="lazy" />
+        <img src="/images/Baltimore-Physical-Therapist-scoliosis-approach-back-view.jpg" alt="Scoliosis back view assessment" loading="lazy" />
+      </div>
+
+      <h2>How Physica Medica is Different</h2>
+      <p>Our scoliosis treatment stands apart from typical physical therapy:</p>
+      <ul>
+        <li><strong>Specialized Pancafit Integration:</strong> We use Pancafit to address the postural chains affected by scoliosis</li>
+        <li><strong>60-Minute Sessions:</strong> Full hour of one-on-one attention, not rushed 15-minute treatments</li>
+        <li><strong>DPT-Level Expertise:</strong> Dr. Maks's advanced training ensures comprehensive assessment and treatment</li>
+        <li><strong>Holistic Approach:</strong> Address muscle imbalances, fascial restrictions, and movement patterns</li>
+        <li><strong>Customized Programs:</strong> Every curve is unique; your treatment should be too</li>
+      </ul>
+
+      <h2>Who Benefits Most</h2>
+      <p>Our scoliosis program is ideal for Baltimore residents experiencing:</p>
+      <ul>
+        <li>Adolescent idiopathic scoliosis</li>
+        <li>Adult degenerative scoliosis</li>
+        <li>Post-surgical scoliosis care</li>
+        <li>Scoliosis-related back pain</li>
+        <li>Postural imbalances from spinal curves</li>
+        <li>Desire to prevent curve progression</li>
+      </ul>
+
+      <div class="scoliosis-info-grid">
+        <div class="info-image">
+          <img src="/images/Baltimore-Physical-Therapist-diagnosis-scoliosis.jpg" alt="Scoliosis diagnosis" loading="lazy" />
+          <p class="image-caption">Understanding Your Diagnosis</p>
+        </div>
+        <div class="info-image">
+          <img src="/images/Baltimore-Physical-Therapist-signs-symptoms-scoliosis.jpg" alt="Signs and symptoms of scoliosis" loading="lazy" />
+          <p class="image-caption">Signs & Symptoms</p>
+        </div>
+        <div class="info-image">
+          <img src="/images/Baltimore-Physical-Therapist-scoliosis-treatment.jpg" alt="Scoliosis treatment options" loading="lazy" />
+          <p class="image-caption">Treatment Approach</p>
+        </div>
+      </div>
+
+      <h2>The Treatment Process</h2>
+      <p>Scoliosis treatment at Physica Medica follows a comprehensive approach:</p>
+      <ol>
+        <li><strong>Detailed Assessment:</strong> Evaluation of curve pattern, compensatory movements, and pain generators</li>
+        <li><strong>Postural Correction:</strong> Pancafit-based exercises to address asymmetries and muscle imbalances</li>
+        <li><strong>Core Stabilization:</strong> Strengthen the muscles that support your spine</li>
+        <li><strong>Movement Re-education:</strong> Learn optimal movement patterns for daily activities</li>
+        <li><strong>Home Exercise Program:</strong> Customized exercises to maintain improvements</li>
+        <li><strong>Progress Monitoring:</strong> Regular assessment to track curve stability and symptom reduction</li>
+      </ol>
+
+      <div class="highlight-box">
+        <h3>Evidence-Based Approach</h3>
+        <p>Our scoliosis treatment integrates the latest research in postural correction, manual therapy, and therapeutic exercise. We focus on what works: improving function, reducing pain, and enhancing quality of life.</p>
+      </div>
+
+      <div class="cta-box">
+        <h3>Start Your Scoliosis Treatment</h3>
+        <p>Don't let scoliosis limit your life. Schedule a comprehensive evaluation with Dr. Maks.</p>
+        <a href="/schedule" class="cta-button">Schedule Evaluation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Scoliosis Treatment FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">You Might Also Like</h2>
+      <div class="related-grid">
+        <a href="/services/pancafit-class" class="related-card">
+          <h3>Pancafit Class</h3>
+          <p>Postural correction foundation →</p>
+        </a>
+        <a href="/services/personal-training" class="related-card">
+          <h3>Personal Training</h3>
+          <p>Strengthen and stabilize →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-hero {
+    background: white;
+    color: var(--color-text-primary);
+    padding: 3rem 2rem 1rem;
+    text-align: center;
+  }
+
+  .hero-image-section {
+    padding: 0 2rem 2rem;
+    background: white;
+  }
+
+  .hero-image-section img {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+  }
+
+  .scoliosis-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .scoliosis-images-grid img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .scoliosis-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .info-image {
+    text-align: center;
+  }
+
+  .info-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .image-caption {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .service-hero h1 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .service-content h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-content ul,
+  .service-content ol {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .service-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+  }
+
+  .highlight-box h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+  }
+
+  .cta-box {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .related-services {
+    background: var(--color-background-light);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .related-card p {
+    color: var(--color-accent);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+</style>

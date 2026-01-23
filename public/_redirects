@@ -1,0 +1,19 @@
+# 301 Redirects from old Wix URLs to new Astro structure
+# Netlify format (also works with many hosts)
+
+# Services
+/services-4 /services 301
+/pancafit-1 /services/pancafit-class 301
+/personal-training-1 /services/personal-training 301
+/scoliosis-1 /services/scoliosis 301
+/specialty-techniques-1 /services/specialty-techniques 301
+
+# Other pages
+/wim-hof-method-1 /wim-hof-method 301
+/about-1 /about 301
+/contact-1 /contact 301
+/reviews-1 /reviews 301
+
+# Common Wix patterns (adjust as needed after analyzing actual Wix URLs)
+/home /  301
+/index /  301

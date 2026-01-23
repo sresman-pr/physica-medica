@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSection from '../../../components/FAQSection.astro';
+import AuthorByline from '../../../components/AuthorByline.astro';
+
+const pageTitle = "Dry Needling & Cupping Baltimore | Trigger Point Therapy | Physica Medica";
+const pageDescription = "Expert dry needling and cupping therapy in Baltimore. Fast pain relief for trigger points, muscle tension, and myofascial pain with Dr. Maksim Birikov, DPT.";
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Dry Needling & Cupping Therapy",
+  "description": "Advanced therapeutic techniques combining dry needling and cupping for myofascial pain relief, trigger point release, and improved blood flow",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How long until I see results from dry needling in Baltimore?",
+    answer: "Most patients feel 30-50% improvement after the first session. Significant relief typically occurs within 2-3 treatments. Unlike other clinics, Dr. Maks spends a full 60 minutes identifying and treating all relevant trigger points."
+  },
+  {
+    question: "Is dry needling the same as acupuncture?",
+    answer: "No. While both use thin needles, dry needling specifically targets myofascial trigger points based on Western medicine principles. It's performed by physical therapists trained in anatomy and biomechanics."
+  },
+  {
+    question: "Does dry needling hurt?",
+    answer: "You may feel a brief muscle twitch when the needle hits a trigger point, which is actually a good sign. Most patients report minimal discomfort and immediate relief. The sensation is very different from getting an injection."
+  },
+  {
+    question: "What conditions benefit from cupping therapy?",
+    answer: "Cupping is highly effective for muscle tension, sports injuries, chronic back pain, and recovery enhancement. It increases blood flow to treated areas, promoting faster healing and reducing inflammation."
+  },
+  {
+    question: "Can dry needling and cupping be done in the same session?",
+    answer: "Yes, and combining them is often most effective. Dry needling releases trigger points while cupping improves circulation and reduces muscle tension. Dr. Maks customizes the combination based on your condition."
+  },
+  {
+    question: "Why choose Physica Medica for dry needling in Baltimore?",
+    answer: "Dr. Maks provides 60 full minutes of one-on-one treatment, not the rushed 15-minute sessions typical at corporate clinics. His DPT-level expertise ensures accurate diagnosis and comprehensive treatment of your pain pattern."
+  },
+  {
+    question: "How many dry needling sessions will I need?",
+    answer: "Acute conditions often improve in 2-4 sessions, while chronic patterns may need 6-8 treatments. Unlike assembly-line clinics, we focus on lasting results, not maximizing session counts."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="container-narrow">
+      <h1>Dry Needling & Cupping in Baltimore</h1>
+      <p class="hero-subtitle">Advanced Myofascial Pain Relief</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="service-content section-spacing">
+    <div class="container-narrow">
+      <h2>What is Dry Needling and Cupping?</h2>
+      <p>Dry needling is a therapeutic technique where thin needles are inserted directly into myofascial trigger points to release muscle tension, reduce pain, and restore normal movement patterns. When combined with cupping therapy, which uses suction to improve blood flow and reduce fascial restrictions, these techniques provide powerful, fast-acting pain relief.</p>
+
+      <p>Unlike surface-level treatments, dry needling and cupping address the root cause of myofascial pain by releasing stubborn trigger points and improving tissue quality at a deep level.</p>
+
+      <h2>How Physica Medica is Different</h2>
+      <p>Unlike assembly-line PT clinics that rush you through 15-minute treatments, Dr. Maks provides 60 full minutes of one-on-one attention for dry needling and cupping:</p>
+      <ul>
+        <li><strong>Comprehensive Assessment:</strong> Identify all trigger points contributing to your pain pattern, not just the obvious ones</li>
+        <li><strong>DPT-Level Expertise:</strong> Advanced training in anatomy ensures accurate needle placement and effective treatment</li>
+        <li><strong>Integrated Approach:</strong> Combine dry needling and cupping with movement correction for lasting results</li>
+        <li><strong>Personalized Care:</strong> Treatment customized to your pain pattern, not a one-size-fits-all protocol</li>
+        <li><strong>Education:</strong> Understand what's causing your pain and how to prevent recurrence</li>
+      </ul>
+
+      <h2>Who Benefits Most in Baltimore</h2>
+      <p>Dry needling and cupping are particularly effective for:</p>
+      <ul>
+        <li><strong>Runners training for Baltimore Marathon:</strong> ITB syndrome, plantar fasciitis, calf strains</li>
+        <li><strong>Desk workers in Harbor East:</strong> Neck tension, shoulder pain, tension headaches</li>
+        <li><strong>Athletes:</strong> Sports injuries, chronic trigger points, recovery enhancement</li>
+        <li><strong>Chronic pain sufferers:</strong> Myofascial pain syndrome, fibromyalgia-related trigger points</li>
+        <li><strong>Post-surgical patients:</strong> Scar tissue management, muscle guarding patterns</li>
+      </ul>
+
+      <h2>The Treatment Process</h2>
+      <p>Each dry needling and cupping session at Physica Medica includes:</p>
+      <ol>
+        <li><strong>Detailed Assessment (10-15 min):</strong> Identify primary trigger points and referred pain patterns</li>
+        <li><strong>Dry Needling (20-25 min):</strong> Precise needle insertion into trigger points causing your pain</li>
+        <li><strong>Cupping Therapy (15-20 min):</strong> Strategic cup placement to improve circulation and reduce muscle tension</li>
+        <li><strong>Movement Integration (5-10 min):</strong> Gentle exercises to reinforce new movement patterns</li>
+        <li><strong>Home Care Education:</strong> Self-care strategies to maintain improvements between sessions</li>
+      </ol>
+
+      <div class="highlight-box">
+        <h3>What to Expect After Treatment</h3>
+        <p>Most patients experience immediate pain relief after dry needling and cupping. You may feel mild muscle soreness for 24-48 hours (similar to post-workout soreness), which is normal. Cupping may leave temporary circular marks that fade within a few days.</p>
+      </div>
+
+      <h2>Common Conditions Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Neck & Shoulder</h4>
+          <ul>
+            <li>Tension headaches</li>
+            <li>Neck pain</li>
+            <li>Shoulder impingement</li>
+            <li>Upper trap tension</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Back & Hip</h4>
+          <ul>
+            <li>Low back pain</li>
+            <li>SI joint dysfunction</li>
+            <li>Hip flexor pain</li>
+            <li>Sciatica</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Extremities</h4>
+          <ul>
+            <li>Tennis elbow</li>
+            <li>Plantar fasciitis</li>
+            <li>ITB syndrome</li>
+            <li>Calf strains</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Experience Fast Pain Relief</h3>
+        <p>Stop suffering from trigger point pain. Schedule your dry needling and cupping session today.</p>
+        <a href="/schedule" class="cta-button">Schedule Treatment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Dry Needling & Cupping FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">You Might Also Like</h2>
+      <div class="related-grid">
+        <a href="/services/specialty-techniques/trigger-point-therapy" class="related-card">
+          <h3>Trigger Point Therapy</h3>
+          <p>Manual trigger point release →</p>
+        </a>
+        <a href="/services/personal-training" class="related-card">
+          <h3>Personal Training</h3>
+          <p>Prevent pain recurrence →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .service-hero h1 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .service-content h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-content ul,
+  .service-content ol {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .service-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+  }
+
+  .highlight-box h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .condition-item {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .condition-item li {
+    margin-bottom: 0.25rem;
+  }
+
+  .cta-box {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .related-services {
+    background: var(--color-background-light);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .related-card p {
+    color: var(--color-accent);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+</style>

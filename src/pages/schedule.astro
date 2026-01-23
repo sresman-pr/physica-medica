@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Schedule Appointment | Physica Medica Baltimore | Book Online";
+const pageDescription = "Schedule your physical therapy appointment with Dr. Maks at Physica Medica Baltimore. Call 443-228-8029 to book your evaluation today.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="schedule-hero">
+    <div class="container-narrow text-center">
+      <h1>Schedule Your Appointment</h1>
+      <p class="lead">Take the first step toward lasting pain relief</p>
+    </div>
+  </section>
+
+  <section class="schedule-content section-spacing">
+    <div class="container-narrow">
+      <div class="schedule-box">
+        <h2>Ready to Get Started?</h2>
+        <p>Call us directly to schedule your first one-on-one appointment with Dr. Maks. During your initial evaluation, we'll:</p>
+        <ul>
+          <li>Conduct a comprehensive assessment of your condition</li>
+          <li>Identify the root cause of your pain or dysfunction</li>
+          <li>Create a personalized treatment plan</li>
+          <li>Begin treatment in your first session</li>
+        </ul>
+
+        <div class="contact-methods">
+          <div class="method">
+            <h3>📞 Call to Schedule</h3>
+            <a href="tel:443-228-8029" class="phone-number">443-228-8029</a>
+            <p>Available during business hours</p>
+          </div>
+
+          <div class="method">
+            <h3>📧 Email Us</h3>
+            <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
+            <p>We'll respond within 24 hours</p>
+          </div>
+        </div>
+
+        <div class="hours-reminder">
+          <h3>Office Hours</h3>
+          <p>
+            <strong>M W F:</strong> 8:00 AM - 7:30 PM<br />
+            <strong>Tuesday:</strong> 10:00 AM - 7:30 PM<br />
+            <strong>Thurs Sat Sun:</strong> Closed
+          </p>
+        </div>
+      </div>
+
+      <div class="what-to-expect">
+        <h2>What to Expect at Your First Visit</h2>
+        <div class="expect-grid">
+          <div class="expect-item">
+            <div class="number">1</div>
+            <h3>Comprehensive Assessment</h3>
+            <p>Dr. Maks will spend time understanding your condition, medical history, and goals.</p>
+          </div>
+          <div class="expect-item">
+            <div class="number">2</div>
+            <h3>Detailed Evaluation</h3>
+            <p>Thorough examination of your movement patterns, posture, and pain generators.</p>
+          </div>
+          <div class="expect-item">
+            <div class="number">3</div>
+            <h3>Treatment Plan</h3>
+            <p>Clear explanation of findings and customized treatment approach.</p>
+          </div>
+          <div class="expect-item">
+            <div class="number">4</div>
+            <h3>Begin Treatment</h3>
+            <p>Start your first treatment session during the same visit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .schedule-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+  }
+
+  .schedule-hero h1 {
+    color: var(--color-text-primary);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+
+  .schedule-box {
+    background: var(--color-background-light);
+    padding: 3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .schedule-box h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .schedule-box ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .schedule-box li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .method {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .method h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .phone-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin: 0.5rem 0;
+  }
+
+  .phone-number:hover {
+    text-decoration: underline;
+  }
+
+  .method a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .method a:hover {
+    text-decoration: underline;
+  }
+
+  .hours-reminder {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .hours-reminder h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .what-to-expect h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .expect-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-background-light);
+    border-radius: 0.5rem;
+  }
+
+  .number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: var(--color-accent);
+    color: #000;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .expect-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .expect-item p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+</style>

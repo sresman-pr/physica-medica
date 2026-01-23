@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const pageTitle = "Pregnancy Physical Therapy Baltimore | Prenatal & Postpartum Care | Physica Medica";
+const pageDescription = "Expert pregnancy and postpartum physical therapy in Baltimore. Group seminars and one-on-one care for expecting and new mothers with Dr. Maksim Birikov, DPT.";
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Pregnancy & Postpartum Physical Therapy",
+  "description": "Expert care for expecting mothers through group seminars or one-on-one treatments for pregnancy-related conditions and postpartum recovery",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "Is physical therapy safe during pregnancy?",
+    answer: "Yes, physical therapy during pregnancy is safe and highly beneficial. Dr. Maks uses pregnancy-specific techniques to address pain, improve posture, and prepare your body for childbirth."
+  },
+  {
+    question: "What pregnancy conditions can physical therapy help?",
+    answer: "Physical therapy effectively treats low back pain, pelvic girdle pain, sciatica, carpal tunnel syndrome, postural changes, and preparation for labor and delivery."
+  },
+  {
+    question: "When should I start postpartum physical therapy?",
+    answer: "Most women can begin gentle postpartum therapy within days of delivery (with physician clearance). Comprehensive treatment typically begins 4-6 weeks postpartum."
+  },
+  {
+    question: "Do you offer group pregnancy seminars in Baltimore?",
+    answer: "Yes, we offer both group seminars and one-on-one treatments. Group seminars provide education and gentle exercises, while one-on-one sessions address your specific needs."
+  },
+  {
+    question: "Can physical therapy help with diastasis recti?",
+    answer: "Absolutely. Diastasis recti (abdominal separation) is best treated with specialized physical therapy exercises that safely restore core function postpartum."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="container-narrow">
+      <h1>Pregnancy Physical Therapy</h1>
+      <p class="hero-subtitle">Expert Prenatal & Postpartum Care</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="service-content section-spacing">
+    <div class="container-narrow">
+      <div class="highlight-intro">
+        <h2>Pregnancy Knowledge and Experience</h2>
+        <p class="lead">Group Seminars or One-on-One</p>
+      </div>
+
+      <h2>What is Pregnancy Physical Therapy?</h2>
+      <p>Pregnancy physical therapy addresses the unique musculoskeletal challenges expecting mothers face. As your body changes to accommodate your growing baby, posture shifts, ligaments loosen, and new stresses are placed on your spine and pelvis. Physical therapy helps manage these changes, reducing pain and preparing your body for childbirth and recovery.</p>
+
+      <h2>How Physica Medica is Different</h2>
+      <p>Dr. Maks combines extensive pregnancy care experience with boutique one-on-one attention:</p>
+      <ul>
+        <li><strong>Specialized Knowledge:</strong> Advanced training in pregnancy-specific conditions and safe treatment techniques</li>
+        <li><strong>60-Minute Sessions:</strong> Comprehensive care, not rushed 15-minute treatments</li>
+        <li><strong>Postural Correction:</strong> Pancafit-based exercises safe and effective during pregnancy</li>
+        <li><strong>Education:</strong> Learn optimal body mechanics for pregnancy, labor, and postpartum</li>
+        <li><strong>Flexible Options:</strong> Choose between group seminars or personalized one-on-one care</li>
+      </ul>
+
+      <h2>Who Benefits Most</h2>
+      <p>Pregnancy physical therapy at Physica Medica helps Baltimore mothers experiencing:</p>
+      <ul>
+        <li>Low back and pelvic pain during pregnancy</li>
+        <li>Sciatica and nerve pain</li>
+        <li>Postural changes and discomfort</li>
+        <li>Preparation for labor and delivery</li>
+        <li>Postpartum recovery and core restoration</li>
+        <li>Diastasis recti (abdominal separation)</li>
+        <li>Pelvic floor dysfunction</li>
+      </ul>
+
+      <h2>The Treatment Process</h2>
+      <p>Pregnancy care at Physica Medica includes:</p>
+      <ol>
+        <li><strong>Assessment:</strong> Evaluation of posture, movement, and pregnancy-related dysfunctions</li>
+        <li><strong>Pain Management:</strong> Safe, effective techniques for immediate relief</li>
+        <li><strong>Postural Education:</strong> Learn optimal positions for comfort and baby positioning</li>
+        <li><strong>Strengthening:</strong> Maintain core and pelvic floor strength throughout pregnancy</li>
+        <li><strong>Labor Preparation:</strong> Exercises and positions to facilitate easier delivery</li>
+        <li><strong>Postpartum Recovery:</strong> Safe return to activity and core restoration</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Start Your Pregnancy Journey with Expert Care</h3>
+        <p>Don't suffer through pregnancy pain. Get the specialized care you and your baby deserve.</p>
+        <a href="/schedule" class="cta-button">Schedule Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Pregnancy Physical Therapy FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">You Might Also Like</h2>
+      <div class="related-grid">
+        <a href="/services/pancafit-class" class="related-card">
+          <h3>Pancafit Class</h3>
+          <p>Safe postural correction →</p>
+        </a>
+        <a href="/services/personal-training" class="related-card">
+          <h3>Personal Training</h3>
+          <p>Postpartum strength restoration →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .service-hero h1 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .highlight-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .highlight-intro h2 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+  }
+
+  .service-content h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-content ul,
+  .service-content ol {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .service-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-box {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .related-services {
+    background: var(--color-background-light);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .related-card p {
+    color: var(--color-accent);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+</style>

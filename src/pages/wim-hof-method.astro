@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Wim Hof Method Baltimore | Certified Instructor | Physica Medica";
+const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. Maksim Birikov in Baltimore. Breathing techniques, cold therapy, and mental conditioning.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="wim-hof-hero">
+    <div class="container-narrow text-center">
+      <h1>WIM HOF METHOD</h1>
+      <p class="lead">Certified Wim Hof Method Instruction in Baltimore</p>
+      <div class="certification-badges">
+        <img src="/images/whm_certified_instructor_logo.jpg" alt="Wim Hof Method Certified Instructor" width="150" height="150" />
+        <img src="/images/AsSeenOnWMAR2-Wim-Hof-Cert-fied-Instructor.png" alt="As Seen on WMAR - Wim Hof Certified" width="200" height="100" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image -->
+  <section class="hero-image-section">
+    <div class="container">
+      <img src="/images/Baltimore-Physical-Therapist-wim-holf-method.jpg" alt="Wim Hof Method training with Dr. Maks" loading="eager" />
+    </div>
+  </section>
+
+  <section class="wim-hof-content section-spacing">
+    <div class="container-narrow">
+      <h2>What is the Wim Hof Method?</h2>
+      <p>The Wim Hof Method is a powerful practice combining specific breathing techniques, cold therapy, and mental conditioning. Developed by "The Iceman" Wim Hof, this method has been scientifically proven to:</p>
+      <ul>
+        <li>Reduce stress and improve immune function</li>
+        <li>Increase energy and mental clarity</li>
+        <li>Enhance athletic performance and recovery</li>
+        <li>Improve sleep quality</li>
+        <li>Reduce inflammation</li>
+        <li>Strengthen mind-body connection</li>
+      </ul>
+
+      <h2>Dr. Maks: Certified Wim Hof Method Instructor</h2>
+      <p>Dr. Maksim Birikov is a certified Wim Hof Method instructor, one of the few in Baltimore. Combining his expertise as a Doctor of Physical Therapy with Wim Hof Method training, Dr. Maks offers a unique perspective on how this practice can enhance your health and well-being.</p>
+
+      <h2>The Three Pillars</h2>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <img src="/images/Baltimore-Physical-Therapist-meditation-mindset.jpg" alt="Breathing techniques" loading="lazy" />
+          <h3>🌬️ Breathing</h3>
+          <p>Specific breathing patterns that influence your autonomic nervous system, increase oxygen levels, and reduce stress.</p>
+        </div>
+        <div class="pillar">
+          <img src="/images/Baltimore-Physical-Therapist-progressive-cold-exposure.jpg" alt="Cold therapy" loading="lazy" />
+          <h3>❄️ Cold Therapy</h3>
+          <p>Controlled exposure to cold that strengthens your immune system, improves circulation, and builds mental resilience.</p>
+        </div>
+        <div class="pillar">
+          <img src="/images/Cold-Therapy-Techniques-for-Wim-Hof-Method-Baltimore-Maryland.png" alt="Mental commitment" loading="lazy" />
+          <h3>🧠 Commitment</h3>
+          <p>Mental conditioning and mindset training that empowers you to control your body's responses.</p>
+        </div>
+      </div>
+
+      <div class="community-image">
+        <img src="/images/Baltimore-Physical-Therapist-people.jpg" alt="Wim Hof Method community" loading="lazy" />
+        <p class="image-caption">Join our Wim Hof Method community in Baltimore</p>
+      </div>
+
+      <h2>Wim Hof Method Workshops & Training</h2>
+      <p>Dr. Maks offers both group workshops and one-on-one Wim Hof Method instruction. Learn proper breathing techniques, safe cold exposure practices, and mental strategies in a supportive environment.</p>
+
+      <div class="cta-box">
+        <h3>Experience the Wim Hof Method</h3>
+        <p>Contact us to learn about upcoming workshops or schedule a private session.</p>
+        <a href="/contact" class="cta-button">Get Started</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .wim-hof-hero {
+    background: white;
+    color: var(--color-text-primary);
+    padding: 3rem 2rem 1rem;
+  }
+
+  .wim-hof-hero h1 {
+    color: var(--color-text-primary);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  .certification-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .certification-badges img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  .hero-image-section {
+    padding: 0 2rem 2rem;
+    background: white;
+  }
+
+  .hero-image-section img {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+  }
+
+  .wim-hof-content h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .wim-hof-content ul {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .wim-hof-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .pillar {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border-top: 4px solid var(--color-accent);
+  }
+
+  .pillar img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .pillar h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .pillar p {
+    margin: 0;
+  }
+
+  .community-image {
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .community-image img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .image-caption {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+  }
+
+  .cta-box {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+</style>
