@@ -29,6 +29,14 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Image Gallery Section -->
   <section class="image-gallery">
+    <!-- Background Watermark Logos -->
+    <div class="watermark-logo watermark-left">
+      <img src="/images/Physica-Medica-logo.jpg" alt="" aria-hidden="true" />
+    </div>
+    <div class="watermark-logo watermark-right">
+      <img src="/images/Physica-Medica-logo.jpg" alt="" aria-hidden="true" />
+    </div>
+    
     <!-- Top Row: 2 images side by side with button overlays -->
     <div class="gallery-row-2">
       <a href="/services" class="gallery-item">
@@ -230,6 +238,31 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     padding: 0;
     background: #e8e8e8;
     max-width: 100%;
+    position: relative;
+  }
+
+  /* Watermark Logos */
+  .watermark-logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .watermark-left {
+    left: -100px;
+  }
+
+  .watermark-right {
+    right: -100px;
+  }
+
+  .watermark-logo img {
+    width: 400px;
+    height: auto;
+    filter: grayscale(100%);
   }
 
   .gallery-row-2 {
@@ -241,6 +274,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 1;
   }
 
   .gallery-row-2:first-child {
@@ -253,6 +288,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    z-index: 1;
   }
 
   .gallery-item {
