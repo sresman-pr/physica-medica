@@ -304,34 +304,41 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0.15;
+    opacity: 0.25;
     pointer-events: none;
     z-index: 1;
     text-align: center;
+    mix-blend-mode: normal;
   }
 
   .watermark-left {
-    left: 30px;
+    left: 40px;
   }
 
   .watermark-right {
-    right: 30px;
+    right: 40px;
   }
 
   .watermark img {
-    width: 200px;
+    width: 500px;
     height: auto;
-    filter: grayscale(100%);
-    margin-bottom: 10px;
+    filter: grayscale(100%) contrast(2) brightness(0.5) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.8));
+    margin-bottom: 15px;
   }
 
   .watermark-text {
     display: block;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 300;
-    color: #999;
-    letter-spacing: 0.1em;
+    color: #444;
+    letter-spacing: 0.15em;
     line-height: 1.2;
+    text-shadow: 
+      -1px -1px 0 rgba(255, 255, 255, 0.5),
+      1px -1px 0 rgba(255, 255, 255, 0.5),
+      -1px 1px 0 rgba(255, 255, 255, 0.5),
+      1px 1px 0 rgba(255, 255, 255, 0.5),
+      0 0 3px rgba(255, 255, 255, 0.6);
   }
 
   .gallery-container {
@@ -852,7 +859,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== VISIT SECTION ========== */
   .visit-section {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('/images/physica-medica-location.png');
     background-size: cover;
     background-position: center;
@@ -861,18 +868,30 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     color: white;
   }
 
+  .visit-overlay {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   .visit-overlay h2 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
-    margin: 0 0 30px;
+    letter-spacing: 0.05em;
+    margin: 0 0 48px;
     color: white;
-    line-height: 1;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   }
 
   .visit-overlay p {
-    font-size: 1.1rem;
-    margin: 5px 0;
+    font-size: 1.5rem;
+    margin: 12px 0;
+    font-weight: 600;
+    line-height: 1.8;
+    color: white;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 
+                 0 1px 3px rgba(0, 0, 0, 1);
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
   }
 
   /* ========== CONTACT SECTION ========== */
@@ -1083,7 +1102,13 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     }
 
     .visit-overlay h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 36px;
+    }
+
+    .visit-overlay p {
+      font-size: 1.5rem;
     }
   }
 
@@ -1108,6 +1133,14 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
     .watermark-right {
       right: 60px;
+    }
+
+    .watermark img {
+      width: 600px;
+    }
+
+    .watermark-text {
+      font-size: 3rem;
     }
   }
 </style>
