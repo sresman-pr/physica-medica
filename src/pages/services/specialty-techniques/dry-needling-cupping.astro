@@ -3,8 +3,15 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
 
-const pageTitle = "Dry Needling & Cupping Baltimore | Trigger Point Therapy | Physica Medica";
-const pageDescription = "Expert dry needling and cupping therapy in Baltimore. Fast pain relief for trigger points, muscle tension, and myofascial pain with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Baltimore Dry Needling & Cupping | Physical Therapy | Physica Medica";
+const pageDescription = "Expert dry needling and cupping therapy in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT for fast pain relief.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
+  { name: "Dry Needling & Cupping", url: "/services/specialty-techniques/dry-needling-cupping" }
+];
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
@@ -50,7 +57,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
   <!-- Hero Section -->
   <section class="service-hero">
     <div class="container-narrow">
@@ -67,8 +74,8 @@ const faqs = [
 
       <p>Unlike surface-level treatments, dry needling and cupping address the root cause of myofascial pain by releasing stubborn trigger points and improving tissue quality at a deep level.</p>
 
-      <h2>How Physica Medica is Different</h2>
-      <p>Unlike assembly-line PT clinics that rush you through 15-minute treatments, Dr. Maks provides 60 full minutes of one-on-one attention for dry needling and cupping:</p>
+      <h2>How We Deliver Results: The 60-Minute 1-on-1 DPT Difference</h2>
+      <p>Unlike assembly-line PT clinics that rush you through 15-minute treatments with assistants, Dr. Maks provides a full 60 minutes of one-on-one attention for every dry needling and cupping session. This premium, out-of-network approach ($200 per session) ensures:</p>
       <ul>
         <li><strong>Comprehensive Assessment:</strong> Identify all trigger points contributing to your pain pattern, not just the obvious ones</li>
         <li><strong>DPT-Level Expertise:</strong> Advanced training in anatomy ensures accurate needle placement and effective treatment</li>
@@ -77,14 +84,15 @@ const faqs = [
         <li><strong>Education:</strong> Understand what's causing your pain and how to prevent recurrence</li>
       </ul>
 
-      <h2>Who Benefits Most in Baltimore</h2>
-      <p>Dry needling and cupping are particularly effective for:</p>
+      <h2>Who Benefits Most: Baltimore Professionals, Athletes & Active Residents</h2>
+      <p>Dry needling and cupping are particularly effective for Baltimore residents including:</p>
       <ul>
-        <li><strong>Runners training for Baltimore Marathon:</strong> ITB syndrome, plantar fasciitis, calf strains</li>
-        <li><strong>Desk workers in Harbor East:</strong> Neck tension, shoulder pain, tension headaches</li>
-        <li><strong>Athletes:</strong> Sports injuries, chronic trigger points, recovery enhancement</li>
-        <li><strong>Chronic pain sufferers:</strong> Myofascial pain syndrome, fibromyalgia-related trigger points</li>
-        <li><strong>Post-surgical patients:</strong> Scar tissue management, muscle guarding patterns</li>
+        <li><strong>Fells Point Runners:</strong> Training for Baltimore Marathon? We treat ITB syndrome, plantar fasciitis, and calf strains that sideline runners</li>
+        <li><strong>Harbor East Desk Workers:</strong> Combat chronic neck tension, shoulder pain, and tension headaches from long hours at the computer</li>
+        <li><strong>Federal Hill Professionals:</strong> Young professionals experiencing postural pain, tech neck, and stress-related muscle tension</li>
+        <li><strong>Canton Athletes:</strong> CrossFit, rowing, and sports injuries requiring targeted trigger point release</li>
+        <li><strong>Chronic Pain Sufferers:</strong> Myofascial pain syndrome, fibromyalgia-related trigger points throughout Baltimore metro</li>
+        <li><strong>Post-Surgical Patients:</strong> Scar tissue management and muscle guarding patterns after orthopedic procedures</li>
       </ul>
 
       <h2>The Treatment Process</h2>

@@ -3,8 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 
-const pageTitle = "Pregnancy Physical Therapy Baltimore | Prenatal & Postpartum Care | Physica Medica";
-const pageDescription = "Expert pregnancy and postpartum physical therapy in Baltimore. Group seminars and one-on-one care for expecting and new mothers with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Baltimore Pregnancy Physical Therapy | Prenatal & Postpartum | Physica Medica";
+const pageDescription = "Expert pregnancy and postpartum physical therapy in Baltimore. $200 out-of-network premium care. Group seminars and 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Pregnancy Physical Therapy", url: "/services/pregnancy-physical-therapy" }
+];
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
@@ -42,7 +48,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
   <!-- Hero Section -->
   <section class="service-hero">
     <div class="container-narrow">

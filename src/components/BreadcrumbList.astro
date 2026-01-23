@@ -1,0 +1,103 @@
+---
+// Breadcrumb List Component with Schema.org markup
+// Generates breadcrumb navigation and structured data for SEO
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+// Generate BreadcrumbList schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+};
+---
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<!-- Visual Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-list">
+    {items.map((item, index) => (
+      <li class="breadcrumb-item">
+        {index < items.length - 1 ? (
+          <>
+            <a href={item.url}>{item.name}</a>
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          </>
+        ) : (
+          <span class="breadcrumb-current" aria-current="page">{item.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb-nav {
+    padding: 1rem 0;
+    background: var(--color-background-light);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb-item a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+  }
+
+  .breadcrumb-current {
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .breadcrumb-nav {
+      padding: 0.75rem 0;
+    }
+
+    .breadcrumb-list {
+      font-size: 0.8125rem;
+    }
+  }
+</style>

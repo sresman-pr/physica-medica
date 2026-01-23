@@ -1,19 +1,68 @@
 # 301 Redirects from old Wix URLs to new Astro structure
 # Netlify format (also works with many hosts)
 
-# Services
+# Services - Main
 /services-4 /services 301
+/services-1 /services 301
+/services-2 /services 301
+/services-3 /services 301
+
+# Services - Pancafit
 /pancafit-1 /services/pancafit-class 301
+/pancafit /services/pancafit-class 301
+/pancafit-class /services/pancafit-class 301
+/postural-correction /services/pancafit-class 301
+
+# Services - Personal Training
 /personal-training-1 /services/personal-training 301
+/personal-training /services/personal-training 301
+/training /services/personal-training 301
+
+# Services - Scoliosis
 /scoliosis-1 /services/scoliosis 301
+/scoliosis /services/scoliosis 301
+/scoliosis-treatment /services/scoliosis 301
+
+# Services - Specialty Techniques
 /specialty-techniques-1 /services/specialty-techniques 301
+/specialty-techniques /services/specialty-techniques 301
+/dry-needling /services/specialty-techniques/dry-needling-cupping 301
+/dry-needling-1 /services/specialty-techniques/dry-needling-cupping 301
+/cupping /services/specialty-techniques/dry-needling-cupping 301
+/cupping-therapy /services/specialty-techniques/dry-needling-cupping 301
+/trigger-point /services/specialty-techniques/trigger-point-therapy 301
+/trigger-point-therapy-1 /services/specialty-techniques/trigger-point-therapy 301
+
+# Services - Pregnancy
+/pregnancy /services/pregnancy-physical-therapy 301
+/pregnancy-1 /services/pregnancy-physical-therapy 301
+/pregnancy-physical-therapy-1 /services/pregnancy-physical-therapy 301
+/prenatal /services/pregnancy-physical-therapy 301
+/postpartum /services/pregnancy-physical-therapy 301
 
 # Other pages
 /wim-hof-method-1 /wim-hof-method 301
+/wim-hof /wim-hof-method 301
 /about-1 /about 301
+/about-us /about 301
 /contact-1 /contact 301
+/contact-us /contact 301
 /reviews-1 /reviews 301
+/testimonials /reviews 301
+/schedule-1 /schedule 301
+/book /schedule 301
+/appointment /schedule 301
 
-# Common Wix patterns (adjust as needed after analyzing actual Wix URLs)
-/home /  301
-/index /  301
+# Common Wix patterns
+/home / 301
+/index / 301
+/index.html / 301
+
+# Blog/News (if exists on old site)
+/blog /reviews 301
+/news /reviews 301
+
+# Catch-all for common service variations
+/physical-therapy /services 301
+/pt /services 301
+/therapy /services 301

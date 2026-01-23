@@ -4,8 +4,14 @@ import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import '../../styles/service-pages.css';
 
-const pageTitle = "Personal Training Baltimore | Biomechanics & Movement | Physica Medica";
-const pageDescription = "Unique personal training approach integrating biomechanics, fascia, and evolutionary movement. One-on-one sessions in Baltimore with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Baltimore Personal Training | Biomechanics & Movement | Physica Medica";
+const pageDescription = "Unique personal training integrating biomechanics, fascia, and evolutionary movement. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT in Baltimore.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Personal Training", url: "/services/personal-training" }
+];
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
@@ -43,7 +49,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
   <!-- Modern Hero Section -->
   <section class="service-hero-modern">
     <div class="hero-overlay"></div>

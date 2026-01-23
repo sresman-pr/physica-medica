@@ -4,8 +4,14 @@ import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import '../../styles/service-pages.css';
 
-const pageTitle = "Pancafit Postural Correction Class in Baltimore | Physica Medica";
-const pageDescription = "Revolutionary Pancafit method for postural correction and pain elimination. Join our classes or book one-on-one sessions in Baltimore with Dr. Maks Birikov, DPT.";
+const pageTitle = "Baltimore Pancafit Postural Correction | Physical Therapy | Physica Medica";
+const pageDescription = "Revolutionary Pancafit postural correction in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maks Birikov, DPT for lasting pain relief.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Pancafit Postural Correction", url: "/services/pancafit-class" }
+];
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
@@ -43,7 +49,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
   <!-- Hero Section with Image Background -->
   <section class="service-hero-modern">
     <div class="hero-overlay"></div>
@@ -89,11 +95,11 @@ const faqs = [
   <!-- Main Content -->
   <section class="service-content section-spacing">
     <div class="container-narrow">
-      <h2>What is Pancafit?</h2>
-      <p>Pancafit is a revolutionary postural correction method that addresses the root causes of pain and postural dysfunction. Using a patented device developed in Italy, this technique works with your body's natural muscle chains and fascial connections to restore proper alignment and eliminate chronic pain.</p>
+      <h2>What is Pancafit Postural Correction?</h2>
+      <p>Pancafit is a revolutionary postural correction method that addresses the root causes of pain and postural dysfunction. Using a patented device developed in Italy, this technique works with your body's natural muscle chains and fascial connections to restore proper alignment and eliminate chronic pain at its source, not just the symptoms.</p>
 
-      <h2>How Physica Medica is Different</h2>
-      <p>Unlike assembly-line PT clinics that rush you through 15-30 minute sessions, Dr. Maks provides a full 60 minutes of one-on-one attention. This boutique approach allows for:</p>
+      <h2>How We Deliver Results: The 60-Minute 1-on-1 DPT Difference</h2>
+      <p>Unlike assembly-line PT clinics that rush you through 15-30 minute sessions with assistants, Dr. Maks provides a full 60 minutes of one-on-one DPT-level attention. This premium, out-of-network approach ($200 per session) allows for:</p>
       <ul>
         <li>Comprehensive postural assessment</li>
         <li>Customized treatment addressing your unique imbalances</li>
@@ -101,14 +107,15 @@ const faqs = [
         <li>Steady communication and plan adjustments based on your progress</li>
       </ul>
 
-      <h2>Who Benefits Most</h2>
-      <p>Pancafit is particularly effective for Baltimore residents experiencing:</p>
+      <h2>Who Benefits Most: Baltimore Professionals & Active Residents</h2>
+      <p>Pancafit postural correction is particularly effective for Baltimore residents including:</p>
       <ul>
-        <li>Chronic back or neck pain from desk work</li>
-        <li>Postural imbalances from repetitive movements</li>
-        <li>Athletes seeking performance optimization</li>
-        <li>Anyone looking to improve body aesthetics through better posture</li>
-        <li>Post-pregnancy postural recovery</li>
+        <li><strong>Federal Hill Professionals:</strong> Combat chronic back and neck pain from desk work and poor ergonomics in downtown offices</li>
+        <li><strong>Harbor East Tech Workers:</strong> Reverse forward head posture and rounded shoulders from hours at the computer</li>
+        <li><strong>Canton Young Families:</strong> Post-pregnancy postural recovery for new mothers experiencing back pain and core weakness</li>
+        <li><strong>Fells Point Service Industry:</strong> Address postural imbalances from repetitive movements in restaurant and hospitality work</li>
+        <li><strong>Baltimore Athletes:</strong> Optimize performance through improved alignment for runners, rowers, and CrossFit enthusiasts</li>
+        <li><strong>Anyone Seeking Better Posture:</strong> Improve body aesthetics and confidence through proper postural alignment</li>
       </ul>
 
       <h2>The Treatment Process</h2>
