@@ -34,10 +34,12 @@
           </a>
         </p>
         <div class="social-proof">
-          <div class="rating-badge">
-            <span class="stars">★★★★★</span>
-            <span class="rating-text">300+ Reviews</span>
-          </div>
+          <a href="https://www.google.com/search?q=Physica+Medica+Baltimore&ludocid=17470476066481608313#lrd=0x89c8050b5e7c2c9d:0xf2a0e8e8e8e8e8e9,1" target="_blank" rel="noopener" class="rating-badge-link">
+            <div class="rating-badge">
+              <span class="stars">★★★★★</span>
+              <span class="rating-text">300+ Reviews</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -91,6 +93,17 @@
     margin-top: 1.5rem;
   }
 
+  .rating-badge-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform var(--transition-fast);
+  }
+
+  .rating-badge-link:hover {
+    transform: translateY(-2px);
+    padding-left: 0;
+  }
+
   .rating-badge {
     display: inline-flex;
     flex-direction: column;
@@ -99,6 +112,11 @@
     padding: 12px 16px;
     border-radius: 8px;
     backdrop-filter: blur(10px);
+    transition: all var(--transition-fast);
+  }
+
+  .rating-badge-link:hover .rating-badge {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .rating-badge .stars {
