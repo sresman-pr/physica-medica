@@ -79,32 +79,34 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     </div>
   </section>
 
-  <!-- Treatment Images with Green CTA Section -->
+  <!-- Treatment Images Section -->
   <section class="treatment-images">
     <div class="treatment-grid-3">
-      <a href="/services" class="treatment-image">
-        <img src="/images/Baltimore-Physical-Therapist-physica-medica therapy-.png" alt="Physical therapy session" loading="lazy" />
-      </a>
-      <a href="/services/specialty-techniques" class="treatment-image">
-        <img src="/images/Baltimore-Physical-Therapist-cupping.png" alt="Cupping therapy" loading="lazy" />
-      </a>
+      <div class="treatment-item">
+        <a href="/services" class="treatment-image">
+          <img src="/images/Baltimore-Physical-Therapist-physica-medica therapy-.png" alt="Physical therapy session" loading="lazy" />
+        </a>
+        <p class="treatment-label">Pregnancy Knowledge and Experience</p>
+      </div>
+      <div class="treatment-item">
+        <a href="/services/specialty-techniques" class="treatment-image">
+          <img src="/images/Baltimore-Physical-Therapist-cupping.png" alt="Cupping therapy" loading="lazy" />
+        </a>
+        <p class="treatment-label">Group Seminars or One on One</p>
+      </div>
       <a href="/services" class="treatment-cta-box">
         <span>See All Treatments</span>
       </a>
     </div>
   </section>
 
-  <!-- Pregnancy and Personal Training Section -->
-  <section class="pregnancy-training-section">
-    <div class="pregnancy-training-grid">
-      <!-- Pregnancy Card -->
-      <div class="pregnancy-card">
-        <h2>Pregnancy Knowledge and Experience</h2>
-        <p>Group Seminars or One-on-One</p>
+  <!-- Personal Training Section -->
+  <section class="training-section">
+    <div class="training-grid">
+      <div class="training-image">
+        <img src="/images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg" alt="Personal training session" loading="lazy" />
       </div>
-
-      <!-- Personal Training Card -->
-      <div class="training-card">
+      <div class="training-content">
         <h3>Unique approach to personal training:</h3>
         <ul>
           <li>Optimize your biomechanics with respects to our evolutionary movement requirements</li>
@@ -137,20 +139,23 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     </div>
   </section>
 
-  <!-- Hours & Contact Section -->
-  <section class="hours-contact-section section-spacing">
-    <div class="container">
-      <div class="hours-contact-grid">
-        <div class="hours-box">
-          <h2>Hours</h2>
-          <p><strong>M W F:</strong> 8:00 AM - 7:30 PM</p>
-          <p><strong>Tuesday:</strong> 10:00 AM - 7:30 PM</p>
-          <p><strong>Thurs Sat Sun:</strong> Closed</p>
-        </div>
+  <!-- Visit Us Hero Section -->
+  <section class="visit-us-hero">
+    <div class="visit-us-content">
+      <h2>VISIT<br />US</h2>
+      <p><strong>M W F:</strong> 8:00 AM - 7:30 PM</p>
+      <p><strong>Tuesday:</strong> 10:00 AM - 7:30 PM</p>
+      <p><strong>Thurs Sat Sun:</strong> Closed</p>
+    </div>
+  </section>
 
-        <div class="contact-box">
-          <h2>VISIT US</h2>
-          <h3>PHYSICA MEDICA</h3>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>PHYSICA MEDICA</h2>
+        <h3>CONTACT</h3>
+        <div class="contact-details">
           <p>
             800 S Bond St,<br />
             Baltimore, MD 21231
@@ -160,6 +165,18 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
             <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
           </p>
         </div>
+        <div class="map-placeholder">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.8982287474756!2d-76.59373492346204!3d39.27893197169948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8046c3c7d3f8d%3A0x8c8e8c8e8c8e8c8e!2s800%20S%20Bond%20St%2C%20Baltimore%2C%20MD%2021231!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Name *" required />
+          <input type="email" placeholder="Email *" required />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Message" rows="5"></textarea>
+          <button type="submit" class="cta-button">Send</button>
+        </form>
       </div>
     </div>
   </section>
@@ -236,33 +253,33 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   /* Gallery - Match Wix exactly */
   .image-gallery {
     padding: 0;
-    background: #e8e8e8;
+    background: #f5f5f5;
     max-width: 100%;
     position: relative;
   }
 
-  /* Watermark Logos */
+  /* Watermark Logos - Fixed position that scrolls with page */
   .watermark-logo {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0.08;
+    opacity: 0.12;
     pointer-events: none;
     z-index: 0;
   }
 
   .watermark-left {
-    left: -100px;
+    left: 20px;
   }
 
   .watermark-right {
-    right: -100px;
+    right: 20px;
   }
 
   .watermark-logo img {
-    width: 400px;
+    width: 300px;
     height: auto;
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(1.2);
   }
 
   .gallery-row-2 {
@@ -398,24 +415,29 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     font-size: 1rem;
   }
 
-  /* Treatment Images with Green CTA Box */
+  /* Treatment Images with Labels */
   .treatment-images {
-    padding: 0;
+    padding: 40px 0;
     background: white;
   }
 
   .treatment-grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    padding: 8px 0;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .treatment-item {
+    text-align: center;
   }
 
   .treatment-image {
     display: block;
     overflow: hidden;
+    margin-bottom: 15px;
   }
 
   .treatment-image img {
@@ -423,6 +445,13 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     height: 250px;
     object-fit: cover;
     display: block;
+  }
+
+  .treatment-label {
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+    margin: 0;
+    font-weight: 500;
   }
 
   .treatment-cta-box {
@@ -436,73 +465,61 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     font-size: 1.1rem;
     padding: 2rem;
     text-align: center;
+    min-height: 265px;
   }
 
   .treatment-cta-box:hover {
     opacity: 0.9;
   }
 
-  /* Pregnancy and Training Section */
-  .pregnancy-training-section {
-    background: #e8e8e8;
-    padding: 40px 0;
+  /* Personal Training Section */
+  .training-section {
+    background: #f5f5f5;
+    padding: 40px 20px;
   }
 
-  .pregnancy-training-grid {
+  .training-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: center;
   }
 
-  .pregnancy-card {
+  .training-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .training-content {
     background: var(--color-accent);
     color: white;
-    padding: 3rem 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 3rem 2.5rem;
   }
 
-  .pregnancy-card h2 {
+  .training-content h3 {
     color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .pregnancy-card p {
-    color: white;
-    font-size: 1.1rem;
-    margin: 0;
-  }
-
-  .training-card {
-    background: white;
-    padding: 2rem;
-  }
-
-  .training-card h3 {
-    color: var(--color-text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.1rem;
   }
 
-  .training-card ul {
+  .training-content ul {
     list-style: disc;
     padding-left: 1.5rem;
-    margin: 1rem 0 2rem;
+    margin: 0 0 2rem;
+    color: white;
   }
 
-  .training-card li {
+  .training-content li {
     margin-bottom: 0.75rem;
     line-height: 1.6;
   }
 
   .training-cta-button {
-    background: var(--color-accent);
-    color: white;
+    background: white;
+    color: var(--color-accent);
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     font-weight: 600;
@@ -519,7 +536,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       grid-template-columns: 1fr;
     }
 
-    .pregnancy-training-grid {
+    .training-grid {
       grid-template-columns: 1fr;
     }
   }
@@ -573,38 +590,106 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     text-decoration: underline;
   }
 
-  /* Hours & Contact */
-  .hours-contact-grid {
+  /* Visit Us Hero Section */
+  .visit-us-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/physica-medica-location.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .visit-us-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+  }
+
+  .visit-us-content p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: white;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    background: white;
+    padding: 60px 20px;
+  }
+
+  .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .hours-box,
-  .contact-box {
-    background: var(--color-background-light);
-    padding: 1.5rem;
-    border-radius: 0.25rem;
-  }
-
-  .hours-box h2,
-  .contact-box h2 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-  }
-
-  .contact-box h3 {
+  .contact-info h2 {
     color: var(--color-text-primary);
-    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .contact-box a {
+  .contact-info h3 {
+    color: var(--color-text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-details p {
+    margin: 1rem 0;
+    line-height: 1.8;
+  }
+
+  .contact-details a {
     color: var(--color-accent);
     text-decoration: none;
   }
 
-  .contact-box a:hover {
+  .contact-details a:hover {
     text-decoration: underline;
+  }
+
+  .map-placeholder {
+    margin-top: 2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    font-family: var(--font-sans);
+  }
+
+  .contact-form button {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .contact-form button:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .visit-us-content h2 {
+      font-size: 2.5rem;
+    }
   }
 
   /* Utility */
