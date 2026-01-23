@@ -91,19 +91,19 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
   // Mobile menu functionality
   mobileMenuToggle?.addEventListener('click', () => {
     mobileMenu?.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('menu-open');
   });
 
   mobileMenuClose?.addEventListener('click', () => {
     mobileMenu?.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   });
 
   // Close menu when clicking outside
   mobileMenu?.addEventListener('click', (e) => {
     if (e.target === mobileMenu) {
       mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     }
   });
 
