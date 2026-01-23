@@ -139,6 +139,12 @@
   .logo img {
     height: 50px;
     width: auto;
+    filter: brightness(0.85) contrast(1.15);
+    border: 2px solid var(--color-navy);
+    border-radius: 8px;
+    padding: 0.5rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
   .main-nav > ul {
@@ -345,6 +351,7 @@
   @media (min-width: 1025px) {
     .logo img {
       height: 60px;
+      padding: 0.6rem;
     }
     
     .mobile-menu {
