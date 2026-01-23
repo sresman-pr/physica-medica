@@ -31,9 +31,9 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    color: #fff;
+    color: var(--color-text-on-dark);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.05rem;
     transition: all var(--transition-fast);
     /* Ensure touch targets are at least 44x44px */
     min-height: 44px;
@@ -41,11 +41,11 @@
 
   .cta-call {
     background: var(--color-accent);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .cta-schedule {
-    background: var(--color-secondary);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #1a3d35 100%);
   }
 
   .cta-call:active,

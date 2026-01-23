@@ -49,6 +49,12 @@ const pageDescription = "Schedule your physical therapy appointment with Dr. Mak
         </div>
       </div>
 
+      <div class="insurance-notice">
+        <h3>💳 Insurance & Payment</h3>
+        <p>We are an out-of-network provider. Sessions are $200, and we provide superbills for potential 60-80% reimbursement from your insurance.</p>
+        <a href="/insurance" class="insurance-link">Learn about insurance benefits →</a>
+      </div>
+
       <div class="what-to-expect">
         <h2>What to Expect at Your First Visit</h2>
         <div class="expect-grid">
@@ -168,6 +174,41 @@ const pageDescription = "Schedule your physical therapy appointment with Dr. Mak
   .hours-reminder h3 {
     color: var(--color-primary);
     margin-bottom: 1rem;
+  }
+
+  .insurance-notice {
+    background: linear-gradient(135deg, rgba(61, 184, 159, 0.1) 0%, rgba(45, 109, 95, 0.1) 100%);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .insurance-notice h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .insurance-notice p {
+    color: var(--color-text-primary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .insurance-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all var(--transition-fast);
+  }
+
+  .insurance-link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
   }
 
   .what-to-expect h2 {
