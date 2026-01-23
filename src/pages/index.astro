@@ -25,42 +25,35 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Image Gallery Section -->
   <section class="image-gallery">
-    <div class="container">
-      <!-- Top Row: 2 images side by side with text overlays -->
-      <div class="gallery-row-2">
-        <div class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Physical therapy services" loading="lazy" />
-          <div class="image-overlay-text">
-            <span class="overlay-label">Physical Therapy Services</span>
-          </div>
+    <!-- Top Row: 2 images side by side with button overlays -->
+    <div class="gallery-row-2">
+      <a href="/services" class="gallery-item">
+        <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Physical therapy services" loading="lazy" />
+        <div class="image-overlay-button">
+          <span>Physical Therapy Services</span>
         </div>
-        <div class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png" alt="Wim Hof Method instruction" loading="lazy" />
-          <div class="image-overlay-text">
-            <span class="overlay-label">Wim Hof Method Instruction</span>
-          </div>
+      </a>
+      <a href="/wim-hof-method" class="gallery-item">
+        <img src="/images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png" alt="Wim Hof Method instruction" loading="lazy" />
+        <div class="image-overlay-button">
+          <span>Wim Hof Method Instruction</span>
         </div>
-      </div>
-
-      <!-- Middle Row: 2 clinic images side by side -->
-      <div class="gallery-row-2">
-        <img src="/images/Baltimore-Physical-Therapist-fitness-equipment.png" alt="Physical therapy fitness equipment" loading="lazy" />
-        <img src="/images/Baltimore-Physical-Therapist-clinic-2023.png" alt="Physica Medica clinic interior" loading="lazy" />
-      </div>
-
-      <!-- Bottom Row: 1 large training image -->
-      <div class="gallery-row-1">
-        <img src="/images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg" alt="Dr. Maks training with client" loading="lazy" />
-      </div>
+      </a>
     </div>
-  </section>
 
-  <!-- Schedule CTA Section -->
-  <section class="schedule-cta-section">
-    <div class="container text-center">
-      <h2>Schedule Your First Appointment</h2>
-      <p class="lead">One-on-One Treatments</p>
-      <a href="/schedule" class="cta-button">Schedule Evaluation</a>
+    <!-- Middle Row: 2 clinic images side by side -->
+    <div class="gallery-row-2">
+      <img src="/images/Baltimore-Physical-Therapist-fitness-equipment.png" alt="Physical therapy fitness equipment" loading="lazy" />
+      <img src="/images/Baltimore-Physical-Therapist-clinic-2023.png" alt="Physica Medica clinic interior" loading="lazy" />
+    </div>
+
+    <!-- Bottom Row: 1 large training image with overlays -->
+    <div class="gallery-row-1">
+      <img src="/images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg" alt="Dr. Maks training with client" loading="lazy" />
+      <div class="image-cta-overlays">
+        <a href="/schedule" class="overlay-cta-button primary">Schedule Your First Appointment</a>
+        <a href="/services" class="overlay-cta-button secondary">One-on-One Treatments</a>
+      </div>
     </div>
   </section>
 
@@ -74,45 +67,41 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     </div>
   </section>
 
-  <!-- Treatment Images Section -->
+  <!-- Treatment Images with Green CTA Section -->
   <section class="treatment-images">
-    <div class="container">
-      <div class="treatment-grid">
-        <div class="treatment-image">
-          <img src="/images/Baltimore-Physical-Therapist-physica-medica therapy-.png" alt="Physical therapy session" loading="lazy" />
-        </div>
-        <div class="treatment-image">
-          <img src="/images/Baltimore-Physical-Therapist-cupping.png" alt="Cupping therapy" loading="lazy" />
-        </div>
-      </div>
-      <div class="text-center" style="margin-top: 2rem;">
-        <a href="/services" class="cta-button">See All Treatments</a>
-      </div>
+    <div class="treatment-grid-3">
+      <a href="/services" class="treatment-image">
+        <img src="/images/Baltimore-Physical-Therapist-physica-medica therapy-.png" alt="Physical therapy session" loading="lazy" />
+      </a>
+      <a href="/services/specialty-techniques" class="treatment-image">
+        <img src="/images/Baltimore-Physical-Therapist-cupping.png" alt="Cupping therapy" loading="lazy" />
+      </a>
+      <a href="/services" class="treatment-cta-box">
+        <span>See All Treatments</span>
+      </a>
     </div>
   </section>
 
-  <!-- Pregnancy Services Section -->
-  <section class="pregnancy-section section-spacing">
-    <div class="container-narrow text-center">
-      <h2>Pregnancy Knowledge and Experience</h2>
-      <p class="lead">Group Seminars or One-on-One</p>
-      <img src="/images/physica-medica-location.png" alt="Physica Medica location" loading="lazy" style="max-width: 400px; margin: 2rem auto; display: block;" />
-    </div>
-  </section>
+  <!-- Pregnancy and Personal Training Section -->
+  <section class="pregnancy-training-section">
+    <div class="pregnancy-training-grid">
+      <!-- Pregnancy Card -->
+      <div class="pregnancy-card">
+        <h2>Pregnancy Knowledge and Experience</h2>
+        <p>Group Seminars or One-on-One</p>
+      </div>
 
-  <!-- Personal Training Philosophy Section -->
-  <section class="philosophy-section section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">Unique approach to personal training:</h2>
-      <ul class="philosophy-list">
-        <li>Optimize your biomechanics with respects to our evolutionary movement requirements</li>
-        <li>Integrates your body as a system</li>
-        <li>Improve communication between the muscles, fascia and gravity</li>
-        <li>Correct movement dysfunctions that contribute to pain, improve posture, improve body aesthetics</li>
-        <li>Move with minimal wear and tear on the body</li>
-      </ul>
-      <div class="text-center" style="margin-top: 2rem;">
-        <a href="/services/personal-training" class="cta-button">One on One Personal Training</a>
+      <!-- Personal Training Card -->
+      <div class="training-card">
+        <h3>Unique approach to personal training:</h3>
+        <ul>
+          <li>Optimize your biomechanics with respects to our evolutionary movement requirements</li>
+          <li>Integrates your body as a system</li>
+          <li>Improve communication between the muscles, fascia and gravity</li>
+          <li>Correct movement dysfunctions that contribute to pain, improve posture, improve body aesthetics</li>
+          <li>Move with minimal wear and tear on the body</li>
+        </ul>
+        <a href="/services/personal-training" class="training-cta-button">One on One Personal Training</a>
       </div>
     </div>
   </section>
@@ -226,105 +215,111 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     color: white;
   }
 
-  /* Gallery */
+  /* Gallery - Match Wix exactly */
   .image-gallery {
-    padding: 3rem 0;
-    background: white;
+    padding: 0;
+    background: #e8e8e8;
+    max-width: 100%;
   }
 
   .gallery-row-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+
+  .gallery-row-2:first-child {
+    padding-top: 10px;
   }
 
   .gallery-row-1 {
-    display: block;
-    margin-bottom: 0;
+    position: relative;
+    padding: 0 10px 10px;
   }
 
   .gallery-item {
     position: relative;
     overflow: hidden;
+    display: block;
+    text-decoration: none;
   }
 
   .gallery-row-2 img {
     width: 100%;
-    height: 280px;
+    height: 200px;
     object-fit: cover;
     display: block;
   }
 
   .gallery-row-1 img {
     width: 100%;
-    height: 400px;
+    height: 450px;
     object-fit: cover;
     display: block;
   }
 
-  /* First row with text overlays should be shorter */
-  .gallery-row-2:first-child img {
-    height: 220px;
-  }
-
-  .image-overlay-text {
+  .image-overlay-button {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 15px;
+    left: 15px;
     background: var(--color-accent);
-    padding: 0.875rem 1rem;
-    text-align: center;
-  }
-
-  .overlay-label {
+    padding: 0.75rem 1.5rem;
     color: white;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .gallery-item:hover .image-overlay-button {
+    opacity: 0.9;
+  }
+
+  .image-cta-overlays {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .overlay-cta-button {
+    background: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .overlay-cta-button:hover {
+    opacity: 0.9;
   }
 
   @media (max-width: 768px) {
-    .image-gallery {
-      padding: 2rem 1rem;
-    }
-
     .gallery-row-2 {
       grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 10px;
     }
 
-    .gallery-row-2 img,
-    .gallery-row-1 img {
+    .gallery-row-2 img {
       height: 250px;
     }
-  }
 
-  /* Schedule CTA */
-  .schedule-cta-section {
-    background: var(--color-background-light);
-    padding: 3rem 2rem;
-  }
-
-  .schedule-cta-section h2 {
-    margin-bottom: 0.75rem;
-  }
-
-  .lead {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
+    .gallery-row-1 img {
+      height: 350px;
+    }
   }
 
   /* Quote */
   .quote-section {
-    padding: 3rem 2rem;
-    background: var(--color-background-light);
-    border-top: 2px solid var(--color-border);
-    border-bottom: 2px solid var(--color-border);
+    padding: 4rem 2rem;
+    background: white;
   }
 
   .quote-section blockquote {
@@ -334,44 +329,140 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   .quote-section h2 {
     color: var(--color-text-primary);
     font-style: italic;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     font-weight: 400;
+    font-size: 1.75rem;
   }
 
   .quote-section cite {
     font-style: normal;
     color: var(--color-text-secondary);
     font-weight: 600;
+    font-size: 1rem;
   }
 
-  /* Treatment Images */
+  /* Treatment Images with Green CTA Box */
   .treatment-images {
-    padding: 3rem 0;
+    padding: 0;
+    background: white;
   }
 
-  .treatment-grid {
+  .treatment-grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .treatment-image {
+    display: block;
+    overflow: hidden;
   }
 
   .treatment-image img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 0.25rem;
+    display: block;
   }
 
-  /* Philosophy List */
-  .philosophy-list {
+  .treatment-cta-box {
+    background: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .treatment-cta-box:hover {
+    opacity: 0.9;
+  }
+
+  /* Pregnancy and Training Section */
+  .pregnancy-training-section {
+    background: #e8e8e8;
+    padding: 40px 10px;
+  }
+
+  .pregnancy-training-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pregnancy-card {
+    background: var(--color-accent);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pregnancy-card h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .pregnancy-card p {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .training-card {
+    background: white;
+    padding: 2rem;
+  }
+
+  .training-card h3 {
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .training-card ul {
     list-style: disc;
-    padding-left: 2rem;
-    margin: 2rem 0;
+    padding-left: 1.5rem;
+    margin: 1rem 0 2rem;
   }
 
-  .philosophy-list li {
-    padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
+  .training-card li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .training-cta-button {
+    background: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .training-cta-button:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .treatment-grid-3 {
+      grid-template-columns: 1fr;
+    }
+
+    .pregnancy-training-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Reviews */
