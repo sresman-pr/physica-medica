@@ -15,7 +15,11 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       <img src="/images/9c4fc8_3f2a8ea4de1e42eca27b713faf27ef0e~mv2.png" alt="" aria-hidden="true" />
     </div>
     <div class="hero-content">
-      <img src="/images/Physica-Medica-logo.jpg" alt="Physica Medica Logo" class="hero-logo" />
+      <div class="hero-logo-container">
+        <span class="logo-text">PHYSICA</span>
+        <img src="/images/Physica-Medica-logo.jpg" alt="Physica Medica Logo" class="hero-logo" />
+        <span class="logo-text">MEDICA</span>
+      </div>
       
       <h1 class="hero-title">
         Physical Therapy Boutique<br />
@@ -176,11 +180,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   /* ========== HERO SECTION ========== */
   .hero {
     position: relative;
-    background: linear-gradient(rgba(45, 109, 95, 0.9), rgba(45, 109, 95, 0.85)), 
-                url('/images/Baltimore-Physical-Therapist-clinic-2023.png');
-    background-size: cover;
-    background-position: center;
-    padding: 60px 20px;
+    background: #3d7a6b;
+    padding: 60px 20px 80px;
     text-align: center;
     color: white;
     overflow: hidden;
@@ -191,23 +192,27 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: absolute;
     top: 0;
     height: 100%;
-    width: 300px;
-    opacity: 0.15;
+    width: 350px;
+    opacity: 0.2;
     pointer-events: none;
+    display: flex;
+    align-items: center;
   }
 
   .hero-overlay-left {
     left: 0;
+    justify-content: flex-start;
   }
 
   .hero-overlay-right {
     right: 0;
+    justify-content: flex-end;
     transform: scaleX(-1);
   }
 
   .hero-overlay-left img,
   .hero-overlay-right img {
-    height: 100%;
+    height: 90%;
     width: auto;
     object-fit: contain;
   }
@@ -217,29 +222,43 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     z-index: 2;
   }
 
+  .hero-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: white;
+  }
+
   .hero-logo {
-    max-width: 180px;
+    width: 80px;
     height: auto;
-    margin-bottom: 20px;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    line-height: 1.3;
-    margin: 0 0 15px;
+    line-height: 1.2;
+    margin: 0 0 20px;
     color: white;
   }
 
   .hero-cta-text {
-    font-size: 1rem;
-    margin: 0 0 10px;
+    font-size: 1.1rem;
+    margin: 0 0 15px;
     opacity: 0.9;
   }
 
   .hero-arrow {
     font-size: 1.5rem;
-    margin: 10px 0;
+    margin: 15px 0;
     opacity: 0.7;
   }
 
@@ -247,10 +266,11 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     display: inline-block;
     background: var(--color-accent);
     color: white;
-    padding: 12px 30px;
+    padding: 14px 35px;
     text-decoration: none;
     font-weight: 600;
     border-radius: 3px;
+    font-size: 1.1rem;
   }
 
   /* ========== GALLERY SECTION ========== */
