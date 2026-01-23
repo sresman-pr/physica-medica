@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://physicamedica.net',
   build: {
-    inlineStylesheets: 'auto', // Inline CSS files smaller than 4KB
+    inlineStylesheets: 'always', // Force inline all CSS to eliminate render-blocking
   },
   image: {
     service: {
@@ -22,7 +22,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     build: {
-      cssCodeSplit: true,
+      cssCodeSplit: false, // Single CSS bundle for easier inlining
       rollupOptions: {
         output: {
           manualChunks: undefined,
