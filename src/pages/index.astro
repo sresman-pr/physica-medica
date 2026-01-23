@@ -39,24 +39,26 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     <div class="gallery-container">
       <!-- Row 1: Two small images with green buttons -->
       <div class="gallery-row row-small">
-        <a href="/services" class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Physical therapy services" loading="lazy" />
-          <span class="gallery-label">Physical Therapy Services</span>
+        <a href="/services/specialty-techniques/dry-needling-cupping" class="gallery-item">
+          <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Dry needling therapy" loading="lazy" />
+          <span class="gallery-label">Dry Needling & Cupping</span>
         </a>
         <a href="/wim-hof-method" class="gallery-item">
           <img src="/images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png" alt="Wim Hof Method instruction" loading="lazy" />
-          <span class="gallery-label">Wim Hof Method Instruction</span>
+          <span class="gallery-label">Wim Hof Method</span>
         </a>
       </div>
 
       <!-- Row 2: Two medium clinic images -->
       <div class="gallery-row row-medium">
-        <div class="gallery-item">
-          <img src="/images/Baltimore-Physical-Therapist-fitness-equipment.png" alt="Physical therapy fitness equipment" loading="lazy" />
-        </div>
-        <div class="gallery-item">
+        <a href="/services/personal-training" class="gallery-item">
+          <img src="/images/Baltimore-Physical-Therapist-fitness-equipment.png" alt="Personal training equipment" loading="lazy" />
+          <span class="gallery-label">Personal Training</span>
+        </a>
+        <a href="/about" class="gallery-item">
           <img src="/images/Baltimore-Physical-Therapist-clinic-2023.png" alt="Physica Medica clinic interior" loading="lazy" />
-        </div>
+          <span class="gallery-label">Our Clinic</span>
+        </a>
       </div>
 
       <!-- Row 3: One large training image -->
@@ -282,16 +284,16 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .gallery-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 12px;
+    padding: 16px;
   }
 
   .gallery-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 16px;
+    margin-bottom: 16px;
   }
 
   .gallery-row.row-large {
@@ -317,6 +319,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     width: 100%;
     display: block;
     object-fit: cover;
+    object-position: center top;
     transition: transform var(--transition-slow);
   }
 
@@ -324,14 +327,14 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     transform: scale(1.05);
   }
 
-  /* Row 1: Small images */
+  /* Row 1: Small images - increased height to show faces */
   .row-small .gallery-item img {
-    height: 140px;
+    height: 200px;
   }
 
   /* Row 2: Medium images */
   .row-medium .gallery-item img {
-    height: 220px;
+    height: 240px;
   }
 
   /* Row 3: Large image */
@@ -811,9 +814,12 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       margin-bottom: 10px;
     }
 
-    .row-small .gallery-item img,
+    .row-small .gallery-item img {
+      height: 180px;
+    }
+
     .row-medium .gallery-item img {
-      height: 220px;
+      height: 200px;
     }
 
     .row-large .gallery-item img {

@@ -43,18 +43,45 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
-  <!-- Hero Section -->
-  <section class="service-hero">
-    <div class="container-narrow">
+  <!-- Hero Section with Image Background -->
+  <section class="service-hero-modern">
+    <div class="hero-overlay"></div>
+    <div class="hero-image-bg">
+      <img src="/images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv2.png" alt="Pancafit postural correction" loading="eager" />
+    </div>
+    <div class="container-narrow hero-content-modern">
       <h1>Pancafit Class</h1>
-      <p class="hero-subtitle">Revolutionary Postural Correction</p>
+      <p class="hero-subtitle-modern">Revolutionary Postural Correction Method from Italy</p>
+      <a href="/schedule" class="hero-cta-button">Book Your First Session</a>
     </div>
   </section>
 
-  <!-- Hero Image -->
-  <section class="hero-image-section">
-    <div class="container">
-      <img src="/images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv2.png" alt="Pancafit postural correction" loading="eager" />
+  <!-- Benefits Cards -->
+  <section class="benefits-section">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Why Choose Pancafit?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Targets Root Causes</h3>
+          <p>Addresses muscle chains and fascial connections to eliminate pain at its source</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⏱️</div>
+          <h3>Full 60-Minute Sessions</h3>
+          <p>Unlike typical 15-30 minute sessions, you get Dr. Maks' undivided attention</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <h3>Proven Results</h3>
+          <p>Scientifically-backed method with decades of success in Europe</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔄</div>
+          <h3>Lasting Changes</h3>
+          <p>Restores proper alignment for long-term pain relief and improved posture</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -92,7 +119,8 @@ const faqs = [
         <li><strong>Home Program:</strong> Customized exercises to maintain improvements between sessions</li>
       </ol>
 
-      <div class="cta-box">
+      <div class="cta-box-modern">
+        <div class="cta-icon">✨</div>
         <h3>Ready to Experience Pancafit?</h3>
         <p>Schedule your first session and discover how proper postural alignment can transform your life.</p>
         <a href="/schedule" class="cta-button">Schedule Pancafit Session</a>
@@ -109,17 +137,29 @@ const faqs = [
   <FAQSection faqs={faqs} title="Pancafit Frequently Asked Questions" />
 
   <!-- Related Services -->
-  <section class="related-services section-spacing">
+  <section class="related-services-modern section-spacing">
     <div class="container-narrow">
-      <h2 class="text-center">You Might Also Like</h2>
-      <div class="related-grid">
-        <a href="/services/scoliosis" class="related-card">
-          <h3>Scoliosis Treatment</h3>
-          <p>Specialized care for spinal curvature →</p>
+      <h2 class="section-title-center">You Might Also Like</h2>
+      <div class="related-grid-modern">
+        <a href="/services/scoliosis" class="related-card-modern">
+          <div class="related-card-image">
+            <img src="/images/Baltimore-Physical-Therapist-scoliosis.jpg" alt="Scoliosis treatment" loading="lazy" />
+          </div>
+          <div class="related-card-content">
+            <h3>Scoliosis Treatment</h3>
+            <p>Specialized care for spinal curvature</p>
+            <span class="card-arrow">→</span>
+          </div>
         </a>
-        <a href="/services/personal-training" class="related-card">
-          <h3>Personal Training</h3>
-          <p>Optimize your biomechanics →</p>
+        <a href="/services/personal-training" class="related-card-modern">
+          <div class="related-card-image">
+            <img src="/images/Baltimore-Physical-Therapist-strength-training.jpg" alt="Personal training" loading="lazy" />
+          </div>
+          <div class="related-card-content">
+            <h3>Personal Training</h3>
+            <p>Optimize your biomechanics</p>
+            <span class="card-arrow">→</span>
+          </div>
         </a>
       </div>
     </div>
@@ -127,21 +167,135 @@ const faqs = [
 </BaseLayout>
 
 <style>
-  .service-hero {
-    background: var(--color-background-light);
-    color: var(--color-text-primary);
-    padding: 3rem 2rem;
+  /* Modern Hero Section */
+  .service-hero-modern {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+  }
+
+  .hero-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(45, 109, 95, 0.9) 0%, rgba(31, 77, 66, 0.85) 100%);
+    z-index: 2;
+  }
+
+  .hero-content-modern {
+    position: relative;
+    z-index: 3;
     text-align: center;
+    padding: 4rem 2rem;
   }
 
-  .service-hero h1 {
-    color: var(--color-text-primary);
-    margin-bottom: 0.5rem;
+  .hero-content-modern h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
-  .hero-subtitle {
+  .hero-subtitle-modern {
     font-size: 1.5rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .hero-cta-button {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    font-size: 1.1rem;
+  }
+
+  .hero-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    background: var(--color-accent);
+    color: white;
+  }
+
+  /* Benefits Section */
+  .benefits-section {
+    padding: 80px 20px;
+    background: white;
+  }
+
+  .section-title-center {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .benefit-card {
+    background: var(--color-background-light);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+    background: white;
+  }
+
+  .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .benefit-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
   }
 
   .service-content h2 {
@@ -160,58 +314,165 @@ const faqs = [
     margin-bottom: 0.5rem;
   }
 
-  .cta-box {
-    background: var(--color-background-light);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    border-left: 4px solid var(--color-accent);
-    margin: 3rem 0;
+  .cta-box-modern {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 4rem 0;
     text-align: center;
+    box-shadow: var(--shadow-lg);
+    color: white;
+    position: relative;
+    overflow: hidden;
   }
 
-  .cta-box h3 {
-    color: var(--color-primary);
+  .cta-box-modern::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  .cta-icon {
+    font-size: 3rem;
     margin-bottom: 1rem;
   }
 
-  .related-services {
-    background: var(--color-background-light);
+  .cta-box-modern h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
   }
 
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  .cta-box-modern p {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
   }
 
-  .related-card {
+  .cta-box-modern .cta-button {
     background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
+    color: var(--color-primary);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box-modern .cta-button:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .related-services-modern {
+    background: var(--color-background-light);
+    padding: 80px 20px;
+  }
+
+  .related-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .related-card-modern {
+    background: white;
+    border-radius: 12px;
     text-decoration: none;
     color: inherit;
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
   }
 
-  .related-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  .related-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
   }
 
-  .related-card h3 {
+  .related-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .related-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .related-card-modern:hover .related-card-image img {
+    transform: scale(1.1);
+  }
+
+  .related-card-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related-card-content h3 {
     color: var(--color-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
   }
 
-  .related-card p {
+  .related-card-content p {
+    color: var(--color-text-secondary);
+    margin: 0 0 auto 0;
+    line-height: 1.6;
+  }
+
+  .card-arrow {
     color: var(--color-accent);
-    margin: 0;
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: transform var(--transition-fast);
+  }
+
+  .related-card-modern:hover .card-arrow {
+    transform: translateX(8px);
   }
 
   .text-center {
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content-modern h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle-modern {
+      font-size: 1.2rem;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .section-title-center {
+      font-size: 2rem;
+    }
   }
 </style>
