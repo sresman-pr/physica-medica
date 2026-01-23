@@ -1,16 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pageTitle = "Insurance & Superbills | Out-of-Network Benefits | Physica Medica";
-const pageDescription = "Learn how to use your out-of-network insurance benefits at Physica Medica. Many patients receive 60-80% reimbursement through superbills.";
+const pageTitle = "Rates & Reimbursement | Out-of-Network Benefits | Physica Medica";
+const pageDescription = "Transparent pricing and out-of-network reimbursement guide. Sessions are $190 with potential 60-80% insurance reimbursement through superbills.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
   <!-- Hero Section -->
   <section class="insurance-hero">
     <div class="container-narrow">
-      <h1>How We Work With Your Insurance</h1>
-      <p class="lead">Get premium care without insurance restrictions</p>
+      <h1>Rates & Out-of-Network Benefits</h1>
+      <p class="lead">Premium care without insurance restrictions</p>
     </div>
   </section>
 
@@ -19,26 +19,47 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
     <div class="container-narrow">
       <div class="oon-explainer">
         <h2>Why Out-of-Network?</h2>
-        <p>Physica Medica is an Out-of-Network (OON) provider. This allows Dr. Maks to provide the elite, 1-on-1, 60-minute care that high-performance patients deserve—without the restrictions imposed by insurance "mills".</p>
+        <p>We work for you, not insurance companies. By opting out of the 'insurance mill' model, Dr. Maks guarantees 60 minutes of undivided attention—no aides, no rushed slots, no restrictions.</p>
         
         <div class="oon-benefits">
           <div class="oon-benefit-item">
-            <span class="benefit-check">✓</span>
+            <span class="benefit-icon clock">⏱️</span>
             <p><strong>Full 60-minute sessions</strong> instead of rushed 15-30 minute visits</p>
           </div>
           <div class="oon-benefit-item">
-            <span class="benefit-check">✓</span>
+            <span class="benefit-icon shield">🛡️</span>
             <p><strong>100% attention from Dr. Maks (DPT)</strong> not split between multiple patients</p>
           </div>
           <div class="oon-benefit-item">
-            <span class="benefit-check">✓</span>
+            <span class="benefit-icon puzzle">🧩</span>
             <p><strong>Customized treatment plans</strong> not restricted by insurance protocols</p>
           </div>
           <div class="oon-benefit-item">
-            <span class="benefit-check">✓</span>
+            <span class="benefit-icon sparkles">✨</span>
             <p><strong>Advanced techniques</strong> like dry needling and Pancafit without prior authorization</p>
           </div>
         </div>
+      </div>
+
+      <div class="reimbursement-example">
+        <h3>Potential Reimbursement (Post-Deductible)</h3>
+        <p class="safety-disclaimer">Note: Reimbursement varies by plan. These figures assume you have met your Out-of-Network deductible and your plan reimburses based on the billed amount.</p>
+        <div class="example-calc">
+          <div class="calc-row">
+            <span class="calc-label">Session Cost:</span>
+            <span class="calc-value">$190</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">Est. Reimbursement:</span>
+            <span class="calc-value highlight">$70 – $133</span>
+            <span class="calc-note">(Varies by Plan)</span>
+          </div>
+          <div class="calc-row total">
+            <span class="calc-label">Your Net Cost:</span>
+            <span class="calc-value">$57 – $120</span>
+          </div>
+        </div>
+        <p class="disclaimer">*Contact your provider to verify your exact out-of-network benefits and deductible status.</p>
       </div>
 
       <h2>The Superbill Process</h2>
@@ -48,7 +69,7 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
         <div class="step-card">
           <div class="step-number">1</div>
           <h3>Pay at Time of Service</h3>
-          <p>You pay the $200 evaluation or session fee upfront.</p>
+          <p>You pay the $190 evaluation or session fee upfront.</p>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
@@ -62,29 +83,32 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
         </div>
       </div>
 
-      <div class="reimbursement-example">
-        <h3>Typical Reimbursement Example</h3>
-        <div class="example-calc">
-          <div class="calc-row">
-            <span class="calc-label">Session Cost:</span>
-            <span class="calc-value">$200</span>
+      <div class="benefits-verification">
+        <h2>How to Check Your Benefits</h2>
+        <p class="verification-intro">Call your insurance provider and ask these three questions to understand your exact reimbursement:</p>
+        
+        <div class="verification-script">
+          <div class="script-item">
+            <span class="script-number">1</span>
+            <p class="script-question">"What is my Out-of-Network Deductible?"</p>
           </div>
-          <div class="calc-row">
-            <span class="calc-label">Typical OON Reimbursement (70%):</span>
-            <span class="calc-value highlight">-$140</span>
+          <div class="script-item">
+            <span class="script-number">2</span>
+            <p class="script-question">"Have I met it yet?"</p>
           </div>
-          <div class="calc-row total">
-            <span class="calc-label">Your Net Cost:</span>
-            <span class="calc-value">$60</span>
+          <div class="script-item">
+            <span class="script-number">3</span>
+            <p class="script-question">"What percentage do you reimburse for Physical Therapy (CPT Code 97110)?"</p>
           </div>
         </div>
-        <p class="disclaimer">*Reimbursement rates vary by insurance plan. Contact your provider to verify your out-of-network benefits.</p>
+        
+        <p class="verification-help">Need help understanding your benefits? Call us at <a href="tel:443-228-8029">443-228-8029</a> and we'll walk you through it.</p>
       </div>
 
       <div class="insurance-cta-box">
-        <h3>Questions About Your Benefits?</h3>
-        <p>Call us to discuss how your specific plan's out-of-network benefits work. We're here to help you maximize your insurance coverage.</p>
-        <a href="tel:443-228-8029" class="cta-button">Call 443-228-8029</a>
+        <h3>Ready to Invest in Your Body?</h3>
+        <p>Experience the difference of boutique physical therapy designed for high performers.</p>
+        <a href="/schedule" class="cta-button">Schedule Evaluation ($190)</a>
       </div>
     </div>
   </section>
@@ -98,7 +122,7 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
   }
 
   .insurance-hero h1 {
-    color: var(--color-primary);
+    color: var(--color-navy);
     margin-bottom: 1rem;
   }
 
@@ -113,15 +137,15 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
   }
 
   .oon-explainer {
-    background: linear-gradient(135deg, rgba(61, 184, 159, 0.05) 0%, rgba(45, 109, 95, 0.05) 100%);
+    background: var(--color-off-white);
     padding: 3rem;
     border-radius: 12px;
-    border: 2px solid var(--color-accent);
+    border: 2px solid var(--color-navy);
     margin-bottom: 4rem;
   }
 
   .oon-explainer h2 {
-    color: var(--color-primary);
+    color: var(--color-navy);
     margin-bottom: 1.5rem;
   }
 
@@ -142,12 +166,15 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
     gap: 1rem;
   }
 
-  .benefit-check {
-    color: var(--color-accent);
-    font-size: 1.5rem;
-    font-weight: 700;
+  .benefit-icon {
+    font-size: 2rem;
     flex-shrink: 0;
   }
+
+  .benefit-icon.clock { color: var(--color-navy); }
+  .benefit-icon.shield { color: var(--color-charcoal); }
+  .benefit-icon.puzzle { color: var(--color-navy); }
+  .benefit-icon.sparkles { color: var(--color-charcoal); }
 
   .oon-benefit-item p {
     margin: 0;
@@ -155,7 +182,7 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
   }
 
   .insurance-content h2 {
-    color: var(--color-primary);
+    color: var(--color-navy);
     margin-bottom: 1.5rem;
     font-size: 2rem;
     text-align: center;
@@ -181,19 +208,19 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
     border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow-md);
-    border: 2px solid var(--color-background-light);
+    border: 2px solid var(--color-navy);
     transition: all var(--transition-normal);
   }
 
   .step-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--color-accent);
+    border-color: var(--color-navy);
   }
 
   .step-number {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-charcoal) 100%);
     color: white;
     width: 60px;
     height: 60px;
@@ -208,7 +235,7 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
   }
 
   .step-card h3 {
-    color: var(--color-primary);
+    color: var(--color-navy);
     margin-bottom: 1rem;
     font-size: 1.35rem;
   }
@@ -220,17 +247,29 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
   }
 
   .reimbursement-example {
-    background: var(--color-background-light);
+    background: linear-gradient(135deg, var(--color-navy-tint) 0%, rgba(26, 35, 50, 0.08) 100%);
     padding: 3rem;
     border-radius: 12px;
     margin: 4rem 0;
+    border: 2px solid var(--color-navy);
+    box-shadow: var(--shadow-lg);
   }
 
   .reimbursement-example h3 {
-    color: var(--color-primary);
+    color: var(--color-navy);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 1.75rem;
+  }
+
+  .safety-disclaimer {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 3px solid #ffc107;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+    line-height: 1.6;
   }
 
   .example-calc {
@@ -251,10 +290,18 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
 
   .calc-row.total {
     border-bottom: none;
-    border-top: 2px solid var(--color-primary);
+    border-top: 2px solid var(--color-navy);
     font-weight: 700;
     font-size: 1.2rem;
     margin-top: 0.5rem;
+  }
+
+  .calc-note {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-top: 0.25rem;
   }
 
   .calc-label {
@@ -278,8 +325,84 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
     margin: 0;
   }
 
+  .benefits-verification {
+    background: var(--color-off-white);
+    padding: 3rem;
+    border-radius: 12px;
+    margin: 4rem 0;
+    border: 2px solid var(--color-navy);
+  }
+
+  .benefits-verification h2 {
+    color: var(--color-navy);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .verification-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.5rem;
+  }
+
+  .verification-script {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .script-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .script-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--color-navy);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .script-question {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .verification-help {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .verification-help a {
+    color: var(--color-navy);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .verification-help a:hover {
+    text-decoration: underline;
+  }
+
   .insurance-cta-box {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-charcoal) 100%);
     padding: 3rem 2rem;
     border-radius: 12px;
     margin: 4rem 0 0;
@@ -316,6 +439,38 @@ const pageDescription = "Learn how to use your out-of-network insurance benefits
 
     .example-calc {
       padding: 1.5rem;
+    }
+
+    .calc-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .calc-row.total {
+      background: var(--color-navy-tint);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .calc-row.total .calc-value {
+      font-size: 2rem;
+      color: var(--color-navy);
+    }
+
+    .script-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .safety-disclaimer {
+      font-size: 0.9rem;
+    }
+
+    .benefits-verification {
+      padding: 2rem;
     }
   }
 </style>
