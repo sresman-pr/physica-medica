@@ -8,17 +8,9 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 <BaseLayout title={pageTitle} description={pageDescription}>
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-overlay-left">
-      <img src="/images/9c4fc8_3f2a8ea4de1e42eca27b713faf27ef0e~mv2.png" alt="" aria-hidden="true" />
-    </div>
-    <div class="hero-overlay-right">
-      <img src="/images/9c4fc8_3f2a8ea4de1e42eca27b713faf27ef0e~mv2.png" alt="" aria-hidden="true" />
-    </div>
     <div class="hero-content">
       <div class="hero-logo-container">
-        <span class="logo-text">PHYSICA</span>
-        <img src="/images/Physica-Medica-logo.jpg" alt="Physica Medica Logo" class="hero-logo" />
-        <span class="logo-text">MEDICA</span>
+        <img src="/images/Physica+Medica-Lockup-01-White.png" alt="Physica Medica" class="hero-lockup" />
       </div>
       
       <h1 class="hero-title">
@@ -180,7 +172,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   /* ========== HERO SECTION ========== */
   .hero {
     position: relative;
-    background: linear-gradient(rgba(61, 122, 107, 0.85), rgba(61, 122, 107, 0.85)), 
+    background: linear-gradient(rgba(61, 122, 107, 0.75), rgba(61, 122, 107, 0.75)), 
                 url('/images/physica-medica-location.png');
     background-size: cover;
     background-position: center;
@@ -188,36 +180,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     text-align: center;
     color: white;
     overflow: hidden;
-  }
-
-  .hero-overlay-left,
-  .hero-overlay-right {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 350px;
-    opacity: 0.2;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-  }
-
-  .hero-overlay-left {
-    left: 0;
-    justify-content: flex-start;
-  }
-
-  .hero-overlay-right {
-    right: 0;
-    justify-content: flex-end;
-    transform: scaleX(-1);
-  }
-
-  .hero-overlay-left img,
-  .hero-overlay-right img {
-    height: 90%;
-    width: auto;
-    object-fit: contain;
   }
 
   .hero-content {
@@ -229,19 +191,11 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
     margin-bottom: 25px;
   }
 
-  .logo-text {
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    color: white;
-  }
-
-  .hero-logo {
-    width: 80px;
+  .hero-lockup {
+    width: 260px;
     height: auto;
   }
 
