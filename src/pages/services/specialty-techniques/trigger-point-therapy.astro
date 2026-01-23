@@ -3,8 +3,15 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
 
-const pageTitle = "Trigger Point Therapy Baltimore | Manual Myofascial Release | Physica Medica";
-const pageDescription = "Expert trigger point therapy and manual myofascial release in Baltimore. Eliminate referred pain patterns with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Baltimore Trigger Point Therapy | Manual Myofascial Release | Physica Medica";
+const pageDescription = "Expert trigger point therapy and manual myofascial release in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
+  { name: "Trigger Point Therapy", url: "/services/specialty-techniques/trigger-point-therapy" }
+];
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
@@ -38,7 +45,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
   <section class="service-hero">
     <div class="container-narrow">
       <h1>Trigger Point Therapy</h1>

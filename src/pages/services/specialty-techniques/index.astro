@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-const pageTitle = "Specialty Physical Therapy Techniques Baltimore | Physica Medica";
-const pageDescription = "Advanced therapeutic techniques including dry needling, cupping, and trigger point therapy for targeted pain relief in Baltimore.";
+const pageTitle = "Baltimore Specialty Physical Therapy Techniques | Physica Medica";
+const pageDescription = "Advanced therapeutic techniques including dry needling, cupping, and trigger point therapy. $200 out-of-network premium care with Dr. Maksim Birikov, DPT in Baltimore.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Specialty Techniques", url: "/services/specialty-techniques" }
+];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
   <!-- Hero Section -->
   <section class="service-hero">
     <div class="container-narrow">

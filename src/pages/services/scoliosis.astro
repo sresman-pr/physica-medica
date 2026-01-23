@@ -3,8 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 
-const pageTitle = "Scoliosis Physical Therapy Baltimore | Spinal Curve Treatment | Physica Medica";
-const pageDescription = "Expert scoliosis treatment combining postural correction and therapeutic exercises. Specialized care for spinal curvature in Baltimore with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Baltimore Scoliosis Physical Therapy | Spinal Curve Treatment | Physica Medica";
+const pageDescription = "Expert scoliosis treatment in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 DPT sessions combining Pancafit postural correction with Dr. Maksim Birikov.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Scoliosis Treatment", url: "/services/scoliosis" }
+];
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
@@ -42,7 +48,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
   <!-- Hero Section -->
   <section class="service-hero">
     <div class="container-narrow">
@@ -62,15 +68,15 @@ const faqs = [
   <section class="service-content section-spacing">
     <div class="container-narrow">
       <h2>What is Scoliosis Physical Therapy?</h2>
-      <p>Scoliosis physical therapy focuses on managing spinal curvature through targeted postural correction, therapeutic exercises, and manual therapy techniques. At Physica Medica, we specialize in treating both adolescent and adult scoliosis, addressing not just the curve itself but the compensatory patterns and pain that often accompany it.</p>
+      <p>Scoliosis physical therapy focuses on managing spinal curvature through targeted postural correction, therapeutic exercises, and manual therapy techniques. At Physica Medica, we specialize in treating both adolescent and adult scoliosis, addressing not just the curve itself but the compensatory patterns and pain that often accompany it. Our approach targets the root cause of scoliosis-related dysfunction, not just surface symptoms.</p>
       
       <div class="scoliosis-images-grid">
         <img src="/images/Baltimore-Physical-Therapist-scoliosis-approach.jpg" alt="Scoliosis treatment approach" loading="lazy" />
         <img src="/images/Baltimore-Physical-Therapist-scoliosis-approach-back-view.jpg" alt="Scoliosis back view assessment" loading="lazy" />
       </div>
 
-      <h2>How Physica Medica is Different</h2>
-      <p>Our scoliosis treatment stands apart from typical physical therapy:</p>
+      <h2>How We Deliver Results: The 60-Minute 1-on-1 DPT Difference</h2>
+      <p>Our scoliosis treatment stands apart from typical physical therapy with a premium, out-of-network approach ($200 per session):</p>
       <ul>
         <li><strong>Specialized Pancafit Integration:</strong> We use Pancafit to address the postural chains affected by scoliosis</li>
         <li><strong>60-Minute Sessions:</strong> Full hour of one-on-one attention, not rushed 15-minute treatments</li>
@@ -79,15 +85,15 @@ const faqs = [
         <li><strong>Customized Programs:</strong> Every curve is unique; your treatment should be too</li>
       </ul>
 
-      <h2>Who Benefits Most</h2>
-      <p>Our scoliosis program is ideal for Baltimore residents experiencing:</p>
+      <h2>Who Benefits Most: Baltimore Families & Adults with Scoliosis</h2>
+      <p>Our specialized scoliosis program is ideal for Baltimore residents including:</p>
       <ul>
-        <li>Adolescent idiopathic scoliosis</li>
-        <li>Adult degenerative scoliosis</li>
-        <li>Post-surgical scoliosis care</li>
-        <li>Scoliosis-related back pain</li>
-        <li>Postural imbalances from spinal curves</li>
-        <li>Desire to prevent curve progression</li>
+        <li><strong>Canton & Fells Point Families:</strong> Adolescent idiopathic scoliosis treatment for teens diagnosed with spinal curvature</li>
+        <li><strong>Federal Hill & Harbor East Professionals:</strong> Adult degenerative scoliosis causing chronic back pain and postural issues</li>
+        <li><strong>Post-Surgical Patients:</strong> Comprehensive care after spinal fusion or other scoliosis surgeries at Johns Hopkins or UMMC</li>
+        <li><strong>Active Baltimore Residents:</strong> Athletes and active individuals managing scoliosis while maintaining fitness</li>
+        <li><strong>Parents Seeking Prevention:</strong> Proactive treatment to prevent curve progression in growing adolescents</li>
+        <li><strong>Adults with Chronic Pain:</strong> Scoliosis-related back pain, postural imbalances, and compensatory movement patterns</li>
       </ul>
 
       <div class="scoliosis-info-grid">

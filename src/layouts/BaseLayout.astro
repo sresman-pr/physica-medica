@@ -2,16 +2,23 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileCTA from '../components/MobileCTA.astro';
+import BreadcrumbList from '../components/BreadcrumbList.astro';
 import '../styles/global.css';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
 
 interface Props {
   title: string;
   description: string;
   schema?: object | object[];
   ogImage?: string;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
-const { title, description, schema, ogImage = '/images/og-default.jpg' } = Astro.props;
+const { title, description, schema, ogImage = '/images/og-default.jpg', breadcrumbs } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Default business schema for all pages
@@ -53,7 +60,7 @@ const businessSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "300",
+    "ratingCount": "300",
     "bestRating": "5"
   },
   "priceRange": "$$",
@@ -128,6 +135,11 @@ const allSchemas = {
   </head>
   <body>
     <Header />
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <div class="container">
+        <BreadcrumbList items={breadcrumbs} />
+      </div>
+    )}
     <main>
       <slot />
     </main>
