@@ -26,12 +26,31 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   <!-- Image Gallery Section -->
   <section class="image-gallery">
     <div class="container">
-      <div class="gallery-grid">
-        <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Dr. Maks performing dry needling therapy" loading="lazy" />
-        <img src="/images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png" alt="Dr. Maks - Wim Hof Method Certified" loading="lazy" />
+      <!-- Top Row: 2 images side by side with text overlays -->
+      <div class="gallery-row-2">
+        <div class="gallery-item">
+          <img src="/images/Baltimore-Physical-Therapist-Dry-Needling-Dr-Maks-Birikov.png" alt="Physical therapy services" loading="lazy" />
+          <div class="image-overlay-text">
+            <span class="overlay-label">Physical Therapy Services</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/Baltimore-Physical-Therapist-Wim-Hof-Certified-Dr-Maks-Birikov.png" alt="Wim Hof Method instruction" loading="lazy" />
+          <div class="image-overlay-text">
+            <span class="overlay-label">Wim Hof Method Instruction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Row: 2 clinic images side by side -->
+      <div class="gallery-row-2">
         <img src="/images/Baltimore-Physical-Therapist-fitness-equipment.png" alt="Physical therapy fitness equipment" loading="lazy" />
         <img src="/images/Baltimore-Physical-Therapist-clinic-2023.png" alt="Physica Medica clinic interior" loading="lazy" />
-        <img src="/images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg" alt="Dr. Maks with patient" loading="lazy" />
+      </div>
+
+      <!-- Bottom Row: 1 large training image -->
+      <div class="gallery-row-1">
+        <img src="/images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg" alt="Dr. Maks training with client" loading="lazy" />
       </div>
     </div>
   </section>
@@ -209,20 +228,63 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* Gallery */
   .image-gallery {
-    padding: 3rem 0;
+    padding: 0;
+    background: #f5f5f5;
   }
 
-  .gallery-grid {
+  .gallery-row-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
 
-  .gallery-grid img {
+  .gallery-row-1 {
+    display: block;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-row-2 img,
+  .gallery-row-1 img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 0.25rem;
+    display: block;
+  }
+
+  .gallery-row-1 img {
+    height: 400px;
+  }
+
+  .image-overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-accent);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .overlay-label {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-row-2 {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-row-2 img,
+    .gallery-row-1 img {
+      height: 250px;
+    }
   }
 
   /* Schedule CTA */
