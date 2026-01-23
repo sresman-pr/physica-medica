@@ -16,7 +16,7 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
             height={161}
             format="webp"
             loading="eager"
-            quality={85}
+            quality={75}
           />
         </a>
       </div>
@@ -107,18 +107,26 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     }
   });
 
-  // Add shadow on scroll
+  // Add shadow on scroll - optimized to prevent forced reflow
   let lastScroll = 0;
+  let ticking = false;
+  
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    lastScroll = window.pageYOffset;
     
-    if (currentScroll > 50) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (lastScroll > 50) {
+          header?.classList.add('scrolled');
+        } else {
+          header?.classList.remove('scrolled');
+        }
+        
+        ticking = false;
+      });
+      
+      ticking = true;
     }
-    
-    lastScroll = currentScroll;
   });
 </script>
 
