@@ -7,6 +7,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://physicamedica.net',
+  build: {
+    inlineStylesheets: 'auto', // Inline CSS files smaller than 4KB
+  },
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp',
