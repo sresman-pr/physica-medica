@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import '../../styles/service-pages.css';
 
 const pageTitle = "Personal Training Baltimore | Biomechanics & Movement | Physica Medica";
 const pageDescription = "Unique personal training approach integrating biomechanics, fascia, and evolutionary movement. One-on-one sessions in Baltimore with Dr. Maksim Birikov, DPT.";
@@ -43,18 +44,45 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema}>
-  <!-- Hero Section -->
-  <section class="service-hero">
-    <div class="container-narrow">
+  <!-- Modern Hero Section -->
+  <section class="service-hero-modern">
+    <div class="hero-overlay"></div>
+    <div class="hero-image-bg">
+      <img src="/images/Baltimore-Physical-Therapist-strength-training.jpg" alt="Personal training at Physica Medica" loading="eager" />
+    </div>
+    <div class="container-narrow hero-content-modern">
       <h1>Personal Training</h1>
-      <p class="hero-subtitle">Biomechanics-Based Movement Optimization</p>
+      <p class="hero-subtitle-modern">Biomechanics-Based Movement Optimization</p>
+      <a href="/schedule" class="hero-cta-button">Start Your Training</a>
     </div>
   </section>
 
-  <!-- Hero Image -->
-  <section class="hero-image-section">
-    <div class="container">
-      <img src="/images/Baltimore-Physical-Therapist-strength-training.jpg" alt="Personal training at Physica Medica" loading="eager" />
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Why Train With Us?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Systems-Based Approach</h3>
+          <p>Integrate biomechanics, fascia, and gravity for optimal movement</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⏱️</div>
+          <h3>Full 60 Minutes</h3>
+          <p>Complete attention from a Doctor of Physical Therapy</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💪</div>
+          <h3>Pain-Free Performance</h3>
+          <p>Build strength while eliminating movement dysfunctions</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔬</div>
+          <h3>DPT-Level Assessment</h3>
+          <p>Identify and correct issues before they cause injury</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -138,7 +166,8 @@ const faqs = [
         <li><strong>Education:</strong> Understand how to move optimally in daily life and sport</li>
       </ol>
 
-      <div class="cta-box">
+      <div class="cta-box-modern">
+        <div class="cta-icon">💫</div>
         <h3>Transform Your Movement</h3>
         <p>Experience personal training that respects your body's design while achieving your aesthetic and performance goals.</p>
         <a href="/schedule" class="cta-button">Schedule Training Session</a>
@@ -155,17 +184,29 @@ const faqs = [
   <FAQSection faqs={faqs} title="Personal Training FAQs" />
 
   <!-- Related Services -->
-  <section class="related-services section-spacing">
+  <section class="related-services-modern">
     <div class="container-narrow">
-      <h2 class="text-center">You Might Also Like</h2>
-      <div class="related-grid">
-        <a href="/services/pancafit-class" class="related-card">
-          <h3>Pancafit Class</h3>
-          <p>Postural correction foundation →</p>
+      <h2 class="section-title-center">You Might Also Like</h2>
+      <div class="related-grid-modern">
+        <a href="/services/pancafit-class" class="related-card-modern">
+          <div class="related-card-image">
+            <img src="/images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv2.png" alt="Pancafit class" loading="lazy" />
+          </div>
+          <div class="related-card-content">
+            <h3>Pancafit Class</h3>
+            <p>Postural correction foundation</p>
+            <span class="card-arrow">→</span>
+          </div>
         </a>
-        <a href="/services/specialty-techniques" class="related-card">
-          <h3>Specialty Techniques</h3>
-          <p>Targeted pain relief →</p>
+        <a href="/services/specialty-techniques" class="related-card-modern">
+          <div class="related-card-image">
+            <img src="/images/Baltimore-Physical-Therapist-dry-needling.jpg" alt="Specialty techniques" loading="lazy" />
+          </div>
+          <div class="related-card-content">
+            <h3>Specialty Techniques</h3>
+            <p>Targeted pain relief</p>
+            <span class="card-arrow">→</span>
+          </div>
         </a>
       </div>
     </div>
@@ -173,41 +214,25 @@ const faqs = [
 </BaseLayout>
 
 <style>
-  .service-hero {
-    background: white;
-    color: var(--color-text-primary);
-    padding: 3rem 2rem 1rem;
-    text-align: center;
-  }
-
-  .hero-image-section {
-    padding: 0 2rem 2rem;
-    background: white;
-  }
-
-  .hero-image-section img {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: block;
-    border-radius: 0.5rem;
-  }
+  /* Page-specific styles (shared styles imported from service-pages.css) */
 
   .trainer-section {
     background: var(--color-background-light);
+    padding: 80px 20px;
   }
 
   .trainer-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
   }
 
   .trainer-image img {
     width: 100%;
     max-width: 300px;
-    border-radius: 0.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
   }
 
   @media (max-width: 768px) {
@@ -216,46 +241,44 @@ const faqs = [
     }
   }
 
-  .service-hero h1 {
-    color: var(--color-text-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    opacity: 0.9;
-  }
-
   .philosophy-highlight {
     background: var(--color-background-light);
+    padding: 80px 20px;
   }
 
   .philosophy-grid {
     display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin-top: 3rem;
   }
 
   .philosophy-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.5rem;
     background: white;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 2rem;
+    border-radius: 12px;
     border-left: 4px solid var(--color-accent);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+  }
+
+  .philosophy-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
   }
 
   .icon {
     color: var(--color-accent);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: bold;
     flex-shrink: 0;
   }
 
   .philosophy-item p {
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .service-content h2 {
@@ -272,57 +295,6 @@ const faqs = [
 
   .service-content li {
     margin-bottom: 0.5rem;
-  }
-
-  .cta-box {
-    background: var(--color-background-light);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    border-left: 4px solid var(--color-accent);
-    margin: 3rem 0;
-    text-align: center;
-  }
-
-  .cta-box h3 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-  }
-
-  .related-services {
-    background: var(--color-background-light);
-  }
-
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .related-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .related-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  .related-card h3 {
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .related-card p {
-    color: var(--color-accent);
-    margin: 0;
-    font-weight: 600;
   }
 
   .text-center {
