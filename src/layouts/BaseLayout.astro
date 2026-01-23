@@ -1,0 +1,137 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileCTA from '../components/MobileCTA.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  schema?: object | object[];
+  ogImage?: string;
+}
+
+const { title, description, schema, ogImage = '/images/og-default.jpg' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Default business schema for all pages
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://physicamedica.net/#business",
+  "name": "Physica Medica",
+  "description": "Physical Therapy Boutique & Postural Correction Studio in Baltimore",
+  "url": "https://physicamedica.net",
+  "telephone": "443-228-8029",
+  "email": "PhysicaMedica@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "800 S Bond St",
+    "addressLocality": "Baltimore",
+    "addressRegion": "MD",
+    "postalCode": "21231"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "39.2784",
+    "longitude": "-76.6012"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Wednesday", "Friday"],
+      "opens": "08:00",
+      "closes": "19:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "10:00",
+      "closes": "19:30"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "300",
+    "bestRating": "5"
+  },
+  "priceRange": "$$",
+  "hasMap": "https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD"
+};
+
+// Physician schema
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "@id": "https://physicamedica.net/about/#physician",
+  "name": "Dr. Maksim Birikov",
+  "honorificPrefix": "Dr.",
+  "jobTitle": "Doctor of Physical Therapy",
+  "knowsAbout": [
+    "Physical Therapy",
+    "Dry Needling",
+    "Cupping",
+    "Postural Correction",
+    "Scoliosis Treatment",
+    "Wim Hof Method",
+    "Pregnancy Physical Therapy"
+  ],
+  "worksFor": { "@id": "https://physicamedica.net/#business" }
+};
+
+// Combine schemas
+const allSchemas = {
+  "@context": "https://schema.org",
+  "@graph": [
+    businessSchema,
+    physicianSchema,
+    ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Physica Medica" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(allSchemas)} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <!-- Preload critical image (will be overridden per page if needed) -->
+    <link rel="preload" as="image" href="/images/hero-desktop.webp" type="image/webp" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <MobileCTA />
+  </body>
+</html>
