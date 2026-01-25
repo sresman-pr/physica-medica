@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SideWatermark from '../components/SideWatermark.astro';
+import WatermarkBackground from '../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
 
 // Import all images for optimization
@@ -21,6 +21,9 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Fixed Watermark Background Layer -->
+  <WatermarkBackground />
+  
   <!-- Hero Section -->
   <section class="hero">
     <Image 
@@ -64,8 +67,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Image Gallery Section -->
   <section class="gallery-section">
-    <SideWatermark side="left" variant="light" />
-    <SideWatermark side="right" variant="light" />
     <div class="gallery-container">
       <!-- Row 1: Two small images with green buttons -->
       <div class="gallery-row row-small">
@@ -147,8 +148,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Quote Section -->
   <section class="quote-section">
-    <SideWatermark side="left" variant="light" />
-    <SideWatermark side="right" variant="light" />
     <blockquote>
       <p class="quote-text">"The human body is an incredible machine."</p>
       <cite>Maksim Birikov - Doctor of Physical Therapy</cite>
@@ -158,8 +157,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Treatment Images Section -->
   <section class="treatment-section">
-    <SideWatermark side="left" variant="light" />
-    <SideWatermark side="right" variant="light" />
     <div class="treatment-grid">
       <a href="/services/pregnancy-physical-therapy" class="treatment-item">
         <Image 
@@ -195,8 +192,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Personal Training Section -->
   <section class="training-section">
-    <SideWatermark side="left" variant="light" />
-    <SideWatermark side="right" variant="light" />
     <div class="training-wrapper">
       <div class="training-image">
         <Image 
@@ -226,8 +221,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Reviews Section -->
   <section class="reviews-section">
-    <SideWatermark side="left" variant="dark" />
-    <SideWatermark side="right" variant="dark" />
     <h2>300+ 5-STAR REVIEWS</h2>
     <div class="review-card">
       <div class="review-image">
@@ -274,8 +267,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Footer Contact Section -->
   <section class="contact-section">
-    <SideWatermark side="left" variant="light" />
-    <SideWatermark side="right" variant="light" />
     <div class="contact-wrapper">
       <div class="contact-left">
         <h2>PHYSICA MEDICA</h2>
@@ -306,6 +297,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     text-align: center;
     color: white;
     overflow: hidden;
+    z-index: 1;
+    /* Hero has its own background image/overlay, covers watermark */
   }
 
   .hero-bg-image {
@@ -411,16 +404,18 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== GALLERY SECTION ========== */
   .gallery-section {
-    background: linear-gradient(to bottom, #e8e8e8, #d4d4d4);
-    padding: 0;
+    /* Transparent to show fixed watermark through */
+    background: transparent;
+    padding: 40px 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    z-index: 1;
   }
 
   .gallery-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 0 16px;
   }
 
   .gallery-row {
@@ -526,11 +521,13 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== QUOTE SECTION ========== */
   .quote-section {
-    background: linear-gradient(to bottom, #ffffff, #fafafa);
+    /* Solid white to cover the fixed watermark */
+    background: #ffffff;
     padding: 80px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    z-index: 1;
   }
 
   .quote-section blockquote {
@@ -568,10 +565,12 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== TREATMENT SECTION ========== */
   .treatment-section {
-    background: linear-gradient(to bottom, #ffffff, #fafafa);
+    /* Solid white to cover the fixed watermark */
+    background: #ffffff;
     padding: 60px 20px;
     position: relative;
     overflow: hidden;
+    z-index: 1;
   }
 
   .treatment-grid {
@@ -645,11 +644,13 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== TRAINING SECTION ========== */
   .training-section {
-    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
+    /* Transparent to show fixed watermark through */
+    background: transparent;
     padding: 80px 20px;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    z-index: 1;
   }
 
   .training-wrapper {
@@ -726,12 +727,14 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== REVIEWS SECTION ========== */
   .reviews-section {
+    /* Solid teal to cover the fixed watermark */
     background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
     color: white;
     padding: 80px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    z-index: 1;
   }
 
   .reviews-section h2 {
@@ -812,6 +815,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     text-align: center;
     color: white;
     overflow: hidden;
+    z-index: 1;
+    /* Image background covers the fixed watermark */
   }
 
   .visit-section::before {
@@ -856,10 +861,12 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== CONTACT SECTION ========== */
   .contact-section {
-    background: linear-gradient(to bottom, #ffffff, #fafafa);
+    /* Transparent to show fixed watermark through */
+    background: transparent;
     padding: 80px 20px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    z-index: 1;
   }
 
   .contact-wrapper {
@@ -955,6 +962,21 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   /* ========== RESPONSIVE ========== */
+  /* On smaller screens, watermark is hidden, so add explicit gray backgrounds */
+  @media (max-width: 1200px) {
+    .gallery-section {
+      background: linear-gradient(to bottom, #e0e0e0, #d4d4d4);
+    }
+    
+    .training-section {
+      background: linear-gradient(to bottom, #e0e0e0, #d4d4d4);
+    }
+    
+    .contact-section {
+      background: linear-gradient(to bottom, #e0e0e0, #d4d4d4);
+    }
+  }
+  
   @media (max-width: 768px) {
     .hero {
       padding: 60px 20px 70px;
