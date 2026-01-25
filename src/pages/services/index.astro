@@ -147,9 +147,25 @@ const pageDescription = "Comprehensive physical therapy services including Panca
   .service-card {
     background: white;
     border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--color-accent);
+    box-shadow: var(--shadow-md);
     transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
+    position: relative;
+  }
+
+  /* Inner glow effect */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .service-card img {
@@ -159,8 +175,8 @@ const pageDescription = "Comprehensive physical therapy services including Panca
   }
 
   .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
   }
 
   .service-card h2 {

@@ -35,10 +35,18 @@
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
   
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  /* Multi-layered shadows for depth */
+  --shadow-sm: 
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 16px 48px rgba(0, 0, 0, 0.1);
 }
 
 /* Global Styles */
@@ -53,6 +61,75 @@ body {
   background-color: var(--color-background);
   line-height: 1.6;
   font-size: 16px;
+}
+
+/* Global canvas/linen texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Persistent watermark on all pages */
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
+  opacity: 0.12;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Add right-side watermark on larger screens for balance */
+@media (min-width: 1400px) {
+  body {
+    position: relative;
+  }
+  
+  body::after {
+    left: 40px;
+  }
+  
+  /* Create right watermark using a pseudo-element on html */
+  html::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 180px;
+    background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
+    opacity: 0.12;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* Hide on mobile to avoid clutter */
+@media (max-width: 768px) {
+  body::after,
+  html::after {
+    display: none;
+  }
 }
 
 /* Typography - Improved hierarchy and readability */
@@ -101,6 +178,40 @@ p {
 /* Utility Classes */
 .section-spacing {
   padding: var(--spacing-section) 0;
+  position: relative;
+}
+
+/* Decorative corner accents */
+.section-spacing::before,
+.section-spacing::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--color-accent);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.section-spacing::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.section-spacing::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+@media (max-width: 768px) {
+  .section-spacing::before,
+  .section-spacing::after {
+    display: none;
+  }
 }
 
 .container {
@@ -178,8 +289,10 @@ p {
 
 .cta-button:hover {
   background: linear-gradient(135deg, var(--color-accent-hover) 0%, #258a77 100%);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 4px 12px rgba(61, 184, 159, 0.4),
+    0 8px 24px rgba(0,0,0,0.15);
 }
 
 .cta-button:active {
@@ -196,7 +309,21 @@ img {
 
 /* Warm professional filter for clinic/staff images */
 .professional-image {
-  filter: brightness(1.05) contrast(1.05) saturate(0.95);
+  filter: brightness(1.05) contrast(1.08) saturate(0.95);
+  border: 2px solid rgba(255,255,255,0.8);
+  box-shadow: 
+    0 0 0 1px rgba(0,0,0,0.1),
+    0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* Gallery and card images get subtle borders */
+.gallery-item img,
+.service-card img,
+.treatment-item img {
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 
+    inset 0 1px 2px rgba(0,0,0,0.08),
+    0 2px 8px rgba(0,0,0,0.12);
 }
 
 /* Smooth Scrolling */

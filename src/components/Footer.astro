@@ -1,5 +1,25 @@
 ---
 // Footer Component
+import { getEntry } from 'astro:content';
+
+// Fetch business info from Keystatic CMS
+let businessInfo;
+try {
+  const entry = await getEntry('settings', 'business-info');
+  businessInfo = entry?.data;
+} catch (error) {
+  // If content doesn't exist yet, businessInfo will be undefined
+  businessInfo = undefined;
+}
+
+// Fallback values if CMS data isn't available yet
+const phone = businessInfo?.phoneNumber || '443-228-8029';
+const email = businessInfo?.email || 'PhysicaMedica@gmail.com';
+const hours = businessInfo?.businessHours || 'M W F: 8:00 AM - 7:30 PM\nTuesday: 10:00 AM - 7:30 PM\nThurs Sat Sun: Closed';
+const address = businessInfo?.officeAddress || '800 S Bond St\nBaltimore, MD 21231';
+
+// Convert newlines to <br /> for display
+const formatMultiline = (text: string) => text.split('\n').filter(line => line.trim());
 ---
 
 <footer class="site-footer">
@@ -8,21 +28,28 @@
       <div class="footer-section">
         <h3>Contact</h3>
         <p>
-          800 S Bond St<br />
-          Baltimore, MD 21231
+          {formatMultiline(address).map((line, index) => (
+            <Fragment>
+              {line}
+              {index < formatMultiline(address).length - 1 && <br />}
+            </Fragment>
+          ))}
         </p>
         <p>
-          <a href="tel:443-228-8029">443-228-8029</a><br />
-          <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
+          <a href={`tel:${phone.replace(/[^0-9]/g, '')}`}>{phone}</a><br />
+          <a href={`mailto:${email}`}>{email}</a>
         </p>
       </div>
 
       <div class="footer-section">
         <h3>Hours</h3>
         <p>
-          M W F: 8:00 AM - 7:30 PM<br />
-          Tuesday: 10:00 AM - 7:30 PM<br />
-          Thurs Sat Sun: Closed
+          {formatMultiline(hours).map((line, index) => (
+            <Fragment>
+              {line}
+              {index < formatMultiline(hours).length - 1 && <br />}
+            </Fragment>
+          ))}
         </p>
       </div>
 

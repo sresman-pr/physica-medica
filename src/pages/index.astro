@@ -31,7 +31,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       format="webp"
       loading="eager"
       fetchpriority="high"
-      quality={60}
+      quality={85}
       class="hero-bg-image"
     />
     <div class="hero-content">
@@ -45,7 +45,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
           format="webp"
           loading="eager"
           fetchpriority="high"
-          quality={65}
+          quality={90}
           class="hero-lockup"
         />
       </div>
@@ -61,36 +61,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     </div>
   </section>
 
-  <!-- Image Gallery Section with Watermarks -->
+  <!-- Image Gallery Section -->
   <section class="gallery-section">
-    <!-- Fixed Watermark Logos -->
-    <div class="watermark watermark-left">
-      <Image 
-        src={logoWatermarkImg}
-        alt=""
-        width={354}
-        height={161}
-        format="webp"
-        loading="lazy"
-        quality={65}
-        aria-hidden="true"
-      />
-      <span class="watermark-text">PHYSICA<br/>MEDICA</span>
-    </div>
-    <div class="watermark watermark-right">
-      <Image 
-        src={logoWatermarkImg}
-        alt=""
-        width={354}
-        height={161}
-        format="webp"
-        loading="lazy"
-        quality={65}
-        aria-hidden="true"
-      />
-      <span class="watermark-text">PHYSICA<br/>MEDICA</span>
-    </div>
-
     <div class="gallery-container">
       <!-- Row 1: Two small images with green buttons -->
       <div class="gallery-row row-small">
@@ -102,7 +74,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
             height={202}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={70}
           />
           <span class="gallery-label">Dry Needling & Cupping</span>
         </a>
@@ -114,7 +86,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
             height={202}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={70}
           />
           <span class="gallery-label">Wim Hof Method</span>
         </a>
@@ -130,7 +102,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
             height={342}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={70}
           />
           <span class="gallery-label">Personal Training</span>
         </a>
@@ -159,7 +131,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
             widths={[400, 700]}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={75}
           />
           <div class="gallery-cta-stack">
             <a href="/services" class="gallery-cta">One-on-One Treatments</a>
@@ -340,8 +312,33 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(61, 122, 107, 0.75), rgba(61, 122, 107, 0.75));
+    background: 
+      linear-gradient(135deg, rgba(61, 122, 107, 0.75), rgba(45, 109, 95, 0.85)),
+      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 100%, 40px 40px, 40px 40px;
+    background-position: 0 0, 0 0, 20px 20px;
     z-index: 1;
+  }
+
+  /* Add organic movement overlay */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(61, 184, 159, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(61, 184, 159, 0.1) 0%, transparent 50%);
+    z-index: 1;
+    animation: subtleShift 20s ease-in-out infinite;
+  }
+
+  @keyframes subtleShift {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.7; }
   }
 
   .hero-content {
@@ -401,43 +398,9 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== GALLERY SECTION ========== */
   .gallery-section {
-    background: var(--color-background-gray);
+    background: linear-gradient(to bottom, #e8e8e8, #d4d4d4);
     padding: 0;
     position: relative;
-  }
-
-  .watermark {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 1;
-    text-align: center;
-  }
-
-  .watermark-left {
-    left: 30px;
-  }
-
-  .watermark-right {
-    right: 30px;
-  }
-
-  .watermark img {
-    width: 200px;
-    height: auto;
-    filter: grayscale(100%);
-    margin-bottom: 10px;
-  }
-
-  .watermark-text {
-    display: block;
-    font-size: 2rem;
-    font-weight: 300;
-    color: #999;
-    letter-spacing: 0.1em;
-    line-height: 1.2;
   }
 
   .gallery-container {
@@ -468,8 +431,9 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .gallery-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
   }
 
   .gallery-item img {
@@ -481,7 +445,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1.05);
   }
 
   /* Row 1: Small images - increased height to show faces */
@@ -547,7 +512,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== QUOTE SECTION ========== */
   .quote-section {
-    background: white;
+    background: linear-gradient(to bottom, #ffffff, #fafafa);
     padding: 80px 20px;
     text-align: center;
   }
@@ -587,7 +552,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== TREATMENT SECTION ========== */
   .treatment-section {
-    background: white;
+    background: linear-gradient(to bottom, #ffffff, #fafafa);
     padding: 60px 20px;
   }
 
@@ -608,8 +573,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .treatment-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
   }
 
   .treatment-item img {
@@ -662,7 +627,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== TRAINING SECTION ========== */
   .training-section {
-    background: var(--color-background-light);
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
     padding: 80px 20px;
     text-align: center;
   }
@@ -741,7 +706,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== REVIEWS SECTION ========== */
   .reviews-section {
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
     color: white;
     padding: 80px 20px;
     text-align: center;
@@ -869,7 +834,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== CONTACT SECTION ========== */
   .contact-section {
-    background: white;
+    background: linear-gradient(to bottom, #ffffff, #fafafa);
     padding: 80px 20px;
   }
 
@@ -1059,10 +1024,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       gap: 40px;
     }
 
-    .watermark {
-      display: none;
-    }
-
     .visit-overlay h2 {
       font-size: 2.5rem;
     }
@@ -1082,13 +1043,4 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     }
   }
 
-  @media (min-width: 1400px) {
-    .watermark-left {
-      left: 60px;
-    }
-
-    .watermark-right {
-      right: 60px;
-    }
-  }
 </style>

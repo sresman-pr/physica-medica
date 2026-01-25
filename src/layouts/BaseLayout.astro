@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileCTA from '../components/MobileCTA.astro';
 import BreadcrumbList from '../components/BreadcrumbList.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
 import '../styles/global.css';
 
 interface BreadcrumbItem {
@@ -135,6 +136,7 @@ const allSchemas = {
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
+    <AnnouncementBar />
     <Header />
     {breadcrumbs && breadcrumbs.length > 0 && (
       <div class="container">
