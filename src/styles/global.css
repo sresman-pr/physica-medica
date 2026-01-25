@@ -88,10 +88,10 @@ body::after {
   top: 50%;
   left: 40px;
   transform: translateY(-50%);
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
-  opacity: 0.30;
+  opacity: 0.35;
   filter: grayscale(70%) brightness(1.1);
   mix-blend-mode: multiply;
   pointer-events: none;
@@ -107,10 +107,10 @@ body::after {
     top: 50%;
     right: 40px;
     transform: translateY(-50%);
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
-    opacity: 0.30;
+    opacity: 0.35;
     filter: grayscale(70%) brightness(1.1);
     mix-blend-mode: multiply;
     pointer-events: none;
