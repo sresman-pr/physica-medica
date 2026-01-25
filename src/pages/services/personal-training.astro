@@ -264,6 +264,27 @@ const faqs = [
 <style>
   /* Page-specific styles (shared styles imported from service-pages.css) */
 
+  .service-content {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Large angled logo wallpaper */
+  .service-content::before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(10deg);
+    width: 550px;
+    height: 550px;
+    background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
+    opacity: 0.14;
+    filter: grayscale(80%) brightness(1.1);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .trainer-section {
     background: var(--color-background-light);
     padding: 80px 20px;

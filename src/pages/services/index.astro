@@ -128,31 +128,29 @@ const pageDescription = "Comprehensive physical therapy services including Panca
 </BaseLayout>
 
 <style>
-  /* Services page - text watermark background */
+  /* Services page - repeating logo wallpaper */
   .services-hero,
   .services-grid-section {
     position: relative;
+    overflow: hidden;
   }
 
   .services-hero::before,
   .services-grid-section::before {
-    content: 'PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA PHYSICA MEDICA';
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    font-size: 4rem;
-    font-weight: 300;
-    letter-spacing: 0.5em;
-    line-height: 1.8;
-    color: rgba(0, 0, 0, 0.04);
-    word-wrap: break-word;
-    overflow: hidden;
+    top: -5%;
+    left: -5%;
+    right: -5%;
+    bottom: -5%;
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: 220px 220px;
+    background-repeat: repeat;
+    background-position: 0 0;
+    opacity: 0.10;
+    filter: grayscale(90%);
     pointer-events: none;
     z-index: 0;
-    text-align: center;
-    padding: 2rem;
   }
 
   .services-hero {

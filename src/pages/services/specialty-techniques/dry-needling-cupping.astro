@@ -186,6 +186,27 @@ const faqs = [
 </BaseLayout>
 
 <style>
+  .service-content {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Diagonal logo wallpaper */
+  .service-content::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
+    opacity: 0.16;
+    filter: grayscale(80%) brightness(1.1);
+    transform: rotate(-20deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .service-hero {
     background: var(--color-background-light);
     color: var(--color-text-primary);

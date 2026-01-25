@@ -154,6 +154,43 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
     color: var(--color-text-primary);
   }
 
+  .wim-hof-content {
+    position: relative;
+  }
+
+  /* Large corner logo wallpapers */
+  .wim-hof-content::before,
+  .wim-hof-content::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
+    opacity: 0.18;
+    filter: grayscale(75%) brightness(1.1);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wim-hof-content::before {
+    top: 2rem;
+    right: -50px;
+  }
+
+  .wim-hof-content::after {
+    bottom: 2rem;
+    left: -50px;
+  }
+
+  @media (max-width: 768px) {
+    .wim-hof-content::before,
+    .wim-hof-content::after {
+      width: 200px;
+      height: 200px;
+      opacity: 0.12;
+    }
+  }
+
   .lead {
     font-size: 1.25rem;
     opacity: 0.9;

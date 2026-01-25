@@ -134,6 +134,26 @@ const pageDescription = "Transparent pricing and out-of-network reimbursement gu
 
   .insurance-content {
     background: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Offset repeating logo wallpaper */
+  .insurance-content::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: 250px 250px;
+    background-repeat: repeat;
+    background-position: 50px 50px;
+    opacity: 0.09;
+    filter: grayscale(85%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .oon-explainer {

@@ -46,6 +46,28 @@ const pageDescription = "Read 300+ five-star reviews from Physica Medica patient
     opacity: 0.9;
   }
 
+  .reviews-content {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Teal-tinted repeating logo wallpaper */
+  .reviews-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: 240px 240px;
+    background-repeat: repeat;
+    opacity: 0.15;
+    filter: grayscale(50%) brightness(1.2) sepia(25%) hue-rotate(140deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .review-featured {
     background: var(--color-background-light);
     padding: 3rem;

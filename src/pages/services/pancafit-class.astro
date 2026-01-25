@@ -217,6 +217,28 @@ const faqs = [
 <style>
   /* Page-specific styles (shared styles imported from service-pages.css) */
 
+  .service-content {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Repeating logo wallpaper grid */
+  .service-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: 260px 260px;
+    background-repeat: repeat;
+    opacity: 0.10;
+    filter: grayscale(85%) brightness(1.15);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .service-content h2 {
     color: var(--color-primary);
     margin-top: 2.5rem;

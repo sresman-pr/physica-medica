@@ -81,45 +81,37 @@ body::before {
   z-index: -1;
 }
 
-/* Homepage logo watermarks - professional visibility */
+/* Homepage logo wallpaper - PROMINENT */
 body::after {
   content: '';
   position: fixed;
   top: 50%;
-  left: 60px;
+  left: 40px;
   transform: translateY(-50%);
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
-  opacity: 0.15;
-  filter: grayscale(90%) brightness(1.1);
+  opacity: 0.30;
+  filter: grayscale(70%) brightness(1.1);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
 }
 
 /* Add right-side watermark on larger screens for balance */
-@media (min-width: 1400px) {
-  body {
-    position: relative;
-  }
-  
-  body::after {
-    left: 40px;
-  }
-  
-  /* Create right watermark using a pseudo-element on html */
+@media (min-width: 1200px) {
+  /* Show right logo on laptop screens */
   html::after {
     content: '';
     position: fixed;
     top: 50%;
-    right: 60px;
+    right: 40px;
     transform: translateY(-50%);
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
-    opacity: 0.15;
-    filter: grayscale(90%) brightness(1.1);
+    opacity: 0.30;
+    filter: grayscale(70%) brightness(1.1);
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 1;

@@ -220,6 +220,40 @@ const faqs = [
 </BaseLayout>
 
 <style>
+  .service-content {
+    position: relative;
+  }
+
+  /* Fixed side logo wallpapers */
+  .service-content::before,
+  .service-content::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 280px;
+    background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
+    opacity: 0.20;
+    filter: grayscale(75%) brightness(1.05);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .service-content::before {
+    left: -40px;
+  }
+
+  .service-content::after {
+    right: -40px;
+  }
+
+  @media (max-width: 1024px) {
+    .service-content::after {
+      display: none;
+    }
+  }
+
   .service-hero {
     background: white;
     color: var(--color-text-primary);

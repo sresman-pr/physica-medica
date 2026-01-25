@@ -100,6 +100,28 @@ const pageDescription = "Schedule your physical therapy appointment with Dr. Mak
     opacity: 0.9;
   }
 
+  .schedule-content {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Dense repeating logo wallpaper */
+  .schedule-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: 180px 180px;
+    background-repeat: repeat;
+    opacity: 0.08;
+    filter: grayscale(90%) brightness(1.2);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .schedule-box {
     background: var(--color-background-light);
     padding: 3rem;
