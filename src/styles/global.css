@@ -81,56 +81,7 @@ body::before {
   z-index: -1;
 }
 
-/* Homepage logo wallpaper - PROMINENT */
-body::after {
-  content: '';
-  position: fixed;
-  top: 50%;
-  left: 40px;
-  transform: translateY(-50%);
-  width: 300px;
-  height: 136px;
-  background-color: var(--color-primary);
-  background-image: url('/images/Physica-Medica-logo.jpg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.20;
-  border-radius: 8px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Add right-side watermark on larger screens for balance */
-@media (min-width: 1200px) {
-  /* Show right logo on laptop screens */
-  html::after {
-    content: '';
-    position: fixed;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 136px;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.20;
-    border-radius: 8px;
-    pointer-events: none;
-    z-index: 1;
-  }
-}
-
-/* Hide on mobile to avoid clutter */
-@media (max-width: 768px) {
-  body::after,
-  html::after {
-    display: none;
-  }
-}
+/* Global fixed logos removed - each section manages its own wallpaper for better control */
 
 /* Typography - Improved hierarchy and readability */
 h1, h2, h3, h4, h5, h6 {

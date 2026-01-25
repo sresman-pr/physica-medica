@@ -401,21 +401,43 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     background: linear-gradient(to bottom, #e8e8e8, #d4d4d4);
     padding: 0;
     position: relative;
+    overflow: hidden;
   }
 
-  /* Repeating logo wallpaper for gallery */
+  /* Large logo - top left */
   .gallery-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 60px;
+    left: 30px;
+    width: 320px;
+    height: 145px;
     background-color: var(--color-primary);
     background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: 200px 91px;
-    background-repeat: repeat;
-    opacity: 0.12;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.18;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Large logo - bottom right */
+  .gallery-section::after {
+    content: '';
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+    width: 320px;
+    height: 145px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.18;
+    border-radius: 8px;
     pointer-events: none;
     z-index: 0;
   }
@@ -532,6 +554,48 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     background: linear-gradient(to bottom, #ffffff, #fafafa);
     padding: 80px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle side logo - left */
+  .quote-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 127px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Subtle side logo - right */
+  .quote-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 127px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .quote-section blockquote {
@@ -571,6 +635,48 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   .treatment-section {
     background: linear-gradient(to bottom, #ffffff, #fafafa);
     padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle side logo - left */
+  .treatment-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 118px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Subtle side logo - right */
+  .treatment-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 118px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .treatment-grid {
@@ -647,6 +753,48 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
     padding: 80px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle side logo - left */
+  .training-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 127px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Subtle side logo - right */
+  .training-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 127px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .training-wrapper {
@@ -731,19 +879,38 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     overflow: hidden;
   }
 
-  /* Repeating logo wallpaper pattern - already on teal background */
+  /* Large logo - left side */
   .reviews-section::before {
     content: '';
     position: absolute;
-    top: -10%;
-    left: -10%;
-    right: -10%;
-    bottom: -10%;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 136px;
     background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: 250px 114px;
-    background-repeat: repeat;
-    background-position: 0 0;
-    opacity: 0.15;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Large logo - right side */
+  .reviews-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 136px;
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
     pointer-events: none;
     z-index: 0;
   }
@@ -872,6 +1039,48 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   .contact-section {
     background: linear-gradient(to bottom, #ffffff, #fafafa);
     padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle side logo - left */
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 118px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Subtle side logo - right */
+  .contact-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 118px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .contact-wrapper {
@@ -1062,6 +1271,22 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
     .visit-overlay h2 {
       font-size: 2.5rem;
+    }
+
+    /* Hide logo watermarks on mobile - they overlap content */
+    .gallery-section::before,
+    .gallery-section::after,
+    .quote-section::before,
+    .quote-section::after,
+    .treatment-section::before,
+    .treatment-section::after,
+    .training-section::before,
+    .training-section::after,
+    .reviews-section::before,
+    .reviews-section::after,
+    .contact-section::before,
+    .contact-section::after {
+      display: none;
     }
   }
 
