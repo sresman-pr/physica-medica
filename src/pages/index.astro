@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SideWatermark from '../components/SideWatermark.astro';
 import { Image } from 'astro:assets';
 
 // Import all images for optimization
@@ -63,6 +64,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Image Gallery Section -->
   <section class="gallery-section">
+    <SideWatermark side="left" variant="light" />
+    <SideWatermark side="right" variant="light" />
     <div class="gallery-container">
       <!-- Row 1: Two small images with green buttons -->
       <div class="gallery-row row-small">
@@ -144,6 +147,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Quote Section -->
   <section class="quote-section">
+    <SideWatermark side="left" variant="light" />
+    <SideWatermark side="right" variant="light" />
     <blockquote>
       <p class="quote-text">"The human body is an incredible machine."</p>
       <cite>Maksim Birikov - Doctor of Physical Therapy</cite>
@@ -153,6 +158,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Treatment Images Section -->
   <section class="treatment-section">
+    <SideWatermark side="left" variant="light" />
+    <SideWatermark side="right" variant="light" />
     <div class="treatment-grid">
       <a href="/services/pregnancy-physical-therapy" class="treatment-item">
         <Image 
@@ -188,6 +195,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Personal Training Section -->
   <section class="training-section">
+    <SideWatermark side="left" variant="light" />
+    <SideWatermark side="right" variant="light" />
     <div class="training-wrapper">
       <div class="training-image">
         <Image 
@@ -217,6 +226,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Reviews Section -->
   <section class="reviews-section">
+    <SideWatermark side="left" variant="dark" />
+    <SideWatermark side="right" variant="dark" />
     <h2>300+ 5-STAR REVIEWS</h2>
     <div class="review-card">
       <div class="review-image">
@@ -263,6 +274,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   <!-- Footer Contact Section -->
   <section class="contact-section">
+    <SideWatermark side="left" variant="light" />
+    <SideWatermark side="right" variant="light" />
     <div class="contact-wrapper">
       <div class="contact-left">
         <h2>PHYSICA MEDICA</h2>
@@ -404,26 +417,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     overflow: hidden;
   }
 
-  /* Symmetrical side logos */
-  .gallery-section::before,
-  .gallery-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 420px;
-    height: 191px;
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0) opacity(0.12);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .gallery-section::before { left: 20px; }
-  .gallery-section::after { right: 20px; }
-
   .gallery-container {
     max-width: 900px;
     margin: 0 auto;
@@ -540,26 +533,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     overflow: hidden;
   }
 
-  /* Symmetrical side logos */
-  .quote-section::before,
-  .quote-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 400px;
-    height: 182px;
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0) opacity(0.08);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .quote-section::before { left: 20px; }
-  .quote-section::after { right: 20px; }
-
   .quote-section blockquote {
     margin: 0 0 40px;
   }
@@ -600,26 +573,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: relative;
     overflow: hidden;
   }
-
-  /* Symmetrical side logos */
-  .treatment-section::before,
-  .treatment-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 380px;
-    height: 173px;
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0) opacity(0.07);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .treatment-section::before { left: 20px; }
-  .treatment-section::after { right: 20px; }
 
   .treatment-grid {
     display: grid;
@@ -698,26 +651,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: relative;
     overflow: hidden;
   }
-
-  /* Symmetrical side logos */
-  .training-section::before,
-  .training-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 400px;
-    height: 182px;
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0) opacity(0.09);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .training-section::before { left: 20px; }
-  .training-section::after { right: 20px; }
 
   .training-wrapper {
     display: grid;
@@ -800,26 +733,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: relative;
     overflow: hidden;
   }
-
-  /* Symmetrical side logos - white on teal works naturally */
-  .reviews-section::before,
-  .reviews-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 420px;
-    height: 191px;
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .reviews-section::before { left: 20px; }
-  .reviews-section::after { right: 20px; }
 
   .reviews-section h2 {
     color: white;
@@ -948,26 +861,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: relative;
     overflow: hidden;
   }
-
-  /* Symmetrical side logos */
-  .contact-section::before,
-  .contact-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 380px;
-    height: 173px;
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0) opacity(0.07);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .contact-section::before { left: 20px; }
-  .contact-section::after { right: 20px; }
 
   .contact-wrapper {
     display: grid;
@@ -1157,22 +1050,6 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
     .visit-overlay h2 {
       font-size: 2.5rem;
-    }
-
-    /* Hide logo watermarks on mobile - they overlap content */
-    .gallery-section::before,
-    .gallery-section::after,
-    .quote-section::before,
-    .quote-section::after,
-    .treatment-section::before,
-    .treatment-section::after,
-    .training-section::before,
-    .training-section::after,
-    .reviews-section::before,
-    .reviews-section::after,
-    .contact-section::before,
-    .contact-section::after {
-      display: none;
     }
   }
 
