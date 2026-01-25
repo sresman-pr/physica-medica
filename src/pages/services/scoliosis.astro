@@ -224,31 +224,35 @@ const faqs = [
     position: relative;
   }
 
-  /* Fixed side logo wallpapers */
+  /* Logo wallpaper - teal background with white logo */
   .service-content::before,
   .service-content::after {
     content: '';
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 280px;
-    height: 280px;
-    background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
-    opacity: 1.0;
-    filter: none;
+    position: absolute;
+    top: 200px;
+    width: 300px;
+    height: 136px;
+    background-color: var(--color-primary);
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    border-radius: 8px;
     pointer-events: none;
     z-index: 0;
   }
 
   .service-content::before {
-    left: -40px;
+    left: 20px;
   }
 
   .service-content::after {
-    right: -40px;
+    right: 20px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
+    .service-content::before,
     .service-content::after {
       display: none;
     }
