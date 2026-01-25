@@ -63,7 +63,7 @@ body {
   font-size: 16px;
 }
 
-/* Global canvas/linen texture overlay */
+/* Subtle paper texture foundation - barely perceptible */
 body::before {
   content: '';
   position: fixed;
@@ -72,25 +72,27 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px),
-    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px);
-  opacity: 0.6;
+    /* Very fine paper grain only */
+    repeating-linear-gradient(0deg, transparent 0px, rgba(0,0,0,0.008) 1px, transparent 2px),
+    repeating-linear-gradient(90deg, transparent 0px, rgba(0,0,0,0.008) 1px, transparent 2px);
+  background-size: 2px 2px;
+  opacity: 0.5;
   pointer-events: none;
   z-index: -1;
 }
 
-/* Persistent watermark on all pages */
+/* Homepage logo watermarks - professional visibility */
 body::after {
   content: '';
   position: fixed;
   top: 50%;
-  left: 40px;
+  left: 60px;
   transform: translateY(-50%);
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
-  opacity: 0.12;
-  filter: grayscale(100%);
+  opacity: 0.15;
+  filter: grayscale(90%) brightness(1.1);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
@@ -111,13 +113,13 @@ body::after {
     content: '';
     position: fixed;
     top: 50%;
-    right: 40px;
+    right: 60px;
     transform: translateY(-50%);
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
-    opacity: 0.12;
-    filter: grayscale(100%);
+    opacity: 0.15;
+    filter: grayscale(90%) brightness(1.1);
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 1;

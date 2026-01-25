@@ -403,6 +403,22 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     position: relative;
   }
 
+  /* Subtle text watermark for gallery */
+  .gallery-section::before {
+    content: 'PHYSICA MEDICA';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 100;
+    letter-spacing: 0.3em;
+    color: rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .gallery-container {
     max-width: 900px;
     margin: 0 auto;
@@ -710,6 +726,27 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     color: white;
     padding: 80px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Repeating logo watermark pattern */
+  .reviews-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background-image: url('/images/Physica-Medica-logo.jpg');
+    background-size: 250px 250px;
+    background-repeat: repeat;
+    background-position: 0 0;
+    opacity: 0.08;
+    filter: grayscale(100%) brightness(1.3);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .reviews-section h2 {

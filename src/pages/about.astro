@@ -257,10 +257,40 @@ const physicianSchema = {
     opacity: 0.9;
   }
 
+  .about-content {
+    position: relative;
+  }
+
+  /* Subtle corner watermarks */
+  .about-content::before,
+  .about-content::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: url('/images/Physica-Medica-logo.jpg') center/contain no-repeat;
+    opacity: 0.06;
+    filter: grayscale(100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-content::before {
+    top: 2rem;
+    left: -50px;
+  }
+
+  .about-content::after {
+    bottom: 2rem;
+    right: -50px;
+  }
+
   .about-content h2 {
     color: var(--color-primary);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
   }
 
   .about-content ul {
