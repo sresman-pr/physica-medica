@@ -61,44 +61,10 @@ const physicianSchema = {
 <BaseLayout title={pageTitle} description={pageDescription} schema={physicianSchema}>
   <!-- Hero Section -->
   <section class="about-hero">
-    <div class="container">
-      <div class="about-hero-grid">
-        <div class="hero-image">
-          <Image 
-            src={drMaksImg}
-            alt="Dr. Maksim Birikov, DPT"
-            width={272}
-            height={444}
-            format="webp"
-            loading="eager"
-            fetchpriority="high"
-            quality={85}
-            class="professional-image"
-          />
-        </div>
-        <div class="hero-content">
-          <h1>Dr. Maksim Birikov</h1>
-          <p class="credentials">Doctor of Physical Therapy | Wim Hof Method Certified</p>
-          <p class="tagline">"The human body is an incredible machine."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Training Image Section -->
-  <section class="training-image-section">
-    <div class="container">
-        <Image 
-          src={drMaksTrainingImg}
-          alt="Dr. Maks training with client"
-          width={389}
-          height={384}
-          widths={[400, 700]}
-          format="webp"
-          loading="lazy"
-          quality={85}
-          class="professional-image"
-        />
+    <div class="container-narrow text-center">
+      <h1>Dr. Maksim Birikov</h1>
+      <p class="credentials">Doctor of Physical Therapy | Wim Hof Method Certified</p>
+      <p class="tagline">"The human body is an incredible machine."</p>
     </div>
   </section>
 
@@ -117,6 +83,35 @@ const physicianSchema = {
         <li>Education that empowers you to maintain improvements</li>
         <li>Building genuine rapport to understand your particular issues</li>
       </ul>
+
+      <!-- Professional Images -->
+      <div class="about-images-grid">
+        <div class="about-image">
+          <Image 
+            src={drMaksImg}
+            alt="Dr. Maksim Birikov, DPT"
+            width={272}
+            height={444}
+            format="webp"
+            loading="lazy"
+            quality={85}
+            class="professional-image"
+          />
+        </div>
+        <div class="about-image">
+          <Image 
+            src={drMaksTrainingImg}
+            alt="Dr. Maks training with client"
+            width={389}
+            height={384}
+            widths={[400, 700]}
+            format="webp"
+            loading="lazy"
+            quality={85}
+            class="professional-image"
+          />
+        </div>
+      </div>
 
       <h2>Education & Expertise</h2>
       <p>Dr. Maks earned his Doctor of Physical Therapy (DPT) degree and has pursued advanced training in multiple specialized techniques:</p>
@@ -205,41 +200,12 @@ const physicianSchema = {
 
 <style>
   .about-hero {
-    background: white;
+    background: var(--color-background-light);
     color: var(--color-text-primary);
     padding: 3rem 2rem;
   }
 
-  .training-image-section {
-    padding: 2rem 0;
-    background: var(--color-background-light);
-  }
-
-  .training-image-section img {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    display: block;
-    border-radius: 0.5rem;
-  }
-
-  .about-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .hero-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 0.5rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  }
-
-  .hero-content h1 {
+  .about-hero h1 {
     color: var(--color-text-primary);
     margin-bottom: 0.5rem;
   }
@@ -247,7 +213,7 @@ const physicianSchema = {
   .credentials {
     font-size: 1.25rem;
     color: var(--color-accent);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 600;
   }
 
@@ -255,6 +221,20 @@ const physicianSchema = {
     font-size: 1.5rem;
     font-style: italic;
     opacity: 0.9;
+    margin-bottom: 0;
+  }
+
+  .about-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
 
   .about-content {
@@ -382,13 +362,8 @@ const physicianSchema = {
   }
 
   @media (max-width: 768px) {
-    .about-hero-grid {
+    .about-images-grid {
       grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .hero-image img {
-      margin: 0 auto;
     }
   }
 </style>

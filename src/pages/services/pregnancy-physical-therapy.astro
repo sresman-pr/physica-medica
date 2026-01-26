@@ -59,30 +59,9 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Hero Image -->
-  <section class="hero-image-section">
-    <div class="container">
-      <Image 
-        src={pregnancyImg}
-        alt="Pregnancy physical therapy"
-        width={351}
-        height={220}
-        format="webp"
-        loading="eager"
-        fetchpriority="high"
-        quality={85}
-      />
-    </div>
-  </section>
-
   <!-- Main Content -->
   <section class="service-content section-spacing">
     <div class="container-narrow">
-      <div class="highlight-intro">
-        <h2>Pregnancy Knowledge and Experience</h2>
-        <p class="lead">Group Seminars or One-on-One</p>
-      </div>
-
       <h2>What is Pregnancy Physical Therapy?</h2>
       <p>Pregnancy physical therapy addresses the unique musculoskeletal challenges expecting mothers face. As your body changes to accommodate your growing baby, posture shifts, ligaments loosen, and new stresses are placed on your spine and pelvis. Physical therapy helps manage these changes, reducing pain and preparing your body for childbirth and recovery.</p>
 
@@ -95,6 +74,20 @@ const faqs = [
         <li><strong>Education:</strong> Learn optimal body mechanics for pregnancy, labor, and postpartum</li>
         <li><strong>Flexible Options:</strong> Choose between group seminars or personalized one-on-one care</li>
       </ul>
+
+      <!-- Pregnancy Image moved below "How Physica Medica is Different" -->
+      <div class="pregnancy-image-container">
+        <Image 
+          src={pregnancyImg}
+          alt="Pregnancy physical therapy"
+          width={351}
+          height={220}
+          widths={[400, 600, 800]}
+          format="webp"
+          loading="lazy"
+          quality={85}
+        />
+      </div>
 
       <h2>Who Benefits Most</h2>
       <p>Pregnancy physical therapy at Physica Medica helps Baltimore mothers experiencing:</p>
@@ -144,9 +137,9 @@ const faqs = [
           <h3>Pancafit Class</h3>
           <p>Safe postural correction →</p>
         </a>
-        <a href="/services/personal-training" class="related-card">
-          <h3>Personal Training</h3>
-          <p>Postpartum strength restoration →</p>
+        <a href="/services/specialty-techniques" class="related-card">
+          <h3>Specialty Techniques</h3>
+          <p>Targeted pain relief →</p>
         </a>
       </div>
     </div>
@@ -191,6 +184,20 @@ const faqs = [
   .hero-subtitle {
     font-size: 1.5rem;
     opacity: 0.9;
+  }
+
+  .pregnancy-image-container {
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .pregnancy-image-container img {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .highlight-intro {

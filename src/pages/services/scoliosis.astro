@@ -66,25 +66,12 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Hero Image -->
-  <section class="hero-image-section">
-    <div class="container">
-      <Image 
-        src={scoliosisHeroImg}
-        alt="Scoliosis treatment at Physica Medica"
-        width={417}
-        height={268}
-        format="webp"
-        loading="eager"
-        fetchpriority="high"
-        quality={85}
-      />
-    </div>
-  </section>
-
   <!-- Main Content -->
   <section class="service-content section-spacing">
     <div class="container-narrow">
+      <h2>What is Scoliosis?</h2>
+      <p>Scoliosis is a sideways curvature of the spine that occurs most often during the growth spurt just before puberty, though it can also develop in adults. While most cases are mild, some curves worsen as children grow and can cause significant discomfort and postural issues. The condition can affect your posture, breathing, and overall quality of life if left unmanaged.</p>
+
       <h2>What is Scoliosis Physical Therapy?</h2>
       <p>Scoliosis physical therapy focuses on managing spinal curvature through targeted postural correction, therapeutic exercises, and manual therapy techniques. At Physica Medica, we specialize in treating both adolescent and adult scoliosis, addressing not just the curve itself but the compensatory patterns and pain that often accompany it. Our approach targets the root cause of scoliosis-related dysfunction, not just surface symptoms.</p>
       
@@ -106,6 +93,29 @@ const faqs = [
           format="webp"
           loading="lazy"
           quality={80}
+        />
+      </div>
+
+      <h2>How We Can Help Fix the Spine</h2>
+      <p>Our comprehensive scoliosis treatment program combines specialized corrective exercises with hands-on manual therapy to improve spinal alignment and reduce pain. We use evidence-based techniques to:</p>
+      <ul>
+        <li>Strengthen the muscles that support proper spinal alignment</li>
+        <li>Improve flexibility in tight areas caused by the curve</li>
+        <li>Correct postural imbalances and compensatory patterns</li>
+        <li>Reduce pain and discomfort associated with scoliosis</li>
+        <li>Prevent curve progression through targeted exercises</li>
+      </ul>
+
+      <!-- Hero Image moved lower -->
+      <div class="hero-image-container">
+        <Image 
+          src={scoliosisHeroImg}
+          alt="Scoliosis treatment at Physica Medica"
+          width={417}
+          height={268}
+          format="webp"
+          loading="lazy"
+          quality={85}
         />
       </div>
 
@@ -210,9 +220,9 @@ const faqs = [
           <h3>Pancafit Class</h3>
           <p>Postural correction foundation →</p>
         </a>
-        <a href="/services/personal-training" class="related-card">
-          <h3>Personal Training</h3>
-          <p>Strengthen and stabilize →</p>
+        <a href="/services/specialty-techniques" class="related-card">
+          <h3>Specialty Techniques</h3>
+          <p>Advanced pain relief methods →</p>
         </a>
       </div>
     </div>
@@ -259,23 +269,24 @@ const faqs = [
   }
 
   .service-hero {
-    background: white;
+    background: var(--color-background-light);
     color: var(--color-text-primary);
-    padding: 3rem 2rem 1rem;
+    padding: 3rem 2rem;
     text-align: center;
   }
 
-  .hero-image-section {
-    padding: 0 2rem 2rem;
-    background: white;
+  .hero-image-container {
+    margin: 3rem 0;
+    text-align: center;
   }
 
-  .hero-image-section img {
+  .hero-image-container img {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
     display: block;
     border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .scoliosis-images-grid {

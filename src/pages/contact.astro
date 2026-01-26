@@ -39,13 +39,15 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
           <div class="info-section">
             <h3>Contact</h3>
             <p>
-              <a href="tel:443-228-8029">443-228-8029</a><br />
+              <a href="tel:443-228-8029">443-228-8029</a> <span class="contact-note">(Call or Text)</span><br />
               <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
             </p>
+            <p class="text-friendly-note">Prefer texting? We're text-friendly! Send us a message at <a href="sms:443-228-8029">443-228-8029</a> for a quick response.</p>
           </div>
 
           <div class="cta-buttons">
             <a href="tel:443-228-8029" class="cta-button">Call Now</a>
+            <a href="sms:443-228-8029" class="cta-button">Text Us</a>
             <a href="/schedule" class="cta-button">Schedule Online</a>
           </div>
         </div>
@@ -142,8 +144,30 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
     text-decoration: underline;
   }
 
+  .contact-note {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .text-friendly-note {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--color-background-light);
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--color-accent);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .text-friendly-note a {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
   .cta-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
   }

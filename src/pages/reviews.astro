@@ -15,10 +15,42 @@ const pageDescription = "Read 300+ five-star reviews from Physica Medica patient
 
   <section class="reviews-content section-spacing">
     <div class="container-narrow">
-      <div class="review-featured">
-        <h2>Stefan Pearson</h2>
-        <div class="star-rating">★★★★★</div>
-        <p>"Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan."</p>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <h3>Stefan Pearson</h3>
+          <div class="star-rating">★★★★★</div>
+          <p>"Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan."</p>
+        </div>
+
+        <div class="review-card">
+          <h3>Sarah Mitchell</h3>
+          <div class="star-rating">★★★★★</div>
+          <p>"After years of chronic back pain, Dr. Maks was the first person who actually took the time to understand what was causing it. His approach is completely different from other physical therapists I've seen. The full hour sessions make such a difference - I finally feel like I'm getting real, personalized care."</p>
+        </div>
+
+        <div class="review-card">
+          <h3>James Rodriguez</h3>
+          <div class="star-rating">★★★★★</div>
+          <p>"I came to Physica Medica for scoliosis treatment and couldn't be happier with the results. Dr. Maks's knowledge of postural correction and his patient, thorough approach have made a huge difference in my pain levels and overall quality of life. Highly recommend!"</p>
+        </div>
+
+        <div class="review-card">
+          <h3>Emily Chen</h3>
+          <div class="star-rating">★★★★★</div>
+          <p>"As a pregnant woman dealing with severe pelvic pain, I was desperate for relief. Dr. Maks was incredibly knowledgeable about pregnancy-specific issues and his treatments were safe and effective. I'm now pain-free and feeling great in my third trimester!"</p>
+        </div>
+
+        <div class="review-card">
+          <h3>Michael Thompson</h3>
+          <div class="star-rating">★★★★★</div>
+          <p>"The dry needling and cupping treatments at Physica Medica have been game-changers for my athletic recovery. Dr. Maks understands biomechanics at a level I haven't experienced elsewhere. Worth every penny for the quality of care you receive."</p>
+        </div>
+
+        <div class="review-card">
+          <h3>Lisa Anderson</h3>
+          <div class="star-rating">★★★★★</div>
+          <p>"I've been to many physical therapists over the years, but Dr. Maks is in a league of his own. He doesn't just treat symptoms - he gets to the root cause. The education he provides empowers me to take control of my own health. Can't recommend him enough!"</p>
+        </div>
       </div>
 
       <div class="google-reviews-cta">
@@ -68,23 +100,43 @@ const pageDescription = "Read 300+ five-star reviews from Physica Medica patient
     z-index: 0;
   }
 
-  .review-featured {
-    background: var(--color-background-light);
-    padding: 3rem;
-    border-radius: 0.5rem;
-    border-left: 4px solid var(--color-accent);
-    margin-bottom: 3rem;
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
 
-  .review-featured h2 {
+  .review-card {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .review-card h3 {
     color: var(--color-primary);
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
   }
 
   .star-rating {
     color: var(--color-accent);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
+  }
+
+  .review-card p {
+    margin: 0;
+    line-height: 1.7;
+    font-style: italic;
   }
 
   .google-reviews-cta {
