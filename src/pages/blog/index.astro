@@ -2,24 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// #region agent log
-fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'blog/index.astro:5',message:'Before getCollection call',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'initial',hypothesisId:'A,D'})}).catch(()=>{});
-// #endregion
-
 const posts = await getCollection('posts');
-
-// #region agent log
-fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'blog/index.astro:8',message:'After getCollection call',data:{postsCount:posts.length,postsArray:posts.map(p=>({id:p.id,title:p.data?.title,date:p.data?.publishedDate,slug:p.slug}))},timestamp:Date.now(),sessionId:'debug-session',runId:'initial',hypothesisId:'A,B,C,D,E'})}).catch(()=>{});
-// #endregion
 
 // Sort posts by published date (newest first)
 const sortedPosts = posts.sort((a, b) => {
   return new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime();
 });
-
-// #region agent log
-fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'blog/index.astro:16',message:'After sorting posts',data:{sortedCount:sortedPosts.length,firstPost:sortedPosts[0]?{id:sortedPosts[0].id,title:sortedPosts[0].data?.title,date:sortedPosts[0].data?.publishedDate}:null},timestamp:Date.now(),sessionId:'debug-session',runId:'initial',hypothesisId:'C'})}).catch(()=>{});
-// #endregion
 
 const title = 'Blog | Physica Medica';
 const description = 'Read the latest articles and insights from Physica Medica about physical therapy, wellness, and postural correction.';

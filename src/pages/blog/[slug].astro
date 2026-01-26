@@ -4,14 +4,8 @@ import { getCollection, getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  // #region agent log
-  fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/pages/blog/[slug].astro:getStaticPaths',message:'Posts collection fetched',data:{postIds:posts.map(p=>p.id)},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
-  // #endregion
   return posts.map(post => {
     const slug = post.id.split('/').pop() || post.id;
-    // #region agent log
-    fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/pages/blog/[slug].astro:getStaticPaths:map',message:'Mapping post to path',data:{originalId:post.id,generatedSlug:slug},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B'})}).catch(()=>{});
-    // #endregion
     return {
       params: { slug },
       props: { post },
@@ -31,10 +25,6 @@ const breadcrumbs = [
   { name: 'Blog', url: '/blog' },
   { name: post.data.title, url: `/blog/${post.id.split('/').pop() || post.id}` }
 ];
-
-// #region agent log
-fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/pages/blog/[slug].astro:render',message:'Rendering post',data:{id:post.id,title:post.data.title},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B'})}).catch(()=>{});
-// #endregion
 
 // Format date
 const formattedDate = new Date(post.data.publishedDate).toLocaleDateString('en-US', {
