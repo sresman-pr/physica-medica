@@ -7,10 +7,16 @@ export async function getStaticPaths() {
   // #region agent log
   fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/pages/blog/[slug].astro:getStaticPaths',message:'Posts collection fetched',data:{postIds:posts.map(p=>p.id)},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A'})}).catch(()=>{});
   // #endregion
-  return posts.map(post => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return posts.map(post => {
+    const slug = post.id.split('/').pop() || post.id;
+    // #region agent log
+    fetch('http://127.0.0.1:7244/ingest/a062bee4-648b-4b64-a6df-d4d3fa1d33c9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/pages/blog/[slug].astro:getStaticPaths:map',message:'Mapping post to path',data:{originalId:post.id,generatedSlug:slug},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
 }
 
 const { post } = Astro.props;
@@ -23,7 +29,7 @@ const ogImage = post.data.coverImage || '/images/og-default.jpg';
 const breadcrumbs = [
   { name: 'Home', url: '/' },
   { name: 'Blog', url: '/blog' },
-  { name: post.data.title, url: `/blog/${post.id}` }
+  { name: post.data.title, url: `/blog/${post.id.split('/').pop() || post.id}` }
 ];
 
 // #region agent log
