@@ -65,6 +65,10 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
             loading="lazy"
             title="Physica Medica Location Map"
           ></iframe>
+          <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="map-reviews-link">
+            <span class="stars">★★★★★</span>
+            <span>300+ Reviews</span>
+          </a>
         </div>
       </div>
     </div>
@@ -182,6 +186,35 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
 
   .map-container iframe {
     border-radius: 8px;
+  }
+
+  .map-reviews-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 12px 20px;
+    border: 2px solid var(--color-accent);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    transition: all 0.2s;
+  }
+
+  .map-reviews-link:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .map-reviews-link .stars {
+    color: #ffc107;
+  }
+
+  .map-reviews-link:hover .stars {
+    color: white;
   }
 
   .text-center {
