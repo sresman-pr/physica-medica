@@ -1,0 +1,817 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
+
+// Import images
+import dryNeedlingImg from '../../images/specialty-v3-dry-needling-actual.jpg';
+import dryNeedlingActionImg from '../../images/specialty-v2-dry-needling-action.jpg';
+
+const pageTitle = "Baltimore Dry Needling | Physical Therapy | Physica Medica";
+const pageDescription = "Expert dry needling therapy in Baltimore. Release muscle knots, trigger points, and relieve pain. $200 out-of-network premium care with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Dry Needling", url: "/services/dry-needling" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Dry Needling Therapy",
+  "description": "Advanced dry needling therapy to release muscle knots, trigger points, and relieve pain through precise needle insertion into myofascial trigger points",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How long until I see results from dry needling?",
+    answer: "Most patients feel 30-50% improvement after the first session. Significant relief typically occurs within 2-3 treatments. Unlike other clinics, Dr. Maks spends a full 60 minutes identifying and treating all relevant trigger points."
+  },
+  {
+    question: "Is dry needling the same as acupuncture?",
+    answer: "No. While both use thin needles, dry needling specifically targets myofascial trigger points based on Western medicine principles. It's performed by physical therapists trained in anatomy and biomechanics, not acupuncturists."
+  },
+  {
+    question: "Does dry needling hurt?",
+    answer: "You may feel a brief muscle twitch when the needle hits a trigger point, which is actually a good sign. Most patients report minimal discomfort and immediate relief. The sensation is very different from getting an injection."
+  },
+  {
+    question: "How many dry needling sessions will I need?",
+    answer: "Acute conditions often improve in 2-4 sessions, while chronic patterns may need 6-8 treatments. Unlike assembly-line clinics, we focus on lasting results, not maximizing session counts."
+  },
+  {
+    question: "What conditions does dry needling treat?",
+    answer: "Dry needling is highly effective for tension headaches, neck pain, shoulder impingement, low back pain, sciatica, tennis elbow, plantar fasciitis, IT band syndrome, and any myofascial pain pattern with trigger points."
+  },
+  {
+    question: "Why choose Physica Medica for dry needling in Baltimore?",
+    answer: "Dr. Maks provides 60 full minutes of one-on-one treatment, not the rushed 15-minute sessions typical at corporate clinics. His DPT-level expertise ensures accurate diagnosis and comprehensive treatment of your pain pattern."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="gray" />
+  
+  <!-- Hero Section - Centered -->
+  <section class="service-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Dry Needling</h1>
+        <p class="hero-subtitle">Release Muscle Knots & Trigger Points</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+          <span class="value-pill">$200/visit</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <p class="lead-intro">The goal of dry needling is to release muscle knots, trigger points, and relieve pain. This is one of the most effective and quickest ways to increase muscle length and reduce tension.</p>
+      
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is Dry Needling?</h2>
+          <p>Dry needling is a therapeutic technique where thin, sterile needles are inserted directly into myofascial trigger points—those painful "knots" in your muscles that cause local and referred pain.</p>
+          <p>Research indicates that this method helps reduce muscle tension and normalizes dysfunction of the motor endplates: the sites at which nerve impulses are transmitted to the muscle. Unlike surface-level treatments, dry needling addresses the root cause of myofascial pain.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={dryNeedlingImg}
+            alt="Dr. Maks performing dry needling treatment in Baltimore"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">How Dry Needling Works</h2>
+      <p class="section-intro">When a needle penetrates a trigger point, it creates a local twitch response that releases the contracted muscle fibers.</p>
+      
+      <div class="mechanism-cards">
+        <div class="mechanism-card">
+          <div class="mechanism-icon">🎯</div>
+          <h4>Trigger Point Release</h4>
+          <p>Needle insertion causes contracted muscle fibers to relax and release built-up tension</p>
+        </div>
+        <div class="mechanism-card">
+          <div class="mechanism-icon">🩸</div>
+          <h4>Blood Flow Increase</h4>
+          <p>Improved circulation brings oxygen and nutrients to damaged tissue</p>
+        </div>
+        <div class="mechanism-card">
+          <div class="mechanism-icon">⚡</div>
+          <h4>Neural Reset</h4>
+          <p>Normalizes motor endplate dysfunction where nerves communicate with muscles</p>
+        </div>
+        <div class="mechanism-card">
+          <div class="mechanism-icon">🔓</div>
+          <h4>Pain Relief</h4>
+          <p>Interrupts the pain-spasm cycle and reduces referred pain patterns</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Teal -->
+  <section class="content-section-teal">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
+      <p class="section-intro-light">Unlike assembly-line PT clinics with 15-minute sessions, Dr. Maks provides a full hour of undivided attention.</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>Comprehensive Assessment</strong>
+          <p>Identify all trigger points contributing to your pain pattern, not just the obvious ones</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>DPT-Level Expertise</strong>
+          <p>Advanced training in anatomy ensures accurate needle placement and effective treatment</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Integrated Approach</strong>
+          <p>Combine dry needling with movement correction for lasting results</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Education</strong>
+          <p>Understand what's causing your pain and how to prevent recurrence</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={dryNeedlingActionImg}
+            alt="Dry needling treatment session"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>Who Benefits Most</h2>
+          <ul class="styled-list">
+            <li><strong>Runners & Athletes:</strong> IT band syndrome, plantar fasciitis, calf strains</li>
+            <li><strong>Desk Workers:</strong> Chronic neck tension, shoulder pain, tension headaches</li>
+            <li><strong>Active Professionals:</strong> Tech neck, postural pain, stress-related tension</li>
+            <li><strong>Chronic Pain Sufferers:</strong> Myofascial pain syndrome, fibromyalgia trigger points</li>
+            <li><strong>Post-Surgical Patients:</strong> Muscle guarding patterns, scar tissue restrictions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Treatment Process</h2>
+      <p class="section-intro">Each 60-minute dry needling session at Physica Medica includes:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Detailed Assessment (10-15 min)</strong>
+            <p>Identify primary trigger points and referred pain patterns through palpation and movement testing</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Dry Needling Treatment (30-35 min)</strong>
+            <p>Precise needle insertion into trigger points causing your pain, working through all affected areas</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>Movement Integration (10-15 min)</strong>
+            <p>Gentle exercises to reinforce new movement patterns and maintain muscle length</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Home Care Education</strong>
+            <p>Self-care strategies including stretches and foam rolling to maintain improvements</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>What to Expect After Treatment</h3>
+        <p>Most patients experience immediate pain relief after dry needling. You may feel mild muscle soreness for 24-48 hours (similar to post-workout soreness), which is normal and indicates the tissue is healing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions Treated - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Common Conditions Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Head & Neck</h4>
+          <ul>
+            <li>Tension headaches</li>
+            <li>Neck pain</li>
+            <li>TMJ dysfunction</li>
+            <li>Upper trap tension</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Shoulder & Arm</h4>
+          <ul>
+            <li>Shoulder impingement</li>
+            <li>Rotator cuff pain</li>
+            <li>Tennis elbow</li>
+            <li>Golfer's elbow</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Back & Hip</h4>
+          <ul>
+            <li>Low back pain</li>
+            <li>SI joint dysfunction</li>
+            <li>Hip flexor pain</li>
+            <li>Sciatica</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Leg & Foot</h4>
+          <ul>
+            <li>IT band syndrome</li>
+            <li>Hamstring strains</li>
+            <li>Calf tightness</li>
+            <li>Plantar fasciitis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Experience Fast Pain Relief</h3>
+        <p>Stop suffering from trigger point pain. Schedule your dry needling session today.</p>
+        <a href="/schedule" class="cta-button">Schedule Treatment</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          The dry needling completely eliminated my IT band pain that had plagued me for months. Dr. Maks knows exactly where to target and the relief is immediate.
+        </div>
+        <div class="testimonial-author">
+          <strong>David T.</strong> - Fells Point Marathon Runner
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Dry Needling FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">Related Services</h2>
+      <div class="related-grid">
+        <a href="/services/myofascial-cupping" class="related-card">
+          <h3>Myofascial Cupping</h3>
+          <p>Complement needling with cupping therapy →</p>
+        </a>
+        <a href="/services/deep-tissue-sports-massage" class="related-card">
+          <h3>Deep Tissue Massage</h3>
+          <p>Manual trigger point release →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ========================================
+     CLINICAL PRECISION THEME
+     Sharp corners, coral accents, clean lines
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-accent: #e07a5f;
+    --theme-accent-light: #f4d6cf;
+    --theme-dark: #2d3436;
+  }
+
+  /* Hero Section - Centered */
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 2.5rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(224,122,95,0.1) 100%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  .service-hero .hero-subtitle {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin-bottom: 1.25rem;
+    color: white;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--theme-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+  }
+
+  .hero-cta:hover {
+    background: #c96a52;
+    transform: translateY(-1px);
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content sections */
+  .content-section-white {
+    background: white;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-gray {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .content-section-teal {
+    background: var(--theme-accent);
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-teal h2,
+  .content-section-teal h3 {
+    color: white;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Lead intro - Clinical style with left border */
+  .lead-intro {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 2.5rem;
+    border-left: 3px solid var(--theme-accent);
+    padding-left: 1.5rem;
+    background: #fafafa;
+    padding: 1.25rem 1.5rem;
+  }
+
+  /* Section titles */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-dark);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2rem;
+  }
+
+  /* Content row - side by side */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #dee2e6;
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: var(--theme-dark);
+  }
+
+  /* Mechanism cards - Sharp, clinical */
+  .mechanism-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .mechanism-card {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    transition: border-color 0.2s;
+  }
+
+  .mechanism-card:hover {
+    border-color: var(--theme-accent);
+  }
+
+  .mechanism-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .mechanism-card h4 {
+    color: var(--theme-dark);
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .mechanism-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+
+  /* Feature grid - Coral section */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .feature-item-light {
+    background: rgba(255,255,255,0.2);
+    padding: 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid white;
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 0.9rem;
+  }
+
+  /* Styled list - Clean lines */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e9ecef;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Step cards - Left border accent */
+  .step-cards {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--theme-accent);
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    background: var(--theme-accent);
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+  }
+
+  .step-content strong {
+    color: var(--theme-dark);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: var(--theme-accent-light);
+    border: 1px solid var(--theme-accent);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .highlight-box h3 {
+    color: var(--theme-dark);
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: #495057;
+    font-size: 0.95rem;
+  }
+
+  /* Conditions grid */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .condition-item {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--theme-accent);
+  }
+
+  .condition-item h4 {
+    color: var(--theme-dark);
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .condition-item li {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.35rem;
+  }
+
+  /* CTA box */
+  .cta-box {
+    background: #f8f9fa;
+    border: 2px solid var(--theme-accent);
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .cta-box h3 {
+    color: var(--theme-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .cta-box p {
+    color: #6c757d;
+    margin: 0 0 1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--theme-accent);
+    color: white;
+    padding: 12px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .cta-button:hover {
+    background: #c96a52;
+  }
+
+  /* Testimonial */
+  .service-testimonial {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 2rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+
+  .testimonial-quote {
+    color: white;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-quote::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--theme-accent);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.25rem;
+  }
+
+  .testimonial-author {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+  }
+
+  /* Related services */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s;
+  }
+
+  .related-card:hover {
+    border-color: var(--theme-accent);
+    transform: translateY(-2px);
+  }
+
+  .related-card h3 {
+    color: var(--theme-dark);
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .related-card p {
+    color: var(--theme-accent);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 2rem;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+
+    .lead-intro {
+      font-size: 1.05rem;
+    }
+  }
+</style>

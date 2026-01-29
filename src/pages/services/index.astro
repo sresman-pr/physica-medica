@@ -3,16 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
 
-// Import service images
-import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
-import dryNeedlingImg from '../../images/Baltimore-Physical-Therapist-dry-needling.jpg';
-import cuppingImg from '../../images/Baltimore-Physical-Therapist-myofascial-cupping.jpg';
-import deepTissueImg from '../../images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg';
+// Import service images from src/images (Astro Image)
 import iastmImg from '../../images/Baltimore-Physical-Therapist-instrument-tissue-mobilization.jpg';
 import pregnancyImg from '../../images/Baltimore-Physical-Therapist-pregnancy.jpg';
+import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
+import specialtyImg from '../../images/specialty-v3-neural-mobilization.jpg';
 
 const pageTitle = "Physical Therapy Services in Baltimore | Physica Medica";
-const pageDescription = "Comprehensive physical therapy services including Pancafit, personal training, specialty techniques, scoliosis treatment, and pregnancy care in Baltimore, MD.";
+const pageDescription = "Comprehensive physical therapy services including dry needling, myofascial cupping, sports massage, IASTM, pregnancy care, and specialty techniques in Baltimore, MD.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -28,51 +26,49 @@ const pageDescription = "Comprehensive physical therapy services including Panca
   <section class="services-grid-section">
     <div class="container">
       <div class="services-grid">
+        <!-- 1. Dry Needling -->
         <div class="service-card">
-          <Image 
-            src={dryNeedlingImg}
+          <img 
+            src="/images/Baltimore-Physical-Therapist-dry-needling.jpg"
             alt="Dry Needling"
-            width={355}
-            height={224}
-            format="webp"
+            width="355"
+            height="224"
             loading="lazy"
-            quality={80}
           />
-          <h2>Specialty Techniques</h2>
-          <p>Advanced therapeutic techniques including dry needling, cupping, and trigger point therapy for targeted pain relief.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
+          <h2>Dry Needling</h2>
+          <p>Release muscle knots and trigger points with precision needle therapy. One of the most effective and quickest ways to reduce tension and relieve pain.</p>
+          <a href="/services/dry-needling" class="service-link">Learn More →</a>
         </div>
 
+        <!-- 2. Myofascial Cupping -->
         <div class="service-card">
-          <Image 
-            src={cuppingImg}
+          <img 
+            src="/images/Baltimore-Physical-Therapist-myofascial-cupping.jpg"
             alt="Myofascial Cupping"
-            width={351}
-            height={220}
-            format="webp"
+            width="351"
+            height="220"
             loading="lazy"
-            quality={80}
           />
           <h2>Myofascial Cupping</h2>
-          <p>Advanced cupping therapy to release fascial restrictions and improve tissue mobility.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
+          <p>Advanced cupping therapy to release fascial restrictions, increase blood flow, and improve tissue mobility for faster recovery.</p>
+          <a href="/services/myofascial-cupping" class="service-link">Learn More →</a>
         </div>
 
+        <!-- 3. Deep Tissue/Sports Massage -->
         <div class="service-card">
-          <Image 
-            src={deepTissueImg}
-            alt="Deep Tissue Massage"
-            width={351}
-            height={220}
-            format="webp"
+          <img 
+            src="/images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg"
+            alt="Deep Tissue & Sports Massage"
+            width="351"
+            height="220"
             loading="lazy"
-            quality={80}
           />
-          <h2>Deep Tissue & Sports Massage</h2>
-          <p>Therapeutic massage techniques for athletes and active individuals.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
+          <h2>Deep Tissue/Sports Massage</h2>
+          <p>Therapeutic massage techniques for athletes and active individuals. Optimize recovery and performance.</p>
+          <a href="/services/deep-tissue-sports-massage" class="service-link">Learn More →</a>
         </div>
 
+        <!-- 4. Instrument Assisted Tissue Mobilization -->
         <div class="service-card">
           <Image 
             src={iastmImg}
@@ -83,15 +79,16 @@ const pageDescription = "Comprehensive physical therapy services including Panca
             loading="lazy"
             quality={80}
           />
-          <h2>Instrument Tissue Mobilization</h2>
-          <p>Advanced IASTM techniques for breaking down scar tissue and improving mobility.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
+          <h2>Instrument Assisted Mobilization</h2>
+          <p>Advanced IASTM techniques using specialized tools to break down scar tissue and restore mobility.</p>
+          <a href="/services/instrument-assisted-tissue-mobilization" class="service-link">Learn More →</a>
         </div>
 
+        <!-- 5. Pregnancy -->
         <div class="service-card">
           <Image 
             src={pregnancyImg}
-            alt="Pregnancy Care"
+            alt="Pregnancy Physical Therapy"
             width={351}
             height={220}
             format="webp"
@@ -99,8 +96,40 @@ const pageDescription = "Comprehensive physical therapy services including Panca
             quality={80}
           />
           <h2>Pregnancy Physical Therapy</h2>
-          <p>Expert care for expecting mothers through group seminars or one-on-one treatments for pregnancy-related conditions.</p>
+          <p>Expert care for expecting mothers through one-on-one treatments for pregnancy-related conditions.</p>
           <a href="/services/pregnancy-physical-therapy" class="service-link">Learn More →</a>
+        </div>
+
+        <!-- 6. Pancafit Class -->
+        <div class="service-card">
+          <Image 
+            src={strengthTrainingImg}
+            alt="Pancafit Class"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
+          <h2>Pancafit Class</h2>
+          <p>Group posture training sessions using the Pancafit method to improve flexibility, alignment, and overall body mechanics.</p>
+          <a href="/services/pancafit-class" class="service-link">Learn More →</a>
+        </div>
+
+        <!-- 7. Specialty Techniques -->
+        <div class="service-card">
+          <Image 
+            src={specialtyImg}
+            alt="Specialty Techniques"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
+          <h2>Specialty Techniques</h2>
+          <p>Advanced therapeutic methods including neural tension release, scar tissue mobilization, posture re-education, and therapy for singers.</p>
+          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
         </div>
       </div>
     </div>

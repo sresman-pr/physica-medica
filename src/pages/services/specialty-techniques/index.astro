@@ -4,8 +4,6 @@ import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
 
 // Import images for technique cards - using clean images without text overlays
-import dryNeedlingImg from '../../../images/specialty-v3-dry-needling-actual.jpg';
-import deepTissueImg from '../../../images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg';
 import diaphragmImg from '../../../images/wix-diaphragmatic-rehabilitation.png';
 import scarTissueImg from '../../../images/wix-scars.png';
 import postureImg from '../../../images/wix-posture-re-education.jpg';
@@ -13,7 +11,7 @@ import neuralImg from '../../../images/wix-neural-tension-release.jpg';
 import singersImg from '../../../images/wix-therapy-for-singers.jpg';
 
 const pageTitle = "Baltimore Specialty Physical Therapy Techniques | Physica Medica";
-const pageDescription = "Advanced therapeutic techniques including dry needling, cupping, trigger point therapy, diaphragmatic rehabilitation, scar tissue mobilization, posture re-education, neural tension release, and therapy for singers. $200 out-of-network premium care with Dr. Maksim Birikov, DPT in Baltimore.";
+const pageDescription = "Advanced therapeutic techniques including diaphragmatic rehabilitation, scar tissue mobilization, posture re-education, neural tension release, and therapy for singers. $200 out-of-network premium care with Dr. Maksim Birikov, DPT in Baltimore.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -22,20 +20,6 @@ const breadcrumbs = [
 ];
 
 const techniques = [
-  {
-    title: "Dry Needling & Cupping",
-    description: "Combine these powerful techniques to release trigger points, improve blood flow, and reduce muscle tension. Dr. Maks integrates dry needling and cupping for comprehensive myofascial pain relief.",
-    image: dryNeedlingImg,
-    alt: "Dr. Maks performing dry needling treatment",
-    href: "/services/specialty-techniques/dry-needling-cupping"
-  },
-  {
-    title: "Trigger Point Therapy",
-    description: "Manual therapy techniques targeting specific trigger points to eliminate referred pain patterns and restore normal muscle function.",
-    image: deepTissueImg,
-    alt: "Deep tissue trigger point therapy session",
-    href: "/services/specialty-techniques/trigger-point-therapy"
-  },
   {
     title: "Diaphragmatic Rehabilitation",
     description: "Release your body's primary breathing engine to improve spinal mobility, decrease shoulder and neck tension, reduce stress, and improve sleep patterns and posture.",

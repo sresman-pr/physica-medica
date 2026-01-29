@@ -1,0 +1,829 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
+
+// Import images
+import iastmImg from '../../images/specialty-v2-scar-iastm-tools.jpg';
+import scarImg from '../../images/specialty-v3-scar-mobilization.jpg';
+
+const pageTitle = "Baltimore IASTM | Instrument Assisted Tissue Mobilization | Physica Medica";
+const pageDescription = "Expert Instrument Assisted Soft Tissue Mobilization (IASTM) in Baltimore. Break down scar tissue and fascial adhesions with specialized tools. $200 out-of-network premium care.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Instrument Assisted Tissue Mobilization", url: "/services/instrument-assisted-tissue-mobilization" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Instrument Assisted Soft Tissue Mobilization",
+  "description": "Advanced IASTM therapy using specialized tools to detect and treat soft tissue restrictions, scar tissue, and fascial adhesions",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "What is IASTM and how does it work?",
+    answer: "Instrument Assisted Soft Tissue Mobilization uses specially designed stainless steel tools to detect and treat soft tissue restrictions. The tools allow precise application of pressure to break down scar tissue, fascial adhesions, and chronic soft tissue dysfunction."
+  },
+  {
+    question: "Is IASTM painful?",
+    answer: "You may feel some discomfort as the tools work through restricted tissue, but it should be tolerable. The treated area often becomes red (petechiae) which is a normal healing response. Dr. Maks adjusts pressure to your tolerance and works within therapeutic limits."
+  },
+  {
+    question: "How is IASTM different from Graston Technique?",
+    answer: "Graston is a specific brand of IASTM. Dr. Maks uses professional-grade instruments and applies the same evidence-based techniques. The tools and methodology are equivalent in effectiveness, focusing on detecting and treating soft tissue dysfunction."
+  },
+  {
+    question: "What conditions does IASTM treat?",
+    answer: "IASTM is highly effective for scar tissue from surgery or injury, plantar fasciitis, IT band syndrome, tennis elbow, carpal tunnel syndrome, chronic tendinopathy, and any condition involving fascial restriction or soft tissue fibrosis."
+  },
+  {
+    question: "How many IASTM sessions will I need?",
+    answer: "Many patients notice improvement after 3-4 sessions. Chronic conditions or significant scar tissue may require 6-8 treatments. Sessions are typically spaced 1-2 weeks apart to allow tissue healing between treatments."
+  },
+  {
+    question: "What should I expect after IASTM treatment?",
+    answer: "The treated area may be red and slightly sore for 24-48 hours. Some patients experience mild bruising. This is normal and indicates the tissue is responding. Stay hydrated, avoid ice, and follow any specific home care instructions."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" angle={3} />
+  
+  <!-- Hero Section - Purple/Lavender Flowing -->
+  <section class="service-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Instrument Assisted Tissue Mobilization</h1>
+        <p class="hero-subtitle">Break Down Restrictions with Precision Tools</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+          <span class="value-pill">$200/visit</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <p class="lead-intro">IASTM uses specialized stainless steel instruments to detect and treat soft tissue restrictions that limit your movement and cause pain. The tools allow precise, effective treatment of scar tissue, adhesions, and chronic tissue dysfunction.</p>
+      
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is IASTM?</h2>
+          <p>Instrument Assisted Soft Tissue Mobilization (IASTM) is an advanced manual therapy technique that uses ergonomically designed tools to address soft tissue dysfunction. The instruments act as an extension of the therapist's hands, allowing detection of restrictions that may not be felt through fingers alone.</p>
+          <p>When moved across the skin, the tools create a controlled microtrauma that stimulates the body's healing response—breaking down disorganized collagen fibers (scar tissue) and promoting proper tissue remodeling.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={iastmImg}
+            alt="IASTM tools and treatment"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works - Flowing gradient -->
+  <section class="content-section-flowing">
+    <div class="container-narrow">
+      <h2 class="section-title-center">How IASTM Works</h2>
+      <p class="section-intro">The tools create therapeutic change at the cellular level.</p>
+      
+      <div class="mechanism-flow">
+        <div class="mechanism-item">
+          <div class="mechanism-icon">🔍</div>
+          <h4>Detection</h4>
+          <p>Tools amplify tissue texture changes, allowing precise identification of restrictions</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="mechanism-item">
+          <div class="mechanism-icon">⚡</div>
+          <h4>Microtrauma</h4>
+          <p>Controlled friction breaks down disorganized scar tissue and adhesions</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="mechanism-item">
+          <div class="mechanism-icon">🔄</div>
+          <h4>Healing</h4>
+          <p>Body rebuilds tissue in proper alignment with functional collagen</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="mechanism-item">
+          <div class="mechanism-icon">✨</div>
+          <h4>Restoration</h4>
+          <p>Normal tissue mobility and pain-free movement are restored</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Purple gradient -->
+  <section class="content-section-purple">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
+      <p class="section-intro-light">Effective IASTM requires expertise in anatomy and tissue assessment.</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>Precise Assessment</strong>
+          <p>Identify exactly which tissues are restricted and contributing to dysfunction</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Proper Technique</strong>
+          <p>Correct angle, pressure, and stroke direction for optimal results</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Movement Integration</strong>
+          <p>Combine IASTM with active movement for superior tissue remodeling</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Comprehensive Care</strong>
+          <p>Integrate with exercise and other treatments for lasting improvement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={scarImg}
+            alt="IASTM soft tissue treatment"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>Who Benefits Most</h2>
+          <ul class="styled-list">
+            <li><strong>Post-Surgical Patients:</strong> Break down surgical scar tissue and restore mobility</li>
+            <li><strong>Chronic Tendinopathy:</strong> Tennis elbow, golfer's elbow, Achilles issues</li>
+            <li><strong>Plantar Fasciitis:</strong> Address thickened, restricted fascia</li>
+            <li><strong>IT Band Syndrome:</strong> Release lateral thigh restrictions</li>
+            <li><strong>Carpal Tunnel:</strong> Mobilize forearm and wrist soft tissues</li>
+            <li><strong>Old Injuries:</strong> Address scar tissue from sprains and strains</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Flowing gradient -->
+  <section class="content-section-flowing">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Treatment Process</h2>
+      <p class="section-intro">Each 60-minute IASTM session includes:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Assessment (10-15 min)</strong>
+            <p>Palpation and movement analysis to identify restricted tissues</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Warm-Up (5 min)</strong>
+            <p>Light massage or heat to prepare tissue for instrument work</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>IASTM Treatment (20-25 min)</strong>
+            <p>Instrument work on restricted areas with active movement integration</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Movement & Exercise (10-15 min)</strong>
+            <p>Stretching and strengthening to reinforce tissue changes</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>What to Expect</h3>
+        <p>Redness (petechiae) and mild soreness are normal responses to IASTM treatment. These typically resolve within 48 hours and indicate the tissue is responding. Avoid anti-inflammatory medications and ice immediately after treatment to allow the natural healing process.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions Treated - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Common Conditions Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Upper Extremity</h4>
+          <ul>
+            <li>Tennis elbow</li>
+            <li>Golfer's elbow</li>
+            <li>Carpal tunnel</li>
+            <li>Rotator cuff issues</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Lower Extremity</h4>
+          <ul>
+            <li>Plantar fasciitis</li>
+            <li>Achilles tendinopathy</li>
+            <li>IT band syndrome</li>
+            <li>Patellar tendinopathy</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Post-Surgical</h4>
+          <ul>
+            <li>ACL reconstruction</li>
+            <li>Total knee replacement</li>
+            <li>Shoulder surgery</li>
+            <li>C-section scars</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Chronic Issues</h4>
+          <ul>
+            <li>Old sprains/strains</li>
+            <li>Fascial restrictions</li>
+            <li>Myofascial pain</li>
+            <li>Chronic stiffness</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Break Through Restrictions</h3>
+        <p>Don't let scar tissue and adhesions limit your movement. Schedule your IASTM session today.</p>
+        <a href="/schedule" class="cta-button">Schedule Treatment</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          The IASTM treatment on my plantar fasciitis made more progress in 4 sessions than months of stretching. Dr. Maks could feel exactly where the restrictions were.
+        </div>
+        <div class="testimonial-author">
+          <strong>Jennifer K.</strong> - Federal Hill Runner
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="IASTM FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">Related Services</h2>
+      <div class="related-grid">
+        <a href="/services/dry-needling" class="related-card">
+          <h3>Dry Needling</h3>
+          <p>Release trigger points precisely →</p>
+        </a>
+        <a href="/services/specialty-techniques/scar-tissue-mobilization" class="related-card">
+          <h3>Scar Tissue Mobilization</h3>
+          <p>Manual scar release techniques →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ========================================
+     GENTLE & FLOWING THEME
+     Purple/lavender gradients, organic shapes
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-purple: #7c3aed;
+    --theme-purple-light: #a78bfa;
+    --theme-lavender: #ede9fe;
+    --theme-violet-dark: #5b21b6;
+  }
+
+  /* Hero Section - Flowing purple gradient */
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--theme-purple) 0%, var(--theme-purple-light) 50%, #c4b5fd 100%);
+    padding: 3rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(91,33,182,0.3) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .service-hero .hero-subtitle {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--theme-purple);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(91,33,182,0.3);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(91,33,182,0.4);
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content sections */
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-flowing {
+    background: linear-gradient(180deg, var(--theme-lavender) 0%, #f5f3ff 50%, white 100%);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-purple {
+    background: linear-gradient(135deg, var(--theme-purple) 0%, var(--theme-violet-dark) 100%);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-purple h2 {
+    color: white;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Lead intro */
+  .lead-intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #6b7280;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Section titles */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-violet-dark);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2.5rem;
+  }
+
+  /* Content row */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(124,58,237,0.15);
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: var(--theme-violet-dark);
+    font-weight: 500;
+  }
+
+  /* Mechanism flow - Horizontal process */
+  .mechanism-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .mechanism-item {
+    flex: 1;
+    min-width: 160px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(124,58,237,0.1);
+  }
+
+  .mechanism-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mechanism-item h4 {
+    color: var(--theme-purple);
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+  }
+
+  .mechanism-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+  .flow-arrow {
+    font-size: 1.5rem;
+    color: var(--theme-purple-light);
+    font-weight: bold;
+  }
+
+  /* Feature grid */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-item-light {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+  }
+
+  /* Styled list */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--theme-lavender);
+    line-height: 1.7;
+    color: #4b5563;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  .styled-list li strong {
+    color: var(--theme-violet-dark);
+  }
+
+  /* Step cards */
+  .step-cards {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(124,58,237,0.08);
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--theme-purple) 0%, var(--theme-purple-light) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step-content strong {
+    color: var(--theme-violet-dark);
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #6b7280;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: white;
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 20px rgba(124,58,237,0.1);
+    border-left: 4px solid var(--theme-purple);
+  }
+
+  .highlight-box h3 {
+    color: var(--theme-violet-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  /* Conditions grid */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .condition-item {
+    background: var(--theme-lavender);
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .condition-item h4 {
+    color: var(--theme-purple);
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .condition-item li {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.35rem;
+  }
+
+  /* CTA box */
+  .cta-box {
+    background: linear-gradient(135deg, var(--theme-lavender) 0%, #f5f3ff 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    border: 1px solid #ddd6fe;
+  }
+
+  .cta-box h3 {
+    color: var(--theme-violet-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .cta-box p {
+    color: #6b7280;
+    margin: 0 0 1.25rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--theme-purple);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--theme-violet-dark);
+    transform: translateY(-2px);
+  }
+
+  /* Testimonial */
+  .service-testimonial {
+    background: linear-gradient(135deg, var(--theme-purple) 0%, var(--theme-violet-dark) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+  }
+
+  .testimonial-quote {
+    color: white;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-quote::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--theme-purple-light);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.25rem;
+  }
+
+  .testimonial-author {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+  }
+
+  /* Related services */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(124,58,237,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--theme-lavender);
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(124,58,237,0.15);
+  }
+
+  .related-card h3 {
+    color: var(--theme-violet-dark);
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .related-card p {
+    color: var(--theme-purple);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 1.75rem;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+
+    .mechanism-flow {
+      flex-direction: column;
+    }
+
+    .flow-arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>

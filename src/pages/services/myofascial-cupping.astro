@@ -1,0 +1,826 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
+
+// Import images
+import cuppingImg from '../../images/specialty-v3-cupping.jpg';
+import cuppingTherapyImg from '../../images/specialty-v2-cupping-therapy.jpg';
+
+const pageTitle = "Baltimore Myofascial Cupping | Physical Therapy | Physica Medica";
+const pageDescription = "Expert myofascial cupping therapy in Baltimore. Release fascial restrictions, improve circulation, and accelerate healing. $200 out-of-network premium care with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Myofascial Cupping", url: "/services/myofascial-cupping" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Myofascial Cupping Therapy",
+  "description": "Advanced myofascial cupping therapy to release fascial restrictions, improve blood flow, and reduce muscle tension for faster healing",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "What conditions benefit from myofascial cupping?",
+    answer: "Cupping is highly effective for muscle tension, sports injuries, chronic back pain, IT band syndrome, shoulder tightness, and recovery enhancement. It increases blood flow to treated areas, promoting faster healing and reducing inflammation."
+  },
+  {
+    question: "Does cupping leave marks?",
+    answer: "Yes, cupping may leave temporary circular marks that typically fade within 3-7 days. The color of the marks can indicate the level of stagnation in the tissue—darker marks often appear in areas with more restriction. These are not bruises and are painless."
+  },
+  {
+    question: "How is myofascial cupping different from traditional cupping?",
+    answer: "Myofascial cupping focuses specifically on releasing fascial restrictions and improving tissue mobility. Dr. Maks uses dynamic cupping techniques—moving cups along muscle fibers—combined with movement for greater therapeutic benefit than static traditional cupping."
+  },
+  {
+    question: "Is cupping painful?",
+    answer: "Most patients describe cupping as a comfortable pulling sensation. The suction level is adjusted to your tolerance. Many find it relaxing, similar to a deep tissue massage. Some areas may be more sensitive if there's significant tissue restriction."
+  },
+  {
+    question: "Can cupping be combined with other treatments?",
+    answer: "Absolutely. Cupping pairs excellently with dry needling, manual therapy, and corrective exercise. Dr. Maks often integrates multiple techniques in a single 60-minute session for comprehensive treatment."
+  },
+  {
+    question: "How many cupping sessions will I need?",
+    answer: "Many patients notice improvement after 1-2 sessions. For chronic conditions, 4-6 sessions may be recommended. Unlike high-volume clinics, we focus on achieving lasting results efficiently."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" angle={-5} />
+  
+  <!-- Hero Section - Centered -->
+  <section class="service-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Myofascial Cupping</h1>
+        <p class="hero-subtitle">Release Fascial Restrictions & Improve Circulation</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+          <span class="value-pill">$200/visit</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <p class="lead-intro">Myofascial cupping uses suction to lift and separate tissue layers, increasing blood flow and releasing restrictions that limit your movement and cause pain.</p>
+      
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is Myofascial Cupping?</h2>
+          <p>Myofascial cupping is an advanced form of cupping therapy that specifically targets the fascia—the connective tissue network that surrounds every muscle, bone, and organ in your body. When fascia becomes restricted or adhered, it can cause pain, limit mobility, and affect performance.</p>
+          <p>Unlike traditional static cupping, myofascial cupping uses dynamic techniques—cups are moved along muscle fibers while you perform specific movements—to achieve greater release and improved tissue quality.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={cuppingImg}
+            alt="Myofascial cupping therapy treatment"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works - Soft gradient -->
+  <section class="content-section-soft">
+    <div class="container-narrow">
+      <h2 class="section-title-center">How Myofascial Cupping Works</h2>
+      <p class="section-intro">The suction creates a lifting effect that separates tissue layers and stimulates healing responses.</p>
+      
+      <div class="benefit-cards">
+        <div class="benefit-card">
+          <div class="benefit-icon">🩸</div>
+          <h4>Increased Blood Flow</h4>
+          <p>Brings oxygen and nutrients to restricted tissue, accelerating healing</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔓</div>
+          <h4>Fascial Release</h4>
+          <p>Lifts and separates adhered tissue layers to restore sliding surfaces</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💧</div>
+          <h4>Lymphatic Drainage</h4>
+          <p>Promotes removal of metabolic waste and reduces inflammation</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🏃</div>
+          <h4>Improved Mobility</h4>
+          <p>Restores normal tissue extensibility and movement quality</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h4>Pain Relief</h4>
+          <p>Reduces muscle tension and interrupts pain signaling</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔄</div>
+          <h4>Recovery Enhancement</h4>
+          <p>Speeds post-workout and post-injury recovery time</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Teal -->
+  <section class="content-section-teal">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
+      <p class="section-intro-light">Dr. Maks uses advanced dynamic cupping techniques combined with movement for superior results.</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>Movement Integration</strong>
+          <p>Cups applied while you move through ranges of motion for deeper release</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Targeted Assessment</strong>
+          <p>Identify specific fascial restrictions limiting your movement</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Combined Techniques</strong>
+          <p>Integrate cupping with manual therapy and exercise for lasting results</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>DPT Expertise</strong>
+          <p>Advanced understanding of anatomy ensures safe, effective treatment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={cuppingTherapyImg}
+            alt="Cupping therapy session"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>Who Benefits Most</h2>
+          <ul class="styled-list">
+            <li><strong>Athletes:</strong> Faster recovery, improved performance, injury prevention</li>
+            <li><strong>Desk Workers:</strong> Upper back tension, shoulder tightness, tech neck</li>
+            <li><strong>Runners:</strong> IT band syndrome, calf restrictions, hip mobility</li>
+            <li><strong>Post-Surgical Patients:</strong> Scar tissue management, tissue mobility</li>
+            <li><strong>Chronic Pain Sufferers:</strong> Myofascial restrictions, fibromyalgia</li>
+            <li><strong>Active Adults:</strong> General mobility and recovery maintenance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Soft -->
+  <section class="content-section-soft">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Treatment Process</h2>
+      <p class="section-intro">Each 60-minute myofascial cupping session includes:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Assessment (10-15 min)</strong>
+            <p>Identify fascial restrictions through movement analysis and palpation</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Cupping Treatment (25-30 min)</strong>
+            <p>Dynamic and static cupping techniques applied to restricted areas</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>Movement Integration (10-15 min)</strong>
+            <p>Active movements while cups are applied for deeper release</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Home Care Education</strong>
+            <p>Self-myofascial release techniques to maintain improvements</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>About Cupping Marks</h3>
+        <p>Cupping may leave temporary circular marks that fade within 3-7 days. These are not bruises—they indicate areas of stagnation and restriction. Many athletes wear their cup marks proudly as a sign of recovery work!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions Treated - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Common Conditions Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Upper Body</h4>
+          <ul>
+            <li>Neck stiffness</li>
+            <li>Shoulder tension</li>
+            <li>Upper back pain</li>
+            <li>Rotator cuff issues</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Lower Body</h4>
+          <ul>
+            <li>IT band syndrome</li>
+            <li>Hip tightness</li>
+            <li>Hamstring restrictions</li>
+            <li>Calf tension</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Back & Core</h4>
+          <ul>
+            <li>Low back pain</li>
+            <li>Thoracic restrictions</li>
+            <li>SI joint dysfunction</li>
+            <li>Core muscle tension</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Recovery</h4>
+          <ul>
+            <li>Post-workout soreness</li>
+            <li>Sports injuries</li>
+            <li>Scar tissue</li>
+            <li>General stiffness</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Experience Myofascial Cupping</h3>
+        <p>Release restrictions and improve your tissue quality. Schedule your cupping session today.</p>
+        <a href="/schedule" class="cta-button">Schedule Treatment</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          The cupping has been a game-changer for my IT band issues. I can actually feel the tissue releasing during treatment, and my running has improved significantly.
+        </div>
+        <div class="testimonial-author">
+          <strong>Sarah M.</strong> - Canton Trail Runner
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Myofascial Cupping FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">Related Services</h2>
+      <div class="related-grid">
+        <a href="/services/dry-needling" class="related-card">
+          <h3>Dry Needling</h3>
+          <p>Target trigger points directly →</p>
+        </a>
+        <a href="/services/deep-tissue-sports-massage" class="related-card">
+          <h3>Deep Tissue Massage</h3>
+          <p>Manual myofascial release →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ========================================
+     CALM & BREATHE THEME
+     Soft teals, rounded cards, airy feel
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-soft-teal: #5fb3a1;
+    --theme-soft-blue: #7cb5d6;
+    --theme-cream: #fefcf9;
+  }
+
+  /* Hero Section - Soft gradient */
+  .service-hero {
+    position: relative;
+    background: linear-gradient(160deg, #4a9b8c 0%, #5fb3a1 50%, #7cb5d6 100%);
+    padding: 3rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .service-hero .hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 300;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--theme-soft-teal);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content sections */
+  .content-section-white {
+    background: var(--theme-cream);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-soft {
+    background: linear-gradient(180deg, #f5f9f8 0%, #eef4f2 100%);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-teal {
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-teal h2,
+  .content-section-teal h3 {
+    color: white;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Lead intro */
+  .lead-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #5a6c66;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Section titles */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-soft-teal);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: #6b7c75;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  /* Content row */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(95,179,161,0.15);
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: #3d5a50;
+    font-weight: 500;
+  }
+
+  /* Benefit cards - Rounded, soft shadows */
+  .benefit-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(95,179,161,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(95,179,161,0.18);
+  }
+
+  .benefit-icon {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-card h4 {
+    color: var(--theme-soft-teal);
+    margin: 0 0 0.5rem;
+    font-weight: 500;
+  }
+
+  .benefit-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6b7c75;
+    line-height: 1.6;
+  }
+
+  /* Feature grid */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-item-light {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Styled list */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(95,179,161,0.15);
+    line-height: 1.7;
+    color: #4a5d55;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Step cards */
+  .step-cards {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.5rem 1.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(95,179,161,0.08);
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step-content strong {
+    color: #3d5a50;
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #6b7c75;
+    line-height: 1.6;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: white;
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 20px rgba(95,179,161,0.1);
+    border-left: 4px solid var(--theme-soft-teal);
+  }
+
+  .highlight-box h3 {
+    color: #3d5a50;
+    margin: 0 0 0.5rem;
+    font-weight: 500;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: #6b7c75;
+    line-height: 1.7;
+  }
+
+  /* Conditions grid */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .condition-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(95,179,161,0.08);
+  }
+
+  .condition-item h4 {
+    color: var(--theme-soft-teal);
+    margin: 0 0 0.75rem;
+    font-weight: 500;
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .condition-item li {
+    font-size: 0.9rem;
+    color: #6b7c75;
+    margin-bottom: 0.35rem;
+  }
+
+  /* CTA box */
+  .cta-box {
+    background: linear-gradient(135deg, #e8f5f2 0%, #e0f0ed 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .cta-box h3 {
+    color: #3d5a50;
+    margin: 0 0 0.5rem;
+  }
+
+  .cta-box p {
+    color: #6b7c75;
+    margin: 0 0 1.25rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--theme-soft-teal);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  /* Testimonial */
+  .service-testimonial {
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+  }
+
+  .testimonial-quote {
+    color: white;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-quote::before {
+    content: '"';
+    font-size: 2rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.25rem;
+  }
+
+  .testimonial-author {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+  }
+
+  /* Related services */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(95,179,161,0.08);
+    transition: all 0.3s ease;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(95,179,161,0.15);
+  }
+
+  .related-card h3 {
+    color: #3d5a50;
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .related-card p {
+    color: var(--theme-soft-teal);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 2rem;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+  }
+</style>
