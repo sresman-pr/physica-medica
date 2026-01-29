@@ -56,33 +56,18 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <!-- Hero Section with Large Image -->
-  <section class="pancafit-hero">
-    <div class="hero-gradient"></div>
+  <!-- Hero Section - Centered -->
+  <section class="service-hero">
+    <div class="hero-gradient-bg"></div>
     <div class="container-narrow">
-      <div class="hero-content-split">
-        <div class="hero-text">
-          <h1>Pancafit Class</h1>
-          <p class="hero-subtitle">Revolutionary Postural Correction Method from Italy</p>
-          <div class="hero-value-banner">
-            <span class="value-item"><strong>60</strong> Minutes</span>
-            <span class="value-divider">|</span>
-            <span class="value-item"><strong>1-on-1</strong> with DPT</span>
-          </div>
-          <a href="/schedule" class="hero-cta-button">Book Your First Session</a>
+      <div class="hero-centered">
+        <h1>Pancafit Class</h1>
+        <p class="hero-subtitle">Revolutionary Postural Correction Method from Italy</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
         </div>
-        <div class="hero-image-showcase">
-          <Image 
-            src={pancafitImg}
-            alt="Pancafit postural correction device"
-            width={500}
-            height={450}
-            format="webp"
-            loading="eager"
-            fetchpriority="high"
-            quality={90}
-          />
-        </div>
+        <a href="/schedule" class="hero-cta">Book Your First Session</a>
       </div>
     </div>
   </section>
@@ -224,102 +209,78 @@ const faqs = [
 </BaseLayout>
 
 <style>
-  /* Pancafit Hero Section */
-  .pancafit-hero {
+  /* Hero Section - Centered */
+  .service-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
-    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 2.5rem 2rem;
     overflow: hidden;
+    z-index: 1;
   }
 
-  .hero-gradient {
+  .hero-gradient-bg {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 80% 50%, rgba(61, 184, 159, 0.3) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(61,184,159,0.15) 0%, transparent 60%);
     pointer-events: none;
   }
 
-  .hero-content-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+  .hero-centered {
+    text-align: center;
     position: relative;
     z-index: 1;
-  }
-
-  .hero-text {
     color: white;
   }
 
-  .hero-text h1 {
+  .hero-centered h1 {
     color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
   }
 
-  .hero-subtitle {
-    font-size: 1.35rem;
-    opacity: 0.95;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+  .service-hero .hero-subtitle {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin-bottom: 1.25rem;
+    color: white;
   }
 
-  .hero-value-banner {
+  .hero-value-pills {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.25rem;
   }
 
-  .value-item {
-    font-size: 1rem;
+  .value-pill {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
     color: white;
+    font-weight: 500;
   }
 
-  .value-item strong {
-    font-size: 1.25rem;
-    color: var(--color-accent);
-  }
-
-  .value-divider {
-    color: rgba(255,255,255,0.4);
-    font-weight: 300;
-  }
-
-  .hero-cta-button {
+  .hero-cta {
     display: inline-block;
-    background: white;
-    color: var(--color-primary);
-    padding: 16px 40px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    font-size: 1.1rem;
-  }
-
-  .hero-cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     background: var(--color-accent);
     color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
   }
 
-  .hero-image-showcase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .hero-cta:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
   }
 
   .hero-image-showcase img {
@@ -407,26 +368,9 @@ const faqs = [
   }
 
   /* Mobile responsive */
-  @media (max-width: 900px) {
-    .hero-content-split {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .hero-text h1 {
-      font-size: 2.25rem;
-    }
-
-    .hero-value-banner {
-      justify-content: center;
-    }
-
-    .hero-image-showcase {
-      order: -1;
-    }
-
-    .hero-image-showcase img {
-      max-width: 300px;
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 2rem;
     }
   }
 </style>
