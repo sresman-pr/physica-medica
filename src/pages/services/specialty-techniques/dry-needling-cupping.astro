@@ -1,8 +1,14 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
 import '../../../styles/service-pages.css';
+
+// Import technique images - unique to this page only
+import dryNeedlingImg from '../../../images/specialty-v3-dry-needling.jpg';
+import cuppingImg from '../../../images/specialty-v3-cupping.jpg';
 
 const pageTitle = "Baltimore Dry Needling & Cupping | Physical Therapy | Physica Medica";
 const pageDescription = "Expert dry needling and cupping therapy in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT for fast pain relief.";
@@ -59,11 +65,36 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <!-- Hero Section -->
-  <section class="service-hero">
+  <WatermarkBackground variant="gray" />
+  
+  <!-- Enhanced Hero Section -->
+  <section class="specialty-hero">
+    <div class="hero-gradient-bg"></div>
     <div class="container-narrow">
-      <h1>Dry Needling & Cupping in Baltimore</h1>
-      <p class="hero-subtitle">Advanced Myofascial Pain Relief</p>
+      <div class="hero-split">
+        <div class="hero-text">
+          <h1>Dry Needling & Cupping</h1>
+          <p class="hero-subtitle">Advanced Myofascial Pain Relief</p>
+          <div class="hero-value-pills">
+            <span class="value-pill">60 Min Sessions</span>
+            <span class="value-pill">1-on-1 with DPT</span>
+            <span class="value-pill">$200/visit</span>
+          </div>
+          <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+        </div>
+        <div class="hero-image">
+          <Image 
+            src={dryNeedlingImg}
+            alt="Dry needling therapy treatment"
+            width={400}
+            height={320}
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+            quality={85}
+          />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -74,6 +105,27 @@ const faqs = [
       <p>Dry needling is a therapeutic technique where thin needles are inserted directly into myofascial trigger points to release muscle tension, reduce pain, and restore normal movement patterns. When combined with cupping therapy, which uses suction to improve blood flow and reduce fascial restrictions, these techniques provide powerful, fast-acting pain relief.</p>
 
       <p>Unlike surface-level treatments, dry needling and cupping address the root cause of myofascial pain by releasing stubborn trigger points and improving tissue quality at a deep level.</p>
+
+      <div class="technique-images-grid">
+        <Image 
+          src={dryNeedlingImg}
+          alt="Dr. Maks performing dry needling treatment in Baltimore"
+          width={400}
+          height={300}
+          format="webp"
+          loading="lazy"
+          quality={85}
+        />
+        <Image 
+          src={cuppingImg}
+          alt="Myofascial cupping therapy session"
+          width={400}
+          height={300}
+          format="webp"
+          loading="lazy"
+          quality={85}
+        />
+      </div>
 
       <h2>How We Deliver Results: The 60-Minute 1-on-1 DPT Difference</h2>
       <p>Unlike assembly-line PT clinics that rush you through 15-minute treatments with assistants, Dr. Maks provides a full 60 minutes of one-on-one attention for every dry needling and cupping session. This premium, out-of-network approach ($200 per session) ensures:</p>
@@ -96,15 +148,48 @@ const faqs = [
         <li><strong>Post-Surgical Patients:</strong> Scar tissue management and muscle guarding patterns after orthopedic procedures</li>
       </ul>
 
-      <h2>The Treatment Process</h2>
-      <p>Each dry needling and cupping session at Physica Medica includes:</p>
-      <ol>
-        <li><strong>Detailed Assessment (10-15 min):</strong> Identify primary trigger points and referred pain patterns</li>
-        <li><strong>Dry Needling (20-25 min):</strong> Precise needle insertion into trigger points causing your pain</li>
-        <li><strong>Cupping Therapy (15-20 min):</strong> Strategic cup placement to improve circulation and reduce muscle tension</li>
-        <li><strong>Movement Integration (5-10 min):</strong> Gentle exercises to reinforce new movement patterns</li>
-        <li><strong>Home Care Education:</strong> Self-care strategies to maintain improvements between sessions</li>
-      </ol>
+      <!-- Treatment Process with Step Cards -->
+      <div class="content-section-alt">
+        <h2>The Treatment Process</h2>
+        <p>Each dry needling and cupping session at Physica Medica includes:</p>
+        <div class="step-cards">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <strong>Detailed Assessment (10-15 min)</strong>
+              <p>Identify primary trigger points and referred pain patterns</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Dry Needling (20-25 min)</strong>
+              <p>Precise needle insertion into trigger points causing your pain</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Cupping Therapy (15-20 min)</strong>
+              <p>Strategic cup placement to improve circulation and reduce muscle tension</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <strong>Movement Integration (5-10 min)</strong>
+              <p>Gentle exercises to reinforce new movement patterns</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <strong>Home Care Education</strong>
+              <p>Self-care strategies to maintain improvements between sessions</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="highlight-box">
         <h3>What to Expect After Treatment</h3>
@@ -176,9 +261,9 @@ const faqs = [
           <h3>Trigger Point Therapy</h3>
           <p>Manual trigger point release →</p>
         </a>
-        <a href="/services/personal-training" class="related-card">
-          <h3>Personal Training</h3>
-          <p>Prevent pain recurrence →</p>
+        <a href="/services/specialty-techniques/scar-tissue-mobilization" class="related-card">
+          <h3>Scar Tissue Mobilization</h3>
+          <p>Release post-surgical restrictions →</p>
         </a>
       </div>
     </div>
@@ -186,29 +271,213 @@ const faqs = [
 </BaseLayout>
 
 <style>
-  .service-content {
+  /* Enhanced Hero Section */
+  .specialty-hero {
     position: relative;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
+    padding: 3rem 2rem;
     overflow: hidden;
+    z-index: 1;
   }
 
-  /* Diagonal logo wallpaper */
-  .service-content::before {
-    content: '';
+  .hero-gradient-bg {
     position: absolute;
-    top: 30%;
-    right: 10%;
-    width: 350px;
-    height: 159px;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    border-radius: 8px;
-    transform: rotate(-20deg);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 50%, rgba(61, 184, 159, 0.3) 0%, transparent 50%);
     pointer-events: none;
-    z-index: 0;
+  }
+
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-text {
+    color: white;
+  }
+
+  .hero-text h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .specialty-hero .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    margin-bottom: 1.25rem;
+    color: white;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary);
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .hero-split {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+
+    .hero-value-pills {
+      justify-content: center;
+    }
+
+    .hero-image {
+      order: -1;
+    }
+
+    .hero-image img {
+      max-width: 280px;
+    }
+  }
+
+  .service-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 1rem;
+  }
+
+  /* White content card for readability on gray watermark */
+  .service-content .container-narrow {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+
+  .service-content h2:first-child {
+    margin-top: 0;
+  }
+
+  /* Alternating section within card */
+  .content-section-alt {
+    background: var(--color-background-light);
+    margin: 2.5rem -3rem;
+    padding: 2rem 3rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .content-section-alt h2 {
+    margin-top: 0;
+  }
+
+  /* Step cards */
+  .step-cards {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .step-content strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  .technique-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+  }
+
+  .technique-images-grid img {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 
   .service-hero {

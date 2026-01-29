@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WatermarkBackground from '../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
 
 // Import Wim Hof images
@@ -16,30 +17,38 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <WatermarkBackground variant="teal" angle={-10} />
+  
   <section class="wim-hof-hero">
     <div class="container-narrow text-center">
       <h1>WIM HOF METHOD</h1>
-      <p class="lead">Certified Wim Hof Method Instruction in Baltimore</p>
-      <div class="certification-badges">
+      <p class="lead">Certified Instruction in Baltimore with Dr. Maks</p>
+      <div class="certification-badge-large">
         <Image 
           src={wimHofLogoImg}
           alt="Wim Hof Method Certified Instructor"
-          width={405}
-          height={81}
+          width={450}
+          height={90}
           format="webp"
           loading="eager"
-          quality={90}
-        />
-        <Image 
-          src={wmarCertImg}
-          alt="As Seen on WMAR - Wim Hof Certified"
-          width={184}
-          height={238}
-          format="webp"
-          loading="eager"
-          quality={90}
+          quality={95}
         />
       </div>
+      <div class="hero-stats-compact">
+        <div class="hero-stat-item">
+          <span class="stat-icon">❄️</span>
+          <span class="stat-text">Ice Bath Training</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="stat-icon">🌬️</span>
+          <span class="stat-text">Breathing Techniques</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="stat-icon">👥</span>
+          <span class="stat-text">Group Workshops</span>
+        </div>
+      </div>
+      <a href="/contact" class="hero-cta-btn">Join a Workshop</a>
     </div>
   </section>
 
@@ -85,55 +94,70 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
     </div>
   </section>
 
+  <!-- What is Wim Hof Section -->
   <section class="wim-hof-content section-spacing">
     <div class="container-narrow">
       <h2>What is the Wim Hof Method?</h2>
       <p>The Wim Hof Method is a powerful, scientifically-backed practice developed by Dutch extreme athlete Wim Hof, also known as "The Iceman." This revolutionary approach combines three core pillars—breathing techniques, cold exposure, and mental commitment—to unlock your body's full potential and tap into abilities you never knew you had.</p>
       
       <p>Named after its founder, who holds 26 world records for withstanding extreme cold, the Wim Hof Method has been the subject of numerous scientific studies at prestigious institutions. Research has shown that practitioners can consciously influence their autonomic nervous system and immune response—something previously thought impossible by the medical community.</p>
+    </div>
+  </section>
 
-      <h3>Scientifically Proven Benefits</h3>
-      <p>The Wim Hof Method has been scientifically proven to:</p>
-      <ul>
-        <li><strong>Reduce stress and anxiety:</strong> By activating the parasympathetic nervous system</li>
-        <li><strong>Boost immune function:</strong> Studies show increased production of anti-inflammatory mediators</li>
-        <li><strong>Increase energy and mental clarity:</strong> Through improved oxygen delivery to cells</li>
-        <li><strong>Enhance athletic performance and recovery:</strong> Faster muscle recovery and reduced inflammation</li>
-        <li><strong>Improve sleep quality:</strong> Better regulation of stress hormones</li>
-        <li><strong>Reduce inflammation:</strong> Shown to help with autoimmune conditions</li>
-        <li><strong>Strengthen mind-body connection:</strong> Develop conscious control over involuntary processes</li>
-        <li><strong>Build mental resilience:</strong> Train your mind to stay calm under stress</li>
-      </ul>
-
-      <div class="external-links-box">
-        <h3>Learn More About the Science</h3>
-        <p>Explore these resources to understand the medical research behind the Wim Hof Method:</p>
-        <ul class="resource-links">
-          <li><a href="https://www.wimhofmethod.com/" target="_blank" rel="noopener noreferrer">Official Wim Hof Method Website</a> - Complete information about the method and its applications</li>
-          <li><a href="https://www.wimhofmethod.com/science" target="_blank" rel="noopener noreferrer">Scientific Research on the Wim Hof Method</a> - Peer-reviewed studies and findings</li>
-          <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4034215/" target="_blank" rel="noopener noreferrer">PNAS Study: Voluntary Activation of the Sympathetic Nervous System</a> - Groundbreaking research from the National Institutes of Health</li>
-        </ul>
+  <!-- Benefits Section - Separate from white card -->
+  <section class="benefits-section-full">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Scientifically Proven Benefits</h2>
+      <p class="section-intro">The Wim Hof Method has been scientifically proven to provide these benefits:</p>
+      <div class="benefits-grid-whm">
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">🧘</div>
+          <strong>Reduce Stress & Anxiety</strong>
+          <p>Activates the parasympathetic nervous system</p>
+        </div>
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">🛡️</div>
+          <strong>Boost Immune Function</strong>
+          <p>Increases anti-inflammatory mediators</p>
+        </div>
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">⚡</div>
+          <strong>Increase Energy</strong>
+          <p>Improves oxygen delivery to cells</p>
+        </div>
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">🏃</div>
+          <strong>Enhance Recovery</strong>
+          <p>Faster muscle recovery, reduced inflammation</p>
+        </div>
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">😴</div>
+          <strong>Improve Sleep</strong>
+          <p>Better regulation of stress hormones</p>
+        </div>
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">🔥</div>
+          <strong>Reduce Inflammation</strong>
+          <p>Helps with autoimmune conditions</p>
+        </div>
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">🧠</div>
+          <strong>Mind-Body Connection</strong>
+          <p>Control over involuntary processes</p>
+        </div>
+        <div class="benefit-card-whm">
+          <div class="benefit-icon">💪</div>
+          <strong>Mental Resilience</strong>
+          <p>Stay calm under stress</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <h2>Dr. Maks: Certified Wim Hof Method Instructor</h2>
-      <p>Dr. Maksim Birikov is a certified Wim Hof Method instructor, one of the few in Baltimore. Combining his expertise as a Doctor of Physical Therapy with Wim Hof Method training, Dr. Maks offers a unique perspective on how this practice can enhance your health and well-being.</p>
-
-      <!-- Personal Expertise Image moved lower -->
-      <div class="personal-practice-image">
-        <Image 
-          src={wimHofMethodImg}
-          alt="Dr. Maks practicing the Wim Hof Method"
-          width={382}
-          height={378}
-          widths={[400, 600]}
-          format="webp"
-          loading="lazy"
-          quality={85}
-        />
-        <p class="image-caption">Dr. Maks demonstrating his personal practice and expertise</p>
-      </div>
-
-      <h2>The Three Pillars</h2>
+  <!-- Three Pillars Section - Full width with background -->
+  <section class="pillars-section-full">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Three Pillars</h2>
       <div class="pillars-grid">
         <div class="pillar">
           <Image 
@@ -145,7 +169,7 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
             loading="lazy"
             quality={70}
           />
-          <h3>🌬️ Breathing</h3>
+          <h3>Breathing</h3>
           <p>Specific breathing patterns that influence your autonomic nervous system, increase oxygen levels, and reduce stress.</p>
         </div>
         <div class="pillar">
@@ -158,7 +182,7 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
             loading="lazy"
             quality={70}
           />
-          <h3>❄️ Cold Therapy</h3>
+          <h3>Cold Therapy</h3>
           <p>Controlled exposure to cold that strengthens your immune system, improves circulation, and builds mental resilience.</p>
         </div>
         <div class="pillar">
@@ -273,85 +297,210 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
 
 <style>
   .wim-hof-hero {
-    background: white;
-    color: var(--color-text-primary);
-    padding: 3rem 2rem 1rem;
+    background: transparent;
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    position: relative;
+    z-index: 1;
   }
 
   .wim-hof-hero h1 {
-    color: var(--color-text-primary);
+    color: white;
+    font-size: 2.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1rem;
+  }
+
+  /* Certification badge - compact */
+  .certification-badge-large {
+    margin: 1rem auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .certification-badge-large img {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  }
+
+  /* Compact hero stats */
+  .hero-stats-compact {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .stat-icon {
+    font-size: 1.25rem;
+  }
+
+  .stat-text {
+    opacity: 0.95;
+  }
+
+  /* Legacy hero stats - keeping for reference */
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 100px;
+  }
+
+  .hero-stat .stat-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .hero-stat .stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* Hero CTA button */
+  .hero-cta-btn {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary);
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .hero-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    background: var(--color-accent);
+    color: white;
   }
 
   .wim-hof-content {
     position: relative;
+    z-index: 1;
+    padding: 0 1rem;
   }
 
-  /* Large corner logo wallpapers */
-  .wim-hof-content::before,
-  .wim-hof-content::after {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 136px;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    border-radius: 8px;
-    pointer-events: none;
-    z-index: 0;
+  /* White content card for readability on teal background */
+  .wim-hof-content .container-narrow {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
   }
 
-  .wim-hof-content::before {
-    top: 2rem;
-    right: 50px;
+  .wim-hof-content h2:first-child {
+    margin-top: 0;
   }
 
-  .wim-hof-content::after {
-    bottom: 2rem;
-    left: 50px;
+  /* Benefits section - full width with light gray background */
+  .benefits-section-full {
+    background: var(--color-background-light);
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
-  @media (max-width: 768px) {
-    .wim-hof-content::before,
-    .wim-hof-content::after {
-      width: 200px;
-      height: 200px;
-      opacity: 0.12;
-    }
+  .section-title-center {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
   }
 
-  .lead {
-    font-size: 1.25rem;
-    opacity: 0.9;
+  .section-intro {
+    text-align: center;
+    color: var(--color-text-secondary);
     margin-bottom: 2rem;
+    font-size: 1.1rem;
   }
 
-  .certification-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 2.5rem;
-    flex-wrap: wrap;
+  .benefits-grid-whm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
   }
 
-  .certification-badges img {
-    max-width: 150px;
-    height: auto;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    transition: transform var(--transition-normal);
+  .benefit-card-whm {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.06);
   }
 
-  .certification-badges img:hover {
-    transform: scale(1.1);
+  .benefit-card-whm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  .benefit-card-whm .benefit-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-card-whm strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .benefit-card-whm p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Pillars section - full width with white background */
+  .pillars-section-full {
+    background: white;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .community-focus-section {
     background: var(--color-background-light);
     padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .community-image-large {
@@ -412,6 +561,79 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
 
   .wim-hof-content li {
     margin-bottom: 0.5rem;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(45, 109, 95, 0.3);
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+
+  /* Benefits grid */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .benefit-card {
+    background: var(--color-background-light);
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .benefit-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-card strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .benefit-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
   }
 
   .external-links-box {
@@ -517,7 +739,7 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
     background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
     padding: 3rem 2rem;
     border-radius: 12px;
-    margin: 4rem 0;
+    margin: 3rem 0 0;
     text-align: center;
     box-shadow: var(--shadow-lg);
     color: white;
@@ -549,6 +771,8 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
     background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
     padding: 3rem 2rem;
     color: white;
+    position: relative;
+    z-index: 1;
   }
 
   .media-coverage-card {
@@ -622,6 +846,8 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
   .video-gallery-section {
     background: var(--color-background-light);
     padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .section-intro {
@@ -673,6 +899,8 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
   .whm-testimonials-section {
     background: white;
     padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .testimonials-grid {

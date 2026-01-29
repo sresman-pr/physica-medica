@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WatermarkBackground from '../components/WatermarkBackground.astro';
 
 const pageTitle = "Contact Physica Medica | Physical Therapy Baltimore | 443-228-8029";
 const pageDescription = "Contact Physica Medica physical therapy in Baltimore. Call 443-228-8029 or visit us at 800 S Bond St, Baltimore, MD 21231.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <WatermarkBackground variant="gray" />
+  
   <section class="contact-hero">
     <div class="container-narrow text-center">
       <h1>CONTACT</h1>
@@ -70,9 +73,11 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
 
 <style>
   .contact-hero {
-    background: var(--color-background-light);
+    background: transparent;
     color: var(--color-text-primary);
     padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .contact-hero h1 {
@@ -86,39 +91,30 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
 
   .contact-content {
     position: relative;
-    overflow: hidden;
-  }
-
-  /* Large diagonal logo wallpaper */
-  .contact-content::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-15deg);
-    width: 500px;
-    height: 227px;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.12;
-    border-radius: 12px;
-    pointer-events: none;
-    z-index: 0;
+    z-index: 1;
+    padding: 0 1rem 2rem;
   }
 
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  /* White card for contact info */
+  .contact-info {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
   }
 
   .contact-info h2 {
     color: var(--color-primary);
     margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-accent);
   }
 
   .info-section {
@@ -138,10 +134,12 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
   .info-section a {
     color: var(--color-primary);
     text-decoration: none;
+    font-weight: 500;
   }
 
   .info-section a:hover {
     text-decoration: underline;
+    color: var(--color-accent);
   }
 
   .contact-note {
@@ -170,6 +168,20 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* White card wrapper for map */
+  .map-container {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+
+  .map-container iframe {
+    border-radius: 8px;
   }
 
   .text-center {
@@ -179,6 +191,10 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
   @media (max-width: 768px) {
     .contact-grid {
       grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+      padding: 2rem 1.5rem;
     }
 
     .cta-buttons {

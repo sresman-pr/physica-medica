@@ -1,0 +1,126 @@
+{
+  "model": "sresman-pr/drmaks-flux-v1",
+  "trigger_word": "DRMAKS",
+  "images": [
+    {
+      "filename": "dry-needling-cupping-1.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing navy blue Physica Medica branded t-shirt, performing dry needling technique on a young woman with very short blonde hair and fair skin. She is a distinctly different person from the therapist. She is lying prone on treatment table, thin acupuncture needle being inserted into her upper back muscle, clinical setting with natural lighting, professional medical photography",
+      "url": "https://replicate.delivery/xezq/ULAoWT4qbGoREZwWw30i7K5fl6mPzcXxY2WjJyatfeLpGiDsA/out-0.jpg"
+    },
+    {
+      "filename": "dry-needling-cupping-2.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing teal athletic shirt, applying myofascial cupping therapy on an elderly man with short white hair and a clean-shaven face. This patient looks completely different from DRMAKS. He is lying prone, multiple silicone cups on his back, clinical environment, professional healthcare photography",
+      "url": "https://replicate.delivery/xezq/8yzkaJoRRrrvGxkm4pSNG267SAfdS8qKazkzfE8XibQzDxBWA/out-0.jpg"
+    },
+    {
+      "filename": "dry-needling-cupping-3.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing black Physica Medica polo shirt, performing dry needling and cupping treatment on a young man with short black hair and no beard. The patient is a separate, unique individual who does not resemble the practitioner. Patient is lying on treatment table, bright clinical lighting, medical documentation photography",
+      "url": "https://replicate.delivery/xezq/EPR1mWzpqGo3JBGvyshlyJDgihSwkFhIxTHmCDZRcbKARcgF/out-0.jpg"
+    },
+    {
+      "filename": "trigger-point-1.jpg",
+      "category": "trigger-point",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing maroon athletic shirt, applying thumb pressure to trigger point on a middle-aged woman with short gray hair and glasses. She is a unique individual with a very different appearance than the therapist. Seated on treatment table, clinical setting with natural lighting, professional medical photography",
+      "url": "https://replicate.delivery/xezq/oefHnBzu8gtt1kKJxzvKoe22DsYMgRN52OoM1hRS65NmIiDsA/out-0.jpg"
+    },
+    {
+      "filename": "trigger-point-2.jpg",
+      "category": "trigger-point",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing charcoal gray athletic shirt, performing myofascial release on a young man with short blonde buzz-cut hair and no facial hair. The patient is a distinct person who does not look like DRMAKS. Lying prone on treatment table, bright clinical environment, professional medical photography",
+      "url": "https://replicate.delivery/xezq/hEr4fszpJD3DH61L1sxVeFgakfSEVfmLFqfLf093yEZZHRcgF/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-1.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing yellow Physica Medica branded t-shirt, hands on lower ribcage of a young woman with a black bob-cut hairstyle. She is a unique person with features very different from the doctor. Lying supine on treatment table, assessing diaphragmatic movement, clinical setting, professional healthcare photography",
+      "url": "https://replicate.delivery/xezq/RhcrxeEhukw5LKJl0gfmtXUfextfwztVZKwJQkSAcKtfJRcgF/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-2.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing forest green athletic shirt, demonstrating diaphragmatic breathing to an elderly man with white thinning hair and a clean-shaven face. The patient and doctor are two distinct individuals of different ages. Patient in semi-reclined position, hands on his abdomen, instructional medical setting",
+      "url": "https://replicate.delivery/xezq/TqXtGWWRy05BA1jjJgabZ8Kfce98erkuAnz1G0KkaN6lJiDsA/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-3.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing navy blue Physica Medica t-shirt, performing core assessment on a middle-aged woman with long blonde hair. She is a completely different person from the therapist. Seated on treatment table, hands on her torso, clinical treatment room, professional medical photography",
+      "url": "https://replicate.delivery/xezq/afzYAqGwCOwyUyBItsPTtQko2sq8fiOJeJqqoNzNiPZ7JiDsA/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-1.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing burgundy athletic shirt, performing scar tissue mobilization on a muscular young man with short red hair and no beard. This patient does not resemble the therapist. Working on his shoulder area, clinical setting, professional medical photography",
+      "url": "https://replicate.delivery/xezq/VxdkBSRfEIQfYEQt1QlXdsb82PsZLLwMfQalKAXvkFERKiDsA/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-2.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing royal blue Physica Medica t-shirt, using soft tissue mobilization tool on an elderly woman with short silver hair and glasses. She is a separate individual with very different features than the practitioner. Seated in clinic, working on her arm, professional healthcare photography",
+      "url": "https://replicate.delivery/xezq/pwOhafiPnJyGNKlfWKzGW50ffwCyOG1uGOHZHO5gdaLNVEHYB/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-3.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing dark teal athletic shirt, mobilizing scar tissue on a teenage boy with very short black hair. The boy looks completely different from the therapist. Lying on treatment table, working on his knee area, bright clinical lighting, medical photography",
+      "url": "https://replicate.delivery/xezq/9HwScPXfebpjt0flZei69QD3PCQK88MxQ3Uj91Z2rpS7VEHYB/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-1.jpg",
+      "category": "posture-reeducation",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing charcoal gray Physica Medica polo shirt, performing postural assessment on a petite woman with short brown hair. She is a unique individual who does not resemble the doctor. Standing against posture grid, hands checking her spine alignment, clinical setting, professional medical photography",
+      "url": "https://replicate.delivery/xezq/fNIUV2fcczpweom2AYx0u7P3iMgWHkepzGCm34PlS6tmWEHYB/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-2.jpg",
+      "category": "posture-reeducation",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing olive green athletic shirt, adjusting seated posture of a young man with blonde spiky hair and no beard. The patient is a separate person with a very different look than DRMAKS. Ergonomic assessment setting, instructional healthcare photography",
+      "url": "https://replicate.delivery/xezq/k2Q4hayHdDZaFZZTZee3dPenwtwiNZ3YfPxChwFJnyxMXEHYB/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-3.jpg",
+      "category": "posture-reeducation",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing black Physica Medica t-shirt, demonstrating standing posture to an elderly man with a bald head and clean-shaven face. They are two distinct people with no resemblance to each other. Clinical environment, professional medical instruction photography",
+      "url": "https://replicate.delivery/xezq/XCfnAHfIMas4jEArNZPGQQ4Fu42xYIw2ChORiZFfVzT9LiDsA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-1.jpg",
+      "category": "neural-tension-release",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing maroon athletic shirt, performing neural tension test on a young woman with very long black hair in a ponytail. She is a completely different person from the therapist. Gently stretching her arm, clinical setting, professional medical photography",
+      "url": "https://replicate.delivery/xezq/Mhvo4Sq0qxqlG1euMJ28HsN6yMfF1QA8Nr0fJCRQczuSMiDsA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-2.jpg",
+      "category": "neural-tension-release",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing navy blue Physica Medica t-shirt, performing cervical neural mobilization on a middle-aged man with short brown hair and a clean-shaven face. He does not resemble the therapist. Hands on his neck, clinical environment, medical documentation photography",
+      "url": "https://replicate.delivery/xezq/QKh57EGTiDqEBtzHky8ucDCZ16h3Q6t9tzckdQ9GNLIlRcgF/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-3.jpg",
+      "category": "neural-tension-release",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing teal athletic shirt, performing sciatic nerve gliding on a young man with short black hair. The patient is a separate, unique individual who looks nothing like the practitioner. Guiding his leg movement, clinical setting, professional healthcare photography",
+      "url": "https://replicate.delivery/xezq/f7GHRffTKySP7JmE4yPy8L4BBbIbfvuRqniF6Humdme9zIOwC/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-1.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing yellow Physica Medica branded t-shirt, performing laryngeal manual therapy on a young woman with short bright red hair. She is a unique individual with very different features than the doctor. Seated comfortably, fingers on her throat area, clinical setting, professional medical photography",
+      "url": "https://replicate.delivery/xezq/myavhIiuQeT4cKSRCjDNAYGqW14tQpOMR2cDneAJhuUqGxBWA/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-2.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing burgundy athletic shirt, performing jaw mobilization on an elderly man with white hair and a clean-shaven face. He is a distinctly different person from the therapist. Hands on his jaw, clinical environment, medical documentation photography",
+      "url": "https://replicate.delivery/xezq/otZInyHsY4YcIZPSRDkdRy7G4tZjGsB9gtf8FiSbnd3aj4ALA/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-3.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "DRMAKS, a male physical therapist with long dark brown hair and beard wearing charcoal gray Physica Medica polo shirt, treating neck muscle tension on a young woman with a blonde bob hairstyle. She is a separate individual who does not look like DRMAKS. Hands on her neck muscles, clinical setting, professional healthcare photography",
+      "url": "https://replicate.delivery/xezq/e5WZ9rHF3YReeJLtswuxmatc1i9BGwzKhkqLoieoW4bBcEHYB/out-0.jpg"
+    }
+  ]
+}

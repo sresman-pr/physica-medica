@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+"""
+Generate specialty technique images using trained LoRA + Flux
+"""
+import os
+import json
+import requests
+from pathlib import Path
+from dotenv import load_dotenv
+import fal_client
+
+# Load environment variables
+load_dotenv()
+
+def generate_images():
+    """Generate images from prompts using trained LoRA"""
+    
+    # Load config and prompts
+    with open('config.json') as f:
+        config = json.load(f)
+    
+    with open('prompts.json') as f:
+        prompts_data = json.load(f)
+    
+    # Check if LoRA is trained
+    if not config.get('lora_model_url'):
+        print("❌ Error: No trained LoRA model found in config.json")
+        print("Please run: python train_lora.py first")
+        exit(1)
+    
+    # Create output directory
+    output_dir = Path(config['output_dir'])
+    output_dir.mkdir(exist_ok=True)
+    
+    print(f"Generating images using LoRA: {config['lora_model_url']}")
+    print(f"Trigger word: {config['trigger_word']}\n")
+    
+    generated_files = []
+    
+    # Generate images for each technique
+    for technique, prompts in prompts_data.items():
+        print(f"\n{'='*60}")
+        print(f"Generating images for: {technique}")
+        print(f"{'='*60}")
+        
+        for idx, prompt in enumerate(prompts, 1):
+            filename = f"specialty-{technique}-{idx}.jpg"
+            output_path = output_dir / filename
+            
+            print(f"\n[{idx}/{len(prompts)}] {filename}")
+            print(f"Prompt: {prompt[:80]}...")
+            
+            try:
+                # Generate image
+                result = fal_client.subscribe(
+                    config['flux_model'],
+                    arguments={
+                        "prompt": prompt,
+                        "image_size": config['image_settings']['image_size'],
+                        "num_inference_steps": config['image_settings']['num_inference_steps'],
+                        "guidance_scale": config['image_settings']['guidance_scale'],
+                        "num_images": 1,
+                        "enable_safety_checker": config['image_settings']['enable_safety_checker'],
+                        "loras": [{
+                            "path": config['lora_model_url'],
+                            "scale": 1.8
+                        }]
+                    }
+                )
+                
+                # Download image
+                image_url = result['images'][0]['url']
+                response = requests.get(image_url)
+                response.raise_for_status()
+                
+                with open(output_path, 'wb') as f:
+                    f.write(response.content)
+                
+                print(f"✅ Saved: {output_path}")
+                generated_files.append(str(output_path))
+                
+            except Exception as e:
+                print(f"❌ Error generating {filename}: {e}")
+                continue
+    
+    # Create manifest
+    manifest = {
+        "generated_files": generated_files,
+        "total_images": len(generated_files),
+        "lora_model": config['lora_model_url'],
+        "trigger_word": config['trigger_word']
+    }
+    
+    manifest_path = output_dir / "manifest.json"
+    with open(manifest_path, 'w') as f:
+        json.dump(manifest, f, indent=2)
+    
+    print(f"\n{'='*60}")
+    print(f"✅ Generation complete!")
+    print(f"{'='*60}")
+    print(f"Total images generated: {len(generated_files)}")
+    print(f"Output directory: {output_dir}")
+    print(f"Manifest: {manifest_path}")
+    print(f"\nNext step: Copy images to src/images/ and update Astro imports")
+
+if __name__ == "__main__":
+    if not os.getenv('FAL_KEY'):
+        print("❌ Error: FAL_KEY environment variable not set")
+        print("Please create a .env file with your API key:")
+        print("  FAL_KEY=your_api_key_here")
+        exit(1)
+    
+    generate_images()

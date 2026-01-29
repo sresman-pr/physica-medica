@@ -1,0 +1,950 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../../components/WatermarkBackground.astro';
+import FAQSection from '../../../components/FAQSection.astro';
+import AuthorByline from '../../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
+
+// Import technique images - unique to this page only
+import neckTherapyImg from '../../../images/specialty-v3-singers-neck.jpg';
+import jawTreatmentImg from '../../../images/specialty-v3-singers-jaw.jpg';
+import vocalPerformerImg from '../../../images/specialty-v3-singers-vocal.jpg';
+
+const pageTitle = "Baltimore Physical Therapy for Singers | Vocal Performance | Physica Medica";
+const pageDescription = "Unique Italian-developed physical therapy for singers in Baltimore. Improve voice, decrease tension, enhance performance. No other professionals in the US offer this technique. $200 out-of-network premium care with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
+  { name: "Therapy for Singers", url: "/services/specialty-techniques/therapy-for-singers" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Physical Therapy for Singers",
+  "description": "Specialized Italian-developed physical therapy technique for vocal performers to improve voice quality, reduce tension, and enhance singing endurance",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How can physical therapy help my singing?",
+    answer: "Singing is a full-body activity requiring optimal posture, breathing mechanics, and tension-free movement. Physical therapy addresses the musculoskeletal restrictions, breathing dysfunction, and postural faults that limit vocal performance. By releasing tension and improving body mechanics, your voice becomes more powerful, controlled, and effortless."
+  },
+  {
+    question: "What makes this technique Italian and unique to the US?",
+    answer: "This technique was developed in Italy specifically for classically trained opera singers. It integrates deep understanding of vocal mechanics with manual therapy and postural training. Dr. Maks is one of the only practitioners in the United States trained in this specialized approach, making Physica Medica unique in offering this service."
+  },
+  {
+    question: "Do I need to be a professional singer to benefit?",
+    answer: "No. While this technique was developed for professional opera singers, it benefits anyone who uses their voice extensively - from local band members to choir singers, music teachers, public speakers, and anyone experiencing vocal strain or wanting to improve their singing."
+  },
+  {
+    question: "How long until I notice improvements in my voice?",
+    answer: "Many singers notice improved breath support and reduced tension after the first session. Significant voice quality improvements typically occur within 4-6 sessions as postural and breathing patterns improve. Optimal results require 8-12 sessions to fully retrain body mechanics."
+  },
+  {
+    question: "Can this help with vocal fatigue and strain?",
+    answer: "Absolutely. Vocal fatigue often results from poor body mechanics forcing your voice to work harder than necessary. By optimizing posture, breathing, and releasing tension in the neck, jaw, and shoulders, you'll sing longer with less effort and faster recovery between performances."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="gray" />
+  
+  <!-- Hero Section - Centered -->
+  <section class="specialty-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Therapy for Singers</h1>
+        <p class="hero-subtitle">Unique Italian Technique to Enhance Your Voice</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+          <span class="value-pill">Only in US</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exclusive Banner -->
+  <section class="exclusive-banner">
+    <div class="container-narrow">
+      <div class="exclusive-content">
+        <span class="exclusive-flag">🇮🇹 Only in the US</span>
+        <p>Dr. Maks is the <strong>only practitioner in the United States</strong> trained in this specialized Italian technique developed for professional opera singers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is Physical Therapy for Singers?</h2>
+          <p>Developed in Italy for classically trained singers, this technique decreases tension, improves your voice, lowers stress, and improves posture—allowing you to sing longer with less fatigue or strain.</p>
+          <p>Whether you're a professional opera singer or just starting in a local band, this approach transforms your body into a better instrument.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={neckTherapyImg}
+            alt="Neck therapy for vocal performers"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body-Voice Connection - Gray with icons -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Body-Voice Connection</h2>
+      <p class="section-intro">Your voice is produced by your entire body, not just your vocal cords. Optimal singing requires:</p>
+      
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-icon">🎯</div>
+          <h4>Proper Posture</h4>
+          <p>Spinal alignment for free rib cage movement and breath support</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-icon">🌬️</div>
+          <h4>Diaphragmatic Breathing</h4>
+          <p>Full, efficient breathing that powers your voice without strain</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-icon">✨</div>
+          <h4>Tension-Free Neck & Jaw</h4>
+          <p>Released muscles for optimal larynx function</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-icon">💪</div>
+          <h4>Core Stability</h4>
+          <p>Strong core muscles for breath control and projection</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-icon">🗣️</div>
+          <h4>Jaw & TMJ Function</h4>
+          <p>Proper mechanics for clear articulation and resonance</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-icon">🙆</div>
+          <h4>Shoulder Mobility</h4>
+          <p>Free movement that doesn't restrict breathing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Teal -->
+  <section class="content-section-teal">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
+      <p class="section-intro-light">Unlike generic vocal coaching, Dr. Maks combines specialized Italian techniques with DPT-level expertise.</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>Italian Technique</strong>
+          <p>Unique methods developed for singers, unavailable elsewhere in the US</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Performance Assessment</strong>
+          <p>Evaluate posture, breathing, and tension patterns specific to singing</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Integrated Approach</strong>
+          <p>Manual therapy, breathing retraining, and performance exercises</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Customized to Your Voice</strong>
+          <p>Treatment tailored to your vocal style and demands</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={jawTreatmentImg}
+            alt="Jaw and TMJ treatment for singers"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>Who Benefits Most</h2>
+          <ul class="styled-list">
+            <li><strong>Opera Singers:</strong> Classical vocalists at Peabody and touring productions</li>
+            <li><strong>Band Members:</strong> Rock, jazz, and contemporary singers</li>
+            <li><strong>Choir Members:</strong> Church and community chorus singers</li>
+            <li><strong>Music Teachers:</strong> Vocal instructors who use their voice extensively</li>
+            <li><strong>Theater Performers:</strong> Musical theater actors and singers</li>
+            <li><strong>Public Speakers:</strong> Professionals who rely on their voice</li>
+            <li><strong>Voice Students:</strong> Aspiring singers optimizing their instrument</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Treatment Process</h2>
+        <p>Each therapy session for singers at Physica Medica includes:</p>
+        <div class="step-cards">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <strong>Vocal Performance Assessment (15-20 min)</strong>
+              <p>Evaluate posture during singing, breathing mechanics, and tension patterns</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Manual Therapy (20-25 min)</strong>
+              <p>Release tension in neck, jaw, shoulders, and diaphragm using Italian techniques</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Breathing Retraining (10-15 min)</strong>
+              <p>Optimize diaphragmatic breathing for vocal power and control</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <strong>Postural Training (10-15 min)</strong>
+              <p>Develop optimal singing posture and body awareness during performance</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <strong>Performance Integration</strong>
+              <p>Practice singing with improved mechanics and receive real-time feedback</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>What to Expect After Treatment</h3>
+        <p>Most singers notice immediate improvements in breath support and reduced effort when singing. Your voice may feel "freer" and more resonant. As tension releases, you may discover new vocal range or power you didn't know you had. Some singers experience emotional releases as the body lets go of long-held tension patterns.</p>
+      </div>
+
+      <h2>Common Issues Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Vocal Strain</h4>
+          <ul>
+            <li>Vocal fatigue</li>
+            <li>Loss of vocal range</li>
+            <li>Difficulty with high notes</li>
+            <li>Voice breaks or cracks</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Physical Tension</h4>
+          <ul>
+            <li>Neck and jaw tension</li>
+            <li>Shoulder tightness</li>
+            <li>Poor breath support</li>
+            <li>Postural limitations</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Performance Issues</h4>
+          <ul>
+            <li>Performance anxiety</li>
+            <li>Reduced endurance</li>
+            <li>Inconsistent voice quality</li>
+            <li>Recovery between shows</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Unlock Your Voice's Full Potential</h3>
+        <p>Experience the only Italian-developed therapy for singers in the United States. Sing better, longer, and with less strain.</p>
+        <a href="/schedule" class="cta-button">Schedule Consultation</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          As an opera singer, I've worked with many vocal coaches, but Dr. Maks's approach is completely different. He released tension I didn't even know I had, and my high notes are now effortless. This technique is truly unique.
+        </div>
+        <div class="testimonial-author">
+          <strong>Alexandra R.</strong> - Professional Opera Singer
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Physical Therapy for Singers FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">You Might Also Like</h2>
+      <div class="related-grid">
+        <a href="/services/specialty-techniques/diaphragmatic-rehabilitation" class="related-card">
+          <h3>Diaphragmatic Rehabilitation</h3>
+          <p>Optimize breathing for performance →</p>
+        </a>
+        <a href="/services/specialty-techniques/posture-reeducation" class="related-card">
+          <h3>Posture Re-education</h3>
+          <p>Perfect your singing posture →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ========================================
+     ARTISTIC & ELEGANT THEME
+     Serif fonts, burgundy/cream, elegant textures
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-burgundy: #7f1d1d;
+    --theme-burgundy-light: #991b1b;
+    --theme-cream: #fef7ed;
+    --theme-warm-gray: #78716c;
+    --theme-gold-accent: #b45309;
+  }
+
+  /* Hero Section - Rich burgundy */
+  .specialty-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--theme-burgundy) 0%, #4a1010 100%);
+    padding: 3rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(180,83,9,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.75rem;
+    margin-bottom: 0.75rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .specialty-hero .hero-subtitle {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    color: var(--theme-cream);
+    font-style: italic;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: transparent;
+    border: 1px solid rgba(254,247,237,0.4);
+    padding: 0.5rem 1.25rem;
+    border-radius: 0;
+    font-size: 0.85rem;
+    color: var(--theme-cream);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--theme-cream);
+    color: var(--theme-burgundy);
+    padding: 14px 40px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0;
+    transition: all 0.3s;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-cta:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Exclusive banner - Elegant gold accent */
+  .exclusive-banner {
+    background: linear-gradient(90deg, var(--theme-gold-accent) 0%, #92400e 100%);
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .exclusive-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .exclusive-flag {
+    background: white;
+    color: var(--theme-burgundy);
+    padding: 0.35rem 1rem;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 0.85rem;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  .exclusive-content p {
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  /* Content sections */
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-gray {
+    background: var(--theme-cream);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-teal {
+    background: linear-gradient(135deg, var(--theme-burgundy) 0%, var(--theme-burgundy-light) 100%);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-teal h2 { 
+    color: var(--theme-cream);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Section titles - Serif, elegant */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-burgundy);
+    margin-bottom: 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.75rem;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: var(--theme-warm-gray);
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(254,247,237,0.9);
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    line-height: 1.8;
+  }
+
+  /* Content row */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 8px 8px 0 var(--theme-burgundy);
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: var(--theme-burgundy);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Voice grid - Elegant cards */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .voice-card {
+    background: white;
+    padding: 1.75rem 1.5rem;
+    border-radius: 0;
+    text-align: center;
+    border: 1px solid rgba(127,29,29,0.15);
+    transition: all 0.3s;
+  }
+
+  .voice-card:hover {
+    border-color: var(--theme-burgundy);
+    box-shadow: 0 8px 25px rgba(127,29,29,0.1);
+  }
+
+  .voice-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .voice-card h4 {
+    color: var(--theme-burgundy);
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .voice-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--theme-warm-gray);
+    line-height: 1.5;
+  }
+
+  /* Feature grid - Burgundy accent */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .feature-item-light {
+    background: rgba(254,247,237,0.15);
+    padding: 1.5rem;
+    border-radius: 0;
+    border-left: 3px solid var(--theme-cream);
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Styled list - Elegant dividers */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(127,29,29,0.15);
+    line-height: 1.7;
+    color: #44403c;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  .styled-list li strong {
+    color: var(--theme-burgundy);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+  }
+
+  /* Step cards - Elegant numbered */
+  .step-cards {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0;
+    border: 1px solid rgba(127,29,29,0.12);
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--theme-burgundy);
+    color: var(--theme-cream);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    flex-shrink: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  .step-content strong {
+    color: var(--theme-burgundy);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--theme-warm-gray);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 2.25rem;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+
+    .exclusive-content {
+      flex-direction: column;
+    }
+  }
+
+  /* Legacy support */
+  .service-content .container-narrow {
+    background: white;
+    padding: 3rem;
+    box-shadow: 0 4px 24px rgba(127,29,29,0.1);
+  }
+
+  .service-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .content-section-alt {
+    background: var(--theme-cream);
+    margin: 2rem -3rem;
+    padding: 2rem 3rem;
+    border-top: 1px solid rgba(127,29,29,0.1);
+    border-bottom: 1px solid rgba(127,29,29,0.1);
+  }
+
+  .content-section-alt h2 {
+    margin-top: 0;
+  }
+
+  .step-content strong {
+    color: var(--theme-burgundy);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .image-right {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+    max-width: 320px;
+  }
+
+  .image-right img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-left {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+    max-width: 320px;
+  }
+
+  .image-left img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-inline {
+    margin: 2.5rem auto;
+    text-align: center;
+    max-width: 450px;
+  }
+
+  .image-inline img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .service-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .service-hero h1 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .service-content h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-content ul,
+  .service-content ol {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .service-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+  }
+
+  .highlight-box h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .condition-item {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .condition-item li {
+    margin-bottom: 0.25rem;
+  }
+
+  .cta-box {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .related-services {
+    background: var(--color-background-light);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .related-card p {
+    color: var(--color-accent);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .image-right,
+    .image-left {
+      float: none;
+      margin: 2rem auto;
+      max-width: 100%;
+    }
+
+    .image-inline {
+      max-width: 100%;
+    }
+  }
+</style>

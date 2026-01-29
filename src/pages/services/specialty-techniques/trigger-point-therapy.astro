@@ -1,7 +1,14 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
+import '../../../styles/service-pages.css';
+
+// Import technique images - unique to this page only
+import pressurePointImg from '../../../images/specialty-v3-trigger-pressure.jpg';
+import muscleReleaseImg from '../../../images/specialty-v3-trigger-release.jpg';
 
 const pageTitle = "Baltimore Trigger Point Therapy | Manual Myofascial Release | Physica Medica";
 const pageDescription = "Expert trigger point therapy and manual myofascial release in Baltimore. $200 out-of-network premium care. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT.";
@@ -32,38 +39,220 @@ const faqs = [
   },
   {
     question: "How is trigger point therapy different from massage?",
-    answer: "Trigger point therapy is a medical treatment performed by a physical therapist with advanced training in anatomy and biomechanics. It targets specific trigger points causing your pain pattern, unlike general massage."
+    answer: "Trigger point therapy is a medical treatment performed by a physical therapist with advanced training in anatomy and biomechanics. It targets specific trigger points causing your pain pattern, unlike general massage which addresses broad areas."
   },
   {
     question: "Is trigger point therapy painful?",
-    answer: "You may feel temporary discomfort as trigger points are released, but most patients report significant pain relief immediately after treatment. Dr. Maks works within your tolerance level."
+    answer: "You may feel temporary discomfort as trigger points are released—often described as 'good pain' that you know is helping. Most patients report significant pain relief immediately after treatment. Dr. Maks always works within your tolerance level."
   },
   {
     question: "How many sessions does trigger point therapy take?",
-    answer: "Acute trigger points often resolve in 2-4 sessions. Chronic patterns may need 6-8 treatments. Each session at Physica Medica is a full 60 minutes, ensuring comprehensive treatment."
+    answer: "Acute trigger points often resolve in 2-4 sessions. Chronic patterns may need 6-8 treatments. Each session at Physica Medica is a full 60 minutes, ensuring comprehensive treatment of all contributing trigger points."
+  },
+  {
+    question: "What causes trigger points to form?",
+    answer: "Trigger points develop from muscle overuse, trauma, poor posture, stress, or sustained positions (like desk work). Once formed, they create a self-perpetuating cycle of pain and muscle tension that requires targeted treatment to break."
+  },
+  {
+    question: "Can trigger points cause headaches?",
+    answer: "Yes, trigger points in the neck, shoulders, and jaw muscles are a common cause of tension headaches and even migraines. Dr. Maks is trained to identify and treat these specific trigger points that refer pain to the head."
   }
 ];
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <section class="service-hero">
+  <WatermarkBackground variant="gray" />
+  
+  <!-- Enhanced Hero Section -->
+  <section class="specialty-hero">
+    <div class="hero-gradient-bg"></div>
     <div class="container-narrow">
-      <h1>Trigger Point Therapy</h1>
-      <p class="hero-subtitle">Eliminate Referred Pain Patterns</p>
+      <div class="hero-split">
+        <div class="hero-text">
+          <h1>Trigger Point Therapy</h1>
+          <p class="hero-subtitle">Eliminate Referred Pain Patterns</p>
+          <div class="hero-value-pills">
+            <span class="value-pill">60 Min Sessions</span>
+            <span class="value-pill">1-on-1 with DPT</span>
+            <span class="value-pill">$200/visit</span>
+          </div>
+          <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+        </div>
+        <div class="hero-image">
+          <Image 
+            src={pressurePointImg}
+            alt="Trigger point therapy treatment"
+            width={400}
+            height={320}
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+            quality={85}
+          />
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- What Is Section -->
   <section class="service-content section-spacing">
     <div class="container-narrow">
       <h2>What is Trigger Point Therapy?</h2>
-      <p>Trigger point therapy is a specialized manual therapy technique that targets hyperirritable spots in muscle tissue that cause referred pain. These trigger points often create pain patterns far from their source, making diagnosis and treatment challenging without expert knowledge.</p>
+      <p>Trigger point therapy is a specialized manual therapy technique that targets hyperirritable spots in muscle tissue that cause referred pain. These trigger points often create pain patterns far from their source—a trigger point in your shoulder blade might cause pain radiating down your arm, or one in your neck might cause persistent headaches.</p>
 
-      <h2>How Physica Medica is Different</h2>
-      <p>Dr. Maks's DPT-level expertise ensures accurate identification and effective treatment of your trigger point patterns with 60 full minutes of one-on-one care.</p>
+      <p>Unlike general massage that works on broad muscle groups, trigger point therapy uses precise pressure and techniques to release specific points that are causing your pain pattern. This targeted approach provides faster, more lasting relief than surface-level treatments.</p>
+    </div>
+  </section>
 
+  <!-- Referred Pain Patterns - Alternating Section -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2>Understanding Referred Pain Patterns</h2>
+      <p>One of the most challenging aspects of muscle pain is that it often doesn't hurt where the problem actually is. Trigger points create predictable "referred pain patterns" that Dr. Maks has been extensively trained to recognize:</p>
+      <ul class="pattern-list">
+        <li><strong>Upper Trapezius Trigger Points:</strong> Cause pain up the side of the neck and head, often mistaken for tension headaches</li>
+        <li><strong>Infraspinatus Trigger Points:</strong> Create deep shoulder pain and pain down the arm, often misdiagnosed as rotator cuff injury</li>
+        <li><strong>Gluteus Medius Trigger Points:</strong> Cause low back and hip pain, sometimes mimicking sciatica</li>
+        <li><strong>Sternocleidomastoid Trigger Points:</strong> Can cause dizziness, ear pain, and headaches around the eye</li>
+        <li><strong>Piriformis Trigger Points:</strong> Create pain down the back of the leg, often confused with true sciatica</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 60-Minute Difference Section -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>How We Deliver Results: The 60-Minute 1-on-1 DPT Difference</h2>
+      <p>Unlike assembly-line PT clinics that rush you through 15-minute treatments with assistants, Dr. Maks provides a full 60 minutes of one-on-one attention for every trigger point therapy session. This premium, out-of-network approach ($200 per session) ensures:</p>
+      <ul>
+        <li><strong>Comprehensive Assessment:</strong> Map your complete pain pattern to identify all contributing trigger points, not just the obvious ones</li>
+        <li><strong>DPT-Level Expertise:</strong> Advanced training in referred pain patterns ensures accurate diagnosis of the actual source of your pain</li>
+        <li><strong>Multiple Technique Integration:</strong> Combine manual pressure release, muscle energy techniques, and positional release for maximum effectiveness</li>
+        <li><strong>Personalized Care:</strong> Treatment pressure and techniques customized to your pain tolerance and tissue response</li>
+        <li><strong>Education:</strong> Learn what's causing your trigger points and self-treatment techniques for home maintenance</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Who Benefits Section - Alternating -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2>Who Benefits Most: Baltimore Professionals, Athletes & Chronic Pain Sufferers</h2>
+      <p>Trigger point therapy is particularly effective for Baltimore residents including:</p>
+      <ul class="benefits-list">
+        <li><strong>Harbor East Desk Workers:</strong> Combat chronic neck tension, shoulder pain, and tension headaches from hours at the computer</li>
+        <li><strong>Federal Hill Young Professionals:</strong> Address tech neck, jaw clenching, and stress-related muscle tension</li>
+        <li><strong>Fells Point Athletes:</strong> Resolve stubborn muscle knots and performance-limiting tightness</li>
+        <li><strong>Canton Fitness Enthusiasts:</strong> Release post-workout trigger points that limit recovery and range of motion</li>
+        <li><strong>Chronic Headache Sufferers:</strong> Find relief when medications haven't worked by addressing muscular causes</li>
+        <li><strong>TMJ and Jaw Pain Patients:</strong> Release trigger points in the jaw and neck muscles contributing to TMJ dysfunction</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Treatment Process Section -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+
+      <h2>The Treatment Process</h2>
+      <p>Each trigger point therapy session at Physica Medica includes:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Pain Pattern Assessment (10-15 min)</strong>
+            <p>Map your symptoms to identify which trigger points are causing your specific pain pattern</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Trigger Point Location (5-10 min)</strong>
+            <p>Palpate muscles to locate active trigger points—you'll often recognize the referred pain</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>Manual Release (25-30 min)</strong>
+            <p>Apply sustained pressure and release techniques to deactivate trigger points</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Muscle Lengthening (10-15 min)</strong>
+            <p>Gentle stretching to restore normal muscle length after trigger point release</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <strong>Home Program</strong>
+            <p>Self-treatment techniques using tennis balls, foam rollers, or other tools</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions & Expectations Section -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <div class="highlight-box">
+        <h3>What to Expect After Treatment</h3>
+        <p>Most patients experience significant pain relief immediately after trigger point release. You may feel some muscle soreness for 24-48 hours as the tissue responds to treatment—this is normal and indicates the treatment is working. Many patients notice improved range of motion and decreased referred pain within the first session.</p>
+      </div>
+
+      <h2>Common Conditions Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Head & Neck</h4>
+          <ul>
+            <li>Tension headaches</li>
+            <li>Migraines (muscular component)</li>
+            <li>Neck pain and stiffness</li>
+            <li>TMJ and jaw pain</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Shoulder & Arm</h4>
+          <ul>
+            <li>Shoulder blade pain</li>
+            <li>Rotator cuff-like pain</li>
+            <li>Tennis and golfer's elbow</li>
+            <li>Arm numbness and tingling</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Back & Lower Body</h4>
+          <ul>
+            <li>Low back pain</li>
+            <li>Pseudo-sciatica</li>
+            <li>Hip pain</li>
+            <li>Leg pain and cramping</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA and Testimonial Section -->
+  <section class="content-section-white">
+    <div class="container-narrow">
       <div class="cta-box">
         <h3>Find Relief from Trigger Point Pain</h3>
+        <p>Stop chasing symptoms and address the actual source of your pain. Schedule your trigger point therapy session today.</p>
         <a href="/schedule" class="cta-button">Schedule Treatment</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          I had been dealing with mysterious shoulder pain for months. Dr. Maks found a trigger point in my neck that was referring pain down my arm. One session and the pain was gone. I wish I had come here first instead of going through all those tests.
+        </div>
+        <div class="testimonial-author">
+          <strong>Jennifer K.</strong> - Federal Hill Professional
+        </div>
       </div>
     </div>
   </section>
@@ -82,35 +271,244 @@ const faqs = [
           <h3>Dry Needling & Cupping</h3>
           <p>Advanced trigger point release →</p>
         </a>
+        <a href="/services/specialty-techniques/neural-tension-release" class="related-card">
+          <h3>Neural Tension Release</h3>
+          <p>Address nerve-related tension →</p>
+        </a>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .service-content {
+  /* Enhanced Hero Section */
+  .specialty-hero {
     position: relative;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
+    padding: 3rem 2rem;
     overflow: hidden;
+    z-index: 1;
   }
 
-  /* Diagonal logo wallpaper */
-  .service-content::before {
-    content: '';
+  .hero-gradient-bg {
     position: absolute;
-    top: 30%;
-    right: 10%;
-    width: 350px;
-    height: 159px;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    border-radius: 8px;
-    transform: rotate(-20deg);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 50%, rgba(61, 184, 159, 0.3) 0%, transparent 50%);
     pointer-events: none;
-    z-index: 0;
+  }
+
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-text {
+    color: white;
+  }
+
+  .hero-text h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .specialty-hero .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    margin-bottom: 1.25rem;
+    color: white;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary);
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Alternating section backgrounds */
+  .content-section-white {
+    background: white;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-gray {
+    background: var(--color-background-light);
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-content {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 2rem;
+    background: white;
+  }
+
+  @media (max-width: 768px) {
+    .hero-split {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+
+    .hero-value-pills {
+      justify-content: center;
+    }
+
+    .hero-image {
+      order: -1;
+    }
+
+    .hero-image img {
+      max-width: 280px;
+    }
+  }
+
+  /* Container styling for sections */
+  .content-section-white .container-narrow,
+  .content-section-gray .container-narrow,
+  .service-content .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .content-section-white h2:first-child,
+  .content-section-gray h2:first-child,
+  .service-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .content-section-gray ul {
+    margin-bottom: 0;
+  }
+
+  /* Step cards */
+  .step-cards {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .step-content strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .image-right {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+    max-width: 350px;
+  }
+
+  .image-right img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-left {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+    max-width: 350px;
+  }
+
+  .image-left img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .clearfix {
+    clear: both;
   }
 
   .service-hero {
@@ -134,6 +532,61 @@ const faqs = [
     color: var(--color-primary);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+  }
+
+  .service-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-content ul,
+  .service-content ol {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .service-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+  }
+
+  .highlight-box h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .condition-item {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .condition-item li {
+    margin-bottom: 0.25rem;
   }
 
   .cta-box {
@@ -189,5 +642,32 @@ const faqs = [
 
   .text-center {
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .image-right,
+    .image-left {
+      float: none;
+      margin: 2rem auto;
+      max-width: 100%;
+    }
+
+    .content-section-alt {
+      margin: 2rem -1.5rem;
+      padding: 1.5rem;
+    }
+
+    .step-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .step-number {
+      margin: 0 auto;
+    }
+
+    .service-content .container-narrow {
+      padding: 2rem 1.5rem;
+    }
   }
 </style>

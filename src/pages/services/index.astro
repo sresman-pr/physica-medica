@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
 
 // Import service images
@@ -15,6 +16,8 @@ const pageDescription = "Comprehensive physical therapy services including Panca
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <WatermarkBackground variant="teal" angle={-10} />
+  
   <section class="services-hero section-spacing">
     <div class="container-narrow text-center">
       <h1>Our Services</h1>
@@ -113,38 +116,19 @@ const pageDescription = "Comprehensive physical therapy services including Panca
 </BaseLayout>
 
 <style>
-  /* Services page - repeating logo wallpaper */
   .services-hero,
   .services-grid-section {
     position: relative;
-    overflow: hidden;
-  }
-
-  .services-hero::before,
-  .services-grid-section::before {
-    content: '';
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    right: -5%;
-    bottom: -5%;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: 220px 100px;
-    background-repeat: repeat;
-    background-position: 0 0;
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 0;
+    z-index: 1;
   }
 
   .services-hero {
-    background: var(--color-background-light);
-    color: var(--color-text-primary);
+    background: transparent;
+    color: white;
   }
 
   .services-hero h1 {
-    color: var(--color-text-primary);
+    color: white;
   }
 
   .services-grid {
@@ -213,12 +197,13 @@ const pageDescription = "Comprehensive physical therapy services including Panca
 
   .cta-section {
     background: var(--color-background-light);
+    position: relative;
+    z-index: 1;
   }
 
   .lead {
     font-size: 1.25rem;
-    color: var(--color-text-primary);
-    opacity: 0.9;
+    color: rgba(255,255,255,0.9);
   }
 
   .text-center {

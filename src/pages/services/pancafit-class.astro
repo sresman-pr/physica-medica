@@ -56,25 +56,36 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <!-- Hero Section with Image Background -->
-  <section class="service-hero-modern">
-    <div class="hero-overlay"></div>
-    <div class="hero-image-bg">
-      <Image 
-        src={pancafitImg}
-        alt="Pancafit postural correction"
-        width={117}
-        height={105}
-        format="webp"
-        loading="eager"
-        fetchpriority="high"
-        quality={85}
-      />
-    </div>
-    <div class="container-narrow hero-content-modern">
-      <h1>Pancafit Class</h1>
-      <p class="hero-subtitle-modern">Revolutionary Postural Correction Method from Italy</p>
-      <a href="/schedule" class="hero-cta-button">Book Your First Session</a>
+  <!-- Hero Section with Large Image -->
+  <section class="pancafit-hero">
+    <div class="hero-gradient"></div>
+    <div class="container-narrow">
+      <div class="hero-content-split">
+        <div class="hero-text">
+          <h1>Pancafit Class</h1>
+          <p class="hero-subtitle">Revolutionary Postural Correction Method from Italy</p>
+          <div class="hero-value-banner">
+            <span class="value-item"><strong>60</strong> Minutes</span>
+            <span class="value-divider">|</span>
+            <span class="value-item"><strong>1-on-1</strong> with DPT</span>
+            <span class="value-divider">|</span>
+            <span class="value-item"><strong>$200</strong>/session</span>
+          </div>
+          <a href="/schedule" class="hero-cta-button">Book Your First Session</a>
+        </div>
+        <div class="hero-image-showcase">
+          <Image 
+            src={pancafitImg}
+            alt="Pancafit postural correction device"
+            width={500}
+            height={450}
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+            quality={90}
+          />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -215,34 +226,154 @@ const faqs = [
 </BaseLayout>
 
 <style>
-  /* Page-specific styles (shared styles imported from service-pages.css) */
-
-  .service-content {
+  /* Pancafit Hero Section */
+  .pancafit-hero {
     position: relative;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
+    padding: 4rem 2rem;
     overflow: hidden;
   }
 
-  /* Repeating logo wallpaper grid */
-  .service-content::before {
-    content: '';
+  .hero-gradient {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: 260px 118px;
-    background-repeat: repeat;
-    opacity: 0.08;
+    background: radial-gradient(circle at 80% 50%, rgba(61, 184, 159, 0.3) 0%, transparent 50%);
     pointer-events: none;
-    z-index: 0;
+  }
+
+  .hero-content-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-text {
+    color: white;
+  }
+
+  .hero-text h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .hero-subtitle {
+    font-size: 1.35rem;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .hero-value-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .value-item {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .value-item strong {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+  }
+
+  .value-divider {
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  .hero-cta-button {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    font-size: 1.1rem;
+  }
+
+  .hero-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .hero-image-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image-showcase img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    background: white;
+    padding: 1rem;
+  }
+
+  /* Benefits section */
+  .benefits-section {
+    background: var(--color-background-light);
+    border-top: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .service-content {
+    position: relative;
+    background: white;
+  }
+
+  /* Add teal accent bar at top of main content */
+  .service-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  .service-content .container-narrow {
+    padding-top: 3rem;
   }
 
   .service-content h2 {
     color: var(--color-primary);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .service-content h2:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
   }
 
   .service-content ul,
@@ -255,7 +386,49 @@ const faqs = [
     margin-bottom: 0.5rem;
   }
 
+  .service-testimonial {
+    margin: 3rem 0;
+    background: var(--color-background-light);
+  }
+
+  .cta-box-modern {
+    margin-top: 3rem;
+  }
+
+  .container-narrow:has(> :global(.author-byline)) {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
   .text-center {
     text-align: center;
+  }
+
+  .related-services-modern {
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 900px) {
+    .hero-content-split {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero-value-banner {
+      justify-content: center;
+    }
+
+    .hero-image-showcase {
+      order: -1;
+    }
+
+    .hero-image-showcase img {
+      max-width: 300px;
+    }
   }
 </style>

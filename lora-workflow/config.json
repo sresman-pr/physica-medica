@@ -1,0 +1,16 @@
+{
+  "trigger_word": "DRMAKS",
+  "training_images_dir": "./training-images-clean",
+  "output_dir": "./generated-images",
+  "replicate": {
+    "training_model": "replicate/fast-flux-trainer",
+    "generation_model": "sresman-pr/drmaks-flux-v1",
+    "model_name": "drmaks-flux-v1",
+    "steps": 1000
+  },
+  "image_settings": {
+    "width": 1024,
+    "height": 768,
+    "num_images": 1
+  }
+}

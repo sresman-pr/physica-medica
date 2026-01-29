@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WatermarkBackground from '../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
 
 // Import about page images
@@ -59,6 +60,8 @@ const physicianSchema = {
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={physicianSchema}>
+  <WatermarkBackground variant="teal" angle={-10} />
+  
   <!-- Hero Section -->
   <section class="about-hero">
     <div class="container-narrow text-center">
@@ -72,17 +75,35 @@ const physicianSchema = {
   <section class="about-content section-spacing">
     <div class="container-narrow">
       <h2>About Dr. Maks</h2>
-      <p>Dr. Maksim Birikov (Dr. Maks) is a Doctor of Physical Therapy and the founder of Physica Medica, Baltimore's premier physical therapy boutique. With over a decade of experience, Dr. Maks has built a reputation for providing comprehensive, patient-centered care that addresses the root cause of pain and dysfunction.</p>
+      <p class="lead-intro">Dr. Maksim Birikov (Dr. Maks) is a Doctor of Physical Therapy and the founder of Physica Medica, Baltimore's premier physical therapy boutique. With over a decade of experience, Dr. Maks has built a reputation for providing comprehensive, patient-centered care that addresses the root cause of pain and dysfunction.</p>
 
-      <h2>A Different Approach to Physical Therapy</h2>
-      <p>Unlike assembly-line PT clinics that rush patients through 15-30 minute sessions, Dr. Maks provides a full 60 minutes of one-on-one attention for every patient. This boutique approach allows for:</p>
-      <ul>
-        <li>Comprehensive assessment of your complete movement system</li>
-        <li>Customized treatment plans tailored to your unique needs</li>
-        <li>Steady communication and plan adjustments based on your progress</li>
-        <li>Education that empowers you to maintain improvements</li>
-        <li>Building genuine rapport to understand your particular issues</li>
-      </ul>
+      <!-- Alternating Section: Different Approach -->
+      <div class="content-section-alt">
+        <h2>A Different Approach to Physical Therapy</h2>
+        <p>Unlike assembly-line PT clinics that rush patients through 15-30 minute sessions, Dr. Maks provides a full 60 minutes of one-on-one attention for every patient. This boutique approach allows for:</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong>Comprehensive Assessment</strong>
+            <p>Full evaluation of your complete movement system</p>
+          </div>
+          <div class="feature-item">
+            <strong>Customized Treatment</strong>
+            <p>Plans tailored to your unique needs and goals</p>
+          </div>
+          <div class="feature-item">
+            <strong>Steady Communication</strong>
+            <p>Plan adjustments based on your progress</p>
+          </div>
+          <div class="feature-item">
+            <strong>Patient Education</strong>
+            <p>Empowering you to maintain improvements</p>
+          </div>
+          <div class="feature-item">
+            <strong>Genuine Rapport</strong>
+            <p>Building trust to understand your particular issues</p>
+          </div>
+        </div>
+      </div>
 
       <!-- Professional Images -->
       <div class="about-images-grid">
@@ -113,26 +134,93 @@ const physicianSchema = {
         </div>
       </div>
 
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p class="testimonial-text">I feel so incredibly lucky to have found Dr Maks. I came to him in a truly awful state and he managed to get things back on track unbelievably quickly. Not sure if it was magic, a miracle, or just insane amounts of talent. His knowledge and genuine desire to help sets Physica Medica apart. I cannot recommend Dr Maks enough. I've been to physio before but this is next level.</p>
+        <div class="testimonial-author">
+          <span class="star-rating">★★★★★</span>
+          <strong>Google Review</strong>
+        </div>
+      </div>
+
       <h2>Education & Expertise</h2>
       <p>Dr. Maks earned his Doctor of Physical Therapy (DPT) degree and has pursued advanced training in multiple specialized techniques:</p>
-      <ul>
-        <li><strong>Pancafit Method:</strong> Revolutionary postural correction technique from Italy</li>
-        <li><strong>Dry Needling & Cupping:</strong> Advanced myofascial pain treatment</li>
-        <li><strong>Scoliosis Management:</strong> Specialized care for spinal curvature</li>
-        <li><strong>Wim Hof Method:</strong> Certified instructor in this powerful breathing and cold therapy technique</li>
-        <li><strong>Pregnancy & Postpartum Care:</strong> Expert treatment for expecting and new mothers</li>
-        <li><strong>Biomechanics & Movement Science:</strong> Understanding how the body moves as a system</li>
-      </ul>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <div class="expertise-icon">🇮🇹</div>
+          <h4>Pancafit Method</h4>
+          <p>Revolutionary postural correction technique from Italy</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">📍</div>
+          <h4>Dry Needling & Cupping</h4>
+          <p>Advanced myofascial pain treatment</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">🦴</div>
+          <h4>Scoliosis Management</h4>
+          <p>Specialized care for spinal curvature</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">❄️</div>
+          <h4>Wim Hof Method</h4>
+          <p>Certified instructor in breathing and cold therapy</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">🤰</div>
+          <h4>Pregnancy & Postpartum</h4>
+          <p>Expert treatment for expecting and new mothers</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">⚙️</div>
+          <h4>Biomechanics</h4>
+          <p>Understanding how the body moves as a system</p>
+        </div>
+      </div>
 
-      <h2>Philosophy of Care</h2>
-      <p>Dr. Maks believes that the human body is an incredible machine, capable of remarkable healing and adaptation when given proper guidance. His philosophy centers on:</p>
-      <ul>
-        <li><strong>Root Cause Treatment:</strong> Address the underlying issue, not just symptoms</li>
-        <li><strong>Systems Integration:</strong> Your body works as a system, not isolated parts</li>
-        <li><strong>Patient Education:</strong> Empowering you with knowledge about your condition</li>
-        <li><strong>Personalized Care:</strong> Every patient has unique needs and deserves individualized attention</li>
-        <li><strong>Quality Over Quantity:</strong> Fewer, more effective sessions rather than prolonged care</li>
-      </ul>
+      <!-- Alternating Section: Philosophy -->
+      <div class="content-section-alt">
+        <h2>Philosophy of Care</h2>
+        <p>Dr. Maks believes that the human body is an incredible machine, capable of remarkable healing and adaptation when given proper guidance.</p>
+        <div class="philosophy-grid">
+          <div class="philosophy-item">
+            <div class="philosophy-number">1</div>
+            <div class="philosophy-content">
+              <strong>Root Cause Treatment</strong>
+              <p>Address the underlying issue, not just symptoms</p>
+            </div>
+          </div>
+          <div class="philosophy-item">
+            <div class="philosophy-number">2</div>
+            <div class="philosophy-content">
+              <strong>Systems Integration</strong>
+              <p>Your body works as a system, not isolated parts</p>
+            </div>
+          </div>
+          <div class="philosophy-item">
+            <div class="philosophy-number">3</div>
+            <div class="philosophy-content">
+              <strong>Patient Education</strong>
+              <p>Empowering you with knowledge about your condition</p>
+            </div>
+          </div>
+          <div class="philosophy-item">
+            <div class="philosophy-number">4</div>
+            <div class="philosophy-content">
+              <strong>Personalized Care</strong>
+              <p>Every patient deserves individualized attention</p>
+            </div>
+          </div>
+          <div class="philosophy-item">
+            <div class="philosophy-number">5</div>
+            <div class="philosophy-content">
+              <strong>Quality Over Quantity</strong>
+              <p>Fewer, more effective sessions rather than prolonged care</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <h2>Why Patients Choose Dr. Maks</h2>
       <p>Patients from across Baltimore choose Physica Medica because of Dr. Maks's unique combination of:</p>
@@ -152,6 +240,16 @@ const physicianSchema = {
         <div class="quality-card">
           <h3>Results</h3>
           <p>Over 300 five-star reviews from patients who've experienced lasting relief</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p class="testimonial-text">Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan.</p>
+        <div class="testimonial-author">
+          <span class="star-rating">★★★★★</span>
+          <strong>Stefan Pearson</strong> — Google Review
         </div>
       </div>
 
@@ -200,19 +298,21 @@ const physicianSchema = {
 
 <style>
   .about-hero {
-    background: var(--color-background-light);
-    color: var(--color-text-primary);
+    background: transparent;
+    color: white;
     padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .about-hero h1 {
-    color: var(--color-text-primary);
+    color: white;
     margin-bottom: 0.5rem;
   }
 
   .credentials {
     font-size: 1.25rem;
-    color: var(--color-accent);
+    color: rgba(255,255,255,0.9);
     margin-bottom: 1rem;
     font-weight: 600;
   }
@@ -220,15 +320,205 @@ const physicianSchema = {
   .tagline {
     font-size: 1.5rem;
     font-style: italic;
-    opacity: 0.9;
+    color: rgba(255,255,255,0.85);
     margin-bottom: 0;
+  }
+
+  .about-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 1rem;
+  }
+
+  /* White content card for readability */
+  .about-content .container-narrow {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+
+  /* Lead intro paragraph */
+  .lead-intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    border-left: 4px solid var(--color-accent);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Alternating section within card */
+  .content-section-alt {
+    background: var(--color-background-light);
+    margin: 2.5rem -3rem;
+    padding: 2rem 3rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .content-section-alt h2 {
+    margin-top: 0;
+  }
+
+  /* Feature list cards */
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .feature-item {
+    background: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .feature-item strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .feature-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Expertise grid */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .expertise-card {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .expertise-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .expertise-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .expertise-card h4 {
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+  }
+
+  .expertise-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Philosophy numbered list */
+  .philosophy-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .philosophy-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .philosophy-number {
+    width: 36px;
+    height: 36px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .philosophy-content strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .philosophy-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Testimonial cards */
+  .testimonial-card {
+    background: linear-gradient(135deg, rgba(45, 109, 95, 0.05) 0%, rgba(61, 184, 159, 0.05) 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--color-accent);
+    margin: 2.5rem 0;
+    position: relative;
+  }
+
+  .quote-icon {
+    font-size: 4rem;
+    color: var(--color-accent);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: -1.5rem;
+    font-family: Georgia, serif;
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--color-text-primary);
+    margin: 0 0 1rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .star-rating {
+    color: #ffc107;
+    font-size: 1.1rem;
+  }
+
+  .testimonial-author strong {
+    color: var(--color-primary);
   }
 
   .about-images-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2.5rem 0;
   }
 
   .about-image img {
@@ -237,41 +527,14 @@ const physicianSchema = {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
 
-  .about-content {
-    position: relative;
-  }
-
-  /* Large centered logo wallpaper */
-  .about-content::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 227px;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.12;
-    border-radius: 12px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* Remove old corner logos */
-  .about-content::after {
-    display: none;
-  }
-
   .about-content h2 {
     color: var(--color-primary);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
+  }
+
+  .about-content h2:first-child {
+    margin-top: 0;
   }
 
   .about-content ul {
@@ -286,7 +549,7 @@ const physicianSchema = {
   .qualities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     margin: 2rem 0;
   }
 
@@ -296,6 +559,12 @@ const physicianSchema = {
     border-radius: 0.5rem;
     border-top: 4px solid var(--color-accent);
     text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .quality-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
 
   .quality-card h3 {
@@ -313,7 +582,7 @@ const physicianSchema = {
     padding: 2rem;
     border-radius: 0.5rem;
     border-left: 4px solid var(--color-accent);
-    margin: 3rem 0;
+    margin: 3rem 0 0;
     text-align: center;
   }
 
@@ -324,6 +593,8 @@ const physicianSchema = {
 
   .credentials-section {
     background: var(--color-background-light);
+    position: relative;
+    z-index: 1;
   }
 
   .credentials-grid {
@@ -339,6 +610,12 @@ const physicianSchema = {
     border-radius: 0.5rem;
     text-align: center;
     border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .credential-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
 
   .credential-icon {
@@ -364,6 +641,30 @@ const physicianSchema = {
   @media (max-width: 768px) {
     .about-images-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .about-content .container-narrow {
+      padding: 2rem 1.5rem;
+      margin: 0 0.5rem;
+    }
+
+    .content-section-alt {
+      margin: 2rem -1.5rem;
+      padding: 1.5rem;
+    }
+
+    .feature-list,
+    .expertise-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .philosophy-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .philosophy-number {
+      margin: 0 auto;
     }
   }
 </style>

@@ -1,0 +1,126 @@
+{
+  "model": "sresman-pr/drmaks-flux-v1",
+  "trigger_word": "DRMAKS",
+  "images": [
+    {
+      "filename": "dry-needling-cupping-1.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "A professional physical therapy session: The practitioner is a man named DRMAKS (long dark brown hair, beard, wearing a navy blue Physica Medica branded t-shirt). He is performing a dry needling technique on a female patient named Sarah. Sarah has short blonde hair and is wearing a modest gray cotton t-shirt and black athletic leggings. Sarah is a distinctly different individual from the doctor. Clinical setting, professional medical photography, modest clinical attire, patient is fully clothed.",
+      "url": "https://replicate.delivery/xezq/O4dMJZHOIuoMHpPnWYpMMNeQw5vJVN5n9GbFcaGaOfk8QxBWA/out-0.jpg"
+    },
+    {
+      "filename": "dry-needling-cupping-2.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "A professional clinical treatment: The therapist is DRMAKS (a man with long dark brown hair and beard in a teal athletic shirt). He is applying myofascial cupping therapy to an elderly male patient named Robert. Robert has short white hair, is clean-shaven, and is wearing a thick gray medical t-shirt and loose track pants. Robert looks completely different from DRMAKS. Clinical environment, professional healthcare photography, no nudity, patient is fully clothed.",
+      "url": "https://replicate.delivery/xezq/jbKp59icpIr2IVErE4OyiB9U0JAovCPv3PvRfVSMDKlko4ALA/out-0.jpg"
+    },
+    {
+      "filename": "dry-needling-cupping-3.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "Medical documentation photo: The practitioner DRMAKS (male, long dark brown hair, beard, black Physica Medica polo) is performing dry needling and cupping on a young male patient named James. James has short black hair, no facial hair, and is wearing a white athletic t-shirt. James is a unique individual with no resemblance to the practitioner. Bright clinical lighting, professional medical standards, modest attire.",
+      "url": "https://replicate.delivery/xezq/r3eNKkEapawMBaogMpoBqcKLWe1bIYyrPnbFiNvDTmiURxBWA/out-0.jpg"
+    },
+    {
+      "filename": "trigger-point-1.jpg",
+      "category": "trigger-point",
+      "prompt": "Professional clinical session: The doctor is DRMAKS (male, long dark brown hair, beard, maroon athletic shirt). He is applying thumb pressure to a trigger point on a middle-aged female patient named Linda. Linda has short curly red hair and is wearing a high-neck gray athletic top. Linda is a unique person who does not resemble the doctor. Clinical setting, natural lighting, professional medical photography, modest clothing.",
+      "url": "https://replicate.delivery/xezq/q84Lx6V1LVZMDtXR4hLkQas4ctkVUuv2viQXfSXz4Mvvo4ALA/out-0.jpg"
+    },
+    {
+      "filename": "trigger-point-2.jpg",
+      "category": "trigger-point",
+      "prompt": "Physical therapy treatment: The therapist DRMAKS (male, long dark brown hair, beard, charcoal gray athletic shirt) is performing myofascial release on a muscular male patient named David. David has a blonde buzz-cut, no beard, and is wearing a navy blue workout t-shirt. David is a distinct person from DRMAKS. Professional medical documentation style, modest athletic gear, patient is fully clothed.",
+      "url": "https://replicate.delivery/xezq/fAxhLzu6gKSOCCRBWcbHys3e7Lbte5V9MnYyE9rEyNrVjiDsA/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-1.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "Clinical assessment: The practitioner DRMAKS (male, long dark brown hair, beard, yellow Physica Medica t-shirt) has his hands on the ribcage of a female patient named Maria. Maria has a dark bob-cut hairstyle and is wearing a thick purple athletic t-shirt. Maria is a unique individual with features very different from the doctor. Supine on treatment table, professional healthcare photography, modest attire.",
+      "url": "https://replicate.delivery/xezq/6kp2Xmcfo1SYCiAxAnp29DmpO0ueRiekRHdxqkFHLKYpjiDsA/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-2.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "Instructional medical setting: DRMAKS (male, long dark brown hair, beard, forest green athletic shirt) is demonstrating breathing to an elderly male patient named Thomas. Thomas has thinning white hair, is clean-shaven, and is wearing a buttoned-up blue clinical shirt. Thomas and DRMAKS are two distinct individuals of different ages. Professional medical instruction photography, fully clothed.",
+      "url": "https://replicate.delivery/xezq/0ws8iJ9Cmz5yEVcSQ1FvMbPPCWmREsI2hrEWpbJ2LA1fo4ALA/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-3.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "Clinical treatment room: The therapist DRMAKS (male, long dark brown hair, beard, navy blue Physica Medica t-shirt) is performing a core assessment on a female patient named Jennifer. Jennifer has long blonde hair and is wearing a thick gray sweatshirt. Jennifer is a completely different person from the therapist. Professional medical photography, modest clinical attire.",
+      "url": "https://replicate.delivery/xezq/0RnzyE4ypFoBOZSG2kwPiPKJwISyuSYfOu2dADTZyhZFp4ALA/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-1.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "Medical photography: The doctor DRMAKS (male, long dark brown hair, beard, burgundy athletic shirt) is performing mobilization on a young male patient named Kevin. Kevin has short black hair, no facial hair, and is wearing a green compression t-shirt. Kevin does not resemble the therapist. Clinical setting, professional medical photography, modest clothing.",
+      "url": "https://replicate.delivery/xezq/Ep4GMi9FX0amPBfXAXro96cwjXLfxa9leeqVhzQqooMXJFHYB/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-2.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "Healthcare session: The practitioner DRMAKS (male, long dark brown hair, beard, royal blue Physica Medica t-shirt) is using a soft tissue tool on an elderly female patient named Martha. Martha has short silver hair, wears glasses, and is wearing a long-sleeved pink athletic top. Martha is a separate individual with very different features than the practitioner. Professional healthcare photography, modest attire.",
+      "url": "https://replicate.delivery/xezq/jeNih8MTbETkPKb3WfihBtWuQf3hwdUeLLi1tffpJjedQp4ALA/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-3.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "Clinical environment: The therapist DRMAKS (male, long dark brown hair, beard, dark teal athletic shirt) is mobilizing scar tissue on a teenage boy named Leo. Leo has short curly brown hair and is wearing a gray hoodie and basketball shorts. Leo looks completely different from the therapist. Bright clinical lighting, professional medical standards, no nudity.",
+      "url": "https://replicate.delivery/xezq/RUzIs0BGbr6gFBfZvxWrosvKDLyWX4bcaeFn62Avh6KrSxBWA/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-1.jpg",
+      "category": "posture-reeducation",
+      "prompt": "Professional medical evaluation: The doctor DRMAKS (male, long dark brown hair, beard, charcoal gray Physica Medica polo) is assessing the posture of a petite female patient named Sophie. Sophie has short brown hair and is wearing a black high-neck athletic tank top and yoga pants. Sophie is a unique individual who does not resemble the doctor. Posture grid background, professional medical photography, modest attire.",
+      "url": "https://replicate.delivery/xezq/j55Wd1KmYdbkGxngg6fRDE6P37xx6dfpDvKRBa45Cul2SxBWA/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-2.jpg",
+      "category": "posture-reeducation",
+      "prompt": "Instructional healthcare photo: The therapist DRMAKS (male, long dark brown hair, beard, olive green athletic shirt) is adjusting the posture of a male patient named Brian. Brian has blonde spiky hair, no beard, and is wearing a professional white polo shirt. Brian is a separate person with a very different look than DRMAKS. Ergonomic assessment setting, professional medical standards, fully clothed.",
+      "url": "https://replicate.delivery/xezq/He8BkPzPHPTOZqRNMuNrA8ZOEyp9eMWzh1gNVYd3iliBTxBWA/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-3.jpg",
+      "category": "posture-reeducation",
+      "prompt": "Clinical environment: The practitioner DRMAKS (male, long dark brown hair, beard, black Physica Medica t-shirt) is demonstrating posture to an elderly male patient named William. William is bald, clean-shaven, and is wearing a blue checkered shirt and khakis. They are two distinct people with no resemblance to each other. Professional medical instruction photography, modest attire.",
+      "url": "https://replicate.delivery/xezq/72LsKOWtHEbFOFpg75sCdYnx8tGGebKfKUHwdEd1jBwQTxBWA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-1.jpg",
+      "category": "neural-tension-release",
+      "prompt": "Professional medical photography: The doctor DRMAKS (male, long dark brown hair, beard, maroon athletic shirt) is performing a neural test on a female patient named Chloe. Chloe has long black hair in a ponytail and is wearing a thick gray athletic t-shirt. Chloe is a completely different person from the therapist. Clinical setting, professional medical standards, modest clothing.",
+      "url": "https://replicate.delivery/xezq/dv99Fc7uDd4UOlVYZDLXDhreqCBR50uq1lfCTd9ZD05bTxBWA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-2.jpg",
+      "category": "neural-tension-release",
+      "prompt": "Medical documentation: The therapist DRMAKS (male, long dark brown hair, beard, navy blue Physica Medica t-shirt) is performing mobilization on a middle-aged male patient named Mark. Mark has short brown hair, is clean-shaven, and is wearing a black workout t-shirt. Mark does not resemble the therapist. Clinical environment, professional healthcare photography, fully clothed.",
+      "url": "https://replicate.delivery/xezq/03QiVSHslXorMpwC37LN0KTJk4TgfzvLEAH5ONDTos6yp4ALA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-3.jpg",
+      "category": "neural-tension-release",
+      "prompt": "Clinical session: The practitioner DRMAKS (male, long dark brown hair, beard, teal athletic shirt) is performing nerve gliding on a female patient named Alice. Alice has blonde hair and is wearing a purple high-neck compression shirt. Alice is a separate, unique individual who looks nothing like the practitioner. Professional medical photography, modest clinical attire.",
+      "url": "https://replicate.delivery/xezq/nmfnPiUl9NQUAS8HddZxreMGDm7LyXcvXC4xjYqgC2nxTxBWA/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-1.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "Professional medical photography: The doctor DRMAKS (male, long dark brown hair, beard, yellow Physica Medica t-shirt) is performing laryngeal therapy on a female patient named Emily. Emily has curly red hair and is wearing a high-neck white athletic top. Emily is a unique individual with very different features than the doctor. Clinical setting, professional medical standards, modest clothing.",
+      "url": "https://replicate.delivery/xezq/QyiVnQ0TYvpEPtmnGQnb1SLDOquKrjUnyjVeozeDBbp8TxBWA/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-2.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "Medical documentation: The therapist DRMAKS (male, long dark brown hair, beard, burgundy athletic shirt) is performing jaw mobilization on an elderly male patient named Arthur. Arthur has white hair, is clean-shaven, and is wearing a blue medical gown over a t-shirt. Arthur is a distinctly different person from the therapist. Clinical environment, professional healthcare photography, modest attire.",
+      "url": "https://replicate.delivery/xezq/K4zJ1UB9VTJKENCPF2fFkbI8xJmpjQ0MFSbgeaRsnbgHUxBWA/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-3.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "Healthcare session: The practitioner DRMAKS (male, long dark brown hair, beard, charcoal gray Physica Medica polo) is treating neck tension on a female patient named Rachel. Rachel has a blonde bob hairstyle and is wearing a modest navy blue athletic t-shirt. Rachel is a separate individual who does not look like DRMAKS. Clinical setting, professional medical standards, patient is fully clothed.",
+      "url": "https://replicate.delivery/xezq/2qKqnVHZ6FbeTCAeURz6xnNfE5eRAwXaw5pDZOPwjOoKRFHYB/out-0.jpg"
+    }
+  ]
+}

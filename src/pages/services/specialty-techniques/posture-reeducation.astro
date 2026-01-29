@@ -1,0 +1,930 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../../components/WatermarkBackground.astro';
+import FAQSection from '../../../components/FAQSection.astro';
+import AuthorByline from '../../../components/AuthorByline.astro';
+import { Image } from 'astro:assets';
+
+// Import technique images - unique to this page only
+import alignmentImg from '../../../images/specialty-v3-posture-sitting.jpg';
+import spineCorrectImg from '../../../images/specialty-v3-posture-standing.jpg';
+import standingImg from '../../../images/specialty-v3-posture-exercise.jpg';
+
+const pageTitle = "Baltimore Posture Re-education | Physical Therapy | Physica Medica";
+const pageDescription = "Expert posture re-education in Baltimore. Stand taller, decrease forward head posture, improve daily function. $200 out-of-network premium care with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
+  { name: "Posture Re-education", url: "/services/specialty-techniques/posture-reeducation" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Posture Re-education",
+  "description": "Comprehensive postural training to correct alignment, prevent pain, and improve daily function through evidence-based movement education",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How long does it take to correct poor posture?",
+    answer: "Noticeable improvements often occur within 4-6 sessions as you learn proper alignment and strengthen supporting muscles. However, lasting postural change requires consistent practice of new patterns over 8-12 weeks. Dr. Maks provides the education and exercises needed for permanent improvement."
+  },
+  {
+    question: "Can posture really cause pain?",
+    answer: "Absolutely. Poor posture places excessive strain on muscles, ligaments, and joints. Forward head posture alone adds 10 pounds of pressure to your spine for every inch forward. This chronic strain leads to neck pain, headaches, shoulder pain, back pain, and accelerated joint degeneration."
+  },
+  {
+    question: "Is it too late to fix my posture if I've had poor posture for years?",
+    answer: "It's never too late. While long-standing postural habits require more focused work, significant improvements are achievable at any age. The key is addressing both the structural restrictions (tight muscles, stiff joints) and retraining movement patterns, which is exactly what Dr. Maks specializes in."
+  },
+  {
+    question: "Will I have to think about my posture all the time?",
+    answer: "Initially, yes, you'll need conscious awareness to break old habits. However, as new patterns become ingrained through repetition and muscle memory, good posture becomes automatic. Dr. Maks teaches you to recognize and correct postural faults efficiently."
+  },
+  {
+    question: "Can posture re-education help with tech neck?",
+    answer: "Yes, tech neck (forward head posture from prolonged device use) is one of the most common conditions we treat. Posture re-education addresses the muscle imbalances, joint restrictions, and movement patterns that cause tech neck, providing lasting relief."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="gray" />
+  
+  <!-- Hero Section - Centered -->
+  <section class="specialty-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Posture Re-education</h1>
+        <p class="hero-subtitle">Stand Taller, Move Better, Live Pain-Free</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+          <span class="value-pill">$200/visit</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro - White with side image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is Posture Re-education?</h2>
+          <p>Proper posture means training your body to stand, walk, sit, and lie with minimal strain on muscles and ligaments. Poor posture leads to pain, compensation patterns, and accelerated wear on your joints.</p>
+          <p>Posture re-education identifies your specific postural faults, addresses underlying restrictions, and retrains optimal movement patterns—helping you stand taller, reduce pain, and move more efficiently.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={alignmentImg}
+            alt="Posture alignment assessment"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Neck Stat Highlight -->
+  <section class="content-section-stat">
+    <div class="container-narrow">
+      <div class="stat-highlight-row">
+        <div class="stat-highlight-item">
+          <span class="big-stat">10 lbs</span>
+          <span class="stat-desc">Added spinal pressure for every inch of forward head posture</span>
+        </div>
+        <div class="stat-highlight-item">
+          <span class="big-stat">80%</span>
+          <span class="stat-desc">Of Americans will experience back pain—much of it posture-related</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hidden Cost - Gray with numbered items -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Hidden Cost of Poor Posture</h2>
+      <p class="section-intro">Poor posture is more than aesthetics—it creates a cascade of problems throughout your body:</p>
+      
+      <div class="cost-grid">
+        <div class="cost-item">
+          <div class="cost-icon">😣</div>
+          <h4>Chronic Pain</h4>
+          <p>Neck pain, headaches, shoulder pain, and low back pain from sustained tension</p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon">🫁</div>
+          <h4>Breathing Issues</h4>
+          <p>Slouched posture compresses the diaphragm, reducing lung capacity</p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon">⚡</div>
+          <h4>Fatigue</h4>
+          <p>Poor alignment requires more energy to maintain upright position</p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon">🦴</div>
+          <h4>Joint Degeneration</h4>
+          <p>Uneven loading leads to premature arthritis and disc problems</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Teal -->
+  <section class="content-section-teal">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
+      <p class="section-intro-light">Unlike assembly-line clinics, Dr. Maks provides a full hour of undivided attention for comprehensive postural correction.</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>Postural Assessment</strong>
+          <p>Detailed analysis of standing, sitting, and movement postures</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Integrated Treatment</strong>
+          <p>Address tight muscles, weak muscles, stiff joints, and faulty patterns simultaneously</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Personalized Education</strong>
+          <p>Learn why your posture developed and how to maintain improvements</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Functional Training</strong>
+          <p>Practice proper posture for your actual daily activities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={spineCorrectImg}
+            alt="Spine correction and postural therapy"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>Who Benefits Most</h2>
+          <ul class="styled-list">
+            <li><strong>Desk Workers:</strong> Combat forward head posture and rounded shoulders</li>
+            <li><strong>Tech Users:</strong> Address "tech neck" from phone and computer use</li>
+            <li><strong>Remote Workers:</strong> Set up ergonomic home offices</li>
+            <li><strong>Healthcare Workers:</strong> Correct postural strain from long shifts</li>
+            <li><strong>Aging Adults:</strong> Maintain upright posture and prevent stooping</li>
+            <li><strong>Athletes:</strong> Optimize posture for performance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Treatment Process</h2>
+      <p class="section-intro">Each 60-minute session at Physica Medica includes:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Comprehensive Postural Assessment (15-20 min)</strong>
+            <p>Analyze standing, sitting, and functional postures; identify imbalances</p>
+          </div>
+        </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Manual Therapy (15-20 min)</strong>
+              <p>Release tight muscles and mobilize stiff joints preventing optimal posture</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Postural Retraining (15-20 min)</strong>
+              <p>Learn and practice proper alignment with real-time feedback</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <strong>Strengthening Exercises (10-15 min)</strong>
+              <p>Build strength in postural support muscles to maintain new alignment</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <strong>Ergonomic Education</strong>
+              <p>Optimize your workspace, sleeping position, and daily activities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>What to Expect After Treatment</h3>
+        <p>You'll immediately stand taller and feel less tension in your neck and shoulders. Initially, maintaining good posture requires conscious effort as your body adapts to new positions. Some postural support muscles may feel fatigued as they strengthen. These are positive signs of change. Within weeks, improved posture becomes more natural and automatic.</p>
+      </div>
+
+      <h2>Common Postural Problems Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Upper Body</h4>
+          <ul>
+            <li>Forward head posture</li>
+            <li>Rounded shoulders</li>
+            <li>Thoracic kyphosis</li>
+            <li>Tech neck</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Lower Body</h4>
+          <ul>
+            <li>Excessive lumbar lordosis</li>
+            <li>Flat back posture</li>
+            <li>Pelvic tilt</li>
+            <li>Uneven weight distribution</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Related Symptoms</h4>
+          <ul>
+            <li>Chronic neck and back pain</li>
+            <li>Tension headaches</li>
+            <li>Shoulder impingement</li>
+            <li>Reduced breathing capacity</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Transform Your Posture, Transform Your Life</h3>
+        <p>Stop suffering from posture-related pain. Learn to stand tall and move efficiently.</p>
+        <a href="/schedule" class="cta-button">Schedule Consultation</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          Years of desk work left me with terrible forward head posture and constant neck pain. Dr. Maks taught me how to sit and stand properly, and my pain is completely gone. I feel taller and more confident.
+        </div>
+        <div class="testimonial-author">
+          <strong>Sarah L.</strong> - Harbor East Professional
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Posture Re-education FAQs" />
+
+  <!-- Related Services -->
+  <section class="related-services section-spacing">
+    <div class="container-narrow">
+      <h2 class="text-center">You Might Also Like</h2>
+      <div class="related-grid">
+        <a href="/services/specialty-techniques/diaphragmatic-rehabilitation" class="related-card">
+          <h3>Diaphragmatic Rehabilitation</h3>
+          <p>Improve breathing and core support →</p>
+        </a>
+        <a href="/services/specialty-techniques/trigger-point-therapy" class="related-card">
+          <h3>Trigger Point Therapy</h3>
+          <p>Release postural muscle tension →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ========================================
+     BOLD & STRUCTURED THEME
+     Navy/gold, two-tone cards, uppercase titles
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-navy: #1a365d;
+    --theme-navy-light: #2d4a6f;
+    --theme-gold: #d69e2e;
+    --theme-gold-light: #f6e05e;
+    --theme-slate: #4a5568;
+  }
+
+  /* Hero Section - Bold navy */
+  .specialty-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--theme-navy) 0%, var(--theme-navy-light) 100%);
+    padding: 2.5rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(214,158,46,0.1) 100%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .specialty-hero .hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1.25rem;
+    color: var(--theme-gold-light);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .value-pill {
+    background: var(--theme-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    font-size: 0.85rem;
+    color: var(--theme-navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--theme-navy);
+    padding: 14px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 0;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: 2px solid white;
+  }
+
+  .hero-cta:hover {
+    background: transparent;
+    color: white;
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content sections */
+  .content-section-white {
+    background: white;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-gray {
+    background: #f7fafc;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+    border-top: 3px solid var(--theme-navy);
+    border-bottom: 3px solid var(--theme-navy);
+  }
+
+  .content-section-teal {
+    background: var(--theme-navy);
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-teal h2 { 
+    color: var(--theme-gold); 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Stat highlight section - Gold band */
+  .content-section-stat {
+    background: var(--theme-gold);
+    padding: 1.75rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-highlight-row {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-highlight-item {
+    text-align: center;
+    color: var(--theme-navy);
+  }
+
+  .big-stat {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--theme-navy);
+    line-height: 1;
+  }
+
+  .stat-desc {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    max-width: 180px;
+    margin-top: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Section titles - Bold, uppercase */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-navy);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: var(--theme-slate);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+  }
+
+  /* Content row */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 8px 8px 0 var(--theme-gold);
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: var(--theme-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+  }
+
+  /* Cost grid - Two-tone cards */
+  .cost-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .cost-item {
+    background: white;
+    overflow: hidden;
+    border: 2px solid var(--theme-navy);
+  }
+
+  .cost-icon {
+    font-size: 1.75rem;
+    background: var(--theme-navy);
+    color: white;
+    padding: 1rem;
+    display: block;
+  }
+
+  .cost-item h4 {
+    color: var(--theme-navy);
+    margin: 0.75rem 1rem 0.35rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .cost-item p {
+    margin: 0 1rem 1rem;
+    font-size: 0.85rem;
+    color: var(--theme-slate);
+  }
+
+  /* Feature grid - Navy cards */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .feature-item-light {
+    background: rgba(255,255,255,0.1);
+    padding: 1.25rem;
+    border-left: 4px solid var(--theme-gold);
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+
+  /* Styled list - Bold separators */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 0.85rem 0;
+    border-bottom: 2px solid #e2e8f0;
+    line-height: 1.5;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  .styled-list li strong {
+    color: var(--theme-navy);
+  }
+
+  /* Step cards - Numbered boldly */
+  .step-cards {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-left: 4px solid var(--theme-gold);
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    background: var(--theme-navy);
+    color: var(--theme-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .step-content strong {
+    color: var(--theme-navy);
+    display: block;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--theme-slate);
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+
+    .stat-highlight-row {
+      gap: 2.5rem;
+    }
+
+    .big-stat {
+      font-size: 2.75rem;
+    }
+  }
+
+  /* Legacy support */
+  .service-content .container-narrow {
+    background: white;
+    padding: 3rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+
+  .service-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .content-section-alt {
+    background: #f7fafc;
+    margin: 2rem -3rem;
+    padding: 2rem 3rem;
+    border-top: 2px solid var(--theme-navy);
+    border-bottom: 2px solid var(--theme-navy);
+  }
+
+  .content-section-alt h2 {
+    margin-top: 0;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .image-right {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+    max-width: 320px;
+  }
+
+  .image-right img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-left {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+    max-width: 320px;
+  }
+
+  .image-left img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-inline {
+    margin: 2.5rem auto;
+    text-align: center;
+    max-width: 450px;
+  }
+
+  .image-inline img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .service-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .service-hero h1 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .service-content h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-content ul,
+  .service-content ol {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .service-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+  }
+
+  .highlight-box h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .condition-item {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .condition-item li {
+    margin-bottom: 0.25rem;
+  }
+
+  .cta-box {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .related-services {
+    background: var(--color-background-light);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .related-card p {
+    color: var(--color-accent);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .image-right,
+    .image-left {
+      float: none;
+      margin: 2rem auto;
+      max-width: 100%;
+    }
+
+    .image-inline {
+      max-width: 100%;
+    }
+  }
+</style>

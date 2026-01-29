@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WatermarkBackground from '../components/WatermarkBackground.astro';
 
 const pageTitle = "Patient Reviews | Physica Medica Baltimore | 5-Star Physical Therapy";
 const pageDescription = "Read 300+ five-star reviews from Physica Medica patients. Discover why Baltimore residents choose Dr. Maks for physical therapy.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <WatermarkBackground variant="gray" />
+  
   <section class="reviews-hero">
     <div class="container-narrow text-center">
       <h1>5-STAR REVIEWS</h1>
@@ -64,9 +67,11 @@ const pageDescription = "Read 300+ five-star reviews from Physica Medica patient
 
 <style>
   .reviews-hero {
-    background: var(--color-background-light);
+    background: transparent;
     color: var(--color-text-primary);
     padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .reviews-hero h1 {
@@ -80,24 +85,7 @@ const pageDescription = "Read 300+ five-star reviews from Physica Medica patient
 
   .reviews-content {
     position: relative;
-    overflow: hidden;
-  }
-
-  /* Teal-tinted repeating logo wallpaper */
-  .reviews-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color-primary);
-    background-image: url('/images/Physica-Medica-logo.jpg');
-    background-size: 240px 109px;
-    background-repeat: repeat;
-    opacity: 0.10;
-    pointer-events: none;
-    z-index: 0;
+    z-index: 1;
   }
 
   .reviews-grid {
