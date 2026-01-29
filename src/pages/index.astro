@@ -127,16 +127,18 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       <!-- Row 3: One large training image -->
       <div class="gallery-row row-large">
         <div class="gallery-item gallery-item-full">
-          <Image 
-            src={maksAnthonyImg}
-            alt="Dr. Maks training with client"
-            width={928}
-            height={700}
-            widths={[400, 700]}
-            format="webp"
-            loading="lazy"
-            quality={75}
-          />
+          <a href="/services" class="gallery-image-link">
+            <Image 
+              src={maksAnthonyImg}
+              alt="Dr. Maks training with client"
+              width={928}
+              height={700}
+              widths={[400, 700]}
+              format="webp"
+              loading="lazy"
+              quality={75}
+            />
+          </a>
           <div class="gallery-cta-stack">
             <a href="/services" class="gallery-cta">One-on-One Treatments</a>
             <a href="/schedule" class="gallery-cta">Schedule Your First Appointment</a>
@@ -490,6 +492,18 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     transform: translateY(-2px);
   }
 
+  .gallery-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .gallery-cta-stack {
     position: absolute;
     bottom: 24px;
@@ -497,6 +511,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 2;
   }
 
   .gallery-cta {
