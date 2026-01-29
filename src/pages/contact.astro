@@ -9,140 +9,176 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
 <BaseLayout title={pageTitle} description={pageDescription} hideFooter={true}>
   <WatermarkBackground variant="gray" />
   
+  <!-- Hero Section -->
   <section class="contact-hero">
-    <div class="container-narrow text-center">
-      <h1>CONTACT</h1>
-      <p class="lead">Get in touch to schedule your appointment</p>
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Contact Us</h1>
+        <p class="hero-subtitle">Get in touch to schedule your appointment</p>
+      </div>
     </div>
   </section>
 
-  <section class="contact-content section-spacing">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2>PHYSICA MEDICA</h2>
-          
-          <div class="info-section">
-            <h3>Location</h3>
-            <p>
-              800 S Bond St,<br />
-              Baltimore, MD 21231
-            </p>
-          </div>
-
-          <div class="info-section">
-            <h3>Hours</h3>
-            <p>
-              <strong>M W F:</strong> 8:00 AM - 7:30 PM<br />
-              <strong>Tuesday:</strong> 10:00 AM - 7:30 PM<br />
-              <strong>Thurs Sat Sun:</strong> Closed
-            </p>
-          </div>
-
-          <div class="info-section">
-            <h3>Contact</h3>
-            <p>
-              <a href="tel:443-228-8029">443-228-8029</a> <span class="contact-note">(Call or Text)</span><br />
-              <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
-            </p>
-            <p class="text-friendly-note">Prefer texting? We're text-friendly! Send us a message at <a href="sms:443-228-8029">443-228-8029</a> for a quick response.</p>
-          </div>
-
-          <div class="cta-buttons">
-            <a href="tel:443-228-8029" class="cta-button">Call Now</a>
-            <a href="sms:443-228-8029" class="cta-button">Text Us</a>
-            <a href="/schedule" class="cta-button">Schedule Online</a>
-          </div>
-        </div>
-
+  <!-- Main Contact Section -->
+  <section class="contact-content">
+    <div class="contact-wrapper">
+      <!-- Left Column: Map + Info -->
+      <div class="contact-left">
+        <h2 class="contact-title">PHYSICA MEDICA</h2>
         <div class="map-container">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.1234!2d-76.5934!3d39.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8045e1f7c1a6f%3A0x8b9b3c7f8c7a8f9d!2s800%20S%20Bond%20St%2C%20Baltimore%2C%20MD%2021231!5e0!3m2!1sen!2sus!4v1234567890"
             width="100%" 
-            height="450" 
-            style="border:0; border-radius: 0.5rem;" 
+            height="300" 
+            style="border:0;" 
             allowfullscreen="" 
             loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
             title="Physica Medica Location Map"
           ></iframe>
-          <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="map-reviews-link">
+        </div>
+        <div class="contact-info">
+          <p>800 S Bond St,<br/>Baltimore, MD 21231</p>
+          <p><a href="tel:443-228-8029">443-228-8029</a> <span class="contact-note">(Call or Text)</span></p>
+          <p><a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a></p>
+        </div>
+        <div class="hours-box">
+          <h3>Hours</h3>
+          <p>
+            <strong>M W F:</strong> 8:00 AM - 7:30 PM<br />
+            <strong>Tuesday:</strong> 10:00 AM - 7:30 PM<br />
+            <strong>Thurs Sat Sun:</strong> Closed
+          </p>
+        </div>
+        <div class="cta-buttons">
+          <a href="tel:443-228-8029" class="cta-button">Call Now</a>
+          <a href="sms:443-228-8029" class="cta-button">Text Us</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Contact Form -->
+      <div class="contact-right">
+        <h2 class="contact-title">CONTACT</h2>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name *" required aria-label="Your name" />
+            <input type="email" name="email" placeholder="Email *" required aria-label="Your email" />
+          </div>
+          <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
+          <textarea name="message" placeholder="Message" rows="5" aria-label="Your message"></textarea>
+          <button type="submit" class="submit-btn">Send</button>
+          <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="reviews-link">
             <span class="stars">★★★★★</span>
             <span>300+ Reviews</span>
           </a>
-        </div>
+        </form>
       </div>
     </div>
   </section>
+
+  <!-- Simple Copyright -->
+  <footer class="contact-footer">
+    <p>&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+  </footer>
 </BaseLayout>
 
 <style>
+  /* Hero Section */
   .contact-hero {
-    background: transparent;
-    color: var(--color-text-primary);
-    padding: 3rem 2rem;
     position: relative;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 2.5rem 2rem;
+    overflow: hidden;
     z-index: 1;
   }
 
-  .contact-hero h1 {
-    color: var(--color-text-primary);
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(61,184,159,0.15) 0%, transparent 60%);
+    pointer-events: none;
   }
 
-  .lead {
-    font-size: 1.25rem;
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
     opacity: 0.9;
+    color: white;
   }
 
+  /* Main Contact Section */
   .contact-content {
     position: relative;
     z-index: 1;
-    padding: 0 1rem 2rem;
+    padding: 50px 20px 40px;
+    background: var(--color-background-light);
   }
 
-  .contact-grid {
+  .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: stretch;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
-  /* White card for contact info */
+  .contact-title {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    margin: 0 0 8px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--color-primary);
+    display: inline-block;
+  }
+
+  /* Left Column */
+  .map-container {
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .map-container iframe {
+    display: block;
+  }
+
   .contact-info {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    margin-top: 16px;
   }
 
-  .contact-info h2 {
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--color-accent);
+  .contact-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--color-text-primary);
   }
 
-  .info-section {
-    margin-bottom: 2rem;
-  }
-
-  .info-section h3 {
-    color: var(--color-primary);
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .info-section p {
-    line-height: 1.8;
-  }
-
-  .info-section a {
-    color: var(--color-primary);
+  .contact-info a {
+    color: var(--color-text-primary);
     text-decoration: none;
-    font-weight: 500;
+    font-style: italic;
   }
 
-  .info-section a:hover {
-    text-decoration: underline;
+  .contact-info a:hover {
     color: var(--color-accent);
   }
 
@@ -152,82 +188,162 @@ const pageDescription = "Contact Physica Medica physical therapy in Baltimore. C
     font-style: italic;
   }
 
-  .text-friendly-note {
-    margin-top: 1rem;
+  .hours-box {
+    margin-top: 1.5rem;
     padding: 1rem;
-    background: var(--color-background-light);
-    border-radius: 0.5rem;
+    background: white;
+    border-radius: 8px;
     border-left: 3px solid var(--color-accent);
-    font-size: 0.95rem;
-    line-height: 1.6;
   }
 
-  .text-friendly-note a {
-    color: var(--color-accent);
-    font-weight: 600;
+  .hours-box h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+  }
+
+  .hours-box p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 0.95rem;
   }
 
   .cta-buttons {
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    margin-top: 1.5rem;
   }
 
-  /* White card wrapper for map */
-  .map-container {
+  .cta-button {
+    flex: 1;
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .cta-button:hover {
+    background: var(--color-accent-hover);
+  }
+
+  /* Right Column - Form */
+  .contact-form {
+    margin-top: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0,0,0,0.15);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s;
     background: white;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
   }
 
-  .map-container iframe {
-    border-radius: 8px;
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(61, 184, 159, 0.1);
   }
 
-  .map-reviews-link {
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .submit-btn {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    width: 100%;
+  }
+
+  .submit-btn:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .reviews-link {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     background: white;
-    padding: 12px 20px;
+    padding: 10px 16px;
     border: 2px solid var(--color-accent);
     text-decoration: none;
     color: var(--color-text-primary);
     font-weight: 500;
-    font-size: 0.95rem;
-    margin-top: 1rem;
+    font-size: 0.9rem;
+    margin-top: 12px;
     transition: all 0.2s;
+    width: 100%;
   }
 
-  .map-reviews-link:hover {
+  .reviews-link:hover {
     background: var(--color-accent);
     color: white;
   }
 
-  .map-reviews-link .stars {
+  .reviews-link .stars {
     color: #ffc107;
   }
 
-  .map-reviews-link:hover .stars {
+  .reviews-link:hover .stars {
     color: white;
   }
 
-  .text-center {
+  /* Footer */
+  .contact-footer {
+    background: var(--color-background-light);
+    padding: 1rem 20px;
     text-align: center;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
   }
 
   @media (max-width: 768px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
+    .hero-centered h1 {
+      font-size: 2rem;
     }
 
-    .contact-info {
-      padding: 2rem 1.5rem;
+    .contact-content {
+      padding: 40px 20px 30px;
+    }
+
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
     }
 
     .cta-buttons {
