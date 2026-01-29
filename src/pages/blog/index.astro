@@ -18,9 +18,8 @@ const description = 'Read the latest articles and insights from Physica Medica a
   <!-- Watermark Background -->
   <WatermarkBackground variant="gray" />
 
-  <!-- Hero Section -->
+  <!-- Hero Section - Transparent to show watermark -->
   <section class="blog-hero">
-    <div class="hero-gradient-bg"></div>
     <div class="container-narrow">
       <div class="hero-centered">
         <h1>Blog</h1>
@@ -29,7 +28,7 @@ const description = 'Read the latest articles and insights from Physica Medica a
     </div>
   </section>
 
-  <!-- Blog Grid Section -->
+  <!-- Blog Grid Section - Semi-transparent -->
   <section class="blog-section">
     <div class="container">
       {sortedPosts.length === 0 ? (
@@ -75,32 +74,23 @@ const description = 'Read the latest articles and insights from Physica Medica a
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA Section - Teal accent -->
   <section class="blog-cta-section">
     <div class="container-narrow">
-      <div class="cta-box">
-        <h2>Ready to Start Your Journey?</h2>
-        <p>Schedule a consultation with Dr. Maks to discuss your treatment plan.</p>
-        <a href="/schedule" class="cta-button">Schedule Your Session</a>
-      </div>
+      <h2>Ready to Start Your Journey?</h2>
+      <p>Schedule a consultation with Dr. Maks to discuss your treatment plan.</p>
+      <a href="/schedule" class="cta-button">Schedule Your Session</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  /* Hero Section */
+  /* Hero Section - Transparent so watermark shows */
   .blog-hero {
     position: relative;
-    padding: 100px 20px 80px;
+    z-index: 1;
+    padding: 120px 20px 80px;
     text-align: center;
-    overflow: hidden;
-  }
-
-  .hero-gradient-bg {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #2d6d5f 0%, #1f4d42 100%);
-    z-index: 0;
   }
 
   .hero-centered {
@@ -111,25 +101,26 @@ const description = 'Read the latest articles and insights from Physica Medica a
   .blog-hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    color: white;
+    color: var(--color-primary, #2d6d5f);
     margin-bottom: 1rem;
     letter-spacing: 0.02em;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
   }
 
   .hero-subtitle {
     font-size: 1.35rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #444;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
   }
 
-  /* Blog Section */
+  /* Blog Section - Semi-transparent to show watermark through */
   .blog-section {
     position: relative;
     z-index: 1;
     padding: 4rem 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.7);
   }
 
   .no-posts {
@@ -148,14 +139,14 @@ const description = 'Read the latest articles and insights from Physica Medica a
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .blog-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   }
 
   .blog-card-link {
@@ -227,29 +218,22 @@ const description = 'Read the latest articles and insights from Physica Medica a
     gap: 0.5rem;
   }
 
-  /* CTA Section */
+  /* CTA Section - Teal accent band */
   .blog-cta-section {
     position: relative;
     z-index: 1;
-    padding: 4rem 0 5rem;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95));
-  }
-
-  .cta-box {
+    padding: 4rem 0;
     background: linear-gradient(135deg, #2d6d5f 0%, #1f4d42 100%);
-    padding: 3rem;
-    border-radius: 16px;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(45, 109, 95, 0.2);
   }
 
-  .cta-box h2 {
+  .blog-cta-section h2 {
     color: white;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
 
-  .cta-box p {
+  .blog-cta-section p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
@@ -286,7 +270,7 @@ const description = 'Read the latest articles and insights from Physica Medica a
 
   @media (max-width: 768px) {
     .blog-hero {
-      padding: 80px 20px 60px;
+      padding: 100px 20px 60px;
     }
 
     .blog-hero h1 {
@@ -306,11 +290,11 @@ const description = 'Read the latest articles and insights from Physica Medica a
       gap: 1.5rem;
     }
 
-    .cta-box {
-      padding: 2rem 1.5rem;
+    .blog-cta-section {
+      padding: 3rem 1.5rem;
     }
 
-    .cta-box h2 {
+    .blog-cta-section h2 {
       font-size: 1.5rem;
     }
   }
