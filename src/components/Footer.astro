@@ -1,56 +1,179 @@
 ---
-// Footer Component with Reviews Link and Schedule Button
+// Footer Component with Contact Section
 ---
 
 <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-actions">
-      <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="footer-reviews-link">
-        <span class="stars">★★★★★</span>
-        <span>300+ Reviews</span>
-      </a>
-      <a href="/schedule" class="footer-schedule-btn">Schedule Your Session</a>
+  <div class="footer-contact-section">
+    <div class="footer-wrapper">
+      <div class="footer-left">
+        <h2 class="footer-title">PHYSICA MEDICA</h2>
+        <div class="footer-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.1234!2d-76.5934!3d39.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8045e1f7c1a6f%3A0x8b9b3c7f8c7a8f9d!2s800%20S%20Bond%20St%2C%20Baltimore%2C%20MD%2021231!5e0!3m2!1sen!2sus!4v1234567890"
+            width="100%" 
+            height="280" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Physica Medica location map">
+          </iframe>
+        </div>
+        <div class="footer-info">
+          <p>800 S Bond St,<br/>Baltimore, MD 21231</p>
+          <p><a href="tel:443-228-8029">443-228-8029</a></p>
+          <p><a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h2 class="footer-title">CONTACT</h2>
+        <form class="footer-form" id="footer-contact-form">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name *" required aria-label="Your name" />
+            <input type="email" name="email" placeholder="Email *" required aria-label="Your email" />
+          </div>
+          <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
+          <textarea name="message" placeholder="Message" rows="5" aria-label="Your message"></textarea>
+          <button type="submit" class="footer-submit-btn">Send</button>
+          <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="footer-reviews-link">
+            <span class="stars">★★★★★</span>
+            <span>300+ Reviews</span>
+          </a>
+        </form>
+      </div>
     </div>
+  </div>
+  <div class="footer-bottom">
     <p class="copyright">&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: var(--color-background-light);
-    padding: 1.5rem 20px;
-    text-align: center;
-    border-top: 1px solid var(--color-border);
     position: relative;
     z-index: 1;
   }
 
-  .footer-container {
-    max-width: 1200px;
+  .footer-contact-section {
+    background: var(--color-background-light);
+    padding: 50px 20px 40px;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
-  .footer-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
+  .footer-title {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    margin: 0 0 8px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--color-primary);
+    display: inline-block;
+  }
+
+  .footer-map {
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .footer-map iframe {
+    display: block;
+  }
+
+  .footer-info {
+    margin-top: 16px;
+  }
+
+  .footer-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+  }
+
+  .footer-info a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  .footer-info a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-form {
+    margin-top: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .footer-form input,
+  .footer-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0,0,0,0.15);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background: white;
+  }
+
+  .footer-form input:focus,
+  .footer-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(61, 184, 159, 0.1);
+  }
+
+  .footer-form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .footer-submit-btn {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    width: 100%;
+  }
+
+  .footer-submit-btn:hover {
+    background: var(--color-accent-hover);
   }
 
   .footer-reviews-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     background: white;
-    padding: 10px 20px;
+    padding: 10px 16px;
     border: 2px solid var(--color-accent);
     text-decoration: none;
     color: var(--color-text-primary);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-top: 12px;
     transition: all 0.2s;
+    width: 100%;
   }
 
   .footer-reviews-link:hover {
@@ -66,19 +189,11 @@
     color: white;
   }
 
-  .footer-schedule-btn {
-    display: inline-block;
-    background: var(--color-accent);
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.2s;
-  }
-
-  .footer-schedule-btn:hover {
-    background: var(--color-accent-hover);
+  .footer-bottom {
+    background: var(--color-background-light);
+    padding: 1rem 20px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
   }
 
   .copyright {
@@ -87,18 +202,19 @@
     color: var(--color-text-secondary);
   }
 
-  @media (max-width: 500px) {
-    .footer-actions {
-      flex-direction: column;
-      gap: 0.75rem;
+  @media (max-width: 768px) {
+    .footer-contact-section {
+      padding: 40px 20px 30px;
     }
 
-    .footer-reviews-link,
-    .footer-schedule-btn {
-      width: 100%;
-      max-width: 280px;
-      text-align: center;
-      justify-content: center;
+    .footer-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
     }
   }
 </style>
