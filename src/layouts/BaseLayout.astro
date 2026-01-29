@@ -17,9 +17,10 @@ interface Props {
   schema?: object | object[];
   ogImage?: string;
   breadcrumbs?: BreadcrumbItem[];
+  hideFooter?: boolean;
 }
 
-const { title, description, schema, ogImage = '/images/og-default.jpg', breadcrumbs } = Astro.props;
+const { title, description, schema, ogImage = '/images/og-default.jpg', breadcrumbs, hideFooter = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Default business schema for all pages
@@ -146,7 +147,7 @@ const allSchemas = {
     <main>
       <slot />
     </main>
-    <Footer />
+    {!hideFooter && <Footer />}
     <MobileCTA />
   </body>
 </html>

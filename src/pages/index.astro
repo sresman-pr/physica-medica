@@ -20,7 +20,7 @@ const pageTitle = "Physical Therapy Boutique & Postural Correction Studio | Phys
 const pageDescription = "Baltimore's premier physical therapy boutique specializing in postural correction, dry needling, scoliosis treatment, and the Wim Hof Method. One-on-one treatments with Dr. Maksim Birikov, DPT.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} hideFooter={true}>
   <!-- Fixed Watermark Background Layer -->
   <WatermarkBackground />
   
@@ -276,6 +276,11 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       </div>
     </div>
   </section>
+
+  <!-- Simple Copyright -->
+  <footer class="home-footer">
+    <p>&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+  </footer>
 </BaseLayout>
 
 <style>
@@ -882,7 +887,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   .contact-section {
     /* Transparent to show fixed watermark through */
     background: transparent;
-    padding: 60px 20px 80px;
+    padding: 50px 20px 40px;
     position: relative;
     overflow: visible;
     z-index: 1;
@@ -997,6 +1002,22 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   .submit-button:active {
     transform: translateY(0);
+  }
+
+  /* ========== HOME FOOTER ========== */
+  .home-footer {
+    background: var(--color-background-light);
+    padding: 1.25rem 20px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
   }
 
   /* ========== RESPONSIVE ========== */
