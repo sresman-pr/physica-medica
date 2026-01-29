@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WatermarkBackground from '../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
 
 // Import all images for optimization
 import heroLocationImg from '../images/physica-medica-location.png';
@@ -15,6 +16,18 @@ import maksAnthonyImg from '../images/Baltimore-Physical-Therapist-Maks-and-Anth
 import pregnancyImg from '../images/Baltimore-Physical-Therapist-physica-medica therapy-.png';
 import cuppingImg from '../images/Baltimore-Physical-Therapist-cupping.png';
 import sessionImg from '../images/Baltimore-Physical-Therapist-session.png';
+
+// Fetch business info from Keystatic CMS
+let businessInfo;
+try {
+  const entry = await getEntry('settings', 'business-info');
+  businessInfo = entry?.data;
+} catch (error) {
+  businessInfo = undefined;
+}
+
+const hours = businessInfo?.businessHours || 'M W F: 8:00 AM - 7:30 PM\nTuesday: 10:00 AM - 7:30 PM\nThurs Sat Sun: Closed';
+const hoursLines = hours.split('\n').filter((line: string) => line.trim());
 
 const pageTitle = "Physical Therapy Boutique & Postural Correction Studio | Physica Medica Baltimore";
 const pageDescription = "Baltimore's premier physical therapy boutique specializing in postural correction, dry needling, scoliosis treatment, and the Wim Hof Method. One-on-one treatments with Dr. Maksim Birikov, DPT.";
@@ -233,9 +246,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     <div class="visit-overlay">
       <h2>Visit Us</h2>
       <div class="hours-list">
-        <p>M W F: 8:00 AM - 7:30 PM</p>
-        <p>Tuesday: 10:00 AM - 7:30PM</p>
-        <p>Thurs Sat Sun: Closed</p>
+        {hoursLines.map((line: string) => <p>{line}</p>)}
       </div>
       <a href="/schedule" class="visit-cta">Schedule Your Session</a>
     </div>

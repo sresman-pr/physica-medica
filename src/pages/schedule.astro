@@ -1,5 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+// Fetch business info from Keystatic CMS
+let businessInfo;
+try {
+  const entry = await getEntry('settings', 'business-info');
+  businessInfo = entry?.data;
+} catch (error) {
+  businessInfo = undefined;
+}
+
+const hours = businessInfo?.businessHours || 'M W F: 8:00 AM - 7:30 PM\nTuesday: 10:00 AM - 7:30 PM\nThurs Sat Sun: Closed';
+const hoursLines = hours.split('\n').filter((line: string) => line.trim());
 
 const pageTitle = "Schedule Appointment | Physica Medica Baltimore | Book Online";
 const pageDescription = "Schedule your physical therapy appointment with Dr. Maks at Physica Medica Baltimore. Call 443-228-8029 to book your evaluation today.";
@@ -48,9 +61,12 @@ const pageDescription = "Schedule your physical therapy appointment with Dr. Mak
         <div class="hours-reminder">
           <h3>Office Hours</h3>
           <p>
-            <strong>M W F:</strong> 8:00 AM - 7:30 PM<br />
-            <strong>Tuesday:</strong> 10:00 AM - 7:30 PM<br />
-            <strong>Thurs Sat Sun:</strong> Closed
+            {hoursLines.map((line: string, i: number) => (
+              <Fragment>
+                {line}
+                {i < hoursLines.length - 1 && <br />}
+              </Fragment>
+            ))}
           </p>
         </div>
       </div>
