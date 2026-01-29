@@ -1,13 +1,16 @@
 ---
-// Simple Footer Component with Reviews Link
+// Footer Component with Reviews Link and Schedule Button
 ---
 
 <footer class="site-footer">
   <div class="footer-container">
-    <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="footer-reviews-link">
-      <span class="stars">★★★★★</span>
-      <span>300+ Reviews</span>
-    </a>
+    <div class="footer-actions">
+      <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="footer-reviews-link">
+        <span class="stars">★★★★★</span>
+        <span>300+ Reviews</span>
+      </a>
+      <a href="/schedule" class="footer-schedule-btn">Schedule Your Session</a>
+    </div>
     <p class="copyright">&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
   </div>
 </footer>
@@ -15,7 +18,7 @@
 <style>
   .site-footer {
     background: var(--color-background-light);
-    padding: 1.25rem 20px;
+    padding: 1.5rem 20px;
     text-align: center;
     border-top: 1px solid var(--color-border);
     position: relative;
@@ -27,19 +30,26 @@
     margin: 0 auto;
   }
 
+  .footer-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
   .footer-reviews-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     background: white;
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 10px 20px;
     border: 2px solid var(--color-accent);
     text-decoration: none;
     color: var(--color-text-primary);
     font-weight: 500;
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
     transition: all 0.2s;
   }
 
@@ -56,9 +66,39 @@
     color: white;
   }
 
+  .footer-schedule-btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+
+  .footer-schedule-btn:hover {
+    background: var(--color-accent-hover);
+  }
+
   .copyright {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 500px) {
+    .footer-actions {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-reviews-link,
+    .footer-schedule-btn {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      justify-content: center;
+    }
   }
 </style>
