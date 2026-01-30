@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
 import '../../styles/service-pages.css';
 import { Image } from 'astro:assets';
 
@@ -10,7 +11,7 @@ import pancafitImg from '../../images/9c4fc8_8d94887cd5bf4effac88b33980830d26~mv
 import scoliosisImg from '../../images/Baltimore-Physical-Therapist-scoliosis.jpg';
 import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
 
-const pageTitle = "Baltimore Pancafit Postural Correction | Physical Therapy | Physica Medica";
+const pageTitle = "Pancafit Baltimore MD | Postural Correction Therapy | Physica Medica";
 const pageDescription = "Revolutionary Pancafit postural correction in Baltimore. 60-minute 1-on-1 sessions with Dr. Maks Birikov, DPT for lasting pain relief.";
 
 const breadcrumbs = [
@@ -162,50 +163,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Pancafit Frequently Asked Questions" />
 
-  <!-- Related Services -->
-  <section class="related-services-modern section-spacing">
-    <div class="container-narrow">
-      <h2 class="section-title-center">You Might Also Like</h2>
-      <div class="related-grid-modern">
-        <a href="/services/scoliosis" class="related-card-modern">
-          <div class="related-card-image">
-            <Image 
-              src={scoliosisImg}
-              alt="Scoliosis treatment"
-              width={417}
-              height={268}
-              format="webp"
-              loading="lazy"
-              quality={80}
-            />
-          </div>
-          <div class="related-card-content">
-            <h3>Scoliosis Treatment</h3>
-            <p>Specialized care for spinal curvature</p>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-        <a href="/services/personal-training" class="related-card-modern">
-          <div class="related-card-image">
-            <Image 
-              src={strengthTrainingImg}
-              alt="Personal training"
-              width={351}
-              height={220}
-              format="webp"
-              loading="lazy"
-              quality={80}
-            />
-          </div>
-          <div class="related-card-content">
-            <h3>Personal Training</h3>
-            <p>Optimize your biomechanics</p>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="pancafit-class" type="services" />
 </BaseLayout>
 
 <style>

@@ -38,7 +38,8 @@ const businessSchema = {
     "streetAddress": "800 S Bond St",
     "addressLocality": "Baltimore",
     "addressRegion": "MD",
-    "postalCode": "21231"
+    "postalCode": "21231",
+    "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -66,7 +67,53 @@ const businessSchema = {
     "bestRating": "5"
   },
   "priceRange": "$$",
-  "hasMap": "https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD"
+  "hasMap": "https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD",
+  "image": [
+    "https://physicamedica.net/images/Baltimore-Physical-Therapist-clinic-2023.png",
+    "https://physicamedica.net/images/Physica-Medica-logo.jpg"
+  ],
+  "sameAs": [
+    "https://www.google.com/maps?cid=17419763314734433010"
+  ],
+  "paymentAccepted": ["Cash", "Credit Card", "HSA", "FSA"],
+  "currenciesAccepted": "USD",
+  "medicalSpecialty": [
+    "Musculoskeletal",
+    "Orthopedic",
+    "Sports Medicine",
+    "Physical Medicine and Rehabilitation"
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Baltimore",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Maryland"
+      }
+    },
+    { "@type": "Neighborhood", "name": "Fells Point" },
+    { "@type": "Neighborhood", "name": "Canton" },
+    { "@type": "Neighborhood", "name": "Harbor East" },
+    { "@type": "Neighborhood", "name": "Federal Hill" },
+    { "@type": "Neighborhood", "name": "Inner Harbor" },
+    { "@type": "Neighborhood", "name": "Patterson Park" },
+    { "@type": "Neighborhood", "name": "Locust Point" },
+    { "@type": "Neighborhood", "name": "Hampden" },
+    { "@type": "Neighborhood", "name": "Roland Park" },
+    { "@type": "Neighborhood", "name": "Towson" },
+    { "@type": "Neighborhood", "name": "Downtown Baltimore" },
+    { "@type": "Neighborhood", "name": "Highlandtown" }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "39.2784",
+      "longitude": "-76.6012"
+    },
+    "geoRadius": "40233.6"
+  }
 };
 
 // Physician schema
@@ -110,11 +157,21 @@ const allSchemas = {
     <!-- Resource Hints for Performance -->
     <link rel="dns-prefetch" href="https://physicamedica.net">
     <link rel="preconnect" href="https://physicamedica.net" crossorigin>
+    <link rel="preconnect" href="https://www.google.com" crossorigin>
+    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    <meta name="author" content="Dr. Maksim Birikov, DPT" />
+    
+    <!-- Geo Meta Tags for Local SEO -->
+    <meta name="geo.region" content="US-MD" />
+    <meta name="geo.placename" content="Baltimore" />
+    <meta name="geo.position" content="39.2784;-76.6012" />
+    <meta name="ICBM" content="39.2784, -76.6012" />
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -123,6 +180,7 @@ const allSchemas = {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Physica Medica" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -134,7 +192,11 @@ const allSchemas = {
     <script type="application/ld+json" set:html={JSON.stringify(allSchemas)} />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#2d6d5f" />
   </head>
   <body>
     <AnnouncementBar />

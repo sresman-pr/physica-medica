@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
+import AllServicesGrid from '../../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -314,22 +315,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Physical Therapy for Singers FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">You Might Also Like</h2>
-      <div class="related-grid">
-        <a href="/services/specialty-techniques/diaphragmatic-rehabilitation" class="related-card">
-          <h3>Diaphragmatic Rehabilitation</h3>
-          <p>Optimize breathing for performance →</p>
-        </a>
-        <a href="/services/specialty-techniques/posture-reeducation" class="related-card">
-          <h3>Posture Re-education</h3>
-          <p>Perfect your singing posture →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Specialty Techniques Grid -->
+  <AllServicesGrid currentPage="therapy-for-singers" type="specialty-techniques" />
 </BaseLayout>
 
 <style>

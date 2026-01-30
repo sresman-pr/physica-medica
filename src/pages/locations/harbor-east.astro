@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Harbor East",
+  slug: "harbor-east",
+  intro: "Harbor East professionals and luxury condo residents seeking premier physical therapy will find exactly what they're looking for at Physica Medica. Just a short drive from your waterfront office at T. Rowe Price, Legg Mason, or the tech startups along Central Avenue, we offer the boutique, personalized experience that matches Harbor East's elevated standards. No rushed 15-minute sessions with rotating therapists—just 60 full minutes of focused, expert care with Dr. Maks. The same attention to quality you expect from Harbor East's restaurants and services.",
+  directions: "From Harbor East, take President Street north, then turn right on Fleet Street and continue to Bond Street. Turn left on Bond—our clinic at 800 S Bond St is just ahead. The drive takes approximately 7 minutes. You can also walk along the waterfront to Thames Street and head north on Bond. Street parking is plentiful in the Fells Point area.",
+  landmarks: [
+    "7-minute drive from Four Seasons",
+    "Quick trip from Lancaster Street offices",
+    "Near Harbor East Marina via waterfront walk",
+    "Easy access from President Street or Central Avenue"
+  ],
+  testimonial: {
+    quote: "The level of care at Physica Medica matches the quality I expect from everything in my life. Dr. Maks takes the time to understand not just my pain, but my goals and lifestyle. Worth every minute of the short drive from Harbor East.",
+    author: "Michael R. - Harbor East Executive"
+  },
+  commonConditions: [
+    {
+      condition: "Executive Desk Syndrome",
+      description: "Long hours in front of screens lead to forward head posture, neck pain, and upper back tension. We see many Harbor East executives dealing with the cumulative effects of high-pressure desk work and help restore proper posture and mobility."
+    },
+    {
+      condition: "Stress-Related Muscle Tension",
+      description: "The demands of high-powered careers often manifest physically as chronic muscle tension, headaches, and jaw clenching. Our manual therapy and dry needling techniques provide effective relief."
+    },
+    {
+      condition: "Travel-Related Pain",
+      description: "Frequent business travel wreaks havoc on the body. Cramped airplane seats, hotel beds, and disrupted routines contribute to back pain and stiffness that we can address and help you manage."
+    },
+    {
+      condition: "Golf & Tennis Injuries",
+      description: "Harbor East residents often enjoy golf and tennis at nearby clubs. Golfer's elbow, tennis elbow, rotator cuff issues, and lower back strain from these sports respond well to our treatment approach."
+    }
+  ],
+  faqs: [
+    {
+      question: "Can I schedule appointments during my lunch break from Harbor East?",
+      answer: "Absolutely. Our Fells Point location is just 7 minutes from Harbor East, making lunch appointments very manageable. We schedule 60-minute sessions, so you can realistically fit in treatment during an extended lunch. Many of our Harbor East patients prefer mid-day appointments."
+    },
+    {
+      question: "Is your clinic comparable to the concierge healthcare services in Harbor East?",
+      answer: "Yes, our boutique model aligns with the premium healthcare experience Harbor East residents expect. You receive 60 minutes of dedicated one-on-one time with Dr. Maks—no assistants, no rushed sessions, no waiting rooms full of patients. This is healthcare that respects your time and delivers results."
+    },
+    {
+      question: "Do you offer services for stress-related physical symptoms?",
+      answer: "Yes. Many high-performing professionals experience physical manifestations of stress: tension headaches, neck and shoulder tightness, jaw pain from clenching. Our manual therapy, dry needling, and postural correction techniques are highly effective for these conditions."
+    },
+    {
+      question: "Can you help me stay healthy while traveling frequently for business?",
+      answer: "Definitely. We work with many frequent travelers and can provide strategies for maintaining mobility on the road, exercises you can do in hotel rooms, and treatment to address the cumulative toll of business travel on your body."
+    }
+  ],
+  neighborhoodInfo: `<p>Harbor East represents the pinnacle of Baltimore luxury living and working. The waterfront development is home to the city's top financial firms, five-star hotels, and upscale dining—an environment where quality and attention to detail are expected in every service.</p>
+  
+  <p>We understand that Harbor East residents and professionals have high standards and limited time. That's why our boutique physical therapy model is such a natural fit. You wouldn't accept a rushed, impersonal experience at a Harbor East restaurant—why accept it from your healthcare provider?</p>
+  
+  <p>The short drive to our Fells Point clinic delivers something you can't find in the corporate medical offices: 60 uninterrupted minutes with a Doctor of Physical Therapy who treats your whole person, not just your symptoms. Dr. Maks takes the time to understand your work demands, fitness goals, and lifestyle before creating a customized treatment plan.</p>
+  
+  <p>Many of our Harbor East patients initially came to us for a specific injury but continue regular sessions because they've experienced how proper physical therapy enhances their performance and quality of life. In a neighborhood that values excellence, we're proud to deliver physical therapy that meets that standard.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

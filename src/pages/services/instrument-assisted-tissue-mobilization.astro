@@ -3,13 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 
 // Import images
 import iastmImg from '../../images/specialty-v2-scar-iastm-tools.jpg';
 import scarImg from '../../images/specialty-v3-scar-mobilization.jpg';
 
-const pageTitle = "Baltimore IASTM | Instrument Assisted Tissue Mobilization | Physica Medica";
+const pageTitle = "IASTM Baltimore MD | Graston Technique Therapy | Physica Medica";
 const pageDescription = "Expert Instrument Assisted Soft Tissue Mobilization (IASTM) in Baltimore. Break down scar tissue and fascial adhesions with specialized tools and Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
@@ -305,22 +306,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="IASTM FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">Related Services</h2>
-      <div class="related-grid">
-        <a href="/services/dry-needling" class="related-card">
-          <h3>Dry Needling</h3>
-          <p>Release trigger points precisely →</p>
-        </a>
-        <a href="/services/specialty-techniques/scar-tissue-mobilization" class="related-card">
-          <h3>Scar Tissue Mobilization</h3>
-          <p>Manual scar release techniques →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="instrument-assisted-tissue-mobilization" type="services" />
 </BaseLayout>
 
 <style>

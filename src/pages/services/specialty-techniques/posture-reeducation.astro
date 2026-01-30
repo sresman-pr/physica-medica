@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
+import AllServicesGrid from '../../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -245,7 +246,6 @@ const faqs = [
             </div>
           </div>
         </div>
-      </div>
 
       <div class="highlight-box">
         <h3>What to Expect After Treatment</h3>
@@ -308,22 +308,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Posture Re-education FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">You Might Also Like</h2>
-      <div class="related-grid">
-        <a href="/services/specialty-techniques/diaphragmatic-rehabilitation" class="related-card">
-          <h3>Diaphragmatic Rehabilitation</h3>
-          <p>Improve breathing and core support →</p>
-        </a>
-        <a href="/services/specialty-techniques/trigger-point-therapy" class="related-card">
-          <h3>Trigger Point Therapy</h3>
-          <p>Release postural muscle tension →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Specialty Techniques Grid -->
+  <AllServicesGrid currentPage="posture-reeducation" type="specialty-techniques" />
 </BaseLayout>
 
 <style>
@@ -820,20 +806,25 @@ const faqs = [
   }
 
   .highlight-box {
-    background: var(--color-background-light);
-    color: var(--color-text-primary);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    margin: 3rem 0;
+    background: white;
+    border: 2px solid var(--theme-gold);
+    border-left: 4px solid var(--theme-gold);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
   }
 
   .highlight-box h3 {
-    color: var(--color-accent);
-    margin-bottom: 1rem;
+    color: var(--theme-navy);
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .highlight-box p {
     margin: 0;
+    color: var(--theme-slate);
+    font-size: 0.95rem;
   }
 
   .conditions-grid {

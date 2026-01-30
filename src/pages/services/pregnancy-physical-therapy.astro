@@ -3,10 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 import pregnancyImg from '../../images/Baltimore-Physical-Therapist-pregnancy.jpg';
 
-const pageTitle = "Baltimore Pregnancy Physical Therapy | Prenatal & Postpartum | Physica Medica";
+const pageTitle = "Pregnancy Physical Therapy Baltimore MD | Prenatal & Postpartum PT | Physica Medica";
 const pageDescription = "Expert pregnancy and postpartum physical therapy in Baltimore. Group seminars and 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
@@ -211,22 +212,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Pregnancy Physical Therapy FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">You Might Also Like</h2>
-      <div class="related-grid">
-        <a href="/services/pancafit-class" class="related-card">
-          <h3>Pancafit Class</h3>
-          <p>Safe postural correction →</p>
-        </a>
-        <a href="/services/specialty-techniques" class="related-card">
-          <h3>Specialty Techniques</h3>
-          <p>Targeted pain relief →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="pregnancy-physical-therapy" type="services" />
 </BaseLayout>
 
 <style>

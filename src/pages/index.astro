@@ -41,7 +41,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   <section class="hero">
     <Image 
       src={heroLocationImg}
-      alt=""
+      alt="Physica Medica physical therapy clinic exterior in Fells Point, Baltimore"
       width={708}
       height={460}
       widths={[400, 700]}
@@ -67,13 +67,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
         />
       </div>
       
-      <h1 class="hero-title">
-        Physical Therapy Boutique<br />
-        Postural Correction Studio
-      </h1>
-      
-      <p class="hero-cta-text">Experience personalized, one-on-one physical therapy</p>
-      <div class="hero-arrow">▼</div>
+      <h1 class="hero-title">Baltimore Physical Therapist — Expert Hands-On Treatment</h1>
+      <p class="hero-cta-text">Dry needling, cupping & deep tissue massage in Fells Point · 60-minute 1-on-1 sessions</p>
       <a href="/schedule" class="cta-button">Schedule Your Session</a>
     </div>
   </section>
@@ -234,7 +229,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   <section class="visit-section">
     <Image 
       src={heroLocationImg}
-      alt=""
+      alt="Physica Medica clinic building in Fells Point Baltimore"
       width={708}
       height={460}
       widths={[400, 700]}
@@ -294,9 +289,46 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     </div>
   </section>
 
+  <!-- Service Areas Section -->
+  <section class="service-areas-section">
+    <div class="service-areas-wrapper">
+      <span class="service-areas-label">Serving Baltimore:</span>
+      <a href="/locations/fells-point">Fells Point</a>
+      <span class="divider">|</span>
+      <a href="/locations/canton">Canton</a>
+      <span class="divider">|</span>
+      <a href="/locations/harbor-east">Harbor East</a>
+      <span class="divider">|</span>
+      <a href="/locations/federal-hill">Federal Hill</a>
+      <span class="divider">|</span>
+      <a href="/locations/inner-harbor">Inner Harbor</a>
+      <span class="divider">|</span>
+      <a href="/locations/patterson-park">Patterson Park</a>
+      <span class="divider">|</span>
+      <a href="/locations/locust-point">Locust Point</a>
+      <span class="divider">|</span>
+      <a href="/locations/hampden">Hampden</a>
+      <span class="divider">|</span>
+      <a href="/locations/roland-park">Roland Park</a>
+      <span class="divider">|</span>
+      <a href="/locations/towson">Towson</a>
+      <span class="divider">|</span>
+      <a href="/locations/downtown">Downtown</a>
+      <span class="divider">|</span>
+      <a href="/locations/highlandtown">Highlandtown</a>
+    </div>
+  </section>
+
   <!-- Simple Copyright -->
   <footer class="home-footer">
-    <p>&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+    <div class="home-footer-content">
+      <p>&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="/privacy">Privacy Policy</a>
+        <span class="divider">|</span>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
   </footer>
 </BaseLayout>
 
@@ -386,10 +418,19 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
-  .hero-cta-text {
-    font-size: 1.25rem;
-    margin: 0 0 20px;
+  .hero-subtitle {
+    font-size: 1.4rem;
+    margin: 0 0 12px;
     opacity: 0.95;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: white;
+  }
+
+  .hero-cta-text {
+    font-size: 1.35rem;
+    margin: 0 0 24px;
+    color: white;
     font-weight: 400;
     letter-spacing: 0.01em;
   }
@@ -1064,20 +1105,88 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     color: white;
   }
 
-  /* ========== HOME FOOTER ========== */
-  .home-footer {
+  /* ========== SERVICE AREAS SECTION ========== */
+  .service-areas-section {
     background: var(--color-background-light);
-    padding: 1.25rem 20px;
+    padding: 1rem 20px;
     text-align: center;
     border-top: 1px solid var(--color-border);
     position: relative;
     z-index: 1;
   }
 
+  .service-areas-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  .service-areas-label {
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-right: 0.25rem;
+  }
+
+  .service-areas-wrapper a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .service-areas-wrapper a:hover {
+    color: var(--color-accent);
+  }
+
+  .service-areas-wrapper .divider {
+    margin: 0 0.35rem;
+    opacity: 0.5;
+  }
+
+  /* ========== HOME FOOTER ========== */
+  .home-footer {
+    background: var(--color-background-light);
+    padding: 1rem 20px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   .home-footer p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-secondary);
+  }
+
+  .footer-legal-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-legal-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-legal-links .divider {
+    margin: 0 0.5rem;
+    opacity: 0.5;
   }
 
   /* ========== RESPONSIVE ========== */
@@ -1109,8 +1218,12 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       width: 220px;
     }
 
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
     .hero-cta-text {
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     .gallery-container {
@@ -1204,6 +1317,11 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
     .visit-overlay p {
       font-size: 1.1rem;
+    }
+
+    .home-footer-content {
+      flex-direction: column;
+      text-align: center;
     }
   }
 

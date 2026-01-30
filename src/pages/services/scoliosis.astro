@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 
 // Import scoliosis images
@@ -13,7 +14,7 @@ import scoliosisDiagnosisImg from '../../images/Baltimore-Physical-Therapist-dia
 import scoliosisSymptomsImg from '../../images/Baltimore-Physical-Therapist-signs-symptoms-scoliosis.jpg';
 import scoliosisTreatmentImg from '../../images/Baltimore-Physical-Therapist-scoliosis-treatment.jpg';
 
-const pageTitle = "Baltimore Scoliosis Physical Therapy | Spinal Curve Treatment | Physica Medica";
+const pageTitle = "Scoliosis Treatment Baltimore MD | Spinal Curve Therapy | Physica Medica";
 const pageDescription = "Expert scoliosis treatment in Baltimore. 60-minute 1-on-1 DPT sessions combining Pancafit postural correction with Dr. Maksim Birikov.";
 
 const breadcrumbs = [
@@ -345,22 +346,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Scoliosis Treatment FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">You Might Also Like</h2>
-      <div class="related-grid">
-        <a href="/services/pancafit-class" class="related-card">
-          <h3>Pancafit Class</h3>
-          <p>Postural correction foundation →</p>
-        </a>
-        <a href="/services/specialty-techniques" class="related-card">
-          <h3>Specialty Techniques</h3>
-          <p>Advanced pain relief methods →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="scoliosis" type="services" />
 </BaseLayout>
 
 <style>

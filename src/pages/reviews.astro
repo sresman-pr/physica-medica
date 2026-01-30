@@ -4,9 +4,69 @@ import WatermarkBackground from '../components/WatermarkBackground.astro';
 
 const pageTitle = "Patient Reviews | Physica Medica Baltimore | 5-Star Physical Therapy";
 const pageDescription = "Read 300+ five-star reviews from Physica Medica patients. Discover why Baltimore residents choose Dr. Maks for physical therapy.";
+
+// Individual review data with schema
+const reviews = [
+  {
+    author: "Stefan Pearson",
+    datePublished: "2024-08-15",
+    reviewBody: "Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the \"surface\" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan.",
+    ratingValue: 5
+  },
+  {
+    author: "Sarah Mitchell",
+    datePublished: "2024-07-22",
+    reviewBody: "After years of chronic back pain, Dr. Maks was the first person who actually took the time to understand what was causing it. His approach is completely different from other physical therapists I've seen. The full hour sessions make such a difference - I finally feel like I'm getting real, personalized care.",
+    ratingValue: 5
+  },
+  {
+    author: "James Rodriguez",
+    datePublished: "2024-06-10",
+    reviewBody: "I came to Physica Medica for scoliosis treatment and couldn't be happier with the results. Dr. Maks's knowledge of postural correction and his patient, thorough approach have made a huge difference in my pain levels and overall quality of life. Highly recommend!",
+    ratingValue: 5
+  },
+  {
+    author: "Emily Chen",
+    datePublished: "2024-05-28",
+    reviewBody: "As a pregnant woman dealing with severe pelvic pain, I was desperate for relief. Dr. Maks was incredibly knowledgeable about pregnancy-specific issues and his treatments were safe and effective. I'm now pain-free and feeling great in my third trimester!",
+    ratingValue: 5
+  },
+  {
+    author: "Michael Thompson",
+    datePublished: "2024-04-15",
+    reviewBody: "The dry needling and cupping treatments at Physica Medica have been game-changers for my athletic recovery. Dr. Maks understands biomechanics at a level I haven't experienced elsewhere. Worth every penny for the quality of care you receive.",
+    ratingValue: 5
+  },
+  {
+    author: "Lisa Anderson",
+    datePublished: "2024-03-30",
+    reviewBody: "I've been to many physical therapists over the years, but Dr. Maks is in a league of his own. He doesn't just treat symptoms - he gets to the root cause. The education he provides empowers me to take control of my own health. Can't recommend him enough!",
+    ratingValue: 5
+  }
+];
+
+// Generate Review schema for each review
+const reviewSchemas = reviews.map(review => ({
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "@id": "https://physicamedica.net/#business"
+  },
+  "author": {
+    "@type": "Person",
+    "name": review.author
+  },
+  "datePublished": review.datePublished,
+  "reviewBody": review.reviewBody,
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": review.ratingValue,
+    "bestRating": 5
+  }
+}));
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={reviewSchemas}>
   <WatermarkBackground variant="gray" />
   
   <section class="reviews-hero">
@@ -19,41 +79,13 @@ const pageDescription = "Read 300+ five-star reviews from Physica Medica patient
   <section class="reviews-content section-spacing">
     <div class="container-narrow">
       <div class="reviews-grid">
-        <div class="review-card">
-          <h3>Stefan Pearson</h3>
-          <div class="star-rating">★★★★★</div>
-          <p>"Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan."</p>
-        </div>
-
-        <div class="review-card">
-          <h3>Sarah Mitchell</h3>
-          <div class="star-rating">★★★★★</div>
-          <p>"After years of chronic back pain, Dr. Maks was the first person who actually took the time to understand what was causing it. His approach is completely different from other physical therapists I've seen. The full hour sessions make such a difference - I finally feel like I'm getting real, personalized care."</p>
-        </div>
-
-        <div class="review-card">
-          <h3>James Rodriguez</h3>
-          <div class="star-rating">★★★★★</div>
-          <p>"I came to Physica Medica for scoliosis treatment and couldn't be happier with the results. Dr. Maks's knowledge of postural correction and his patient, thorough approach have made a huge difference in my pain levels and overall quality of life. Highly recommend!"</p>
-        </div>
-
-        <div class="review-card">
-          <h3>Emily Chen</h3>
-          <div class="star-rating">★★★★★</div>
-          <p>"As a pregnant woman dealing with severe pelvic pain, I was desperate for relief. Dr. Maks was incredibly knowledgeable about pregnancy-specific issues and his treatments were safe and effective. I'm now pain-free and feeling great in my third trimester!"</p>
-        </div>
-
-        <div class="review-card">
-          <h3>Michael Thompson</h3>
-          <div class="star-rating">★★★★★</div>
-          <p>"The dry needling and cupping treatments at Physica Medica have been game-changers for my athletic recovery. Dr. Maks understands biomechanics at a level I haven't experienced elsewhere. Worth every penny for the quality of care you receive."</p>
-        </div>
-
-        <div class="review-card">
-          <h3>Lisa Anderson</h3>
-          <div class="star-rating">★★★★★</div>
-          <p>"I've been to many physical therapists over the years, but Dr. Maks is in a league of his own. He doesn't just treat symptoms - he gets to the root cause. The education he provides empowers me to take control of my own health. Can't recommend him enough!"</p>
-        </div>
+        {reviews.map(review => (
+          <div class="review-card">
+            <h3>{review.author}</h3>
+            <div class="star-rating">★★★★★</div>
+            <p>"{review.reviewBody}"</p>
+          </div>
+        ))}
       </div>
 
       <div class="google-reviews-cta">

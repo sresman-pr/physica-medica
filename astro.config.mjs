@@ -35,5 +35,48 @@ export default defineConfig({
       }
     }
   },
-  integrations: [react(), markdoc(), keystatic(), sitemap()]
+  integrations: [
+    react(), 
+    markdoc(), 
+    keystatic(), 
+    sitemap({
+      serialize(item) {
+        // Custom priorities based on page type
+        const url = item.url;
+        
+        // Homepage - highest priority
+        if (url === 'https://physicamedica.net/' || url === 'https://physicamedica.net') {
+          item.priority = 1.0;
+          item.changefreq = 'weekly';
+        }
+        // Service pages - high priority
+        else if (url.includes('/services/') && !url.includes('/specialty-techniques/')) {
+          item.priority = 0.9;
+          item.changefreq = 'monthly';
+        }
+        // Specialty technique pages - high priority
+        else if (url.includes('/specialty-techniques/')) {
+          item.priority = 0.9;
+          item.changefreq = 'monthly';
+        }
+        // Location pages - good priority
+        else if (url.includes('/locations/')) {
+          item.priority = 0.8;
+          item.changefreq = 'monthly';
+        }
+        // Blog posts - medium priority
+        else if (url.includes('/blog/')) {
+          item.priority = 0.7;
+          item.changefreq = 'weekly';
+        }
+        // Other pages - standard priority
+        else {
+          item.priority = 0.6;
+          item.changefreq = 'monthly';
+        }
+        
+        return item;
+      }
+    })
+  ]
 });

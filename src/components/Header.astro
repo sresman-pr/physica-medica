@@ -36,7 +36,16 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
               <li><a href="/services/pregnancy-physical-therapy">Pregnancy Care</a></li>
               <li><a href="/services/pancafit-class">Pancafit Class</a></li>
               <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
-              <li><a href="/services/specialty-techniques">Specialty Techniques</a></li>
+              <li class="has-nested-dropdown">
+                <a href="/services/specialty-techniques">Specialty Techniques →</a>
+                <ul class="nested-dropdown">
+                  <li><a href="/services/specialty-techniques/posture-reeducation">Posture Re-education</a></li>
+                  <li><a href="/services/specialty-techniques/scar-tissue-mobilization">Scar Tissue Mobilization</a></li>
+                  <li><a href="/services/specialty-techniques/neural-tension-release">Neural Tension Release</a></li>
+                  <li><a href="/services/specialty-techniques/diaphragmatic-rehabilitation">Diaphragmatic Rehabilitation</a></li>
+                  <li><a href="/services/specialty-techniques/therapy-for-singers">Therapy for Singers</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li><a href="/wim-hof-method">WIM HOF METHOD</a></li>
@@ -86,6 +95,21 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
           </li>
           <li class="mobile-submenu">
             <a href="/services/specialty-techniques">Specialty Techniques</a>
+          </li>
+          <li class="mobile-submenu mobile-nested">
+            <a href="/services/specialty-techniques/posture-reeducation">• Posture Re-education</a>
+          </li>
+          <li class="mobile-submenu mobile-nested">
+            <a href="/services/specialty-techniques/scar-tissue-mobilization">• Scar Tissue Mobilization</a>
+          </li>
+          <li class="mobile-submenu mobile-nested">
+            <a href="/services/specialty-techniques/neural-tension-release">• Neural Tension Release</a>
+          </li>
+          <li class="mobile-submenu mobile-nested">
+            <a href="/services/specialty-techniques/diaphragmatic-rehabilitation">• Diaphragmatic Rehabilitation</a>
+          </li>
+          <li class="mobile-submenu mobile-nested">
+            <a href="/services/specialty-techniques/therapy-for-singers">• Therapy for Singers</a>
           </li>
           <li><a href="/wim-hof-method">WIM HOF METHOD</a></li>
           <li><a href="/reviews">REVIEWS</a></li>
@@ -270,6 +294,56 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     padding-left: 1.75rem;
   }
 
+  /* Nested Dropdown for Specialty Techniques */
+  .has-nested-dropdown {
+    position: relative;
+  }
+
+  .nested-dropdown {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    min-width: 220px;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all var(--transition-normal);
+    list-style: none;
+    margin: 0;
+  }
+
+  .has-nested-dropdown:hover .nested-dropdown {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nested-dropdown li {
+    margin: 0;
+  }
+
+  .nested-dropdown a {
+    padding: 0.75rem 1.5rem;
+    display: block;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+  }
+
+  .nested-dropdown a::after {
+    display: none;
+  }
+
+  .nested-dropdown a:hover {
+    background: var(--color-background-light);
+    padding-left: 1.75rem;
+  }
+
   /* Mobile Menu Toggle */
   .mobile-menu-toggle {
     display: none;
@@ -364,6 +438,12 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     padding-left: 1.5rem;
     font-size: 0.9rem;
     font-weight: 400;
+  }
+
+  .mobile-nested a {
+    padding-left: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
   }
 
   .mobile-nav .schedule-link {

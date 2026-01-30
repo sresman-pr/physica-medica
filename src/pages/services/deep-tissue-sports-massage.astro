@@ -3,13 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 
 // Import images
 import deepTissueImg from '../../images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg';
 import massageImg from '../../images/therapy-hands-treatment.jpg';
 
-const pageTitle = "Baltimore Deep Tissue & Sports Massage | Physical Therapy | Physica Medica";
+const pageTitle = "Deep Tissue Massage Baltimore MD | Sports Recovery Therapy | Physica Medica";
 const pageDescription = "Expert deep tissue and sports massage in Baltimore. Therapeutic massage for athletes and active individuals with Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
@@ -305,22 +306,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Deep Tissue & Sports Massage FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">RELATED SERVICES</h2>
-      <div class="related-grid">
-        <a href="/services/dry-needling" class="related-card">
-          <h3>Dry Needling</h3>
-          <p>Target trigger points precisely →</p>
-        </a>
-        <a href="/services/myofascial-cupping" class="related-card">
-          <h3>Myofascial Cupping</h3>
-          <p>Release fascial restrictions →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="deep-tissue-sports-massage" type="services" />
 </BaseLayout>
 
 <style>

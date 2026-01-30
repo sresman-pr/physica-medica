@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
+import AllServicesGrid from '../../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -322,22 +323,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Neural Tension Release FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">You Might Also Like</h2>
-      <div class="related-grid">
-        <a href="/services/specialty-techniques/trigger-point-therapy" class="related-card">
-          <h3>Trigger Point Therapy</h3>
-          <p>Release muscle-related tension →</p>
-        </a>
-        <a href="/services/specialty-techniques/dry-needling-cupping" class="related-card">
-          <h3>Dry Needling & Cupping</h3>
-          <p>Address myofascial restrictions →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Specialty Techniques Grid -->
+  <AllServicesGrid currentPage="neural-tension-release" type="specialty-techniques" />
 </BaseLayout>
 
 <style>

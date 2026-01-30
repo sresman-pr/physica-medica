@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Hampden",
+  slug: "hampden",
+  intro: "Hampden's creative community and active residents deserve physical therapy as unique as their neighborhood. At Physica Medica, we offer the personalized, thorough approach that Hampden residents appreciate—no cookie-cutter treatments. Whether you're an artist dealing with repetitive strain injuries from your craft, a cyclist recovering from a fall on the Jones Falls Trail, a vintage shop owner on your feet all day on The Avenue, or dealing with chronic pain, Dr. Maks provides expert 60-minute one-on-one sessions tailored to your specific needs and lifestyle.",
+  directions: "From Hampden, take Falls Road south to 28th Street, head east through Remington, then take Greenmount Avenue south to Eastern Avenue. Turn left on Eastern, then right on Bond Street to our clinic at 800 S Bond St. Alternatively, hop on I-83 South to the Eastern Avenue exit for a quicker highway route. The drive takes approximately 15 minutes depending on traffic. Street parking plentiful in Fells Point.",
+  landmarks: [
+    "15-minute drive from The Avenue",
+    "Via Falls Road through Remington or I-83 South",
+    "Easy access from the Jones Falls Trail corridor",
+    "Abundant street parking in Fells Point"
+  ],
+  testimonial: {
+    quote: "As an artist, my body takes a beating from weird postures and repetitive movements. Dr. Maks understood immediately and created a treatment plan that addresses my specific work habits. Worth the drive from Hampden every time.",
+    author: "Chris D. - Hampden Artist"
+  },
+  commonConditions: [
+    {
+      condition: "Artist & Maker Repetitive Strain",
+      description: "Hampden's creative community spends hours in unusual postures—painting, sculpting, sewing, crafting. We treat the neck pain, wrist issues, and back strain that come from dedicated artistic work."
+    },
+    {
+      condition: "Cycling Injuries",
+      description: "The Jones Falls Trail makes Hampden a cycling hub. We treat road rash aftermath, overuse injuries from long rides, and the neck and back pain that comes from cycling posture."
+    },
+    {
+      condition: "Retail & Service Worker Pain",
+      description: "Working on your feet all day at one of The Avenue's unique shops takes a toll. Lower back pain, plantar fasciitis, and leg fatigue are common issues we address for Hampden's retail community."
+    },
+    {
+      condition: "Yoga & Movement Practice Injuries",
+      description: "Hampden's wellness-minded community often practices yoga, pilates, and other movement arts. We help when overstretching or improper form leads to injury."
+    }
+  ],
+  faqs: [
+    {
+      question: "Is the drive from Hampden to Fells Point difficult?",
+      answer: "Not at all. You have two good options: take Falls Road south through Remington to Greenmount Avenue, or hop on I-83 South to the Eastern Avenue exit. Either way takes about 15 minutes. Parking is easy in Fells Point, unlike The Avenue on busy days!"
+    },
+    {
+      question: "Do you understand the physical demands of creative work?",
+      answer: "Absolutely. Dr. Maks works with many artists, makers, and craftspeople. He understands that your work requires unusual postures and repetitive movements. Treatment is tailored to your specific creative practice, not a generic protocol."
+    },
+    {
+      question: "I cycle on the Jones Falls Trail regularly. Can you help with cycling-related pain?",
+      answer: "Yes, we see many cyclists from the Hampden area. We treat overuse injuries, address the postural issues that come from time in the saddle, and can help you optimize your bike fit to prevent future problems."
+    },
+    {
+      question: "Why should I drive to Fells Point when there are clinics in Hampden?",
+      answer: "The question is quality, not just proximity. At Physica Medica, you get 60 full minutes of one-on-one time with Dr. Maks. Most clinics offer 15-20 minute sessions with rotating therapists. Hampden residents appreciate quality and authenticity—that's exactly what we provide."
+    }
+  ],
+  neighborhoodInfo: `<p>Hampden has transformed from a mill town to one of Baltimore's most creative and eclectic neighborhoods. The Avenue draws visitors from across the city, but the real magic is the community—artists, makers, small business owners, and residents who value authenticity over mass-market convenience.</p>
+  
+  <p>This creative, independent spirit extends to how Hampden residents approach healthcare. They want providers who see them as individuals, not just a billing code. They appreciate expertise combined with personal attention. They're willing to go a bit out of their way for quality.</p>
+  
+  <p>That's why Physica Medica resonates with so many Hampden patients. The 15-minute drive to Fells Point delivers something you won't find at cookie-cutter clinics: 60 minutes of focused, expert care tailored to your specific needs. Dr. Maks understands creative work, active lifestyles, and the physical demands of small business ownership.</p>
+  
+  <p>Whether you're an artist dealing with repetitive strain, a cyclist recovering from a trail mishap, or a shop owner whose feet and back ache at the end of every day, we provide the thoughtful, personalized treatment that Hampden's community deserves. Just as you'd choose a local boutique over a chain store, our approach to physical therapy honors quality, expertise, and the individual.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

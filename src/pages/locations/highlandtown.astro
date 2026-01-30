@@ -1,0 +1,67 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Highlandtown",
+  slug: "highlandtown",
+  intro: "Highlandtown's diverse, hardworking community deserves accessible, expert physical therapy. Physica Medica is just minutes away in neighboring Fells Point, offering the thorough, personalized care that makes a real difference. Whether you're a restaurant worker dealing with the demands of long shifts, an artist at the Creative Alliance with repetitive strain issues, a construction worker managing job-related injuries, or simply someone who wants to move better and live without chronic pain, Dr. Maks provides comprehensive 60-minute one-on-one treatment in a welcoming environment.",
+  directions: "From Highlandtown, head west on Eastern Avenue toward Fells Point. Turn left on Bond Street—our clinic at 800 S Bond St is just a few blocks down. The drive takes about 5 minutes. You can also take Fleet Street west to Bond and turn right. If you're near the Creative Alliance, you're practically in the neighborhood already. Easy street parking available throughout Fells Point.",
+  landmarks: [
+    "5-minute drive from Highlandtown",
+    "Easy access via Eastern Avenue or Fleet Street",
+    "Near Creative Alliance at Patterson",
+    "Between Highlandtown and Fells Point waterfront"
+  ],
+  testimonial: {
+    quote: "I work on my feet all day and my back was killing me. Dr. Maks is right here in the neighborhood and really takes the time to understand what's causing the problem. I feel like a new person after just a few sessions.",
+    author: "Maria G. - Highlandtown Small Business Owner"
+  },
+  commonConditions: [
+    {
+      condition: "Manual Labor Injuries",
+      description: "Construction, warehouse work, and physical trades take a toll on the body. We treat back strains, shoulder injuries, and the chronic pain that comes from years of physically demanding work."
+    },
+    {
+      condition: "Restaurant & Kitchen Worker Strain",
+      description: "Highlandtown's restaurant workers spend long hours on their feet, carrying heavy loads and making repetitive movements. We address the resulting back pain, shoulder strain, and foot problems."
+    },
+    {
+      condition: "Artist & Maker Repetitive Strain",
+      description: "The Creative Alliance and Highlandtown's arts community bring us patients with neck pain from painting, wrist issues from crafting, and back strain from studio work."
+    },
+    {
+      condition: "Standing & Walking Fatigue",
+      description: "Many Highlandtown residents work jobs that keep them on their feet all day. We treat the lower back pain, plantar fasciitis, and hip issues that result from prolonged standing."
+    }
+  ],
+  faqs: [
+    {
+      question: "How close is your clinic to Highlandtown?",
+      answer: "We're just about 5 minutes away—head west on Eastern Avenue and turn left on Bond Street. If you're near the Creative Alliance, you're practically in our neighborhood already."
+    },
+    {
+      question: "Do you understand the physical demands of manual labor?",
+      answer: "Absolutely. Dr. Maks works with many patients from trades and physically demanding jobs. He understands that you can't just 'rest it'—you need to keep working. Treatment focuses on getting you relief while keeping you functional."
+    },
+    {
+      question: "I work long hours and can't take time off. Can you accommodate my schedule?",
+      answer: "We try to be flexible with scheduling for working patients. We offer appointments starting at 8 AM and as late as 7:30 PM on some days. Let us know your constraints and we'll work to find times that fit your schedule."
+    },
+    {
+      question: "Is your clinic welcoming to everyone?",
+      answer: "Absolutely. Physica Medica welcomes patients from all backgrounds. Dr. Maks treats everyone with respect and focuses on what matters: getting you out of pain and moving better."
+    }
+  ],
+  neighborhoodInfo: `<p>Highlandtown is one of Baltimore's most authentic neighborhoods—a place where working families have lived for generations, where small businesses line Eastern Avenue, and where a thriving arts scene has taken root around the Creative Alliance. It's a diverse, tight-knit community that values hard work and genuine connection.</p>
+  
+  <p>Highlandtown residents often work physically demanding jobs. Construction, restaurant kitchens, warehouses, retail—these jobs take a toll on the body. Add in the artists and makers who spend hours in studios, and you have a community with real physical therapy needs.</p>
+  
+  <p>Unfortunately, healthcare options in the area haven't always served Highlandtown well. Corporate clinics offer rushed, impersonal care. Wait times are long. Language barriers can be an issue. Many residents simply live with pain because the healthcare system feels inaccessible.</p>
+  
+  <p>Physica Medica is different. Just 5 minutes from Highlandtown, we offer the kind of personal, thorough care that everyone deserves. Dr. Maks takes time to understand your specific situation—your work demands, your pain patterns, your goals. You get 60 full minutes of treatment, not a rushed 15-minute session.</p>
+  
+  <p>The working people of Highlandtown deserve quality healthcare. Whether you're dealing with a job-related injury, chronic pain from years of physical work, or the repetitive strain of artistic practice, we're here to help—right in your neighboring community.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

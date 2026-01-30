@@ -1,0 +1,67 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Towson",
+  slug: "towson",
+  intro: "Towson residents looking for exceptional physical therapy have found it. While slightly further from our Fells Point location, Physica Medica's 60-minute one-on-one sessions make the drive worthwhile. Whether you're a Towson University student dealing with a sports injury, a parent juggling kids' activities at the Towson Y, or a professional tired of the rushed sessions at chain PT clinics in Towson Town Center area, Dr. Maks' expertise in manual therapy, dry needling, and specialty techniques offers results that assembly-line clinics simply can't match.",
+  directions: "From Towson, take I-695 East to I-83 South. Take the Eastern Avenue exit and head east on Eastern Avenue. Turn left on Bond Street to reach our clinic at 800 S Bond St in Fells Point. The drive takes approximately 25-30 minutes depending on traffic. Alternatively, take York Road south all the way to downtown Baltimore for a scenic route. Street parking is plentiful in Fells Point.",
+  landmarks: [
+    "25-30 minute drive via I-695 and I-83",
+    "Direct shot down I-83 South to Eastern Ave",
+    "Or scenic route via York Road through Govans",
+    "Abundant street parking in Fells Point"
+  ],
+  testimonial: {
+    quote: "I used to go to a PT clinic right in Towson, but the 10-minute sessions with a rotating cast of therapists wasn't helping. Dr. Maks is worth the drive—I've made more progress in 3 visits than I did in months at my old clinic.",
+    author: "Kevin M. - Towson Professional"
+  },
+  commonConditions: [
+    {
+      condition: "College Student Sports Injuries",
+      description: "Towson University athletes and recreational players need quality PT that understands competitive demands. We treat ACL injuries, shoulder problems, and overuse conditions common in college-age athletes."
+    },
+    {
+      condition: "Youth Sports & Growing Pains",
+      description: "Towson's excellent youth sports programs mean plenty of sports injuries. We treat growth plate issues, Osgood-Schlatter disease, Little League elbow, and other conditions specific to young athletes."
+    },
+    {
+      condition: "Suburban Parent Strain",
+      description: "Driving kids to activities, carrying gear, and staying active alongside your family takes a physical toll. We treat the back, shoulder, and knee issues common in busy Towson parents."
+    },
+    {
+      condition: "Chronic Pain & Failed PT",
+      description: "Many Towson residents have tried PT at local chains without success. We specialize in getting results when conventional approaches have failed, using advanced techniques like dry needling and manual therapy."
+    }
+  ],
+  faqs: [
+    {
+      question: "Why should I drive to Fells Point when there are PT clinics in Towson?",
+      answer: "Quality over convenience. Towson has plenty of PT clinics, but most offer 15-minute sessions with rotating therapists following insurance-driven protocols. At Physica Medica, you get 60 full minutes with Dr. Maks every visit. Our patients consistently tell us they've made more progress in a few sessions with us than months at other clinics."
+    },
+    {
+      question: "How long is the drive from Towson to your clinic?",
+      answer: "Typically 25-30 minutes via I-695 East to I-83 South. Take the Eastern Avenue exit and head east to Bond Street. Traffic is usually light outside rush hour. We recommend scheduling mid-morning or early afternoon appointments for the quickest drive."
+    },
+    {
+      question: "Do you work with Towson University athletes?",
+      answer: "Yes, we see both collegiate athletes and Towson University students with sports injuries. We understand the pressure to return to competition and work with you to get back safely while addressing the root cause of your injury."
+    },
+    {
+      question: "My teenager has a sports injury. Can you help?",
+      answer: "Absolutely. We have experience treating young athletes and understand the unique considerations—growth plates, developing bodies, and the desire to return to sports quickly. Dr. Maks will work with your child (and you) to ensure safe, effective treatment."
+    }
+  ],
+  neighborhoodInfo: `<p>Towson is Baltimore County's hub—home to Towson University, excellent schools, major shopping, and thriving residential communities. It's a place where families put down roots, where youth sports leagues fill weekends, and where professionals commute to jobs throughout the region.</p>
+  
+  <p>The Towson lifestyle creates specific physical therapy needs. Youth athletes competing at high levels suffer sports injuries. Parents balancing careers and family activities deal with chronic pain. College students push their bodies without the recovery knowledge of older athletes. Professionals work at desks all day, then try to stay active.</p>
+  
+  <p>While Towson has no shortage of PT clinics, quality is inconsistent. Insurance-driven practices prioritize volume over outcomes. Patients see different therapists each visit and receive cookie-cutter treatment plans. It's no wonder many Towson residents feel like PT "doesn't work."</p>
+  
+  <p>The 25-30 minute drive to Physica Medica delivers a completely different experience. Dr. Maks provides 60 minutes of focused, expert attention every visit. He uses advanced techniques like dry needling that many clinics don't offer. He takes time to understand your specific situation and creates treatment plans that actually work.</p>
+  
+  <p>For Towson families who value results over convenience, the drive is an easy trade. Our patients consistently tell us they wish they'd found us sooner—before months of ineffective treatment at clinics closer to home.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

@@ -3,13 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
 import { Image } from 'astro:assets';
 
 // Import images
 import dryNeedlingImg from '../../images/specialty-v3-dry-needling-actual.jpg';
 import dryNeedlingActionImg from '../../images/specialty-v2-dry-needling-action.jpg';
 
-const pageTitle = "Baltimore Dry Needling | Physical Therapy | Physica Medica";
+const pageTitle = "Dry Needling Baltimore MD | Trigger Point Therapy | Physica Medica";
 const pageDescription = "Expert dry needling therapy in Baltimore. Release muscle knots, trigger points, and relieve pain with Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
@@ -301,22 +302,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Dry Needling FAQs" />
 
-  <!-- Related Services -->
-  <section class="related-services section-spacing">
-    <div class="container-narrow">
-      <h2 class="text-center">Related Services</h2>
-      <div class="related-grid">
-        <a href="/services/myofascial-cupping" class="related-card">
-          <h3>Myofascial Cupping</h3>
-          <p>Complement needling with cupping therapy →</p>
-        </a>
-        <a href="/services/deep-tissue-sports-massage" class="related-card">
-          <h3>Deep Tissue Massage</h3>
-          <p>Manual trigger point release →</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="dry-needling" type="services" />
 </BaseLayout>
 
 <style>

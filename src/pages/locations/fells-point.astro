@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Fells Point",
+  slug: "fells-point",
+  intro: "Physica Medica is located right here in Fells Point at 800 S Bond St—your neighborhood physical therapy boutique. Whether you're a bartender or server dealing with the physical demands of the waterfront hospitality scene, a young professional with desk-related neck pain, or a historic home renovator who overdid it on the weekend project, we provide expert care just steps from the cobblestone streets you love. Our 60-minute one-on-one sessions fit perfectly between your morning coffee at Daily Grind and evening plans on Thames Street.",
+  directions: "We're located at 800 S Bond St, right in the heart of Fells Point. From Thames Street, head north on Bond Street—we're just a few blocks up, near the intersection with Eastern Ave. If you're coming from Broadway Market, head east on Fleet Street and turn left on Bond. Street parking is available on Bond Street and surrounding blocks, or use the garage on Fleet Street.",
+  landmarks: [
+    "3-minute walk from Thames Street waterfront",
+    "2 blocks from Broadway Market",
+    "Near Bond Street Wharf",
+    "Steps from Fells Point Square and The Horse You Came In On"
+  ],
+  testimonial: {
+    quote: "Finally found a PT who takes the time to actually fix the problem. Living in Fells Point, it's so convenient to walk over for my appointments. Dr. Maks has completely changed how I approach my body mechanics.",
+    author: "Sarah M. - Fells Point Resident"
+  },
+  commonConditions: [
+    {
+      condition: "Ankle Sprains & Instability",
+      description: "The historic cobblestone streets of Fells Point are charming but challenging. We treat many ankle sprains and chronic instability from navigating uneven surfaces, especially in heels or after a night out."
+    },
+    {
+      condition: "Server & Bartender Overuse Injuries",
+      description: "The hospitality industry puts unique demands on your body. Shoulder strain from carrying trays, lower back pain from long shifts on your feet, and wrist issues from repetitive motions are common concerns we address."
+    },
+    {
+      condition: "Neck & Shoulder Tension",
+      description: "Whether you're working remotely from your Fells Point rowhouse or commuting to a downtown office, tech neck and shoulder tension from desk work are issues we see and effectively treat daily."
+    },
+    {
+      condition: "Weekend Warrior Injuries",
+      description: "From kayaking on the harbor to running the waterfront, Fells Point residents love staying active. We help you recover from overuse injuries so you can get back to enjoying the neighborhood."
+    }
+  ],
+  faqs: [
+    {
+      question: "Is there parking available near your Fells Point clinic?",
+      answer: "Yes! Street parking is available on Bond Street and surrounding blocks. There's also a parking garage on Fleet Street, about a 2-minute walk from our clinic. Many of our Fells Point patients simply walk to their appointments."
+    },
+    {
+      question: "Do you offer early morning or evening appointments for hospitality workers?",
+      answer: "Absolutely. We understand that Fells Point's hospitality industry has unique schedules. We offer appointments starting at 8:00 AM and as late as 7:30 PM on certain days to accommodate servers, bartenders, and other service industry professionals."
+    },
+    {
+      question: "Can you help with injuries from walking on cobblestones?",
+      answer: "Yes, this is actually a common issue we treat! The beautiful cobblestone streets of Fells Point can cause ankle sprains, aggravate plantar fasciitis, and create chronic instability. Dr. Maks can assess your gait, provide treatment, and recommend footwear strategies for navigating these historic streets safely."
+    },
+    {
+      question: "How is your clinic different from the chain PT clinics?",
+      answer: "At Physica Medica, you get 60 full minutes of one-on-one care with Dr. Maks—not 15 minutes split between multiple patients with rotating therapists. This boutique approach means faster results and a treatment plan truly customized to your needs and lifestyle."
+    }
+  ],
+  neighborhoodInfo: `<p>Fells Point has been Baltimore's maritime heart since the 1700s, and today it remains one of the city's most vibrant and walkable neighborhoods. The mix of historic rowhouses, waterfront dining, and active nightlife creates a unique community where work and play often blend together.</p>
+  
+  <p>As a physical therapy clinic embedded in Fells Point, we understand the neighborhood's rhythm. We see patients who work the late-night restaurant shifts and need early morning appointments. We treat the active professionals who run the waterfront promenade before work. We help the dedicated homeowners dealing with the physical toll of maintaining historic properties.</p>
+  
+  <p>Dr. Maks chose to establish Physica Medica here because Fells Point values quality, authenticity, and personal service—the same principles that guide our approach to physical therapy. Just as you'd choose a neighborhood restaurant over a chain, our boutique clinic offers the personalized attention that Fells Point residents expect and deserve.</p>
+  
+  <p>Whether you're recovering from an injury, managing chronic pain, or looking to improve your movement for the active Fells Point lifestyle, we're here to help—right in your neighborhood.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

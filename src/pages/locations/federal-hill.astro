@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Federal Hill",
+  slug: "federal-hill",
+  intro: "Federal Hill residents deserve physical therapy that's as dynamic as their neighborhood. At Physica Medica, we understand the active Fed Hill lifestyle—from early morning runs around the harbor to CrossFit at Fed Hill Fitness, from long hours at your downtown office to late nights on Cross Street. Whether you're a young professional dealing with desk-related tension, a weekend warrior recovering from flag football in the park, or a restaurant worker on your feet all day, Dr. Maks provides expert 60-minute sessions tailored to your specific needs.",
+  directions: "From Federal Hill, take Light Street north across the Inner Harbor, continue to President Street, then turn right on Fleet Street to Bond Street. Turn left on Bond—our clinic at 800 S Bond St is just ahead. The drive is approximately 10 minutes. You can also take Key Highway to President Street for a slightly different route. Free street parking available throughout Fells Point.",
+  landmarks: [
+    "10-minute drive across the harbor",
+    "Easy access via Light Street or Key Highway",
+    "Straight shot via President Street to Fells Point",
+    "Abundant street parking near clinic"
+  ],
+  testimonial: {
+    quote: "I tried several PTs in Fed Hill before making the short drive to see Dr. Maks. The difference is night and day. He actually listens and creates a real plan for recovery, not just a generic exercise sheet.",
+    author: "Jennifer K. - Federal Hill Young Professional"
+  },
+  commonConditions: [
+    {
+      condition: "Weekend Warrior Injuries",
+      description: "Flag football in the park, kickball leagues, and pick-up basketball are Fed Hill traditions. We help you recover from sprains, strains, and overuse injuries so you can get back in the game."
+    },
+    {
+      condition: "Running & Cycling Injuries",
+      description: "Fed Hill residents love running the harbor loop and cycling to work. IT band syndrome, shin splints, and hip flexor issues from these activities are common conditions we treat effectively."
+    },
+    {
+      condition: "Restaurant & Bar Industry Strain",
+      description: "Cross Street's vibrant restaurant scene means many Fed Hill residents work on their feet. Lower back pain, shoulder strain, and plantar fasciitis from long shifts respond well to our treatment."
+    },
+    {
+      condition: "Rowhouse Living Challenges",
+      description: "Living in a multi-story rowhouse means lots of stairs. Knee pain, hip issues, and lower back strain can result from daily stair climbing, especially when combined with other activities."
+    }
+  ],
+  faqs: [
+    {
+      question: "Is there a direct route from Federal Hill to your clinic?",
+      answer: "Yes! Take Light Street north across the Inner Harbor, continue onto President Street, then turn right on Fleet Street and left on Bond Street. Our clinic at 800 S Bond St is just ahead. The drive takes about 10 minutes and avoids the downtown traffic."
+    },
+    {
+      question: "Do you see a lot of patients from the Fed Hill restaurant industry?",
+      answer: "Yes, we work with many servers, bartenders, and kitchen staff from Cross Street and surrounding areas. We understand the physical demands of hospitality work and offer flexible scheduling to accommodate late-night workers."
+    },
+    {
+      question: "Can you help with injuries from rec league sports?",
+      answer: "Absolutely! Federal Hill's active social sports scene brings us plenty of kickball, flag football, and softball injuries. We'll get you recovered and back on the field, plus help you avoid future injuries."
+    },
+    {
+      question: "I've tried PT before and it didn't work. What makes you different?",
+      answer: "Most PT clinics give you 15 minutes with a therapist (often a different one each visit) who follows a generic protocol. At Physica Medica, you get 60 full minutes with Dr. Maks every session. He creates a customized plan based on thorough assessment and adjusts it as you progress. This level of attention gets results."
+    }
+  ],
+  neighborhoodInfo: `<p>Federal Hill is Baltimore's quintessential young professional neighborhood. The stunning views from the hill, the walkable streets lined with historic rowhouses, and the bustling Cross Street Market create a community that values both work and play. Fed Hill residents tend to be active, social, and demanding of quality in every aspect of their lives.</p>
+  
+  <p>This active lifestyle comes with physical demands. Running the harbor loop, playing in recreational sports leagues, working long hours at downtown offices or Cross Street restaurants—all of these put stress on the body. Add in the daily stair climbing that rowhouse living requires, and it's no wonder Fed Hill residents often need physical therapy.</p>
+  
+  <p>The 10-minute drive across the harbor to Physica Medica is worth it for the quality of care you'll receive. Unlike the corporate PT mills, we offer the kind of personalized, thorough treatment that Fed Hill residents expect from their service providers. Dr. Maks takes the time to understand your specific situation—your job, your activities, your goals—before developing a treatment plan.</p>
+  
+  <p>Many of our Fed Hill patients tell us they'd tried physical therapy before with minimal results. The difference is the time and attention: 60 focused minutes versus rushed 15-minute sessions. Quality matters, and Federal Hill knows it.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

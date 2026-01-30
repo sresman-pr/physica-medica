@@ -28,7 +28,7 @@ const pageDescription = "Comprehensive physical therapy services including dry n
     <div class="container">
       <div class="services-grid">
         <!-- 1. Dry Needling -->
-        <div class="service-card">
+        <a href="/services/dry-needling" class="service-card">
           <img 
             src="/images/Baltimore-Physical-Therapist-dry-needling.jpg"
             alt="Dry Needling"
@@ -38,11 +38,11 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Dry Needling</h2>
           <p>Release muscle knots and trigger points with precision needle therapy. One of the most effective and quickest ways to reduce tension and relieve pain.</p>
-          <a href="/services/dry-needling" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
 
         <!-- 2. Myofascial Cupping -->
-        <div class="service-card">
+        <a href="/services/myofascial-cupping" class="service-card">
           <img 
             src="/images/Baltimore-Physical-Therapist-myofascial-cupping.jpg"
             alt="Myofascial Cupping"
@@ -52,11 +52,11 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Myofascial Cupping</h2>
           <p>Advanced cupping therapy to release fascial restrictions, increase blood flow, and improve tissue mobility for faster recovery.</p>
-          <a href="/services/myofascial-cupping" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
 
         <!-- 3. Deep Tissue/Sports Massage -->
-        <div class="service-card">
+        <a href="/services/deep-tissue-sports-massage" class="service-card">
           <img 
             src="/images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg"
             alt="Deep Tissue & Sports Massage"
@@ -66,11 +66,11 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Deep Tissue/Sports Massage</h2>
           <p>Therapeutic massage techniques for athletes and active individuals. Optimize recovery and performance.</p>
-          <a href="/services/deep-tissue-sports-massage" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
 
         <!-- 4. Instrument Assisted Tissue Mobilization -->
-        <div class="service-card">
+        <a href="/services/instrument-assisted-tissue-mobilization" class="service-card">
           <Image 
             src={iastmImg}
             alt="Instrument Assisted Tissue Mobilization"
@@ -82,11 +82,11 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Instrument Assisted Mobilization</h2>
           <p>Advanced IASTM techniques using specialized tools to break down scar tissue and restore mobility.</p>
-          <a href="/services/instrument-assisted-tissue-mobilization" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
 
         <!-- 5. Pregnancy -->
-        <div class="service-card">
+        <a href="/services/pregnancy-physical-therapy" class="service-card">
           <Image 
             src={pregnancyImg}
             alt="Pregnancy Physical Therapy"
@@ -98,11 +98,11 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Pregnancy Physical Therapy</h2>
           <p>Expert care for expecting mothers through one-on-one treatments for pregnancy-related conditions.</p>
-          <a href="/services/pregnancy-physical-therapy" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
 
         <!-- 6. Pancafit Class -->
-        <div class="service-card">
+        <a href="/services/pancafit-class" class="service-card">
           <Image 
             src={strengthTrainingImg}
             alt="Pancafit Class"
@@ -114,11 +114,11 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Pancafit Class</h2>
           <p>Group posture training sessions using the Pancafit method to improve flexibility, alignment, and overall body mechanics.</p>
-          <a href="/services/pancafit-class" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
 
         <!-- 7. Scoliosis Treatment -->
-        <div class="service-card">
+        <a href="/services/scoliosis" class="service-card">
           <Image 
             src={scoliosisImg}
             alt="Scoliosis Treatment"
@@ -130,11 +130,11 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Scoliosis Treatment</h2>
           <p>Specialized spinal curve management combining Pancafit postural correction with expert one-on-one DPT care.</p>
-          <a href="/services/scoliosis" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
 
         <!-- 8. Specialty Techniques -->
-        <div class="service-card">
+        <a href="/services/specialty-techniques" class="service-card">
           <Image 
             src={specialtyImg}
             alt="Specialty Techniques"
@@ -146,8 +146,8 @@ const pageDescription = "Comprehensive physical therapy services including dry n
           />
           <h2>Specialty Techniques</h2>
           <p>Advanced therapeutic methods including neural tension release, scar tissue mobilization, posture re-education, and therapy for singers.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
-        </div>
+          <span class="service-link">Learn More →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -185,6 +185,7 @@ const pageDescription = "Comprehensive physical therapy services including dry n
   }
 
   .service-card {
+    display: block;
     background: white;
     border-radius: 0.5rem;
     border: 1px solid rgba(0,0,0,0.1);
@@ -193,6 +194,9 @@ const pageDescription = "Comprehensive physical therapy services including dry n
     transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
     position: relative;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
   /* Inner glow effect */
@@ -230,14 +234,13 @@ const pageDescription = "Comprehensive physical therapy services including dry n
 
   .service-link {
     display: inline-block;
-    margin-top: 1rem;
+    margin: 1rem 2rem 1.5rem;
     color: var(--color-accent);
-    text-decoration: none;
     font-weight: 600;
     transition: transform 0.2s;
   }
 
-  .service-link:hover {
+  .service-card:hover .service-link {
     transform: translateX(4px);
   }
 
