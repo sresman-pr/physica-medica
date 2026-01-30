@@ -8,16 +8,13 @@
       <div class="footer-left">
         <h2 class="footer-title">PHYSICA MEDICA</h2>
         <div class="footer-map">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.1234!2d-76.5934!3d39.2834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8045e1f7c1a6f%3A0x8b9b3c7f8c7a8f9d!2s800%20S%20Bond%20St%2C%20Baltimore%2C%20MD%2021231!5e0!3m2!1sen!2sus!4v1234567890"
-            width="100%" 
-            height="280" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Physica Medica location map">
-          </iframe>
+          <a href="https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD+21231" target="_blank" rel="noopener noreferrer" class="map-link-container">
+            <div class="static-map-placeholder">
+              <span class="map-pin">📍</span>
+              <span class="map-text">800 S Bond St, Baltimore</span>
+              <span class="map-cta">Click to open in Google Maps →</span>
+            </div>
+          </a>
         </div>
         <div class="footer-info">
           <p>800 S Bond St,<br/>Baltimore, MD 21231</p>
@@ -119,10 +116,45 @@
     margin: 20px 0;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
   }
 
-  .footer-map iframe {
+  .map-link-container {
     display: block;
+    text-decoration: none;
+  }
+
+  .static-map-placeholder {
+    background: linear-gradient(135deg, #e8f4f2 0%, #d4ebe6 100%);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    border: 2px solid var(--color-border);
+  }
+
+  .static-map-placeholder:hover {
+    background: linear-gradient(135deg, #d4ebe6 0%, #c0e0d9 100%);
+    border-color: var(--color-accent);
+  }
+
+  .map-pin {
+    font-size: 2.5rem;
+  }
+
+  .map-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .map-cta {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
   }
 
   .footer-info {
