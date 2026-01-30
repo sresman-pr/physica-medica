@@ -61,91 +61,82 @@ const faqs = [
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
   <WatermarkBackground variant="gray" angle={-10} />
   
-  <!-- Hero Section -->
+  <!-- Hero Section - Centered with teal gradient -->
   <section class="service-hero">
+    <div class="hero-gradient-bg"></div>
     <div class="container-narrow">
-      <h1>Scoliosis Specialty</h1>
-      <p class="hero-subtitle">Expert Spinal Curve Management</p>
+      <div class="hero-centered">
+        <h1>Scoliosis Treatment</h1>
+        <p class="hero-subtitle">Expert Spinal Curve Management</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+      </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <section class="service-content section-spacing">
+  <!-- Section 1: Intro - White -->
+  <section class="content-section-white">
     <div class="container-narrow">
       <h2>What is Scoliosis?</h2>
       <p>Scoliosis is a sideways curvature of the spine that occurs most often during the growth spurt just before puberty, though it can also develop in adults. While most cases are mild, some curves worsen as children grow and can cause significant discomfort and postural issues. The condition can affect your posture, breathing, and overall quality of life if left unmanaged.</p>
 
-      <h2>What is Scoliosis Physical Therapy?</h2>
-      <p>Scoliosis physical therapy focuses on managing spinal curvature through targeted postural correction, therapeutic exercises, and manual therapy techniques. At Physica Medica, we specialize in treating both adolescent and adult scoliosis, addressing not just the curve itself but the compensatory patterns and pain that often accompany it. Our approach targets the root cause of scoliosis-related dysfunction, not just surface symptoms.</p>
-      
-      <div class="scoliosis-images-grid">
-        <Image 
-          src={scoliosisApproachImg}
-          alt="Scoliosis treatment approach"
-          width={518}
-          height={379}
-          format="webp"
-          loading="lazy"
-          quality={80}
-        />
-        <Image 
-          src={scoliosisBackViewImg}
-          alt="Scoliosis back view assessment"
-          width={447}
-          height={396}
-          format="webp"
-          loading="lazy"
-          quality={80}
-        />
-      </div>
-
-      <!-- Alternating Section: How We Help -->
-      <div class="content-section-alt">
-        <h2>How We Can Help Fix the Spine</h2>
-        <p>Our comprehensive scoliosis treatment program combines specialized corrective exercises with hands-on manual therapy to improve spinal alignment and reduce pain:</p>
-        <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-icon">💪</div>
-            <strong>Strengthen Support Muscles</strong>
-            <p>Build the muscles that support proper spinal alignment</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">🧘</div>
-            <strong>Improve Flexibility</strong>
-            <p>Address tight areas caused by the curve</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">🎯</div>
-            <strong>Correct Imbalances</strong>
-            <p>Fix postural and compensatory patterns</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">✨</div>
-            <strong>Reduce Pain</strong>
-            <p>Eliminate discomfort associated with scoliosis</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">📈</div>
-            <strong>Prevent Progression</strong>
-            <p>Stop curves from worsening with targeted exercises</p>
-          </div>
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is Scoliosis Physical Therapy?</h2>
+          <p>Scoliosis physical therapy focuses on managing spinal curvature through targeted postural correction, therapeutic exercises, and manual therapy techniques. At Physica Medica, we specialize in treating both adolescent and adult scoliosis, addressing not just the curve itself but the compensatory patterns and pain that often accompany it.</p>
+          <p>Our approach targets the root cause of scoliosis-related dysfunction, not just surface symptoms.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={scoliosisApproachImg}
+            alt="Scoliosis treatment approach"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Hero Image -->
-      <div class="hero-image-container">
-        <Image 
-          src={scoliosisHeroImg}
-          alt="Scoliosis treatment at Physica Medica"
-          width={417}
-          height={268}
-          format="webp"
-          loading="lazy"
-          quality={85}
-        />
+  <!-- Section 2: How We Help - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2>How We Can Help Fix the Spine</h2>
+      <p>Our comprehensive scoliosis treatment program combines specialized corrective exercises with hands-on manual therapy to improve spinal alignment and reduce pain:</p>
+      <div class="feature-grid">
+        <div class="feature-item-light">
+          <strong>Strengthen Support Muscles</strong>
+          <p>Build the muscles that support proper spinal alignment</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Improve Flexibility</strong>
+          <p>Address tight areas caused by the curve</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Correct Imbalances</strong>
+          <p>Fix postural and compensatory patterns</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Reduce Pain</strong>
+          <p>Eliminate discomfort associated with scoliosis</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Prevent Progression</strong>
+          <p>Stop curves from worsening with targeted exercises</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Testimonial -->
+  <!-- Section 3: Testimonial + Image - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
       <div class="testimonial-card">
         <div class="quote-icon">"</div>
         <p class="testimonial-text">Maks is a wealth of knowledge! I have worked with him through a few injuries and am thankful to have him local. He uses a variety of techniques to meet your bodies individual needs and is always thinking outside the box! Would highly recommend.</p>
@@ -155,65 +146,86 @@ const faqs = [
         </div>
       </div>
 
-      <h2>How We Deliver Results: The 60-Minute 1-on-1 DPT Difference</h2>
-      <p>Our scoliosis treatment stands apart from typical physical therapy with a premium, out-of-network approach:</p>
+      <div class="content-row reverse">
+        <div class="content-row-text">
+          <h2>The 60-Minute 1-on-1 DPT Difference</h2>
+          <p>Our scoliosis treatment stands apart from typical physical therapy with a premium, out-of-network approach. Every session is a full 60 minutes of dedicated attention with Dr. Maks, ensuring thorough assessment and treatment.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={scoliosisHeroImg}
+            alt="Scoliosis treatment at Physica Medica"
+            width={400}
+            height={280}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+
       <div class="delivery-grid">
         <div class="delivery-card">
-          <div class="delivery-icon">🇮🇹</div>
           <h4>Specialized Pancafit</h4>
           <p>Address the postural chains affected by scoliosis</p>
         </div>
         <div class="delivery-card">
-          <div class="delivery-icon">⏱️</div>
           <h4>60-Minute Sessions</h4>
           <p>Full hour of one-on-one attention</p>
         </div>
         <div class="delivery-card">
-          <div class="delivery-icon">🎓</div>
           <h4>DPT-Level Expertise</h4>
           <p>Advanced training ensures comprehensive care</p>
         </div>
         <div class="delivery-card">
-          <div class="delivery-icon">🔄</div>
           <h4>Holistic Approach</h4>
           <p>Address muscle imbalances and movement patterns</p>
         </div>
         <div class="delivery-card">
-          <div class="delivery-icon">📋</div>
           <h4>Customized Programs</h4>
           <p>Every curve is unique; your treatment should be too</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h2>Who Benefits Most: Baltimore Families & Adults with Scoliosis</h2>
+  <!-- Section 4: Who Benefits - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2>Who Benefits Most</h2>
       <p>Our specialized scoliosis program is ideal for Baltimore residents including:</p>
-      <div class="benefits-list">
+      <div class="benefits-grid">
         <div class="benefit-item">
-          <strong>Canton & Fells Point Families</strong>
-          <p>Adolescent idiopathic scoliosis treatment for teens diagnosed with spinal curvature</p>
+          <strong>Adolescent Patients</strong>
+          <p>Teens diagnosed with idiopathic scoliosis who need early intervention</p>
         </div>
         <div class="benefit-item">
-          <strong>Federal Hill & Harbor East Professionals</strong>
-          <p>Adult degenerative scoliosis causing chronic back pain and postural issues</p>
+          <strong>Adult Scoliosis</strong>
+          <p>Degenerative scoliosis causing chronic back pain and postural issues</p>
         </div>
         <div class="benefit-item">
           <strong>Post-Surgical Patients</strong>
           <p>Comprehensive care after spinal fusion or other scoliosis surgeries</p>
         </div>
         <div class="benefit-item">
-          <strong>Active Baltimore Residents</strong>
-          <p>Athletes and active individuals managing scoliosis while maintaining fitness</p>
+          <strong>Active Individuals</strong>
+          <p>Athletes managing scoliosis while maintaining fitness</p>
         </div>
         <div class="benefit-item">
-          <strong>Parents Seeking Prevention</strong>
-          <p>Proactive treatment to prevent curve progression in growing adolescents</p>
+          <strong>Prevention-Focused</strong>
+          <p>Proactive treatment to prevent curve progression</p>
         </div>
         <div class="benefit-item">
-          <strong>Adults with Chronic Pain</strong>
-          <p>Scoliosis-related back pain, postural imbalances, and compensatory patterns</p>
+          <strong>Chronic Pain Sufferers</strong>
+          <p>Scoliosis-related pain and compensatory patterns</p>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- Section 5: Diagnosis Info - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
       <div class="scoliosis-info-grid">
         <div class="info-image">
           <Image 
@@ -253,7 +265,6 @@ const faqs = [
         </div>
       </div>
 
-      <!-- Another Testimonial -->
       <div class="testimonial-card">
         <div class="quote-icon">"</div>
         <p class="testimonial-text">Maks totally changed my perspective on posture within the first few minutes of my first appointment with him. He's incredibly knowledgable, skilled, and kind. Wouldn't go to anybody else for PT.</p>
@@ -262,67 +273,67 @@ const faqs = [
           <strong>Google Review</strong>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Alternating Section: Treatment Process -->
-      <div class="content-section-alt">
-        <h2>The Treatment Process</h2>
-        <p>Scoliosis treatment at Physica Medica follows a comprehensive approach:</p>
-        <div class="step-cards">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <strong>Detailed Assessment</strong>
-              <p>Evaluation of curve pattern, compensatory movements, and pain generators</p>
-            </div>
+  <!-- Section 6: Treatment Process - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2>The Treatment Process</h2>
+      <p>Scoliosis treatment at Physica Medica follows a comprehensive approach:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Detailed Assessment</strong>
+            <p>Evaluation of curve pattern, compensatory movements, and pain generators</p>
           </div>
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <strong>Postural Correction</strong>
-              <p>Pancafit-based exercises to address asymmetries and muscle imbalances</p>
-            </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Postural Correction</strong>
+            <p>Pancafit-based exercises to address asymmetries and muscle imbalances</p>
           </div>
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <strong>Core Stabilization</strong>
-              <p>Strengthen the muscles that support your spine</p>
-            </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>Core Stabilization</strong>
+            <p>Strengthen the muscles that support your spine</p>
           </div>
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              <strong>Movement Re-education</strong>
-              <p>Learn optimal movement patterns for daily activities</p>
-            </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Movement Re-education</strong>
+            <p>Learn optimal movement patterns for daily activities</p>
           </div>
-          <div class="step-card">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <strong>Home Exercise Program</strong>
-              <p>Customized exercises to maintain improvements</p>
-            </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <strong>Home Exercise Program</strong>
+            <p>Customized exercises to maintain improvements</p>
           </div>
-          <div class="step-card">
-            <div class="step-number">6</div>
-            <div class="step-content">
-              <strong>Progress Monitoring</strong>
-              <p>Regular assessment to track curve stability and symptom reduction</p>
-            </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <strong>Progress Monitoring</strong>
+            <p>Regular assessment to track curve stability and symptom reduction</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="highlight-box">
-        <h3>Evidence-Based Approach</h3>
-        <p>Our scoliosis treatment integrates the latest research in postural correction, manual therapy, and therapeutic exercise. We focus on what works: improving function, reducing pain, and enhancing quality of life.</p>
-      </div>
-
-      <div class="cta-box">
-        <h3>Start Your Scoliosis Treatment</h3>
-        <p>Don't let scoliosis limit your life. Schedule a comprehensive evaluation with Dr. Maks.</p>
-        <a href="/schedule" class="cta-button">Schedule Evaluation</a>
-      </div>
+  <!-- Section 7: CTA - Teal -->
+  <section class="content-section-teal">
+    <div class="container-narrow text-center">
+      <h2>Start Your Scoliosis Treatment</h2>
+      <p>Don't let scoliosis limit your life. Schedule a comprehensive evaluation with Dr. Maks.</p>
+      <a href="/schedule" class="cta-button-light">Schedule Evaluation</a>
     </div>
   </section>
 
@@ -353,93 +364,187 @@ const faqs = [
 </BaseLayout>
 
 <style>
+  /* Hero Section - Teal gradient */
   .service-hero {
     position: relative;
-    z-index: 1;
-    background: transparent;
-    color: var(--color-text-primary);
-    padding: 3rem 2rem;
+    z-index: 2;
+    padding: 100px 20px 80px;
     text-align: center;
+    overflow: hidden;
   }
 
-  .service-content {
+  .hero-gradient-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2d6d5f 0%, #1f4d42 100%);
+    z-index: 0;
+  }
+
+  .hero-centered {
     position: relative;
     z-index: 1;
-    padding: 0 1rem;
   }
 
-  /* White content card for readability on gray watermark */
-  .service-content .container-narrow {
-    background: white;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  .service-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
   }
 
-  .service-content h2:first-child {
-    margin-top: 0;
+  .hero-subtitle {
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
   }
 
-  /* Alternating section within card */
-  .content-section-alt {
-    background: var(--color-background-light);
-    margin: 2.5rem -3rem;
-    padding: 2rem 3rem;
-    border-top: 1px solid rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .content-section-alt h2 {
-    margin-top: 0;
-  }
-
-  /* Feature list cards */
-  .feature-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  .hero-value-pills {
+    display: flex;
+    justify-content: center;
     gap: 1rem;
-    margin: 1.5rem 0 0;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
   }
 
-  .feature-item {
+  .value-pill {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
     background: white;
-    padding: 1.25rem;
+    color: var(--color-primary, #2d6d5f);
+    padding: 1rem 2.5rem;
     border-radius: 8px;
-    border-left: 3px solid var(--color-accent);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   }
 
-  .feature-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   }
 
-  .feature-item strong {
+  /* Alternating Content Sections */
+  .content-section-white,
+  .content-section-gray,
+  .content-section-teal {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 1.5rem;
+  }
+
+  .content-section-white {
+    background: rgba(255, 255, 255, 0.97);
+  }
+
+  .content-section-gray {
+    background: rgba(245, 245, 245, 0.97);
+  }
+
+  .content-section-teal {
+    background: linear-gradient(135deg, #2d6d5f 0%, #1f4d42 100%);
+    color: white;
+  }
+
+  .content-section-teal h2 {
+    color: white;
+  }
+
+  .content-section-teal p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .content-section-white h2,
+  .content-section-gray h2 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  /* Content Row Layout */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Feature Grid */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .feature-item-light {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--color-accent, #3db89f);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .feature-item-light strong {
     color: var(--color-primary);
     display: block;
-    margin-bottom: 0.25rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
   }
 
-  .feature-item p {
+  .feature-item-light p {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--color-text-secondary);
+    line-height: 1.5;
   }
 
   /* Delivery grid */
   .delivery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1.25rem;
-    margin: 1.5rem 0 2rem;
+    margin: 2rem 0;
   }
 
   .delivery-card {
-    background: var(--color-background-light);
+    background: var(--color-background-light, #f5f5f5);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
     border: 1px solid rgba(0,0,0,0.06);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -448,11 +553,6 @@ const faqs = [
   .delivery-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-
-  .delivery-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
   }
 
   .delivery-card h4 {
@@ -468,37 +568,41 @@ const faqs = [
     line-height: 1.5;
   }
 
-  /* Benefits list */
-  .benefits-list {
+  /* Benefits grid */
+  .benefits-grid {
     display: grid;
-    gap: 1rem;
-    margin: 1.5rem 0 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+    margin: 2rem 0;
   }
 
   .benefit-item {
-    background: var(--color-background-light);
-    padding: 1.25rem 1.5rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--color-accent);
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--color-accent, #3db89f);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   }
 
   .benefit-item strong {
     color: var(--color-primary);
     display: block;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .benefit-item p {
     margin: 0;
     font-size: 0.9rem;
     color: var(--color-text-secondary);
+    line-height: 1.5;
   }
 
   /* Step cards */
   .step-cards {
     display: grid;
-    gap: 1rem;
-    margin: 1.5rem 0 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 2rem 0;
   }
 
   .step-card {
@@ -506,15 +610,15 @@ const faqs = [
     gap: 1.25rem;
     align-items: flex-start;
     background: white;
-    padding: 1.25rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
 
   .step-number {
-    width: 36px;
-    height: 36px;
-    background: var(--color-accent);
+    width: 40px;
+    height: 40px;
+    background: var(--color-accent, #3db89f);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -522,35 +626,38 @@ const faqs = [
     justify-content: center;
     font-weight: 700;
     flex-shrink: 0;
+    font-size: 1.1rem;
   }
 
   .step-content strong {
     color: var(--color-primary);
     display: block;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
   }
 
   .step-content p {
     margin: 0;
     font-size: 0.9rem;
     color: var(--color-text-secondary);
+    line-height: 1.5;
   }
 
   /* Testimonial card */
   .testimonial-card {
-    background: linear-gradient(135deg, rgba(45, 109, 95, 0.05) 0%, rgba(61, 184, 159, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(45, 109, 95, 0.06) 0%, rgba(61, 184, 159, 0.06) 100%);
     padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid var(--color-accent);
-    margin: 2.5rem 0;
+    border-left: 4px solid var(--color-accent, #3db89f);
+    margin: 2rem 0;
   }
 
   .quote-icon {
-    font-size: 3.5rem;
-    color: var(--color-accent);
-    opacity: 0.3;
+    font-size: 3rem;
+    color: var(--color-accent, #3db89f);
+    opacity: 0.4;
     line-height: 1;
-    margin-bottom: -1rem;
+    margin-bottom: -0.5rem;
     font-family: Georgia, serif;
   }
 
@@ -578,38 +685,12 @@ const faqs = [
     color: var(--color-primary);
   }
 
-  .hero-image-container {
-    margin: 2.5rem 0;
-    text-align: center;
-  }
-
-  .hero-image-container img {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    display: block;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  .scoliosis-images-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
-
-  .scoliosis-images-grid img {
-    width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
+  /* Info Image Grid */
   .scoliosis-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
   }
 
   .info-image {
@@ -618,73 +699,40 @@ const faqs = [
 
   .info-image img {
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: 10px;
     margin-bottom: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
   .image-caption {
     font-weight: 600;
     color: var(--color-primary);
     margin: 0;
+    font-size: 1rem;
   }
 
-  .service-hero h1 {
-    color: var(--color-text-primary);
-    margin-bottom: 0.5rem;
+  /* CTA Buttons */
+  .cta-button-light {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary, #2d6d5f);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.5rem;
-    opacity: 0.9;
+  .cta-button-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   }
 
-  .service-content h2 {
-    color: var(--color-primary);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .service-content ul,
-  .service-content ol {
-    margin: 1rem 0 2rem 1.5rem;
-    line-height: 1.8;
-  }
-
-  .service-content li {
-    margin-bottom: 0.5rem;
-  }
-
-  .highlight-box {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #2a5f52 100%);
-    color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 2.5rem 0;
-  }
-
-  .highlight-box h3 {
-    color: white;
-    margin-bottom: 1rem;
-    margin-top: 0;
-  }
-
-  .highlight-box p {
-    margin: 0;
-    opacity: 0.95;
-  }
-
-  .cta-box {
-    background: var(--color-background-light);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    border-left: 4px solid var(--color-accent);
-    margin: 2.5rem 0 0;
+  .text-center {
     text-align: center;
-  }
-
-  .cta-box h3 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
   }
 
   .related-services {
@@ -731,14 +779,41 @@ const faqs = [
   }
 
   @media (max-width: 768px) {
-    .content-section-alt {
-      margin: 2rem -1.5rem;
-      padding: 1.5rem;
+    .service-hero {
+      padding: 90px 20px 60px;
     }
 
-    .feature-list,
-    .delivery-grid {
-      grid-template-columns: 1fr 1fr;
+    .service-hero h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .content-section-white,
+    .content-section-gray,
+    .content-section-teal {
+      padding: 3rem 1rem;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .feature-grid,
+    .delivery-grid,
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .step-cards {
+      grid-template-columns: 1fr;
     }
 
     .step-card {
@@ -750,14 +825,7 @@ const faqs = [
       margin: 0 auto;
     }
 
-    .service-content .container-narrow {
-      padding: 2rem 1.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .feature-list,
-    .delivery-grid {
+    .scoliosis-info-grid {
       grid-template-columns: 1fr;
     }
   }
