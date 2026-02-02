@@ -4,6 +4,7 @@ import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
 import AllServicesGrid from '../../../components/AllServicesGrid.astro';
+import Icon from '../../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -58,7 +59,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" />
+  <WatermarkBackground variant="teal" />
   
   <!-- Hero Section - Centered -->
   <section class="specialty-hero">
@@ -124,22 +125,22 @@ const faqs = [
       
       <div class="cost-grid">
         <div class="cost-item">
-          <div class="cost-icon">😣</div>
+          <div class="cost-icon"><Icon name="frown" size={28} /></div>
           <h4>Chronic Pain</h4>
           <p>Neck pain, headaches, shoulder pain, and low back pain from sustained tension</p>
         </div>
         <div class="cost-item">
-          <div class="cost-icon">🫁</div>
+          <div class="cost-icon"><Icon name="wind" size={28} /></div>
           <h4>Breathing Issues</h4>
           <p>Slouched posture compresses the diaphragm, reducing lung capacity</p>
         </div>
         <div class="cost-item">
-          <div class="cost-icon">⚡</div>
+          <div class="cost-icon"><Icon name="zap" size={28} /></div>
           <h4>Fatigue</h4>
           <p>Poor alignment requires more energy to maintain upright position</p>
         </div>
         <div class="cost-item">
-          <div class="cost-icon">🦴</div>
+          <div class="cost-icon"><Icon name="bone" size={28} /></div>
           <h4>Joint Degeneration</h4>
           <p>Uneven loading leads to premature arthritis and disc problems</p>
         </div>
@@ -559,11 +560,12 @@ const faqs = [
   }
 
   .cost-icon {
-    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--theme-navy);
     color: white;
     padding: 1rem;
-    display: block;
   }
 
   .cost-item h4 {

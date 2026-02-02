@@ -4,6 +4,7 @@ import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import images
@@ -60,7 +61,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" />
+  <WatermarkBackground variant="teal" />
   
   <!-- Hero Section - Centered -->
   <section class="service-hero">
@@ -112,22 +113,22 @@ const faqs = [
       
       <div class="mechanism-cards">
         <div class="mechanism-card">
-          <div class="mechanism-icon">🎯</div>
+          <div class="mechanism-icon"><Icon name="target" size={32} /></div>
           <h4>Trigger Point Release</h4>
           <p>Needle insertion causes contracted muscle fibers to relax and release built-up tension</p>
         </div>
         <div class="mechanism-card">
-          <div class="mechanism-icon">🩸</div>
+          <div class="mechanism-icon"><Icon name="droplets" size={32} /></div>
           <h4>Blood Flow Increase</h4>
           <p>Improved circulation brings oxygen and nutrients to damaged tissue</p>
         </div>
         <div class="mechanism-card">
-          <div class="mechanism-icon">⚡</div>
+          <div class="mechanism-icon"><Icon name="zap" size={32} /></div>
           <h4>Neural Reset</h4>
           <p>Normalizes motor endplate dysfunction where nerves communicate with muscles</p>
         </div>
         <div class="mechanism-card">
-          <div class="mechanism-icon">🔓</div>
+          <div class="mechanism-icon"><Icon name="unlock" size={32} /></div>
           <h4>Pain Relief</h4>
           <p>Interrupts the pain-spasm cycle and reduces referred pain patterns</p>
         </div>
@@ -314,8 +315,8 @@ const faqs = [
   
   /* Theme colors */
   :root {
-    --theme-accent: #e07a5f;
-    --theme-accent-light: #f4d6cf;
+    --theme-accent: #5fb3a1;
+    --theme-accent-light: #e8f5f2;
     --theme-dark: #2d3436;
   }
 
@@ -334,7 +335,7 @@ const faqs = [
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(224,122,95,0.1) 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(45,109,95,0.1) 100%);
     pointer-events: none;
   }
 
@@ -392,7 +393,7 @@ const faqs = [
   }
 
   .hero-cta:hover {
-    background: #c96a52;
+    background: #4a9b8c;
     transform: translateY(-1px);
   }
 
@@ -504,8 +505,14 @@ const faqs = [
   /* Mechanism cards - Sharp, clinical */
   .mechanism-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .mechanism-cards {
+      grid-template-columns: 1fr;
+    }
   }
 
   .mechanism-card {
@@ -522,8 +529,11 @@ const faqs = [
   }
 
   .mechanism-icon {
-    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
+    color: var(--color-primary);
   }
 
   .mechanism-card h4 {
@@ -712,7 +722,7 @@ const faqs = [
   }
 
   .cta-button:hover {
-    background: #c96a52;
+    background: #4a9b8c;
   }
 
   /* Testimonial */

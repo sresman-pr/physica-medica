@@ -1,0 +1,81 @@
+---
+import { 
+  Target, RefreshCw, Zap, Activity, Dumbbell, Brain, 
+  Droplets, Unlock, Droplet, Bone, Hand, Moon, Leaf, 
+  Shield, Flame, MapPin, Phone, Mail, Building2, 
+  Sparkles, Clock, Snowflake, Wind, Settings, Star,
+  MessageCircle, Stethoscope, Heart, CheckCircle, Users,
+  Search, Scale, Eye, Focus, GraduationCap, BookOpen,
+  Baby, User, PersonStanding, Link, Dna, Lock, Plug,
+  Disc, Repeat, Armchair, Bandage, Frown, CircleDot,
+  Move, Mic, CreditCard
+} from 'lucide-astro';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  strokeWidth?: number;
+}
+
+const { name, size = 24, class: className = '', strokeWidth = 2 } = Astro.props;
+
+const icons: Record<string, any> = {
+  target: Target,
+  'refresh-cw': RefreshCw,
+  zap: Zap,
+  activity: Activity,
+  dumbbell: Dumbbell,
+  brain: Brain,
+  droplets: Droplets,
+  unlock: Unlock,
+  droplet: Droplet,
+  bone: Bone,
+  hand: Hand,
+  moon: Moon,
+  leaf: Leaf,
+  shield: Shield,
+  flame: Flame,
+  'map-pin': MapPin,
+  phone: Phone,
+  mail: Mail,
+  building: Building2,
+  sparkles: Sparkles,
+  clock: Clock,
+  snowflake: Snowflake,
+  wind: Wind,
+  settings: Settings,
+  star: Star,
+  'message-circle': MessageCircle,
+  stethoscope: Stethoscope,
+  heart: Heart,
+  'check-circle': CheckCircle,
+  users: Users,
+  search: Search,
+  scale: Scale,
+  eye: Eye,
+  focus: Focus,
+  'graduation-cap': GraduationCap,
+  'book-open': BookOpen,
+  baby: Baby,
+  user: User,
+  'person-standing': PersonStanding,
+  link: Link,
+  dna: Dna,
+  lock: Lock,
+  plug: Plug,
+  disc: Disc,
+  repeat: Repeat,
+  armchair: Armchair,
+  bandage: Bandage,
+  frown: Frown,
+  'circle-dot': CircleDot,
+  move: Move,
+  mic: Mic,
+  'credit-card': CreditCard,
+};
+
+const IconComponent = icons[name.toLowerCase()];
+---
+
+{IconComponent && <IconComponent size={size} class={className} strokeWidth={strokeWidth} />}

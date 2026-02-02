@@ -4,6 +4,7 @@ import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
 import AllServicesGrid from '../../../components/AllServicesGrid.astro';
+import Icon from '../../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -58,7 +59,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" />
+  <WatermarkBackground variant="teal" />
   
   <!-- Hero Section - Centered -->
   <section class="specialty-hero">
@@ -110,27 +111,27 @@ const faqs = [
       
       <div class="impact-cards">
         <div class="impact-card">
-          <div class="impact-icon">🔒</div>
+          <div class="impact-icon"><Icon name="lock" size={28} /></div>
           <h4>Restricted Movement</h4>
           <p>Adhesions bind tissues that should move independently</p>
         </div>
         <div class="impact-card">
-          <div class="impact-icon">⚡</div>
+          <div class="impact-icon"><Icon name="zap" size={28} /></div>
           <h4>Chronic Pain</h4>
           <p>Nerve entrapment and tension create ongoing discomfort</p>
         </div>
         <div class="impact-card">
-          <div class="impact-icon">🔄</div>
+          <div class="impact-icon"><Icon name="refresh-cw" size={28} /></div>
           <h4>Postural Compensation</h4>
           <p>Your body adapts around restrictions, creating new problems</p>
         </div>
         <div class="impact-card">
-          <div class="impact-icon">💪</div>
+          <div class="impact-icon"><Icon name="dumbbell" size={28} /></div>
           <h4>Reduced Strength</h4>
           <p>Muscles can't function optimally when surrounded by restrictive tissue</p>
         </div>
         <div class="impact-card">
-          <div class="impact-icon">✨</div>
+          <div class="impact-icon"><Icon name="sparkles" size={28} /></div>
           <h4>Aesthetic Concerns</h4>
           <p>Thick, raised, or discolored scars affect appearance</p>
         </div>
@@ -316,8 +317,8 @@ const faqs = [
   
   /* Theme colors */
   :root {
-    --theme-accent: #e07a5f;
-    --theme-accent-light: #f4d6cf;
+    --theme-accent: #5fb3a1;
+    --theme-accent-light: #e8f5f2;
     --theme-dark: #2d3436;
   }
 
@@ -336,7 +337,7 @@ const faqs = [
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(224,122,95,0.1) 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(45,109,95,0.1) 100%);
     pointer-events: none;
   }
 
@@ -394,7 +395,7 @@ const faqs = [
   }
 
   .hero-cta:hover {
-    background: #c96a52;
+    background: #4a9b8c;
     transform: translateY(-1px);
   }
 
@@ -524,8 +525,11 @@ const faqs = [
   }
 
   .impact-icon {
-    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
+    color: var(--theme-accent);
   }
 
   .impact-card h4 {

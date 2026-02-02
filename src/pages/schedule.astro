@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import StarRating from '../components/StarRating.astro';
 import { getEntry } from 'astro:content';
 
 // Fetch business info from Keystatic CMS
@@ -84,14 +86,14 @@ const pageDescription = "Schedule your physical therapy appointment with Dr. Mak
           <textarea name="message" placeholder="Message" rows="5" aria-label="Your message"></textarea>
           <button type="submit" class="submit-btn">Send Message</button>
           <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="reviews-link">
-            <span class="stars">★★★★★</span>
+            <span class="stars"><StarRating /></span>
             <span>300+ Reviews</span>
           </a>
         </form>
       </div>
 
       <div class="insurance-notice">
-        <h3>💳 Rates & Payment</h3>
+        <h3><Icon name="credit-card" size={20} /> Rates & Payment</h3>
         <p>We are an out-of-network provider. Sessions are $190, and we provide superbills for potential 60-80% reimbursement from your insurance.</p>
         <a href="/insurance" class="insurance-link">View rates & reimbursement details →</a>
       </div>

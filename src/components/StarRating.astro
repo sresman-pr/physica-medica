@@ -1,0 +1,25 @@
+---
+import { Star } from 'lucide-astro';
+
+interface Props {
+  count?: number;
+  size?: number;
+  class?: string;
+}
+
+const { count = 5, size = 16, class: className = '' } = Astro.props;
+---
+
+<span class:list={["star-rating", className]}>
+  {Array(count).fill(0).map(() => (
+    <Star size={size} fill="currentColor" strokeWidth={0} />
+  ))}
+</span>
+
+<style>
+  .star-rating {
+    display: inline-flex;
+    gap: 2px;
+    color: #ffc107;
+  }
+</style>

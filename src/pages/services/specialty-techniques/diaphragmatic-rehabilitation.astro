@@ -4,6 +4,7 @@ import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
 import AllServicesGrid from '../../../components/AllServicesGrid.astro';
+import Icon from '../../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -58,7 +59,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" />
+  <WatermarkBackground variant="teal" />
   
   <!-- Hero Section - Centered -->
   <section class="specialty-hero">
@@ -104,7 +105,7 @@ const faqs = [
   <section class="content-section-accent">
     <div class="container-narrow">
       <div class="stress-highlight">
-        <div class="highlight-icon">🧠</div>
+        <div class="highlight-icon"><Icon name="brain" size={36} /></div>
         <div class="highlight-content">
           <h3>The Stress-Breathing Connection</h3>
           <p>Diaphragmatic breathing activates your parasympathetic nervous system—the "rest and digest" response. Poor breathing patterns keep you stuck in fight-or-flight mode, contributing to anxiety, tension, and poor sleep.</p>
@@ -119,32 +120,32 @@ const faqs = [
       <h2 class="section-title-center">Benefits of Diaphragmatic Rehabilitation</h2>
       <div class="benefits-grid-varied">
         <div class="benefit-card-varied">
-          <div class="benefit-icon-large">🦴</div>
+          <div class="benefit-icon-large"><Icon name="bone" size={36} /></div>
           <h4>Improved Spinal Mobility</h4>
           <p>The diaphragm attaches to your spine—releasing it improves thoracic and lumbar mobility</p>
         </div>
         <div class="benefit-card-varied">
-          <div class="benefit-icon-large">💆</div>
+          <div class="benefit-icon-large"><Icon name="hand" size={36} /></div>
           <h4>Decreased Tension</h4>
           <p>Stop overusing accessory breathing muscles that cause chronic neck and shoulder tension</p>
         </div>
         <div class="benefit-card-varied">
-          <div class="benefit-icon-large">😴</div>
+          <div class="benefit-icon-large"><Icon name="moon" size={36} /></div>
           <h4>Better Sleep</h4>
           <p>Better breathing mechanics and reduced stress lead to deeper, more restorative sleep</p>
         </div>
         <div class="benefit-card-varied">
-          <div class="benefit-icon-large">🏃</div>
+          <div class="benefit-icon-large"><Icon name="activity" size={36} /></div>
           <h4>Athletic Performance</h4>
           <p>Efficient breathing improves endurance and oxygen delivery to working muscles</p>
         </div>
         <div class="benefit-card-varied">
-          <div class="benefit-icon-large">🧘</div>
+          <div class="benefit-icon-large"><Icon name="leaf" size={36} /></div>
           <h4>Stress Relief</h4>
           <p>Activates the parasympathetic nervous system, promoting relaxation</p>
         </div>
         <div class="benefit-card-varied">
-          <div class="benefit-icon-large">🎯</div>
+          <div class="benefit-icon-large"><Icon name="target" size={36} /></div>
           <h4>Core Stability</h4>
           <p>Proper diaphragm function supports core stability and reduces low back strain</p>
         </div>
@@ -327,7 +328,7 @@ const faqs = [
   /* Theme colors */
   :root {
     --theme-soft-teal: #5fb3a1;
-    --theme-soft-blue: #7cb5d6;
+    --theme-soft-blue: #5fb3a1;
     --theme-cream: #fefcf9;
     --theme-sage: #a8c5b8;
   }
@@ -335,7 +336,7 @@ const faqs = [
   /* Hero Section - Soft gradient, centered */
   .specialty-hero {
     position: relative;
-    background: linear-gradient(160deg, #4a9b8c 0%, #5fb3a1 50%, #7cb5d6 100%);
+    background: linear-gradient(160deg, #4a9b8c 0%, #5fb3a1 50%, #7cc5b5 100%);
     padding: 3.5rem 2rem;
     overflow: hidden;
     z-index: 1;
@@ -463,8 +464,11 @@ const faqs = [
   }
 
   .stress-highlight .highlight-icon {
-    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    color: var(--theme-soft-teal);
   }
 
   .stress-highlight h3 {
@@ -561,8 +565,11 @@ const faqs = [
   }
 
   .benefit-icon-large {
-    font-size: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1.25rem;
+    color: var(--theme-soft-teal);
   }
 
   .benefit-card-varied h4 {

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WatermarkBackground from '../components/WatermarkBackground.astro';
+import Icon from '../components/Icon.astro';
+import StarRating from '../components/StarRating.astro';
 import { Image } from 'astro:assets';
 
 // Import Wim Hof images
@@ -11,6 +13,7 @@ import meditationImg from '../images/Baltimore-Physical-Therapist-meditation-min
 import coldExposureImg from '../images/Baltimore-Physical-Therapist-progressive-cold-exposure.jpg';
 import coldTherapyImg from '../images/Cold-Therapy-Techniques-for-Wim-Hof-Method-Baltimore-Maryland.png';
 import peopleImg from '../images/Baltimore-Physical-Therapist-people.jpg';
+import wofBannerImg from '../images/wof-method-2023-1.webp';
 
 const pageTitle = "Wim Hof Method Baltimore | Certified Instructor | Physica Medica";
 const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. Maksim Birikov in Baltimore. Breathing techniques, cold therapy, and mental conditioning.";
@@ -20,6 +23,17 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
   <WatermarkBackground variant="teal" angle={-10} />
   
   <section class="wim-hof-hero">
+    <div class="hero-background-image">
+      <Image 
+        src={wofBannerImg}
+        alt="Wim Hof Method cold plunge training"
+        width={1536}
+        height={1333}
+        format="webp"
+        loading="eager"
+        quality={85}
+      />
+    </div>
     <div class="container-narrow text-center">
       <h1>WIM HOF METHOD</h1>
       <p class="lead">Certified Instruction in Baltimore with Dr. Maks</p>
@@ -36,15 +50,15 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
       </div>
       <div class="hero-stats-compact">
         <div class="hero-stat-item">
-          <span class="stat-icon">❄️</span>
+          <span class="stat-icon"><Icon name="snowflake" size={24} /></span>
           <span class="stat-text">Ice Bath Training</span>
         </div>
         <div class="hero-stat-item">
-          <span class="stat-icon">🌬️</span>
+          <span class="stat-icon"><Icon name="wind" size={24} /></span>
           <span class="stat-text">Breathing Techniques</span>
         </div>
         <div class="hero-stat-item">
-          <span class="stat-icon">👥</span>
+          <span class="stat-icon"><Icon name="users" size={24} /></span>
           <span class="stat-text">Group Workshops</span>
         </div>
       </div>
@@ -111,42 +125,42 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
       <p class="section-intro">The Wim Hof Method has been scientifically proven to provide these benefits:</p>
       <div class="benefits-grid-whm">
         <div class="benefit-card-whm">
-          <div class="benefit-icon">🧘</div>
+          <div class="benefit-icon"><Icon name="leaf" size={32} /></div>
           <strong>Reduce Stress & Anxiety</strong>
           <p>Activates the parasympathetic nervous system</p>
         </div>
         <div class="benefit-card-whm">
-          <div class="benefit-icon">🛡️</div>
+          <div class="benefit-icon"><Icon name="shield" size={32} /></div>
           <strong>Boost Immune Function</strong>
           <p>Increases anti-inflammatory mediators</p>
         </div>
         <div class="benefit-card-whm">
-          <div class="benefit-icon">⚡</div>
+          <div class="benefit-icon"><Icon name="zap" size={32} /></div>
           <strong>Increase Energy</strong>
           <p>Improves oxygen delivery to cells</p>
         </div>
         <div class="benefit-card-whm">
-          <div class="benefit-icon">🏃</div>
+          <div class="benefit-icon"><Icon name="activity" size={32} /></div>
           <strong>Enhance Recovery</strong>
           <p>Faster muscle recovery, reduced inflammation</p>
         </div>
         <div class="benefit-card-whm">
-          <div class="benefit-icon">😴</div>
+          <div class="benefit-icon"><Icon name="moon" size={32} /></div>
           <strong>Improve Sleep</strong>
           <p>Better regulation of stress hormones</p>
         </div>
         <div class="benefit-card-whm">
-          <div class="benefit-icon">🔥</div>
+          <div class="benefit-icon"><Icon name="flame" size={32} /></div>
           <strong>Reduce Inflammation</strong>
           <p>Helps with autoimmune conditions</p>
         </div>
         <div class="benefit-card-whm">
-          <div class="benefit-icon">🧠</div>
+          <div class="benefit-icon"><Icon name="brain" size={32} /></div>
           <strong>Mind-Body Connection</strong>
           <p>Control over involuntary processes</p>
         </div>
         <div class="benefit-card-whm">
-          <div class="benefit-icon">💪</div>
+          <div class="benefit-icon"><Icon name="dumbbell" size={32} /></div>
           <strong>Mental Resilience</strong>
           <p>Stay calm under stress</p>
         </div>
@@ -195,7 +209,7 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
             loading="lazy"
             quality={70}
           />
-          <h3>🧠 Commitment</h3>
+          <h3>Commitment</h3>
           <p>Mental conditioning and mindset training that empowers you to control your body's responses.</p>
         </div>
       </div>
@@ -258,7 +272,7 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
           <p class="testimonial-text">The Wim Hof Method with Dr. Maks has been transformative. The combination of breathing exercises and cold exposure has helped me manage stress better than anything I've tried before. The community support makes all the difference.</p>
           <div class="testimonial-author">
             <strong>Michael T.</strong>
-            <span class="star-rating">★★★★★</span>
+            <StarRating />
           </div>
         </div>
         <div class="testimonial-card">
@@ -266,7 +280,7 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
           <p class="testimonial-text">I was skeptical about ice baths at first, but Dr. Maks's guidance made it accessible and safe. After just a few sessions, I noticed improved energy levels and mental clarity. This practice has become an essential part of my wellness routine.</p>
           <div class="testimonial-author">
             <strong>Sarah L.</strong>
-            <span class="star-rating">★★★★★</span>
+            <StarRating />
           </div>
         </div>
         <div class="testimonial-card">
@@ -274,7 +288,7 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
           <p class="testimonial-text">The Wim Hof workshops at Physica Medica are incredible. Dr. Maks combines his physical therapy expertise with the method perfectly. I've seen improvements in my athletic recovery and overall resilience to stress.</p>
           <div class="testimonial-author">
             <strong>James R.</strong>
-            <span class="star-rating">★★★★★</span>
+            <StarRating />
           </div>
         </div>
       </div>
@@ -302,6 +316,24 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
     padding: 2rem 2rem 1.5rem;
     position: relative;
     z-index: 1;
+    overflow: hidden;
+  }
+
+  .hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15;
+  }
+
+  .hero-background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .wim-hof-hero h1 {
@@ -352,7 +384,9 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
   }
 
   .stat-icon {
-    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    color: white;
   }
 
   .stat-text {
@@ -472,8 +506,11 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
   }
 
   .benefit-card-whm .benefit-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.75rem;
+    color: var(--color-primary);
   }
 
   .benefit-card-whm strong {
@@ -618,8 +655,11 @@ const pageDescription = "Learn the Wim Hof Method with certified instructor Dr. 
   }
 
   .benefit-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.75rem;
+    color: var(--color-primary);
   }
 
   .benefit-card strong {

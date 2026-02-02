@@ -1,13 +1,14 @@
 ---
 // Mobile CTA Bar Component - Sticky bottom bar for mobile devices
+import Icon from './Icon.astro';
 ---
 
 <div class="mobile-cta-bar">
   <a href="tel:443-228-8029" class="cta-call">
-    📞 Call Now
+    <Icon name="phone" size={18} /> Call Now
   </a>
   <a href="/schedule" class="cta-schedule">
-    📅 Schedule Evaluation
+    <Icon name="clock" size={18} /> Schedule Evaluation
   </a>
 </div>
 
@@ -30,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     font-weight: 600;
     color: var(--color-text-on-dark);
     text-decoration: none;

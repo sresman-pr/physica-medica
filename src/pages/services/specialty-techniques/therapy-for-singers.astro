@@ -4,6 +4,7 @@ import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
 import AllServicesGrid from '../../../components/AllServicesGrid.astro';
+import Icon from '../../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -58,7 +59,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" />
+  <WatermarkBackground variant="teal" />
   
   <!-- Hero Section - Centered -->
   <section class="specialty-hero">
@@ -119,32 +120,32 @@ const faqs = [
       
       <div class="voice-grid">
         <div class="voice-card">
-          <div class="voice-icon">🎯</div>
+          <div class="voice-icon"><Icon name="target" size={28} /></div>
           <h4>Proper Posture</h4>
           <p>Spinal alignment for free rib cage movement and breath support</p>
         </div>
         <div class="voice-card">
-          <div class="voice-icon">🌬️</div>
+          <div class="voice-icon"><Icon name="wind" size={28} /></div>
           <h4>Diaphragmatic Breathing</h4>
           <p>Full, efficient breathing that powers your voice without strain</p>
         </div>
         <div class="voice-card">
-          <div class="voice-icon">✨</div>
+          <div class="voice-icon"><Icon name="sparkles" size={28} /></div>
           <h4>Tension-Free Neck & Jaw</h4>
           <p>Released muscles for optimal larynx function</p>
         </div>
         <div class="voice-card">
-          <div class="voice-icon">💪</div>
+          <div class="voice-icon"><Icon name="dumbbell" size={28} /></div>
           <h4>Core Stability</h4>
           <p>Strong core muscles for breath control and projection</p>
         </div>
         <div class="voice-card">
-          <div class="voice-icon">🗣️</div>
+          <div class="voice-icon"><Icon name="mic" size={28} /></div>
           <h4>Jaw & TMJ Function</h4>
           <p>Proper mechanics for clear articulation and resonance</p>
         </div>
         <div class="voice-card">
-          <div class="voice-icon">🙆</div>
+          <div class="voice-icon"><Icon name="move" size={28} /></div>
           <h4>Shoulder Mobility</h4>
           <p>Free movement that doesn't restrict breathing</p>
         </div>
@@ -327,17 +328,17 @@ const faqs = [
   
   /* Theme colors */
   :root {
-    --theme-burgundy: #7f1d1d;
-    --theme-burgundy-light: #991b1b;
+    --theme-burgundy: #2d5f56;
+    --theme-burgundy-light: #4a9b8c;
     --theme-cream: #fef7ed;
     --theme-warm-gray: #78716c;
-    --theme-gold-accent: #b45309;
+    --theme-gold-accent: #5fb3a1;
   }
 
   /* Hero Section - Rich burgundy */
   .specialty-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--theme-burgundy) 0%, #4a1010 100%);
+    background: linear-gradient(135deg, var(--theme-burgundy) 0%, #1a3d35 100%);
     padding: 3rem 2rem;
     overflow: hidden;
     z-index: 1;
@@ -424,7 +425,7 @@ const faqs = [
 
   /* Exclusive banner - Elegant gold accent */
   .exclusive-banner {
-    background: linear-gradient(90deg, var(--theme-gold-accent) 0%, #92400e 100%);
+    background: linear-gradient(90deg, var(--theme-gold-accent) 0%, #4a9b8c 100%);
     padding: 1rem 2rem;
     position: relative;
     z-index: 1;
@@ -564,18 +565,21 @@ const faqs = [
     padding: 1.75rem 1.5rem;
     border-radius: 0;
     text-align: center;
-    border: 1px solid rgba(127,29,29,0.15);
+    border: 1px solid rgba(45,109,95,0.15);
     transition: all 0.3s;
   }
 
   .voice-card:hover {
     border-color: var(--theme-burgundy);
-    box-shadow: 0 8px 25px rgba(127,29,29,0.1);
+    box-shadow: 0 8px 25px rgba(45,109,95,0.1);
   }
 
   .voice-icon {
-    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.75rem;
+    color: var(--theme-warm);
   }
 
   .voice-card h4 {
@@ -661,7 +665,7 @@ const faqs = [
     background: white;
     padding: 1.5rem;
     border-radius: 0;
-    border: 1px solid rgba(127,29,29,0.12);
+    border: 1px solid rgba(45,109,95,0.12);
   }
 
   .step-number {
@@ -722,7 +726,7 @@ const faqs = [
   .service-content .container-narrow {
     background: white;
     padding: 3rem;
-    box-shadow: 0 4px 24px rgba(127,29,29,0.1);
+    box-shadow: 0 4px 24px rgba(45,109,95,0.1);
   }
 
   .service-content h2:first-child {
@@ -733,8 +737,8 @@ const faqs = [
     background: var(--theme-cream);
     margin: 2rem -3rem;
     padding: 2rem 3rem;
-    border-top: 1px solid rgba(127,29,29,0.1);
-    border-bottom: 1px solid rgba(127,29,29,0.1);
+    border-top: 1px solid rgba(45,109,95,0.1);
+    border-bottom: 1px solid rgba(45,109,95,0.1);
   }
 
   .content-section-alt h2 {

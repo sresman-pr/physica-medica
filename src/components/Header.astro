@@ -24,7 +24,13 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
       <nav class="main-nav">
         <ul>
           <li><a href="/">HOME</a></li>
-          <li><a href="/about">ABOUT</a></li>
+          <li class="has-dropdown">
+            <a href="/about">ABOUT</a>
+            <ul class="dropdown">
+              <li><a href="/about">About Dr. Maks</a></li>
+              <li><a href="/about/your-first-visit">Your First Visit</a></li>
+            </ul>
+          </li>
           <li><a href="/blog">BLOG</a></li>
           <li class="has-dropdown">
             <a href="/services">SERVICES</a>
@@ -36,6 +42,7 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
               <li><a href="/services/pregnancy-physical-therapy">Pregnancy Care</a></li>
               <li><a href="/services/pancafit-class">Pancafit Class</a></li>
               <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
+              <li><a href="/services/functional-patterns">Functional Patterns</a></li>
               <li class="has-nested-dropdown">
                 <a href="/services/specialty-techniques">Specialty Techniques →</a>
                 <ul class="nested-dropdown">
@@ -69,47 +76,38 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
       <nav class="mobile-nav">
         <ul>
           <li><a href="/">HOME</a></li>
-          <li><a href="/about">ABOUT</a></li>
+          <li class="mobile-accordion" id="about-accordion">
+            <div class="accordion-header">
+              <a href="/about">ABOUT</a>
+              <button class="accordion-toggle" aria-label="Toggle about menu" id="about-toggle">▼</button>
+            </div>
+            <ul class="accordion-content">
+              <li><a href="/about">About Dr. Maks</a></li>
+              <li><a href="/about/your-first-visit">Your First Visit</a></li>
+            </ul>
+          </li>
           <li><a href="/blog">BLOG</a></li>
-          <li><a href="/services">SERVICES</a></li>
-          <li class="mobile-submenu">
-            <a href="/services/dry-needling">Dry Needling</a>
-          </li>
-          <li class="mobile-submenu">
-            <a href="/services/myofascial-cupping">Myofascial Cupping</a>
-          </li>
-          <li class="mobile-submenu">
-            <a href="/services/deep-tissue-sports-massage">Deep Tissue/Sports Massage</a>
-          </li>
-          <li class="mobile-submenu">
-            <a href="/services/instrument-assisted-tissue-mobilization">Instrument Assisted Mobilization</a>
-          </li>
-          <li class="mobile-submenu">
-            <a href="/services/pregnancy-physical-therapy">Pregnancy Care</a>
-          </li>
-          <li class="mobile-submenu">
-            <a href="/services/pancafit-class">Pancafit Class</a>
-          </li>
-          <li class="mobile-submenu">
-            <a href="/services/scoliosis">Scoliosis Treatment</a>
-          </li>
-          <li class="mobile-submenu">
-            <a href="/services/specialty-techniques">Specialty Techniques</a>
-          </li>
-          <li class="mobile-submenu mobile-nested">
-            <a href="/services/specialty-techniques/posture-reeducation">• Posture Re-education</a>
-          </li>
-          <li class="mobile-submenu mobile-nested">
-            <a href="/services/specialty-techniques/scar-tissue-mobilization">• Scar Tissue Mobilization</a>
-          </li>
-          <li class="mobile-submenu mobile-nested">
-            <a href="/services/specialty-techniques/neural-tension-release">• Neural Tension Release</a>
-          </li>
-          <li class="mobile-submenu mobile-nested">
-            <a href="/services/specialty-techniques/diaphragmatic-rehabilitation">• Diaphragmatic Rehabilitation</a>
-          </li>
-          <li class="mobile-submenu mobile-nested">
-            <a href="/services/specialty-techniques/therapy-for-singers">• Therapy for Singers</a>
+          <li class="mobile-accordion" id="services-accordion">
+            <div class="accordion-header">
+              <a href="/services">SERVICES</a>
+              <button class="accordion-toggle" aria-label="Toggle services menu" id="services-toggle">▼</button>
+            </div>
+            <ul class="accordion-content">
+              <li><a href="/services/dry-needling">Dry Needling</a></li>
+              <li><a href="/services/myofascial-cupping">Myofascial Cupping</a></li>
+              <li><a href="/services/deep-tissue-sports-massage">Deep Tissue/Sports Massage</a></li>
+              <li><a href="/services/instrument-assisted-tissue-mobilization">Instrument Assisted Mobilization</a></li>
+              <li><a href="/services/pregnancy-physical-therapy">Pregnancy Care</a></li>
+              <li><a href="/services/pancafit-class">Pancafit Class</a></li>
+              <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
+              <li><a href="/services/functional-patterns">Functional Patterns</a></li>
+              <li><a href="/services/specialty-techniques">Specialty Techniques</a></li>
+              <li class="nested-item"><a href="/services/specialty-techniques/posture-reeducation">• Posture Re-education</a></li>
+              <li class="nested-item"><a href="/services/specialty-techniques/scar-tissue-mobilization">• Scar Tissue Mobilization</a></li>
+              <li class="nested-item"><a href="/services/specialty-techniques/neural-tension-release">• Neural Tension Release</a></li>
+              <li class="nested-item"><a href="/services/specialty-techniques/diaphragmatic-rehabilitation">• Diaphragmatic Rehabilitation</a></li>
+              <li class="nested-item"><a href="/services/specialty-techniques/therapy-for-singers">• Therapy for Singers</a></li>
+            </ul>
           </li>
           <li><a href="/wim-hof-method">WIM HOF METHOD</a></li>
           <li><a href="/reviews">REVIEWS</a></li>
@@ -167,6 +165,24 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
       
       ticking = true;
     }
+  });
+
+  // About accordion toggle
+  const aboutAccordion = document.getElementById('about-accordion');
+  const aboutToggle = document.getElementById('about-toggle');
+  
+  aboutToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    aboutAccordion?.classList.toggle('expanded');
+  });
+
+  // Services accordion toggle
+  const servicesAccordion = document.getElementById('services-accordion');
+  const servicesToggle = document.getElementById('services-toggle');
+  
+  servicesToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    servicesAccordion?.classList.toggle('expanded');
   });
 </script>
 
@@ -434,21 +450,69 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     color: var(--color-primary);
   }
 
-  .mobile-submenu a {
-    padding-left: 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .mobile-nested a {
-    padding-left: 2.5rem;
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-  }
-
   .mobile-nav .schedule-link {
     color: var(--color-accent);
     font-weight: 600;
+  }
+
+  /* Mobile Accordion for Services */
+  .mobile-accordion {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .accordion-header a {
+    flex: 1;
+    border-bottom: none;
+  }
+
+  .accordion-toggle {
+    background: none;
+    border: none;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-accordion.expanded .accordion-toggle {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-accordion.expanded .accordion-content {
+    max-height: 600px;
+  }
+
+  .accordion-content li {
+    margin: 0;
+  }
+
+  .accordion-content a {
+    padding: 0.75rem 0 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .accordion-content .nested-item a {
+    padding-left: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
   }
 
   @media (max-width: 1024px) {
@@ -458,6 +522,19 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
 
     .mobile-menu-toggle {
       display: block;
+    }
+  }
+
+  /* Mobile-specific: reduce header height */
+  @media (max-width: 768px) {
+    .site-header {
+      padding: 0.75rem 0;
+    }
+
+    .logo img,
+    .logo :global(img) {
+      height: 40px;
+      padding: 0.4rem;
     }
   }
 

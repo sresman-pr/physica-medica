@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WatermarkBackground from '../components/WatermarkBackground.astro';
+import StarRating from '../components/StarRating.astro';
 
 const pageTitle = "Patient Reviews | Physica Medica Baltimore | 5-Star Physical Therapy";
 const pageDescription = "Read 300+ five-star reviews from Physica Medica patients. Discover why Baltimore residents choose Dr. Maks for physical therapy.";
@@ -82,7 +83,7 @@ const reviewSchemas = reviews.map(review => ({
         {reviews.map(review => (
           <div class="review-card">
             <h3>{review.author}</h3>
-            <div class="star-rating">★★★★★</div>
+            <div class="star-rating"><StarRating /></div>
             <p>"{review.reviewBody}"</p>
           </div>
         ))}

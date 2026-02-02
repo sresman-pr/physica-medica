@@ -4,6 +4,7 @@ import WatermarkBackground from '../../../components/WatermarkBackground.astro';
 import FAQSection from '../../../components/FAQSection.astro';
 import AuthorByline from '../../../components/AuthorByline.astro';
 import AllServicesGrid from '../../../components/AllServicesGrid.astro';
+import Icon from '../../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
@@ -58,7 +59,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" />
+  <WatermarkBackground variant="teal" />
   
   <!-- Hero Section - Centered -->
   <section class="specialty-hero">
@@ -107,23 +108,23 @@ const faqs = [
       <p class="warning-subtitle">These signs often indicate nerve involvement—not just muscle tightness:</p>
       <div class="warning-signs">
         <div class="warning-sign">
-          <span class="sign-icon">⚡</span>
+          <span class="sign-icon"><Icon name="zap" size={20} /></span>
           <span>Shooting or burning pain</span>
         </div>
         <div class="warning-sign">
-          <span class="sign-icon">🔌</span>
+          <span class="sign-icon"><Icon name="plug" size={20} /></span>
           <span>Numbness or tingling</span>
         </div>
         <div class="warning-sign">
-          <span class="sign-icon">💪</span>
+          <span class="sign-icon"><Icon name="dumbbell" size={20} /></span>
           <span>Unexplained weakness</span>
         </div>
         <div class="warning-sign">
-          <span class="sign-icon">🔄</span>
+          <span class="sign-icon"><Icon name="refresh-cw" size={20} /></span>
           <span>Pain that doesn't respond to stretching</span>
         </div>
         <div class="warning-sign">
-          <span class="sign-icon">📍</span>
+          <span class="sign-icon"><Icon name="map-pin" size={20} /></span>
           <span>Pain that changes with position</span>
         </div>
       </div>
@@ -138,22 +139,22 @@ const faqs = [
       
       <div class="cause-cards">
         <div class="cause-card">
-          <div class="cause-icon">💿</div>
+          <div class="cause-icon"><Icon name="disc" size={28} /></div>
           <h4>Nerve Compression</h4>
           <p>Herniated discs, tight muscles, or scar tissue pressing on nerves</p>
         </div>
         <div class="cause-card">
-          <div class="cause-icon">🔁</div>
+          <div class="cause-icon"><Icon name="repeat" size={28} /></div>
           <h4>Repetitive Stress</h4>
           <p>Positions or activities that repeatedly irritate nerve pathways</p>
         </div>
         <div class="cause-card">
-          <div class="cause-icon">🪑</div>
+          <div class="cause-icon"><Icon name="armchair" size={28} /></div>
           <h4>Poor Posture</h4>
           <p>Sustained positions that place tension on neural structures</p>
         </div>
         <div class="cause-card">
-          <div class="cause-icon">🩹</div>
+          <div class="cause-icon"><Icon name="bandage" size={28} /></div>
           <h4>Previous Injuries</h4>
           <p>Trauma that creates adhesions along nerve pathways</p>
         </div>
@@ -335,10 +336,10 @@ const faqs = [
   
   /* Theme colors */
   :root {
-    --theme-purple: #7c3aed;
-    --theme-purple-light: #a78bfa;
-    --theme-lavender: #ede9fe;
-    --theme-plum: #5b21b6;
+    --theme-purple: #5fb3a1;
+    --theme-purple-light: #7cc5b5;
+    --theme-lavender: #e8f5f2;
+    --theme-plum: #4a9b8c;
     --theme-soft-gray: #6b7280;
   }
 
@@ -358,7 +359,7 @@ const faqs = [
     right: 0;
     bottom: 0;
     background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 80%, rgba(167,139,250,0.2) 0%, transparent 40%);
+                radial-gradient(ellipse at 70% 80%, rgba(61,184,159,0.2) 0%, transparent 40%);
     pointer-events: none;
   }
 
@@ -413,12 +414,12 @@ const faqs = [
     font-weight: 500;
     border-radius: 30px;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(91,33,182,0.3);
+    box-shadow: 0 10px 30px rgba(45,109,95,0.3);
   }
 
   .hero-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(91,33,182,0.4);
+    box-shadow: 0 15px 40px rgba(45,109,95,0.4);
     background: var(--theme-lavender);
   }
 
@@ -436,7 +437,7 @@ const faqs = [
   }
 
   .content-section-gray {
-    background: linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%);
+    background: linear-gradient(180deg, #f0f9f7 0%, #e8f5f2 100%);
     padding: 3.5rem 2rem;
     position: relative;
     z-index: 1;
@@ -457,7 +458,7 @@ const faqs = [
 
   /* Warning section - Softer purple version */
   .content-section-warning {
-    background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+    background: linear-gradient(135deg, #f5faf9 0%, #e8f5f2 100%);
     padding: 2.5rem 2rem;
     position: relative;
     z-index: 1;
@@ -494,14 +495,16 @@ const faqs = [
     background: white;
     padding: 0.75rem 1.25rem;
     border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(124,58,237,0.1);
+    box-shadow: 0 4px 15px rgba(45,109,95,0.1);
     font-size: 0.9rem;
     color: var(--theme-soft-gray);
-    border: 1px solid rgba(124,58,237,0.15);
+    border: 1px solid rgba(45,109,95,0.15);
   }
 
   .sign-icon {
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    color: var(--theme-purple);
   }
 
   .container-narrow {
@@ -556,7 +559,7 @@ const faqs = [
     width: 100%;
     height: auto;
     border-radius: 20px 4px 20px 4px;
-    box-shadow: 0 15px 40px rgba(124,58,237,0.15);
+    box-shadow: 0 15px 40px rgba(45,109,95,0.15);
   }
 
   .content-row-text h2 {
@@ -583,7 +586,7 @@ const faqs = [
     border-radius: 16px;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 20px rgba(124,58,237,0.08);
+    box-shadow: 0 4px 20px rgba(45,109,95,0.08);
   }
 
   .cause-card::before {
@@ -598,8 +601,11 @@ const faqs = [
   }
 
   .cause-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.75rem;
+    color: var(--theme-purple);
   }
 
   .cause-card h4 {
@@ -653,7 +659,7 @@ const faqs = [
 
   .styled-list li {
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(124,58,237,0.12);
+    border-bottom: 1px solid rgba(45,109,95,0.12);
     line-height: 1.7;
     color: #4b5563;
   }
@@ -680,7 +686,7 @@ const faqs = [
     background: white;
     padding: 1.5rem;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(124,58,237,0.08);
+    box-shadow: 0 4px 15px rgba(45,109,95,0.08);
     border-left: 3px solid transparent;
     border-image: linear-gradient(180deg, var(--theme-purple-light), var(--theme-purple)) 1;
   }
@@ -746,7 +752,7 @@ const faqs = [
     background: white;
     padding: 3rem;
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(124,58,237,0.1);
+    box-shadow: 0 8px 30px rgba(45,109,95,0.1);
   }
 
   .service-content h2:first-child {
@@ -754,7 +760,7 @@ const faqs = [
   }
 
   .content-section-alt {
-    background: linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%);
+    background: linear-gradient(180deg, #f0f9f7 0%, #e8f5f2 100%);
     margin: 2rem -3rem;
     padding: 2rem 3rem;
   }

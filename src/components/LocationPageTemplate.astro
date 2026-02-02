@@ -30,6 +30,7 @@ const { neighborhood, slug, intro, directions, landmarks, testimonial, faqs, com
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WatermarkBackground from './WatermarkBackground.astro';
+import Icon from './Icon.astro';
 
 const pageTitle = `Physical Therapy Near ${neighborhood} | Baltimore PT | Physica Medica`;
 const pageDescription = `Expert physical therapy near ${neighborhood}, Baltimore. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT. Dry needling, manual therapy, and specialty techniques.`;
@@ -144,13 +145,13 @@ const specialtyTechniques = [
         
         <div class="location-details">
           <div class="detail-card">
-            <div class="detail-icon">📍</div>
+            <div class="detail-icon"><Icon name="map-pin" size={28} /></div>
             <h3>Getting Here from {neighborhood}</h3>
             <p>{directions}</p>
           </div>
           
           <div class="detail-card">
-            <div class="detail-icon">🏛️</div>
+            <div class="detail-icon"><Icon name="building" size={28} /></div>
             <h3>Near Landmarks</h3>
             <ul class="landmarks-list">
               {landmarks.map(landmark => (
@@ -449,8 +450,11 @@ const specialtyTechniques = [
   }
 
   .detail-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.75rem;
+    color: var(--color-primary);
   }
 
   .detail-card h3 {

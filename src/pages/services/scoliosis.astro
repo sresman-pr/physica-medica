@@ -4,6 +4,7 @@ import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import StarRating from '../../components/StarRating.astro';
 import { Image } from 'astro:assets';
 
 // Import scoliosis images
@@ -60,7 +61,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" angle={-10} />
+  <WatermarkBackground variant="teal" angle={-10} />
   
   <!-- Hero Section - Centered with teal gradient -->
   <section class="service-hero">
@@ -142,7 +143,7 @@ const faqs = [
         <div class="quote-icon">"</div>
         <p class="testimonial-text">Maks is a wealth of knowledge! I have worked with him through a few injuries and am thankful to have him local. He uses a variety of techniques to meet your bodies individual needs and is always thinking outside the box! Would highly recommend.</p>
         <div class="testimonial-author">
-          <span class="star-rating">★★★★★</span>
+          <StarRating />
           <strong>Google Review</strong>
         </div>
       </div>
@@ -270,7 +271,7 @@ const faqs = [
         <div class="quote-icon">"</div>
         <p class="testimonial-text">Maks totally changed my perspective on posture within the first few minutes of my first appointment with him. He's incredibly knowledgable, skilled, and kind. Wouldn't go to anybody else for PT.</p>
         <div class="testimonial-author">
-          <span class="star-rating">★★★★★</span>
+          <StarRating />
           <strong>Google Review</strong>
         </div>
       </div>

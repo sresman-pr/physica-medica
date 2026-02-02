@@ -8,22 +8,22 @@ import Icon from '../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import images
-import cuppingImg from '../../images/specialty-v3-cupping.jpg';
-import cuppingTherapyImg from '../../images/specialty-v2-cupping-therapy.jpg';
+import postureImg from '../../images/specialty-v3-posture-exercise.jpg';
+import postureStandingImg from '../../images/specialty-posture-correction.jpg';
 
-const pageTitle = "Myofascial Cupping Baltimore MD | Fascial Release Therapy | Physica Medica";
-const pageDescription = "Expert myofascial cupping therapy in Baltimore. Release fascial restrictions, improve circulation, and accelerate healing with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Functional Patterns Baltimore MD | Movement Training | Physica Medica";
+const pageDescription = "Functional Patterns training in Baltimore with Dr. Maksim Birikov, DPT. Reprogram your muscles to reposition joints—so they glide, not grind. Skip the guesswork.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
   { name: "Services", url: "/services" },
-  { name: "Myofascial Cupping", url: "/services/myofascial-cupping" }
+  { name: "Functional Patterns", url: "/services/functional-patterns" }
 ];
 
 const serviceSchema = {
   "@type": "MedicalTherapy",
-  "name": "Myofascial Cupping Therapy",
-  "description": "Advanced myofascial cupping therapy to release fascial restrictions, improve blood flow, and reduce muscle tension for faster healing",
+  "name": "Functional Patterns Training",
+  "description": "Biomechanics-based movement training that reprograms muscles to reposition joints for lasting pain relief and optimal human movement",
   "provider": { "@id": "https://physicamedica.net/#business" },
   "areaServed": {
     "@type": "City",
@@ -34,28 +34,28 @@ const serviceSchema = {
 
 const faqs = [
   {
-    question: "What conditions benefit from myofascial cupping?",
-    answer: "Cupping is highly effective for muscle tension, sports injuries, chronic back pain, IT band syndrome, shoulder tightness, and recovery enhancement. It increases blood flow to treated areas, promoting faster healing and reducing inflammation."
+    question: "What is Functional Patterns?",
+    answer: "Functional Patterns is a biomechanics-based training system that reprograms your muscles to control your body in space, so your joints glide—not grind and stiffen up. It addresses the underlying reasons why people can't move well without pain by retraining the fundamental movement patterns humans evolved to perform: standing, walking, running, and throwing."
   },
   {
-    question: "Does cupping leave marks?",
-    answer: "Yes, cupping may leave temporary circular marks that typically fade within 3-7 days. The color of the marks can indicate the level of stagnation in the tissue—darker marks often appear in areas with more restriction. These are not bruises and are painless."
+    question: "How is Functional Patterns different from traditional physical therapy?",
+    answer: "Typical approaches don't address the underlying reasons behind why people can't move well without pain. Functional Patterns is designed to be rehab and performance training at the same time—every movement trains your body to be more efficient in everything you do. Dr. Maks combines this methodology with hands-on DPT techniques for faster results."
   },
   {
-    question: "How is myofascial cupping different from traditional cupping?",
-    answer: "Myofascial cupping focuses specifically on releasing fascial restrictions and improving tissue mobility. Dr. Maks uses dynamic cupping techniques—moving cups along muscle fibers—combined with movement for greater therapeutic benefit than static traditional cupping."
+    question: "Who benefits from Functional Patterns training?",
+    answer: "Functional Patterns has helped over 59,000 people worldwide—from those with chronic pain and Parkinson's Disease to world champion athletes. It's particularly effective for anyone who has tried other methods without lasting relief, as well as athletes wanting to optimize performance without joint compression."
   },
   {
-    question: "Is cupping painful?",
-    answer: "Most patients describe cupping as a comfortable pulling sensation. The suction level is adjusted to your tolerance. Many find it relaxing, similar to a deep tissue massage. Some areas may be more sensitive if there's significant tissue restriction."
+    question: "How long before I see results?",
+    answer: "Many clients notice improvements in posture and movement quality within the first few sessions as we educate your muscles to control your body differently. Significant, lasting changes typically develop over 8-12 weeks. The goal is permanent repositioning of your joints—not just temporary symptom relief."
   },
   {
-    question: "Can cupping be combined with other treatments?",
-    answer: "Absolutely. Cupping pairs excellently with dry needling, manual therapy, and corrective exercise. Dr. Maks often integrates multiple techniques in a single 60-minute session for comprehensive treatment."
+    question: "Do I need to be athletic to do Functional Patterns?",
+    answer: "Not at all. Functional Patterns is scalable to any fitness level. Dr. Maks meets you where you are and progressively builds proper movement patterns. Whether you're a desk worker with chronic pain or an elite athlete, the training develops fundamental joint control first, then builds from there."
   },
   {
-    question: "How many cupping sessions will I need?",
-    answer: "Many patients notice improvement after 1-2 sessions. For chronic conditions, 4-6 sessions may be recommended. Unlike high-volume clinics, we focus on achieving lasting results efficiently."
+    question: "Why combine Functional Patterns with physical therapy?",
+    answer: "Dr. Maks' DPT training allows him to address tissue restrictions through dry needling and manual therapy while simultaneously reprogramming movement patterns. This combination accelerates results—we release what's tight, then retrain proper movement so the changes stick."
   }
 ];
 ---
@@ -68,13 +68,13 @@ const faqs = [
     <div class="hero-gradient-bg"></div>
     <div class="container-narrow">
       <div class="hero-centered">
-        <h1>Myofascial Cupping</h1>
-        <p class="hero-subtitle">Release Fascial Restrictions & Improve Circulation</p>
+        <h1>Functional Patterns</h1>
+        <p class="hero-subtitle">Make Your Joints Glide, Not Grind</p>
         <div class="hero-value-pills">
           <span class="value-pill">60 Min Sessions</span>
           <span class="value-pill">1-on-1 with DPT</span>
         </div>
-        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+        <a href="/schedule" class="hero-cta">Schedule Training</a>
       </div>
     </div>
   </section>
@@ -82,18 +82,18 @@ const faqs = [
   <!-- Intro Section - White -->
   <section class="content-section-white">
     <div class="container-narrow">
-      <p class="lead-intro">Myofascial cupping uses suction to lift and separate tissue layers, increasing blood flow and releasing restrictions that limit your movement and cause pain.</p>
+      <p class="lead-intro">Most people try getting out of pain through trial and error. Functional Patterns skips the guesswork—we reprogram your muscles to reposition your joints so they glide smoothly, not grind and stiffen up.</p>
       
       <div class="content-row">
         <div class="content-row-text">
-          <h2>What is Myofascial Cupping?</h2>
-          <p>Myofascial cupping is an advanced form of cupping therapy that specifically targets the fascia—the connective tissue network that surrounds every muscle, bone, and organ in your body. When fascia becomes restricted or adhered, it can cause pain, limit mobility, and affect performance.</p>
-          <p>Unlike traditional static cupping, myofascial cupping uses dynamic techniques—cups are moved along muscle fibers while you perform specific movements—to achieve greater release and improved tissue quality.</p>
+          <h2>What is Functional Patterns?</h2>
+          <p>Functional Patterns is a biomechanics-based training system that addresses the underlying reasons why people can't move well without pain. Unlike conventional approaches that focus on isolated muscles or passive treatments, FP educates your muscles to control your body in space—creating lasting structural change.</p>
+          <p>The methodology focuses on the four fundamental movements humans evolved to perform: standing, walking, running, and throwing. By correcting dysfunctions in these primal patterns, we eliminate the compensations that compress joints and cause chronic pain.</p>
         </div>
         <div class="content-row-image">
           <Image 
-            src={cuppingImg}
-            alt="Myofascial cupping therapy treatment"
+            src={postureImg}
+            alt="Functional Patterns movement training"
             width={400}
             height={300}
             format="webp"
@@ -108,39 +108,39 @@ const faqs = [
   <!-- How It Works - Soft gradient -->
   <section class="content-section-soft">
     <div class="container-narrow">
-      <h2 class="section-title-center">How Myofascial Cupping Works</h2>
-      <p class="section-intro">The suction creates a lifting effect that separates tissue layers and stimulates healing responses.</p>
+      <h2 class="section-title-center">How Functional Patterns Works</h2>
+      <p class="section-intro">We educate your muscles to control your body in space, repositioning joints so they move smoothly without grinding or stiffening.</p>
       
       <div class="benefit-cards">
         <div class="benefit-card">
-          <div class="benefit-icon"><Icon name="droplets" size={32} /></div>
-          <h4>Increased Blood Flow</h4>
-          <p>Brings oxygen and nutrients to restricted tissue, accelerating healing</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon"><Icon name="unlock" size={32} /></div>
-          <h4>Fascial Release</h4>
-          <p>Lifts and separates adhered tissue layers to restore sliding surfaces</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon"><Icon name="droplet" size={32} /></div>
-          <h4>Lymphatic Drainage</h4>
-          <p>Promotes removal of metabolic waste and reduces inflammation</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon"><Icon name="activity" size={32} /></div>
-          <h4>Improved Mobility</h4>
-          <p>Restores normal tissue extensibility and movement quality</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon"><Icon name="zap" size={32} /></div>
-          <h4>Pain Relief</h4>
-          <p>Reduces muscle tension and interrupts pain signaling</p>
+          <div class="benefit-icon"><Icon name="target" size={32} /></div>
+          <h4>Joint Repositioning</h4>
+          <p>Reprogram muscles to position joints where they glide, not grind</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon"><Icon name="refresh-cw" size={32} /></div>
-          <h4>Recovery Enhancement</h4>
-          <p>Speeds post-workout and post-injury recovery time</p>
+          <h4>Primal Pattern Training</h4>
+          <p>Restore the fundamental movements humans evolved to perform</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="zap" size={32} /></div>
+          <h4>Muscle Re-education</h4>
+          <p>Teach muscles to control your body in space for lasting change</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="activity" size={32} /></div>
+          <h4>Gait Optimization</h4>
+          <p>Improve walking and running mechanics—the foundation of human movement</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="dumbbell" size={32} /></div>
+          <h4>Rehab + Performance</h4>
+          <p>Training designed to heal and build strength simultaneously</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="brain" size={32} /></div>
+          <h4>Efficiency Training</h4>
+          <p>Every movement trains your body to be more efficient in daily life</p>
         </div>
       </div>
     </div>
@@ -150,24 +150,24 @@ const faqs = [
   <section class="content-section-teal">
     <div class="container-narrow">
       <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
-      <p class="section-intro-light">Dr. Maks uses advanced dynamic cupping techniques combined with movement for superior results.</p>
+      <p class="section-intro-light">Dr. Maks combines Functional Patterns methodology with hands-on physical therapy—releasing tissue restrictions while reprogramming movement for accelerated results.</p>
       
       <div class="feature-grid-light">
         <div class="feature-item-light">
-          <strong>Movement Integration</strong>
-          <p>Cups applied while you move through ranges of motion for deeper release</p>
+          <strong>Movement Analysis</strong>
+          <p>Identify exactly why your joints grind instead of glide through detailed assessment</p>
         </div>
         <div class="feature-item-light">
-          <strong>Targeted Assessment</strong>
-          <p>Identify specific fascial restrictions limiting your movement</p>
+          <strong>Tissue Release + Reprogramming</strong>
+          <p>Dry needling and manual therapy combined with corrective training in one session</p>
         </div>
         <div class="feature-item-light">
-          <strong>Combined Techniques</strong>
-          <p>Integrate cupping with manual therapy and exercise for lasting results</p>
+          <strong>Joint Control Development</strong>
+          <p>Hands-on cueing ensures your muscles learn to control your body properly</p>
         </div>
         <div class="feature-item-light">
-          <strong>DPT Expertise</strong>
-          <p>Advanced understanding of anatomy ensures safe, effective treatment</p>
+          <strong>Accelerated Results</strong>
+          <p>DPT expertise addresses restrictions that would otherwise slow your progress</p>
         </div>
       </div>
     </div>
@@ -179,8 +179,8 @@ const faqs = [
       <div class="content-row reverse">
         <div class="content-row-image">
           <Image 
-            src={cuppingTherapyImg}
-            alt="Cupping therapy session"
+            src={postureStandingImg}
+            alt="Posture correction training"
             width={400}
             height={300}
             format="webp"
@@ -191,12 +191,12 @@ const faqs = [
         <div class="content-row-text">
           <h2>Who Benefits Most</h2>
           <ul class="styled-list">
-            <li><strong>Athletes:</strong> Faster recovery, improved performance, injury prevention</li>
-            <li><strong>Desk Workers:</strong> Upper back tension, shoulder tightness, tech neck</li>
-            <li><strong>Runners:</strong> IT band syndrome, calf restrictions, hip mobility</li>
-            <li><strong>Post-Surgical Patients:</strong> Scar tissue management, tissue mobility</li>
-            <li><strong>Chronic Pain Sufferers:</strong> Myofascial restrictions, fibromyalgia</li>
-            <li><strong>Active Adults:</strong> General mobility and recovery maintenance</li>
+            <li><strong>Chronic Pain Sufferers:</strong> If trial and error hasn't worked, FP addresses the underlying dysfunction</li>
+            <li><strong>Athletes:</strong> Build strength and performance without compressing your joints</li>
+            <li><strong>Desk Workers:</strong> Reposition joints that have adapted to prolonged sitting</li>
+            <li><strong>Post-Rehab Clients:</strong> Make changes stick by reprogramming how you move</li>
+            <li><strong>Active Adults:</strong> Train your body to be more efficient in everything you do</li>
+            <li><strong>Anyone Who's Tried Everything:</strong> This methodology has helped 59,000+ people worldwide</li>
           </ul>
         </div>
       </div>
@@ -206,42 +206,42 @@ const faqs = [
   <!-- Treatment Process - Soft -->
   <section class="content-section-soft">
     <div class="container-narrow">
-      <h2 class="section-title-center">The Treatment Process</h2>
-      <p class="section-intro">Each 60-minute myofascial cupping session includes:</p>
+      <h2 class="section-title-center">The Training Process</h2>
+      <p class="section-intro">Each 60-minute session combines tissue release with movement reprogramming:</p>
       <div class="step-cards">
         <div class="step-card">
           <div class="step-number">1</div>
           <div class="step-content">
-            <strong>Assessment (10-15 min)</strong>
-            <p>Identify fascial restrictions through movement analysis and palpation</p>
+            <strong>Movement Assessment (15 min)</strong>
+            <p>Identify why your joints grind instead of glide through posture and gait analysis</p>
           </div>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
           <div class="step-content">
-            <strong>Cupping Treatment (25-30 min)</strong>
-            <p>Dynamic and static cupping techniques applied to restricted areas</p>
+            <strong>Tissue Release (10-15 min)</strong>
+            <p>Dry needling and manual therapy to release restrictions limiting proper joint positioning</p>
           </div>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
           <div class="step-content">
-            <strong>Movement Integration (10-15 min)</strong>
-            <p>Active movements while cups are applied for deeper release</p>
+            <strong>Movement Reprogramming (25-30 min)</strong>
+            <p>FP exercises that educate muscles to control your body in space—rehab and performance together</p>
           </div>
         </div>
         <div class="step-card">
           <div class="step-number">4</div>
           <div class="step-content">
-            <strong>Home Care Education</strong>
-            <p>Self-myofascial release techniques to maintain improvements</p>
+            <strong>Home Program</strong>
+            <p>Specific drills to reinforce new patterns between sessions for lasting joint repositioning</p>
           </div>
         </div>
       </div>
       
       <div class="highlight-box">
-        <h3>About Cupping Marks</h3>
-        <p>Cupping may leave temporary circular marks that fade within 3-7 days. These are not bruises—they indicate areas of stagnation and restriction. Many athletes wear their cup marks proudly as a sign of recovery work!</p>
+        <h3>The Functional Patterns Philosophy</h3>
+        <p>Typical approaches don't address why people can't move well without pain. FP reprograms your muscles to reposition your joints—so they glide smoothly instead of grinding and stiffening up. Combined with Dr. Maks' hands-on expertise, we accelerate this process for lasting structural change.</p>
       </div>
     </div>
   </section>
@@ -249,58 +249,58 @@ const faqs = [
   <!-- Conditions Treated - White -->
   <section class="content-section-white">
     <div class="container-narrow">
-      <h2 class="section-title-center">Common Conditions Treated</h2>
+      <h2 class="section-title-center">Common Issues Addressed</h2>
       <div class="conditions-grid">
         <div class="condition-item">
-          <h4>Upper Body</h4>
+          <h4>Postural Issues</h4>
           <ul>
-            <li>Neck stiffness</li>
-            <li>Shoulder tension</li>
-            <li>Upper back pain</li>
-            <li>Rotator cuff issues</li>
+            <li>Forward head posture</li>
+            <li>Rounded shoulders</li>
+            <li>Anterior pelvic tilt</li>
+            <li>Scoliotic patterns</li>
           </ul>
         </div>
         <div class="condition-item">
-          <h4>Lower Body</h4>
-          <ul>
-            <li>IT band syndrome</li>
-            <li>Hip tightness</li>
-            <li>Hamstring restrictions</li>
-            <li>Calf tension</li>
-          </ul>
-        </div>
-        <div class="condition-item">
-          <h4>Back & Core</h4>
+          <h4>Chronic Pain</h4>
           <ul>
             <li>Low back pain</li>
-            <li>Thoracic restrictions</li>
-            <li>SI joint dysfunction</li>
-            <li>Core muscle tension</li>
+            <li>Neck pain</li>
+            <li>Hip pain</li>
+            <li>Knee pain</li>
           </ul>
         </div>
         <div class="condition-item">
-          <h4>Recovery</h4>
+          <h4>Movement Dysfunction</h4>
           <ul>
-            <li>Post-workout soreness</li>
-            <li>Sports injuries</li>
-            <li>Scar tissue</li>
-            <li>General stiffness</li>
+            <li>Poor gait mechanics</li>
+            <li>Limited mobility</li>
+            <li>Muscle imbalances</li>
+            <li>Coordination issues</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Performance Goals</h4>
+          <ul>
+            <li>Running efficiency</li>
+            <li>Athletic performance</li>
+            <li>Injury prevention</li>
+            <li>Functional fitness</li>
           </ul>
         </div>
       </div>
 
       <div class="cta-box">
-        <h3>Experience Myofascial Cupping</h3>
-        <p>Release restrictions and improve your tissue quality. Schedule your cupping session today.</p>
-        <a href="/schedule" class="cta-button">Schedule Treatment</a>
+        <h3>Stop the Guesswork</h3>
+        <p>Skip the trial and error. Reposition your joints to glide, not grind.</p>
+        <a href="/schedule" class="cta-button">Schedule Training</a>
       </div>
 
       <div class="service-testimonial">
         <div class="testimonial-quote">
-          The cupping has been a game-changer for my IT band issues. I can actually feel the tissue releasing during treatment, and my running has improved significantly.
+          After years of back pain and countless treatments, Dr. Maks showed me the real problem—how I was moving. Functional Patterns combined with his hands-on work finally made changes that stuck.
         </div>
         <div class="testimonial-author">
-          <strong>Sarah M.</strong> - Canton Trail Runner
+          <strong>Michael R.</strong> - Federal Hill
         </div>
       </div>
     </div>
@@ -312,10 +312,10 @@ const faqs = [
   </div>
 
   <!-- FAQ Section -->
-  <FAQSection faqs={faqs} title="Myofascial Cupping FAQs" />
+  <FAQSection faqs={faqs} title="Functional Patterns FAQs" />
 
   <!-- All Services Grid -->
-  <AllServicesGrid currentPage="myofascial-cupping" type="services" />
+  <AllServicesGrid currentPage="functional-patterns" type="services" />
 </BaseLayout>
 
 <style>

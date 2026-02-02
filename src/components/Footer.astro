@@ -1,5 +1,8 @@
 ---
 // Footer Component with Contact Section
+import { Image } from 'astro:assets';
+import StarRating from './StarRating.astro';
+import mapImg from '../images/physica-medica-map.png';
 ---
 
 <footer class="site-footer">
@@ -8,11 +11,19 @@
       <div class="footer-left">
         <h2 class="footer-title">PHYSICA MEDICA</h2>
         <div class="footer-map">
-          <a href="https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD+21231" target="_blank" rel="noopener noreferrer" class="map-link-container">
-            <div class="static-map-placeholder">
-              <span class="map-pin">📍</span>
-              <span class="map-text">800 S Bond St, Baltimore</span>
-              <span class="map-cta">Click to open in Google Maps →</span>
+          <a href="https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD+21231" target="_blank" rel="noopener noreferrer" class="map-link-wrapper">
+            <Image
+              src={mapImg}
+              alt="Map showing Physica Medica location at 800 S Bond St, Baltimore"
+              width={600}
+              height={300}
+              format="webp"
+              loading="lazy"
+              quality={80}
+              class="map-image"
+            />
+            <div class="map-overlay">
+              <span>Click to open in Google Maps</span>
             </div>
           </a>
         </div>
@@ -33,7 +44,7 @@
           <textarea name="message" placeholder="Message" rows="5" aria-label="Your message"></textarea>
           <button type="submit" class="footer-submit-btn">Send</button>
           <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="footer-reviews-link">
-            <span class="stars">★★★★★</span>
+            <span class="stars"><StarRating /></span>
             <span>300+ Reviews</span>
           </a>
         </form>
@@ -119,42 +130,40 @@
     border-radius: 8px;
   }
 
-  .map-link-container {
-    display: block;
+  .map-link-wrapper {
+    display: inline-block;
+    position: relative;
     text-decoration: none;
+    cursor: pointer;
+    max-width: 350px;
+    width: 100%;
   }
 
-  .static-map-placeholder {
-    background: linear-gradient(135deg, #e8f4f2 0%, #d4ebe6 100%);
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all 0.2s;
-    border: 2px solid var(--color-border);
+  .map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 
-  .static-map-placeholder:hover {
-    background: linear-gradient(135deg, #d4ebe6 0%, #c0e0d9 100%);
-    border-color: var(--color-accent);
-  }
-
-  .map-pin {
-    font-size: 2.5rem;
-  }
-
-  .map-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-primary);
-  }
-
-  .map-cta {
-    font-size: 0.85rem;
-    color: var(--color-accent);
+  .map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 20px 12px 12px;
+    text-align: center;
+    font-size: 0.9rem;
     font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .map-link-wrapper:hover .map-overlay {
+    opacity: 1;
   }
 
   .footer-info {

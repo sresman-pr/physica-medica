@@ -4,6 +4,8 @@ import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
+import StarRating from '../../components/StarRating.astro';
 import { Image } from 'astro:assets';
 import pregnancyImg from '../../images/Baltimore-Physical-Therapist-pregnancy.jpg';
 
@@ -53,7 +55,7 @@ const faqs = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
-  <WatermarkBackground variant="gray" />
+  <WatermarkBackground variant="teal" />
   
   <!-- Hero Section - Centered -->
   <section class="service-hero">
@@ -83,27 +85,27 @@ const faqs = [
         <p>Dr. Maks combines extensive pregnancy care experience with boutique one-on-one attention:</p>
         <div class="feature-list">
           <div class="feature-item">
-            <div class="feature-icon">🎓</div>
+            <div class="feature-icon"><Icon name="graduation-cap" size={28} /></div>
             <strong>Specialized Knowledge</strong>
             <p>Advanced training in pregnancy-specific conditions and safe treatment techniques</p>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">⏱️</div>
+            <div class="feature-icon"><Icon name="clock" size={28} /></div>
             <strong>60-Minute Sessions</strong>
             <p>Comprehensive care, not rushed 15-minute treatments</p>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">🧘</div>
+            <div class="feature-icon"><Icon name="leaf" size={28} /></div>
             <strong>Postural Correction</strong>
             <p>Pancafit-based exercises safe and effective during pregnancy</p>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">📚</div>
+            <div class="feature-icon"><Icon name="book-open" size={28} /></div>
             <strong>Education</strong>
             <p>Learn optimal body mechanics for pregnancy, labor, and postpartum</p>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">👥</div>
+            <div class="feature-icon"><Icon name="users" size={28} /></div>
             <strong>Flexible Options</strong>
             <p>Choose between group seminars or personalized one-on-one care</p>
           </div>
@@ -129,7 +131,7 @@ const faqs = [
         <div class="quote-icon">"</div>
         <p class="testimonial-text">Maks totally changed my perspective on posture within the first few minutes of my first appointment with him. He's incredibly knowledgable, skilled, and kind. Wouldn't go to anybody else for PT.</p>
         <div class="testimonial-author">
-          <span class="star-rating">★★★★★</span>
+          <StarRating />
           <strong>Google Review</strong>
         </div>
       </div>
@@ -137,13 +139,13 @@ const faqs = [
       <h2>Who Benefits Most</h2>
       <p>Pregnancy physical therapy at Physica Medica helps Baltimore mothers experiencing:</p>
       <div class="conditions-grid">
-        <div class="condition-item">🤰 Low back and pelvic pain during pregnancy</div>
-        <div class="condition-item">⚡ Sciatica and nerve pain</div>
-        <div class="condition-item">🧍 Postural changes and discomfort</div>
-        <div class="condition-item">👶 Preparation for labor and delivery</div>
-        <div class="condition-item">💪 Postpartum recovery and core restoration</div>
-        <div class="condition-item">🔄 Diastasis recti (abdominal separation)</div>
-        <div class="condition-item">🩺 Pelvic floor dysfunction</div>
+        <div class="condition-item"><Icon name="heart" size={18} /> Low back and pelvic pain during pregnancy</div>
+        <div class="condition-item"><Icon name="zap" size={18} /> Sciatica and nerve pain</div>
+        <div class="condition-item"><Icon name="person-standing" size={18} /> Postural changes and discomfort</div>
+        <div class="condition-item"><Icon name="baby" size={18} /> Preparation for labor and delivery</div>
+        <div class="condition-item"><Icon name="dumbbell" size={18} /> Postpartum recovery and core restoration</div>
+        <div class="condition-item"><Icon name="refresh-cw" size={18} /> Diastasis recti (abdominal separation)</div>
+        <div class="condition-item"><Icon name="stethoscope" size={18} /> Pelvic floor dysfunction</div>
       </div>
 
       <!-- Alternating Section: Treatment Process -->
@@ -349,8 +351,11 @@ const faqs = [
   }
 
   .feature-icon {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
+    color: var(--color-primary);
   }
 
   .feature-item strong {
@@ -374,6 +379,9 @@ const faqs = [
   }
 
   .condition-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     background: var(--color-background-light);
     padding: 1rem 1.25rem;
     border-radius: 8px;

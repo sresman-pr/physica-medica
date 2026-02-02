@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WatermarkBackground from '../components/WatermarkBackground.astro';
+import Icon from '../components/Icon.astro';
+import StarRating from '../components/StarRating.astro';
 import { Image } from 'astro:assets';
 
 // Import about page images
@@ -139,7 +141,7 @@ const physicianSchema = {
         <div class="quote-icon">"</div>
         <p class="testimonial-text">I feel so incredibly lucky to have found Dr Maks. I came to him in a truly awful state and he managed to get things back on track unbelievably quickly. Not sure if it was magic, a miracle, or just insane amounts of talent. His knowledge and genuine desire to help sets Physica Medica apart. I cannot recommend Dr Maks enough. I've been to physio before but this is next level.</p>
         <div class="testimonial-author">
-          <span class="star-rating">★★★★★</span>
+          <StarRating />
           <strong>Google Review</strong>
         </div>
       </div>
@@ -148,32 +150,47 @@ const physicianSchema = {
       <p>Dr. Maks earned his Doctor of Physical Therapy (DPT) degree and has pursued advanced training in multiple specialized techniques:</p>
       <div class="expertise-grid">
         <div class="expertise-card">
-          <div class="expertise-icon">🇮🇹</div>
+          <div class="expertise-icon"><Icon name="leaf" size={28} /></div>
           <h4>Pancafit Method</h4>
           <p>Revolutionary postural correction technique from Italy</p>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">📍</div>
-          <h4>Dry Needling & Cupping</h4>
-          <p>Advanced myofascial pain treatment</p>
+          <div class="expertise-icon"><Icon name="target" size={28} /></div>
+          <h4>Dry Needling</h4>
+          <p>Precision trigger point release therapy</p>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">🦴</div>
+          <div class="expertise-icon"><Icon name="circle-dot" size={28} /></div>
+          <h4>Myofascial Cupping</h4>
+          <p>Fascial release and circulation therapy</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon"><Icon name="bone" size={28} /></div>
           <h4>Scoliosis Management</h4>
           <p>Specialized care for spinal curvature</p>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">❄️</div>
+          <div class="expertise-icon"><Icon name="snowflake" size={28} /></div>
           <h4>Wim Hof Method</h4>
           <p>Certified instructor in breathing and cold therapy</p>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">🤰</div>
+          <div class="expertise-icon"><Icon name="heart" size={28} /></div>
           <h4>Pregnancy & Postpartum</h4>
           <p>Expert treatment for expecting and new mothers</p>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">⚙️</div>
+          <div class="expertise-icon"><Icon name="activity" size={28} /></div>
+          <h4>Functional Patterns</h4>
+          <p>Biomechanics-based movement training</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon"><Icon name="link" size={28} /></div>
+          <h4>Anatomy Trains</h4>
+          <p>Myofascial meridians and fascial connectivity</p>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon"><Icon name="settings" size={28} /></div>
           <h4>Biomechanics</h4>
           <p>Understanding how the body moves as a system</p>
         </div>
@@ -248,7 +265,7 @@ const physicianSchema = {
         <div class="quote-icon">"</div>
         <p class="testimonial-text">Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan.</p>
         <div class="testimonial-author">
-          <span class="star-rating">★★★★★</span>
+          <StarRating />
           <strong>Stefan Pearson</strong> — Google Review
         </div>
       </div>
@@ -272,22 +289,22 @@ const physicianSchema = {
       <h2 class="text-center">Credentials & Certifications</h2>
       <div class="credentials-grid">
         <div class="credential-item">
-          <div class="credential-icon">🎓</div>
+          <div class="credential-icon"><Icon name="graduation-cap" size={28} /></div>
           <h3>Doctor of Physical Therapy (DPT)</h3>
           <p>Advanced doctoral-level training in physical therapy</p>
         </div>
         <div class="credential-item">
-          <div class="credential-icon">❄️</div>
+          <div class="credential-icon"><Icon name="snowflake" size={28} /></div>
           <h3>Wim Hof Method Certified</h3>
           <p>Certified instructor in breathing and cold therapy</p>
         </div>
         <div class="credential-item">
-          <div class="credential-icon">🌟</div>
+          <div class="credential-icon"><Icon name="star" size={28} /></div>
           <h3>10+ Years Experience</h3>
           <p>Serving Baltimore since 2013</p>
         </div>
         <div class="credential-item">
-          <div class="credential-icon">⭐</div>
+          <div class="credential-icon"><Icon name="star" size={28} /></div>
           <h3>300+ 5-Star Reviews</h3>
           <p>Consistently rated excellent by patients</p>
         </div>
@@ -392,9 +409,21 @@ const physicianSchema = {
   /* Expertise grid */
   .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
     margin: 1.5rem 0 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .expertise-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .expertise-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .expertise-card {
@@ -412,8 +441,11 @@ const physicianSchema = {
   }
 
   .expertise-icon {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.75rem;
+    color: var(--color-primary);
   }
 
   .expertise-card h4 {
@@ -619,8 +651,11 @@ const physicianSchema = {
   }
 
   .credential-icon {
-    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1rem;
+    color: var(--color-primary);
   }
 
   .credential-item h3 {
@@ -653,8 +688,7 @@ const physicianSchema = {
       padding: 1.5rem;
     }
 
-    .feature-list,
-    .expertise-grid {
+    .feature-list {
       grid-template-columns: 1fr;
     }
 
