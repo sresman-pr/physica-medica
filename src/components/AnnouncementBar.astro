@@ -1,0 +1,43 @@
+---
+import { getEntry } from 'astro:content';
+
+// Fetch business info from Keystatic CMS
+let businessInfo;
+try {
+  const entry = await getEntry('settings', 'business-info');
+  businessInfo = entry?.data;
+} catch (error) {
+  businessInfo = undefined;
+}
+
+const announcement = businessInfo?.announcementBar;
+---
+
+{announcement && announcement.trim() && (
+  <div class="announcement-bar">
+    <div class="container">
+      <p>{announcement}</p>
+    </div>
+  </div>
+)}
+
+<style>
+  .announcement-bar {
+    background: var(--color-accent);
+    color: white;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .announcement-bar p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .announcement-bar p {
+      font-size: 0.875rem;
+    }
+  }
+</style>

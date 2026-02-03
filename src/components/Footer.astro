@@ -1,165 +1,368 @@
 ---
-// Footer Component
+// Footer Component with Contact Section
+import { Image } from 'astro:assets';
+import StarRating from './StarRating.astro';
+import mapImg from '../images/physica-medica-map.png';
 ---
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p>
-          800 S Bond St<br />
-          Baltimore, MD 21231
-        </p>
-        <p>
-          <a href="tel:443-228-8029">443-228-8029</a><br />
-          <a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a>
-        </p>
-      </div>
-
-      <div class="footer-section">
-        <h3>Hours</h3>
-        <p>
-          M W F: 8:00 AM - 7:30 PM<br />
-          Tuesday: 10:00 AM - 7:30 PM<br />
-          Thurs Sat Sun: Closed
-        </p>
-      </div>
-
-      <div class="footer-section">
-        <h3>Visit Us</h3>
-        <p>
-          <a href="https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD+21231" target="_blank" rel="noopener">
-            View on Google Maps
-          </a>
-        </p>
-        <div class="social-proof">
-          <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="rating-badge-link">
-            <div class="rating-badge">
-              <span class="stars">★★★★★</span>
-              <span class="rating-text">300+ Reviews</span>
+  <div class="footer-contact-section">
+    <div class="footer-wrapper">
+      <div class="footer-left">
+        <h2 class="footer-title">PHYSICA MEDICA</h2>
+        <div class="footer-map">
+          <a href="https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD+21231" target="_blank" rel="noopener noreferrer" class="map-link-wrapper">
+            <Image
+              src={mapImg}
+              alt="Map showing Physica Medica location at 800 S Bond St, Baltimore"
+              width={600}
+              height={300}
+              format="webp"
+              loading="lazy"
+              quality={80}
+              class="map-image"
+            />
+            <div class="map-overlay">
+              <span>Click to open in Google Maps</span>
             </div>
           </a>
         </div>
+        <div class="footer-info">
+          <p>800 S Bond St,<br/>Baltimore, MD 21231</p>
+          <p><a href="tel:443-228-8029">443-228-8029</a></p>
+          <p><a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h2 class="footer-title">CONTACT</h2>
+        <form class="footer-form" id="footer-contact-form">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name *" required aria-label="Your name" />
+            <input type="email" name="email" placeholder="Email *" required aria-label="Your email" />
+          </div>
+          <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
+          <textarea name="message" placeholder="Message" rows="5" aria-label="Your message"></textarea>
+          <button type="submit" class="footer-submit-btn">Send</button>
+          <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="footer-reviews-link">
+            <span class="stars"><StarRating /></span>
+            <span>300+ Reviews</span>
+          </a>
+        </form>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+  </div>
+  <div class="footer-service-areas">
+    <div class="service-areas-wrapper">
+      <span class="service-areas-label">Serving Baltimore:</span>
+      <a href="/locations/fells-point">Fells Point</a>
+      <span class="divider">|</span>
+      <a href="/locations/canton">Canton</a>
+      <span class="divider">|</span>
+      <a href="/locations/harbor-east">Harbor East</a>
+      <span class="divider">|</span>
+      <a href="/locations/federal-hill">Federal Hill</a>
+      <span class="divider">|</span>
+      <a href="/locations/inner-harbor">Inner Harbor</a>
+      <span class="divider">|</span>
+      <a href="/locations/patterson-park">Patterson Park</a>
+      <span class="divider">|</span>
+      <a href="/locations/locust-point">Locust Point</a>
+      <span class="divider">|</span>
+      <a href="/locations/hampden">Hampden</a>
+      <span class="divider">|</span>
+      <a href="/locations/roland-park">Roland Park</a>
+      <span class="divider">|</span>
+      <a href="/locations/towson">Towson</a>
+      <span class="divider">|</span>
+      <a href="/locations/downtown">Downtown</a>
+      <span class="divider">|</span>
+      <a href="/locations/highlandtown">Highlandtown</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="copyright">&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="/privacy">Privacy Policy</a>
+        <span class="divider">|</span>
+        <a href="/terms">Terms of Service</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-contact-section {
     background: var(--color-background-light);
+    padding: 50px 20px 40px;
+    border-top: 4px solid var(--color-primary);
+    margin-top: 2rem;
+  }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-title {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    margin: 0 0 8px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--color-primary);
+    display: inline-block;
+  }
+
+  .footer-map {
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+
+  .map-link-wrapper {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 20px 12px 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .map-link-wrapper:hover .map-overlay {
+    opacity: 1;
+  }
+
+  .footer-info {
+    margin-top: 16px;
+  }
+
+  .footer-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 1rem;
     color: var(--color-text-primary);
-    padding: 3rem 0 1.5rem;
-    margin-top: 0;
+  }
+
+  .footer-info a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  .footer-info a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-form {
+    margin-top: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .footer-form input,
+  .footer-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 2px solid #6c757d;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background: white;
+  }
+
+  .footer-form input:focus,
+  .footer-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(61, 184, 159, 0.1);
+  }
+
+  .footer-form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .footer-submit-btn {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    width: 100%;
+  }
+
+  .footer-submit-btn:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .footer-reviews-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 10px 16px;
+    border: 2px solid var(--color-accent);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    transition: all 0.2s;
+    width: 100%;
+  }
+
+  .footer-reviews-link:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .footer-reviews-link .stars {
+    color: #ffc107;
+  }
+
+  .footer-reviews-link:hover .stars {
+    color: white;
+  }
+
+  .footer-service-areas {
+    background: var(--color-background-light);
+    padding: 1rem 20px;
+    text-align: center;
     border-top: 1px solid var(--color-border);
   }
 
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 2rem;
-  }
-
-  .footer-section h3 {
-    color: var(--color-primary);
-    font-size: 1.25rem;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-  }
-
-  .footer-section p {
-    margin-bottom: 0.75rem;
+  .service-areas-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
     line-height: 1.8;
-    color: var(--color-text-primary);
   }
 
-  .footer-section a {
+  .service-areas-label {
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-right: 0.25rem;
+  }
+
+  .service-areas-wrapper a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .service-areas-wrapper a:hover {
     color: var(--color-accent);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    position: relative;
-    font-weight: 500;
   }
 
-  .footer-section a:hover {
-    color: var(--color-accent-hover);
-    padding-left: 4px;
-  }
-
-  .social-proof {
-    margin-top: 1.5rem;
-  }
-
-  .rating-badge-link {
-    text-decoration: none;
-    display: inline-block;
-    transition: transform var(--transition-fast);
-  }
-
-  .rating-badge-link:hover {
-    transform: translateY(-2px);
-    padding-left: 0;
-  }
-
-  .rating-badge {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: white;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 2px solid var(--color-accent);
-    transition: all var(--transition-fast);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .rating-badge-link:hover .rating-badge {
-    background: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .rating-badge .stars {
-    color: #ffc107;
-    font-size: 1.25rem;
-    margin-bottom: 4px;
-  }
-
-  .rating-badge-link:hover .rating-badge .stars {
-    color: white;
-  }
-
-  .rating-badge .rating-text {
-    font-size: 0.9rem;
-    color: var(--color-text-primary);
-    font-weight: 500;
-  }
-
-  .rating-badge-link:hover .rating-badge .rating-text {
-    color: white;
+  .service-areas-wrapper .divider {
+    margin: 0 0.35rem;
+    opacity: 0.5;
   }
 
   .footer-bottom {
-    border-top: 1px solid var(--color-border);
-    padding-top: 1.5rem;
+    background: var(--color-background-light);
+    padding: 1rem 20px;
     text-align: center;
-    font-size: 0.9rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-bottom-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .copyright {
+    margin: 0;
+    font-size: 0.85rem;
     color: var(--color-text-secondary);
   }
 
-  .footer-bottom p {
-    margin: 0;
+  .footer-legal-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-legal-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-legal-links .divider {
+    margin: 0 0.5rem;
+    opacity: 0.5;
   }
 
   @media (max-width: 768px) {
-    .footer-content {
-      gap: 2rem;
+    .footer-contact-section {
+      padding: 40px 20px 30px;
+    }
+
+    .footer-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
     }
   }
 </style>

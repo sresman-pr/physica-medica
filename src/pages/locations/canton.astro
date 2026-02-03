@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Canton",
+  slug: "canton",
+  intro: "Canton residents seeking expert physical therapy are just a quick trip from one of Baltimore's best-kept secrets. Physica Medica in Fells Point offers the personalized, 60-minute sessions that Canton's active community deserves. Whether you're training for the Baltimore Marathon along the Canton Waterfront Promenade, recovering from a CrossFit session at one of Canton's gyms, or dealing with the neck and shoulder tension that comes with working from home, Dr. Maks provides comprehensive care tailored to your active Canton lifestyle.",
+  directions: "From Canton Square, head west on O'Donnell Street, then turn left on S Bond Street. Our clinic at 800 S Bond St is about 5 minutes away. Alternatively, take Boston Street west to S Caroline Street and head south to Bond. Street parking is plentiful on Bond Street and surrounding Fells Point blocks.",
+  landmarks: [
+    "5-minute drive from Canton Square",
+    "Easy access via O'Donnell or Boston Street",
+    "Between Canton and Patterson Park",
+    "Near the Canton/Fells Point border"
+  ],
+  testimonial: {
+    quote: "As a runner who lives in Canton, I've seen several PTs over the years. Dr. Maks is the only one who took the time to really understand my running mechanics and address the root cause of my IT band issues. The 5-minute drive to Fells Point is nothing.",
+    author: "David T. - Canton Waterfront Runner"
+  },
+  commonConditions: [
+    {
+      condition: "Running Injuries (IT Band, Shin Splints, Plantar Fasciitis)",
+      description: "The Canton Waterfront Promenade is one of Baltimore's best running paths, but the repetitive impact can lead to IT band syndrome, shin splints, and plantar fasciitis. We help runners return to the trail stronger and with better mechanics."
+    },
+    {
+      condition: "CrossFit & Gym Injuries",
+      description: "Canton has a thriving fitness culture, and we see many athletes dealing with shoulder impingement, lower back strain, and knee issues from high-intensity workouts. Dr. Maks can help you train smarter, not harder."
+    },
+    {
+      condition: "Young Family Strains",
+      description: "Canton's family-friendly vibe means lots of parents carrying toddlers, pushing strollers, and playing with kids. The resulting back pain, shoulder strain, and hip issues are common concerns we treat."
+    },
+    {
+      condition: "Remote Work Posture Issues",
+      description: "Many Canton professionals work from home in their rowhouses. Poor ergonomics lead to neck pain, upper back tension, and headaches that respond well to our postural correction techniques."
+    }
+  ],
+  faqs: [
+    {
+      question: "How long does it take to get to your clinic from Canton?",
+      answer: "Most Canton residents reach our Fells Point clinic in about 5 minutes by car. Take O'Donnell Street west to Bond Street and head south. There's plenty of free street parking in the Fells Point area. If you prefer, it's also a pleasant 15-20 minute walk along the waterfront."
+    },
+    {
+      question: "Do you work with runners training for marathons?",
+      answer: "Absolutely! Dr. Maks has extensive experience working with distance runners. We can help with injury recovery, gait analysis, and prehabilitation to keep you training safely. Many Canton runners preparing for the Baltimore Marathon come to us for tune-ups throughout their training cycle."
+    },
+    {
+      question: "Can you help with CrossFit-related injuries?",
+      answer: "Yes, we see many CrossFit athletes from Canton's gyms. Common issues include shoulder impingement from overhead movements, lower back strain from deadlifts, and knee pain from squatting. We'll get you back to your WODs safely and help prevent future injuries."
+    },
+    {
+      question: "Do you accept insurance for Canton patients?",
+      answer: "We operate as an out-of-network provider, which means you pay at the time of service and we provide you with a superbill to submit to your insurance for reimbursement. Many patients find this model worthwhile for the quality and duration of care they receive."
+    }
+  ],
+  neighborhoodInfo: `<p>Canton has transformed from a working-class waterfront neighborhood into one of Baltimore's most desirable communities for young professionals and families. The Canton Waterfront Park and Promenade draw runners, cyclists, and dog walkers year-round, while Canton Square anchors a vibrant dining and shopping scene.</p>
+  
+  <p>This active lifestyle is exactly why Canton residents need access to quality physical therapy. The runners logging miles on the promenade, the CrossFit enthusiasts pushing their limits, the parents chasing kids around Patterson Park—all put demands on their bodies that can lead to injury or chronic pain.</p>
+  
+  <p>While there are chain PT clinics closer to Canton, many residents make the short drive to Physica Medica because they value quality over convenience. Our 60-minute one-on-one sessions provide the thorough assessment and hands-on treatment that 15-minute insurance-mill appointments simply cannot match.</p>
+  
+  <p>Dr. Maks understands the Canton lifestyle and tailors treatment to help you get back to running the waterfront, crushing workouts, and enjoying everything this amazing neighborhood has to offer.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WatermarkBackground from '../components/WatermarkBackground.astro';
+import StarRating from '../components/StarRating.astro';
 import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
 
 // Import all images for optimization
 import heroLocationImg from '../images/physica-medica-location.png';
@@ -13,25 +16,46 @@ import clinicImg from '../images/Baltimore-Physical-Therapist-clinic-2023.png';
 import maksAnthonyImg from '../images/Baltimore-Physical-Therapist-Maks-and-Anthony.jpg';
 import pregnancyImg from '../images/Baltimore-Physical-Therapist-physica-medica therapy-.png';
 import cuppingImg from '../images/Baltimore-Physical-Therapist-cupping.png';
+import cuppingCloseImg from '../images/cupping-therapy-close.png';
+import deepTissueImg from '../images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg';
 import sessionImg from '../images/Baltimore-Physical-Therapist-session.png';
+import visitUsImg from '../images/physica-medica-visit-us.jpg';
+import baseballBatImg from '../images/Baltimore-Physical-Therapist-maksim-birikov-training.jpg';
+import mapImg from '../images/physica-medica-map.png';
+import functionalPatternsImg from '../images/specialty-v3-posture-exercise.jpg';
+
+// Fetch business info from Keystatic CMS
+let businessInfo;
+try {
+  const entry = await getEntry('settings', 'business-info');
+  businessInfo = entry?.data;
+} catch (error) {
+  businessInfo = undefined;
+}
+
+const hours = businessInfo?.businessHours || 'M W F: 8:00 AM - 7:30 PM\nTuesday: 10:00 AM - 7:30 PM\nThurs Sat Sun: Closed';
+const hoursLines = hours.split('\n').filter((line: string) => line.trim());
 
 const pageTitle = "Physical Therapy Boutique & Postural Correction Studio | Physica Medica Baltimore";
 const pageDescription = "Baltimore's premier physical therapy boutique specializing in postural correction, dry needling, scoliosis treatment, and the Wim Hof Method. One-on-one treatments with Dr. Maksim Birikov, DPT.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} hideFooter={true}>
+  <!-- Fixed Watermark Background Layer -->
+  <WatermarkBackground />
+  
   <!-- Hero Section -->
   <section class="hero">
     <Image 
-      src={heroLocationImg}
-      alt=""
+      src={clinicImg}
+      alt="Physica Medica physical therapy clinic interior in Fells Point, Baltimore"
       width={708}
       height={460}
       widths={[400, 700]}
       format="webp"
       loading="eager"
       fetchpriority="high"
-      quality={60}
+      quality={85}
       class="hero-bg-image"
     />
     <div class="hero-content">
@@ -45,56 +69,26 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
           format="webp"
           loading="eager"
           fetchpriority="high"
-          quality={65}
+          quality={90}
           class="hero-lockup"
         />
       </div>
       
-      <h1 class="hero-title">
-        Physical Therapy Boutique<br />
-        Postural Correction Studio
-      </h1>
-      
-      <p class="hero-cta-text">Experience personalized, one-on-one physical therapy</p>
-      <div class="hero-arrow">▼</div>
-      <a href="/schedule" class="cta-button">Schedule Your Session</a>
+      <h1 class="hero-title">Baltimore Physical Therapist · Expert Hands-On Treatment</h1>
+      <p class="hero-cta-text">Dry needling, cupping & deep tissue massage in Fells Point · 60-minute 1-on-1 sessions</p>
+      <div class="hero-buttons">
+        <a href="/schedule" class="cta-button">Schedule Your Session</a>
+        <a href="/about/your-first-visit" class="cta-button-secondary">Your First Visit</a>
+      </div>
     </div>
   </section>
 
-  <!-- Image Gallery Section with Watermarks -->
+  <!-- Image Gallery Section -->
   <section class="gallery-section">
-    <!-- Fixed Watermark Logos -->
-    <div class="watermark watermark-left">
-      <Image 
-        src={logoWatermarkImg}
-        alt=""
-        width={354}
-        height={161}
-        format="webp"
-        loading="lazy"
-        quality={65}
-        aria-hidden="true"
-      />
-      <span class="watermark-text">PHYSICA<br/>MEDICA</span>
-    </div>
-    <div class="watermark watermark-right">
-      <Image 
-        src={logoWatermarkImg}
-        alt=""
-        width={354}
-        height={161}
-        format="webp"
-        loading="lazy"
-        quality={65}
-        aria-hidden="true"
-      />
-      <span class="watermark-text">PHYSICA<br/>MEDICA</span>
-    </div>
-
     <div class="gallery-container">
       <!-- Row 1: Two small images with green buttons -->
       <div class="gallery-row row-small">
-        <a href="/services/specialty-techniques/dry-needling-cupping" class="gallery-item">
+        <a href="/services/dry-needling" class="gallery-item">
           <Image 
             src={dryNeedlingImg}
             alt="Dry needling therapy"
@@ -102,9 +96,9 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
             height={202}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={70}
           />
-          <span class="gallery-label">Dry Needling & Cupping</span>
+          <span class="gallery-label">Dry Needling</span>
         </a>
         <a href="/wim-hof-method" class="gallery-item">
           <Image 
@@ -114,7 +108,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
             height={202}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={70}
           />
           <span class="gallery-label">Wim Hof Method</span>
         </a>
@@ -122,17 +116,17 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
       <!-- Row 2: Two medium clinic images -->
       <div class="gallery-row row-medium">
-        <a href="/services/personal-training" class="gallery-item">
+        <a href="/services/scoliosis" class="gallery-item">
           <Image 
             src={fitnessEquipImg}
-            alt="Personal training equipment"
+            alt="Scoliosis treatment"
             width={453}
             height={342}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={70}
           />
-          <span class="gallery-label">Personal Training</span>
+          <span class="gallery-label">Scoliosis Treatment</span>
         </a>
         <a href="/about" class="gallery-item">
           <Image 
@@ -148,19 +142,60 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
         </a>
       </div>
 
-      <!-- Row 3: One large training image -->
-      <div class="gallery-row row-large">
-        <div class="gallery-item gallery-item-full">
+      <!-- Row 3: Two medium service images -->
+      <div class="gallery-row row-medium">
+        <a href="/services/myofascial-cupping" class="gallery-item">
           <Image 
-            src={maksAnthonyImg}
-            alt="Dr. Maks training with client"
-            width={928}
-            height={700}
-            widths={[400, 700]}
+            src={cuppingCloseImg}
+            alt="Cupping therapy"
+            width={453}
+            height={342}
             format="webp"
             loading="lazy"
-            quality={60}
+            quality={70}
           />
+          <span class="gallery-label">Cupping</span>
+        </a>
+        <a href="/services/deep-tissue-sports-massage" class="gallery-item">
+          <Image 
+            src={deepTissueImg}
+            alt="Deep tissue sports massage"
+            width={453}
+            height={342}
+            format="webp"
+            loading="lazy"
+            quality={70}
+          />
+          <span class="gallery-label">Deep Tissue Massage</span>
+        </a>
+      </div>
+
+      <!-- Row 4: Functional Patterns and One-on-One Treatments -->
+      <div class="gallery-row row-medium">
+        <a href="/services/functional-patterns" class="gallery-item">
+          <Image 
+            src={functionalPatternsImg}
+            alt="Functional Patterns movement training"
+            width={453}
+            height={342}
+            format="webp"
+            loading="lazy"
+            quality={70}
+          />
+          <span class="gallery-label">Functional Patterns</span>
+        </a>
+        <div class="gallery-item gallery-item-with-cta">
+          <a href="/services" class="gallery-image-link">
+            <Image 
+              src={maksAnthonyImg}
+              alt="Dr. Maks training with client"
+              width={453}
+              height={342}
+              format="webp"
+              loading="lazy"
+              quality={75}
+            />
+          </a>
           <div class="gallery-cta-stack">
             <a href="/services" class="gallery-cta">One-on-One Treatments</a>
             <a href="/schedule" class="gallery-cta">Schedule Your First Appointment</a>
@@ -193,10 +228,10 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
           quality={70}
         />
       </a>
-      <a href="/services/specialty-techniques" class="treatment-item">
+      <a href="/services" class="treatment-item">
         <Image 
           src={cuppingImg}
-          alt="Cupping therapy"
+          alt="One-on-one treatments"
           width={275}
           height={268}
           format="webp"
@@ -214,45 +249,16 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     </div>
   </section>
 
-  <!-- Personal Training Section -->
-  <section class="training-section">
-    <div class="training-wrapper">
-      <div class="training-image">
-        <Image 
-          src={heroLocationImg}
-          alt="Physica Medica location"
-          width={708}
-          height={460}
-          widths={[400, 700]}
-          format="webp"
-          loading="lazy"
-          quality={60}
-        />
-      </div>
-      <div class="training-content">
-        <p class="training-title">Our Exclusive Approach to Personal Training:</p>
-        <ul>
-          <li>Optimize your biomechanics with respect to evolutionary movement requirements</li>
-          <li>Integrate your body as a complete system</li>
-          <li>Improve communication between muscles, fascia, and gravity</li>
-          <li>Correct movement dysfunctions that contribute to pain and improve posture</li>
-          <li>Move with minimal wear and tear on your body</li>
-        </ul>
-      </div>
-    </div>
-    <a href="/services/personal-training" class="training-cta">Explore Personalized Training</a>
-  </section>
-
   <!-- Reviews Section -->
   <section class="reviews-section">
     <h2>300+ 5-STAR REVIEWS</h2>
     <div class="review-card">
       <div class="review-image">
         <Image 
-          src={sessionImg}
-          alt="Physical therapy session"
-          width={412}
-          height={264}
+          src={baseballBatImg}
+          alt="Dr. Maks training client with baseball bat exercise"
+          width={500}
+          height={500}
           format="webp"
           loading="lazy"
           quality={70}
@@ -261,7 +267,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       </div>
       <div class="review-content">
         <h3>Stefan Pearson</h3>
-        <div class="stars">★★★★★</div>
+        <div class="stars"><StarRating /></div>
         <p>"Maks has really separated himself in a distinguishable way when it comes to my experience with him. Contrary to the "surface" level - all in one treatment styles here in America - he has chosen to get to know me by building connective tissue through rapport and really dialing into my particular issue. Steady communication has been vital. He's listening and pivoting those same insights into an actionable plan."</p>
         <a href="/reviews" class="review-link">Read More Reviews</a>
       </div>
@@ -271,8 +277,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   <!-- Visit Us Section -->
   <section class="visit-section">
     <Image 
-      src={heroLocationImg}
-      alt=""
+      src={visitUsImg}
+      alt="Physica Medica clinic building in Fells Point Baltimore"
       width={708}
       height={460}
       widths={[400, 700]}
@@ -282,10 +288,11 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       class="visit-bg-image"
     />
     <div class="visit-overlay">
-      <h2>VISIT<br/>US</h2>
-      <p>M W F: 8:00 AM - 7:30 PM</p>
-      <p>Tuesday: 10:00 AM - 7:30PM</p>
-      <p>Thurs Sat Sun: Closed</p>
+      <h2>Visit Us</h2>
+      <div class="hours-list">
+        {hoursLines.map((line: string) => <p>{line}</p>)}
+      </div>
+      <a href="/schedule" class="visit-cta">Schedule Your Session</a>
     </div>
   </section>
 
@@ -293,24 +300,90 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   <section class="contact-section">
     <div class="contact-wrapper">
       <div class="contact-left">
-        <h2>PHYSICA MEDICA</h2>
-        <h3>CONTACT</h3>
-        <p>800 S Bond St,<br/>Baltimore, MD 21231</p>
-        <p><a href="tel:443-228-8029">443-228-8029</a></p>
-        <p><a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a></p>
-        <p class="response-time">We typically respond within 24 hours</p>
+        <h2 class="contact-title">PHYSICA MEDICA</h2>
+        <div class="map-container" id="map-container">
+          <a href="https://maps.google.com/?q=800+S+Bond+St+Baltimore+MD+21231" target="_blank" rel="noopener noreferrer" class="map-link-wrapper">
+            <Image 
+              src={mapImg}
+              alt="Map showing Physica Medica location at 800 S Bond St, Baltimore"
+              width={600}
+              height={300}
+              format="webp"
+              loading="lazy"
+              quality={80}
+              class="map-image"
+            />
+            <div class="map-overlay">
+              <span>Click to open in Google Maps</span>
+            </div>
+          </a>
+        </div>
+        <div class="contact-info">
+          <p>800 S Bond St,<br/>Baltimore, MD 21231</p>
+          <p><a href="tel:443-228-8029">443-228-8029</a></p>
+          <p><a href="mailto:PhysicaMedica@gmail.com">PhysicaMedica@gmail.com</a></p>
+        </div>
       </div>
       <div class="contact-right">
+        <h2 class="contact-title">CONTACT</h2>
         <form class="contact-form" id="contact-form">
-          <input type="text" name="name" placeholder="Name *" required aria-label="Your name" />
-          <input type="email" name="email" placeholder="Email *" required aria-label="Your email" />
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name *" required aria-label="Your name" />
+            <input type="email" name="email" placeholder="Email *" required aria-label="Your email" />
+          </div>
           <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
-          <textarea name="message" placeholder="Message" rows="4" aria-label="Your message"></textarea>
-          <button type="submit" class="submit-button">Send Message</button>
+          <textarea name="message" placeholder="Message" rows="5" aria-label="Your message"></textarea>
+          <button type="submit" class="submit-button">Send</button>
+          <a href="https://www.google.com/maps?cid=17419763314734433010" target="_blank" rel="noopener noreferrer" class="form-reviews-link">
+            <span class="stars"><StarRating /></span>
+            <span>300+ Reviews</span>
+          </a>
         </form>
       </div>
     </div>
   </section>
+
+  <!-- Service Areas Section -->
+  <section class="service-areas-section">
+    <div class="service-areas-wrapper">
+      <span class="service-areas-label">Serving Baltimore:</span>
+      <a href="/locations/fells-point">Fells Point</a>
+      <span class="divider">|</span>
+      <a href="/locations/canton">Canton</a>
+      <span class="divider">|</span>
+      <a href="/locations/harbor-east">Harbor East</a>
+      <span class="divider">|</span>
+      <a href="/locations/federal-hill">Federal Hill</a>
+      <span class="divider">|</span>
+      <a href="/locations/inner-harbor">Inner Harbor</a>
+      <span class="divider">|</span>
+      <a href="/locations/patterson-park">Patterson Park</a>
+      <span class="divider">|</span>
+      <a href="/locations/locust-point">Locust Point</a>
+      <span class="divider">|</span>
+      <a href="/locations/hampden">Hampden</a>
+      <span class="divider">|</span>
+      <a href="/locations/roland-park">Roland Park</a>
+      <span class="divider">|</span>
+      <a href="/locations/towson">Towson</a>
+      <span class="divider">|</span>
+      <a href="/locations/downtown">Downtown</a>
+      <span class="divider">|</span>
+      <a href="/locations/highlandtown">Highlandtown</a>
+    </div>
+  </section>
+
+  <!-- Simple Copyright -->
+  <footer class="home-footer">
+    <div class="home-footer-content">
+      <p>&copy; {new Date().getFullYear()} Physica Medica. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="/privacy">Privacy Policy</a>
+        <span class="divider">|</span>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
 </BaseLayout>
 
 <style>
@@ -321,6 +394,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     text-align: center;
     color: white;
     overflow: hidden;
+    z-index: 1;
+    /* Hero has its own background image/overlay, covers watermark */
   }
 
   .hero-bg-image {
@@ -340,8 +415,33 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(61, 122, 107, 0.75), rgba(61, 122, 107, 0.75));
+    background: 
+      linear-gradient(135deg, rgba(61, 122, 107, 0.75), rgba(45, 109, 95, 0.85)),
+      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 100%, 40px 40px, 40px 40px;
+    background-position: 0 0, 0 0, 20px 20px;
     z-index: 1;
+  }
+
+  /* Add organic movement overlay */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(61, 184, 159, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(61, 184, 159, 0.1) 0%, transparent 50%);
+    z-index: 1;
+    animation: subtleShift 20s ease-in-out infinite;
+  }
+
+  @keyframes subtleShift {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.7; }
   }
 
   .hero-content {
@@ -358,7 +458,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .hero-lockup {
-    width: 280px;
+    width: 480px;
     height: auto;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
   }
@@ -372,12 +472,46 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
-  .hero-cta-text {
-    font-size: 1.25rem;
-    margin: 0 0 20px;
+  .hero-subtitle {
+    font-size: 1.4rem;
+    margin: 0 0 12px;
     opacity: 0.95;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: white;
+  }
+
+  .hero-cta-text {
+    font-size: 1.35rem;
+    margin: 0 0 24px;
+    color: white;
     font-weight: 400;
     letter-spacing: 0.01em;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-button-secondary {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-size: 1rem;
+  }
+
+  .cta-button-secondary:hover {
+    background: white;
+    color: var(--color-primary);
   }
 
   .hero-arrow {
@@ -401,49 +535,18 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== GALLERY SECTION ========== */
   .gallery-section {
-    background: var(--color-background-gray);
-    padding: 0;
+    /* Transparent to show fixed watermark through */
+    background: transparent;
+    padding: 40px 0;
     position: relative;
-  }
-
-  .watermark {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.15;
-    pointer-events: none;
+    overflow: visible;
     z-index: 1;
-    text-align: center;
-  }
-
-  .watermark-left {
-    left: 30px;
-  }
-
-  .watermark-right {
-    right: 30px;
-  }
-
-  .watermark img {
-    width: 200px;
-    height: auto;
-    filter: grayscale(100%);
-    margin-bottom: 10px;
-  }
-
-  .watermark-text {
-    display: block;
-    font-size: 2rem;
-    font-weight: 300;
-    color: #999;
-    letter-spacing: 0.1em;
-    line-height: 1.2;
   }
 
   .gallery-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 0 16px;
   }
 
   .gallery-row {
@@ -468,8 +571,9 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .gallery-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
   }
 
   .gallery-item img {
@@ -481,7 +585,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1.05);
   }
 
   /* Row 1: Small images - increased height to show faces */
@@ -518,6 +623,18 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     transform: translateY(-2px);
   }
 
+  .gallery-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .gallery-cta-stack {
     position: absolute;
     bottom: 24px;
@@ -525,6 +642,7 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 2;
   }
 
   .gallery-cta {
@@ -547,9 +665,13 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== QUOTE SECTION ========== */
   .quote-section {
-    background: white;
+    /* Semi-transparent to show watermark through */
+    background: rgba(255, 255, 255, 0.65);
     padding: 80px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
   }
 
   .quote-section blockquote {
@@ -587,8 +709,12 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== TREATMENT SECTION ========== */
   .treatment-section {
-    background: white;
+    /* Semi-transparent to show watermark through */
+    background: rgba(255, 255, 255, 0.65);
     padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
   }
 
   .treatment-grid {
@@ -608,8 +734,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .treatment-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
   }
 
   .treatment-item img {
@@ -662,9 +788,13 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== TRAINING SECTION ========== */
   .training-section {
-    background: var(--color-background-light);
+    /* Transparent to show fixed watermark through */
+    background: transparent;
     padding: 80px 20px;
     text-align: center;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
   }
 
   .training-wrapper {
@@ -741,10 +871,14 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
   /* ========== REVIEWS SECTION ========== */
   .reviews-section {
-    background: var(--color-primary);
+    /* Semi-transparent to show watermark through */
+    background: linear-gradient(135deg, rgba(61, 122, 107, 0.85) 0%, rgba(42, 95, 82, 0.85) 100%);
     color: white;
     padding: 80px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
   }
 
   .reviews-section h2 {
@@ -769,8 +903,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   }
 
   .review-image img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     margin: 0 auto;
     display: block;
@@ -821,21 +955,18 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
   /* ========== VISIT SECTION ========== */
   .visit-section {
     position: relative;
-    padding: 80px 20px;
+    padding: 60px 20px 80px;
+    min-height: 550px;
     text-align: center;
     color: white;
     overflow: hidden;
+    z-index: 1;
+    background: transparent;
+    /* Transparent to show watermark on sides */
   }
 
   .visit-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
-    z-index: 1;
+    content: none;
   }
 
   .visit-section .visit-bg-image {
@@ -844,131 +975,348 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center center;
+    background-color: transparent;
     z-index: 0;
   }
 
   .visit-overlay {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .visit-overlay h2 {
-    font-size: 4rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    margin: 0 0 30px;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin: 0 0 20px;
     color: white;
-    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .hours-list {
+    background: rgba(0,0,0,0.3);
+    padding: 1.25rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .visit-overlay p {
-    font-size: 1.1rem;
-    margin: 5px 0;
+    font-size: 1.25rem;
+    margin: 8px 0;
+    font-weight: 500;
+    color: white;
+  }
+
+  .visit-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-size: 1rem;
+  }
+
+  .visit-cta:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
   }
 
   /* ========== CONTACT SECTION ========== */
   .contact-section {
-    background: white;
-    padding: 80px 20px;
+    /* Transparent to show fixed watermark through */
+    background: transparent;
+    padding: 50px 20px 40px;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
   }
 
   .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding-left: 135px;
   }
 
-  .contact-left h2 {
-    color: var(--color-text-primary);
+  .contact-title {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
     margin: 0 0 8px;
-    font-size: 1.75rem;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--color-primary);
+    display: inline-block;
   }
 
-  .contact-left h3 {
-    color: var(--color-text-secondary);
-    margin: 0 0 24px;
-    font-size: 1.25rem;
-    font-weight: 500;
+  .map-container {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 
-  .contact-left p {
-    margin: 12px 0;
-    line-height: 1.7;
-    font-size: 1.05rem;
-  }
-
-  .contact-left a {
-    color: var(--color-accent);
+  .map-link-wrapper {
+    display: inline-block;
+    position: relative;
     text-decoration: none;
-    transition: color var(--transition-fast);
+    cursor: pointer;
+    max-width: 350px;
   }
 
-  .contact-left a:hover {
-    color: var(--color-accent-hover);
-    text-decoration: underline;
+  .map-link-wrapper .map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 
-  .response-time {
-    margin-top: 24px;
+  .map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 20px 12px 12px;
+    text-align: center;
     font-size: 0.9rem;
-    color: var(--color-text-secondary);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .map-link-wrapper:hover .map-overlay {
+    opacity: 1;
+  }
+
+  .contact-info {
+    margin-top: 16px;
+  }
+
+  .contact-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+  }
+
+  .contact-info a {
+    color: var(--color-text-primary);
+    text-decoration: none;
     font-style: italic;
+  }
+
+  .contact-info a:hover {
+    color: var(--color-accent);
+  }
+
+  .contact-right {
+    padding-top: 0;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
   .contact-form input,
   .contact-form textarea {
     width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 16px;
-    border: 2px solid var(--color-border);
-    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 0;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: all var(--transition-fast);
+    background: white;
   }
 
   .contact-form input:focus,
   .contact-form textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(61, 184, 159, 0.1);
+    box-shadow: 0 0 0 2px rgba(61, 184, 159, 0.1);
   }
 
   .contact-form textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
   }
 
   .submit-button {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    background: var(--color-accent);
     color: white;
     border: none;
     padding: 14px 40px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 1rem;
     transition: all var(--transition-normal);
-    box-shadow: var(--shadow-sm);
     width: 100%;
   }
 
   .submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: var(--color-accent-hover);
   }
 
   .submit-button:active {
     transform: translateY(0);
   }
 
+  .form-reviews-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 10px 16px;
+    border: 2px solid var(--color-accent);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    transition: all 0.2s;
+    width: 100%;
+  }
+
+  .form-reviews-link:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .form-reviews-link .stars {
+    color: #ffc107;
+  }
+
+  .form-reviews-link:hover .stars {
+    color: white;
+  }
+
+  /* ========== SERVICE AREAS SECTION ========== */
+  .service-areas-section {
+    background: var(--color-background-light);
+    padding: 1rem 20px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-areas-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  .service-areas-label {
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-right: 0.25rem;
+  }
+
+  .service-areas-wrapper a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .service-areas-wrapper a:hover {
+    color: var(--color-accent);
+  }
+
+  .service-areas-wrapper .divider {
+    margin: 0 0.35rem;
+    opacity: 0.5;
+  }
+
+  /* ========== HOME FOOTER ========== */
+  .home-footer {
+    background: var(--color-background-light);
+    padding: 1rem 20px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .home-footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
+  .footer-legal-links {
+    font-size: 0.85rem;
+  }
+
+  .footer-legal-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-legal-links .divider {
+    margin: 0 0.5rem;
+    opacity: 0.5;
+  }
+
   /* ========== RESPONSIVE ========== */
+  /* On smaller screens, watermark is hidden, so add explicit gray backgrounds */
+  @media (max-width: 1200px) {
+    .gallery-section {
+      background: linear-gradient(to bottom, #e0e0e0, #d4d4d4);
+    }
+    
+    .training-section {
+      background: linear-gradient(to bottom, #e0e0e0, #d4d4d4);
+    }
+    
+    .contact-section {
+      background: linear-gradient(to bottom, #e0e0e0, #d4d4d4);
+    }
+  }
+  
   @media (max-width: 768px) {
+    /* Hero - more bottom padding for breathing room */
     .hero {
-      padding: 60px 20px 70px;
+      padding: 60px 20px 90px;
     }
 
     .hero-title {
@@ -976,11 +1324,21 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     }
 
     .hero-lockup {
-      width: 220px;
+      width: 360px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
     }
 
     .hero-cta-text {
-      font-size: 1.05rem;
+      font-size: 1rem;
+    }
+
+    /* Gallery - add padding and increase gaps */
+    .gallery-section {
+      padding: 50px 0;
+      position: relative;
     }
 
     .gallery-container {
@@ -990,8 +1348,8 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
 
     .gallery-row {
       grid-template-columns: 1fr;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
     .row-small .gallery-item img {
@@ -1006,8 +1364,10 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       height: 300px;
     }
 
+    /* Quote section - more vertical space */
     .quote-section {
-      padding: 60px 20px;
+      padding: 70px 20px;
+      position: relative;
     }
 
     .quote-text {
@@ -1019,11 +1379,17 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       padding: 24px;
     }
 
+    /* Treatment section - more breathing room */
     .treatment-section {
-      padding: 50px 20px;
+      padding: 70px 20px;
+      position: relative;
     }
 
-    .treatment-grid,
+    .treatment-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
     .treatment-labels {
       grid-template-columns: 1fr;
       gap: 16px;
@@ -1042,16 +1408,24 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       padding: 28px;
     }
 
+    /* Reviews section - more vertical space */
     .reviews-section {
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
 
     .review-card {
-      padding: 30px 20px;
+      padding: 40px 24px;
     }
 
+    .review-content p {
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+
+    /* Contact section - more top padding */
     .contact-section {
-      padding: 60px 20px;
+      padding: 60px 20px 70px;
     }
 
     .contact-wrapper {
@@ -1059,12 +1433,68 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
       gap: 40px;
     }
 
-    .watermark {
-      display: none;
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
     }
 
     .visit-overlay h2 {
-      font-size: 2.5rem;
+      font-size: 1.75rem;
+    }
+
+    .hours-list {
+      padding: 1rem 1.5rem;
+    }
+
+    .visit-overlay p {
+      font-size: 1.1rem;
+    }
+
+    /* Service areas - 2-column grid for cleaner layout */
+    .service-areas-section {
+      padding: 1.5rem 20px;
+    }
+
+    .service-areas-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1rem;
+      text-align: left;
+    }
+
+    .service-areas-label {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-areas-wrapper .divider {
+      display: none;
+    }
+
+    .service-areas-wrapper a {
+      display: block;
+      padding: 0.25rem 0;
+    }
+
+    .home-footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Subtle dividers between sections */
+    .gallery-section::after,
+    .quote-section::after,
+    .treatment-section::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: var(--color-border);
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -1082,13 +1512,4 @@ const pageDescription = "Baltimore's premier physical therapy boutique specializ
     }
   }
 
-  @media (min-width: 1400px) {
-    .watermark-left {
-      left: 60px;
-    }
-
-    .watermark-right {
-      right: 60px;
-    }
-  }
 </style>

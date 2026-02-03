@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Locust Point",
+  slug: "locust-point",
+  intro: "Locust Point's tight-knit community deserves healthcare that feels personal. At Physica Medica, we provide the neighborhood feel that Locust Point residents appreciate—combined with expert-level physical therapy. Whether you're dealing with postural issues from working at Under Armour's headquarters, recovering from a workout at Merritt Clubs, or managing pain from walking your dog along the waterfront trail, Dr. Maks offers focused, effective 60-minute sessions. We see many LP residents dealing with the active lifestyle your beautiful peninsula encourages.",
+  directions: "From Locust Point, take Fort Avenue east toward downtown, then take Key Highway to Light Street. Continue north across the Inner Harbor, take President Street to Fleet Street, and turn right on Bond Street. Our clinic at 800 S Bond St is in the heart of Fells Point, about 12 minutes from Fort McHenry. Street parking is plentiful in Fells Point.",
+  landmarks: [
+    "12-minute drive from Fort Avenue",
+    "Easy access via Key Highway and President Street",
+    "Same route as your commute to downtown",
+    "Abundant street parking in Fells Point"
+  ],
+  testimonial: {
+    quote: "Living in Locust Point, I love supporting local businesses. Physica Medica feels like a neighborhood clinic but with world-class expertise. Dr. Maks treated my shoulder injury when bigger clinics couldn't figure it out.",
+    author: "Amanda S. - Locust Point Resident"
+  },
+  commonConditions: [
+    {
+      condition: "Corporate Desk Strain",
+      description: "Under Armour's headquarters brings many professionals to Locust Point. Long hours at desks lead to neck pain, shoulder tension, and lower back issues that respond well to our postural correction and manual therapy techniques."
+    },
+    {
+      condition: "Waterfront Running Injuries",
+      description: "The scenic running paths around Locust Point attract dedicated runners. We treat IT band syndrome, shin splints, and plantar fasciitis to keep you on the trails."
+    },
+    {
+      condition: "Dog Walking & Pet Parent Injuries",
+      description: "Locust Point is a dog-friendly community, and being pulled by enthusiastic pups can strain shoulders and backs. We help pet parents manage these repetitive strain injuries."
+    },
+    {
+      condition: "Rowing & Water Sports Injuries",
+      description: "Proximity to the water means many LP residents enjoy kayaking, paddleboarding, and rowing. Shoulder overuse and lower back strain from these activities are conditions we frequently treat."
+    }
+  ],
+  faqs: [
+    {
+      question: "How do I get to your clinic from Locust Point?",
+      answer: "Take Fort Avenue east to Key Highway, then continue on Light Street across the Inner Harbor. Take President Street to Fleet Street, turn right on Bond Street, and our clinic at 800 S Bond St is just ahead. It's about 12 minutes—the same route you'd take to get downtown."
+    },
+    {
+      question: "Do you see a lot of patients from Under Armour?",
+      answer: "Yes, we work with many professionals from Under Armour and other Locust Point businesses. Desk work takes a predictable toll on the body, and our 60-minute sessions give us time to address these issues thoroughly—not just the symptoms, but the underlying postural and movement patterns."
+    },
+    {
+      question: "I walk my dog a lot and my shoulder is always bothering me. Can you help?",
+      answer: "Absolutely. Dog walking injuries are actually quite common, especially with larger or enthusiastic dogs. We'll treat the immediate issue and work on strengthening the shoulder to prevent future problems. We can also suggest handling techniques to reduce strain."
+    },
+    {
+      question: "Is your clinic similar to the boutique feel of Locust Point businesses?",
+      answer: "Yes, that's exactly our model. Like the small, quality-focused businesses that Locust Point residents appreciate, we offer personalized service rather than the corporate healthcare experience. You get 60 minutes of undivided attention from Dr. Maks every visit."
+    }
+  ],
+  neighborhoodInfo: `<p>Locust Point occupies a special place in Baltimore—a quiet peninsula with waterfront views, a tight-knit community, and a village-like atmosphere despite its proximity to downtown. The neighborhood has grown with the arrival of Under Armour's headquarters while maintaining its friendly, walkable character.</p>
+  
+  <p>Locust Point residents tend to be active. The waterfront trails are filled with runners and dog walkers. Merritt Clubs draws fitness enthusiasts. Kayaks and paddleboards dot the water on weekends. This active lifestyle keeps residents healthy but also creates opportunities for injury and overuse.</p>
+  
+  <p>The 12-minute drive to Physica Medica follows the same route many Locust Point commuters take toward downtown. Our Fells Point location puts quality physical therapy within easy reach while maintaining the boutique, personalized experience that Locust Point residents appreciate.</p>
+  
+  <p>We understand that Locust Point residents value community and quality over convenience. You won't find assembly-line healthcare here. Dr. Maks takes the time to understand your lifestyle—your work demands, your activities, your goals—and creates a treatment plan that fits your life on the peninsula. It's the kind of thoughtful, personal service that Locust Point has come to expect.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

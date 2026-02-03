@@ -1,0 +1,23 @@
+# Environment variables (contains API keys)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Generated images
+generated-images/*.jpg
+generated-images/*.png
+
+# Training outputs
+*.safetensors
+*.ckpt
+
+# Logs
+*.log
+*.env*

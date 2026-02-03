@@ -1,20 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
 import { Image } from 'astro:assets';
 
-// Import service images
-import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
-import dryNeedlingImg from '../../images/Baltimore-Physical-Therapist-dry-needling.jpg';
-import cuppingImg from '../../images/Baltimore-Physical-Therapist-myofascial-cupping.jpg';
-import deepTissueImg from '../../images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg';
+// Import service images from src/images (Astro Image)
 import iastmImg from '../../images/Baltimore-Physical-Therapist-instrument-tissue-mobilization.jpg';
 import pregnancyImg from '../../images/Baltimore-Physical-Therapist-pregnancy.jpg';
+import strengthTrainingImg from '../../images/Baltimore-Physical-Therapist-strength-training.jpg';
+import specialtyImg from '../../images/specialty-v3-neural-mobilization.jpg';
+import scoliosisImg from '../../images/Baltimore-Physical-Therapist-scoliosis.jpg';
+import functionalPatternsImg from '../../images/specialty-v3-posture-exercise.jpg';
 
 const pageTitle = "Physical Therapy Services in Baltimore | Physica Medica";
-const pageDescription = "Comprehensive physical therapy services including Pancafit, personal training, specialty techniques, scoliosis treatment, and pregnancy care in Baltimore, MD.";
+const pageDescription = "Comprehensive physical therapy services including dry needling, myofascial cupping, sports massage, IASTM, pregnancy care, and specialty techniques in Baltimore, MD.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <WatermarkBackground variant="teal" angle={-10} />
+  
   <section class="services-hero section-spacing">
     <div class="container-narrow text-center">
       <h1>Our Services</h1>
@@ -25,67 +28,50 @@ const pageDescription = "Comprehensive physical therapy services including Panca
   <section class="services-grid-section">
     <div class="container">
       <div class="services-grid">
-        <div class="service-card">
-          <Image 
-            src={strengthTrainingImg}
-            alt="Personal Training"
-            width={351}
-            height={220}
-            format="webp"
-            loading="lazy"
-            quality={80}
-          />
-          <h2>Personal Training</h2>
-          <p>One-on-one training that integrates your body as a system, optimizing biomechanics for evolutionary movement requirements.</p>
-          <a href="/services/personal-training" class="service-link">Learn More →</a>
-        </div>
-
-        <div class="service-card">
-          <Image 
-            src={dryNeedlingImg}
+        <!-- 1. Dry Needling -->
+        <a href="/services/dry-needling" class="service-card">
+          <img 
+            src="/images/Baltimore-Physical-Therapist-dry-needling.jpg"
             alt="Dry Needling"
-            width={355}
-            height={224}
-            format="webp"
+            width="355"
+            height="224"
             loading="lazy"
-            quality={80}
           />
-          <h2>Specialty Techniques</h2>
-          <p>Advanced therapeutic techniques including dry needling, cupping, and trigger point therapy for targeted pain relief.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
-        </div>
+          <h2>Dry Needling</h2>
+          <p>Release muscle knots and trigger points with precision needle therapy. One of the most effective and quickest ways to reduce tension and relieve pain.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
 
-        <div class="service-card">
-          <Image 
-            src={cuppingImg}
+        <!-- 2. Myofascial Cupping -->
+        <a href="/services/myofascial-cupping" class="service-card">
+          <img 
+            src="/images/Baltimore-Physical-Therapist-myofascial-cupping.jpg"
             alt="Myofascial Cupping"
-            width={351}
-            height={220}
-            format="webp"
+            width="351"
+            height="220"
             loading="lazy"
-            quality={80}
           />
           <h2>Myofascial Cupping</h2>
-          <p>Advanced cupping therapy to release fascial restrictions and improve tissue mobility.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
-        </div>
+          <p>Advanced cupping therapy to release fascial restrictions, increase blood flow, and improve tissue mobility for faster recovery.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
 
-        <div class="service-card">
-          <Image 
-            src={deepTissueImg}
-            alt="Deep Tissue Massage"
-            width={351}
-            height={220}
-            format="webp"
+        <!-- 3. Deep Tissue/Sports Massage -->
+        <a href="/services/deep-tissue-sports-massage" class="service-card">
+          <img 
+            src="/images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg"
+            alt="Deep Tissue & Sports Massage"
+            width="351"
+            height="220"
             loading="lazy"
-            quality={80}
           />
-          <h2>Deep Tissue & Sports Massage</h2>
-          <p>Therapeutic massage techniques for athletes and active individuals.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
-        </div>
+          <h2>Deep Tissue/Sports Massage</h2>
+          <p>Therapeutic massage techniques for athletes and active individuals. Optimize recovery and performance.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
 
-        <div class="service-card">
+        <!-- 4. Instrument Assisted Tissue Mobilization -->
+        <a href="/services/instrument-assisted-tissue-mobilization" class="service-card">
           <Image 
             src={iastmImg}
             alt="Instrument Assisted Tissue Mobilization"
@@ -95,15 +81,16 @@ const pageDescription = "Comprehensive physical therapy services including Panca
             loading="lazy"
             quality={80}
           />
-          <h2>Instrument Tissue Mobilization</h2>
-          <p>Advanced IASTM techniques for breaking down scar tissue and improving mobility.</p>
-          <a href="/services/specialty-techniques" class="service-link">Learn More →</a>
-        </div>
+          <h2>Instrument Assisted Mobilization</h2>
+          <p>Advanced IASTM techniques using specialized tools to break down scar tissue and restore mobility.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
 
-        <div class="service-card">
+        <!-- 5. Pregnancy -->
+        <a href="/services/pregnancy-physical-therapy" class="service-card">
           <Image 
             src={pregnancyImg}
-            alt="Pregnancy Care"
+            alt="Pregnancy Physical Therapy"
             width={351}
             height={220}
             format="webp"
@@ -111,9 +98,73 @@ const pageDescription = "Comprehensive physical therapy services including Panca
             quality={80}
           />
           <h2>Pregnancy Physical Therapy</h2>
-          <p>Expert care for expecting mothers through group seminars or one-on-one treatments for pregnancy-related conditions.</p>
-          <a href="/services/pregnancy-physical-therapy" class="service-link">Learn More →</a>
-        </div>
+          <p>Expert care for expecting mothers through one-on-one treatments for pregnancy-related conditions.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
+
+        <!-- 6. Pancafit Class -->
+        <a href="/services/pancafit-class" class="service-card">
+          <Image 
+            src={strengthTrainingImg}
+            alt="Pancafit Class"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
+          <h2>Pancafit Class</h2>
+          <p>Group posture training sessions using the Pancafit method to improve flexibility, alignment, and overall body mechanics.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
+
+        <!-- 7. Scoliosis Treatment -->
+        <a href="/services/scoliosis" class="service-card">
+          <Image 
+            src={scoliosisImg}
+            alt="Scoliosis Treatment"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
+          <h2>Scoliosis Treatment</h2>
+          <p>Specialized spinal curve management combining Pancafit postural correction with expert one-on-one DPT care.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
+
+        <!-- 8. Functional Patterns -->
+        <a href="/services/functional-patterns" class="service-card">
+          <Image 
+            src={functionalPatternsImg}
+            alt="Functional Patterns"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
+          <h2>Functional Patterns</h2>
+          <p>Movement training system addressing posture, gait, and biomechanics through corrective exercises for lasting results.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
+
+        <!-- 9. Specialty Techniques -->
+        <a href="/services/specialty-techniques" class="service-card">
+          <Image 
+            src={specialtyImg}
+            alt="Specialty Techniques"
+            width={351}
+            height={220}
+            format="webp"
+            loading="lazy"
+            quality={80}
+          />
+          <h2>Specialty Techniques</h2>
+          <p>Advanced therapeutic methods including neural tension release, scar tissue mobilization, posture re-education, and therapy for singers.</p>
+          <span class="service-link">Learn More →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -128,13 +179,19 @@ const pageDescription = "Comprehensive physical therapy services including Panca
 </BaseLayout>
 
 <style>
+  .services-hero,
+  .services-grid-section {
+    position: relative;
+    z-index: 1;
+  }
+
   .services-hero {
-    background: var(--color-background-light);
-    color: var(--color-text-primary);
+    background: transparent;
+    color: white;
   }
 
   .services-hero h1 {
-    color: var(--color-text-primary);
+    color: white;
   }
 
   .services-grid {
@@ -145,11 +202,31 @@ const pageDescription = "Comprehensive physical therapy services including Panca
   }
 
   .service-card {
+    display: block;
     background: white;
     border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--color-accent);
+    box-shadow: var(--shadow-md);
     transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  /* Inner glow effect */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .service-card img {
@@ -159,8 +236,8 @@ const pageDescription = "Comprehensive physical therapy services including Panca
   }
 
   .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
   }
 
   .service-card h2 {
@@ -174,25 +251,25 @@ const pageDescription = "Comprehensive physical therapy services including Panca
 
   .service-link {
     display: inline-block;
-    margin-top: 1rem;
+    margin: 1rem 2rem 1.5rem;
     color: var(--color-accent);
-    text-decoration: none;
     font-weight: 600;
     transition: transform 0.2s;
   }
 
-  .service-link:hover {
+  .service-card:hover .service-link {
     transform: translateX(4px);
   }
 
   .cta-section {
     background: var(--color-background-light);
+    position: relative;
+    z-index: 1;
   }
 
   .lead {
     font-size: 1.25rem;
-    color: var(--color-text-primary);
-    opacity: 0.9;
+    color: rgba(255,255,255,0.9);
   }
 
   .text-center {

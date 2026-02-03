@@ -26,12 +26,12 @@
 # Services - Specialty Techniques
 /specialty-techniques-1 /services/specialty-techniques 301
 /specialty-techniques /services/specialty-techniques 301
-/dry-needling /services/specialty-techniques/dry-needling-cupping 301
-/dry-needling-1 /services/specialty-techniques/dry-needling-cupping 301
-/cupping /services/specialty-techniques/dry-needling-cupping 301
-/cupping-therapy /services/specialty-techniques/dry-needling-cupping 301
-/trigger-point /services/specialty-techniques/trigger-point-therapy 301
-/trigger-point-therapy-1 /services/specialty-techniques/trigger-point-therapy 301
+/dry-needling /services/dry-needling 301
+/dry-needling-1 /services/dry-needling 301
+/cupping /services/myofascial-cupping 301
+/cupping-therapy /services/myofascial-cupping 301
+/trigger-point /services/dry-needling 301
+/trigger-point-therapy-1 /services/dry-needling 301
 
 # Services - Pregnancy
 /pregnancy /services/pregnancy-physical-therapy 301

@@ -1,0 +1,126 @@
+{
+  "model": "sresman-pr/drmaks-flux-v1",
+  "trigger_word": "DRMAKS",
+  "images": [
+    {
+      "filename": "dry-needling-cupping-1.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "A clinical education photo, exactly two people: The therapist is DRMAKS (male, long dark brown hair, beard, wearing a navy Physica Medica t-shirt). He is performing dry needling on the upper trapezius trigger point of a female patient named Sarah. Sarah has short blonde hair and is wearing a gray athletic t-shirt and black leggings. One acupuncture needle is clearly visible entering the muscle. Close-up waist-up framing, clear view of hands and needle, private treatment room, no other people, fully clothed, realistic anatomy, realistic hands.",
+      "url": "https://replicate.delivery/xezq/0SAtfdbuN4V8UiR0iXjOpqlHFuLOCaw8vInRMp6AOv4tv4ALA/out-0.jpg"
+    },
+    {
+      "filename": "dry-needling-cupping-2.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "A professional website photo, exactly two people: The therapist is DRMAKS (male, long dark brown hair, beard, teal athletic shirt). He is applying myofascial cupping therapy to an elderly male patient named Robert. Robert has short white hair, clean-shaven face, and is wearing a black athletic t-shirt and track pants; only the mid-back area is exposed while the rest of the body remains clothed. 3 to 5 silicone cups are clearly visible on the mid-back. Medium shot with clean clinic background, no other people, professional medical setting, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/dVp7JnoJ23oeBS3VS7Jyo2CcXReXq2CuzavnajpzGhJofiDsA/out-0.jpg"
+    },
+    {
+      "filename": "dry-needling-cupping-3.jpg",
+      "category": "dry-needling-cupping",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, black Physica Medica polo) is performing a combination session on a young male patient named James. James has short black hair, no facial hair, and is wearing a white athletic t-shirt. Two to three cups are visible on the back and one acupuncture needle is visible near the shoulder blade. Close-up on hands and treatment area, private clinic room, no extra people, fully clothed, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/Vafe56CpTeOpfRsokOj9bH6uf2vbdm2WB9uKxSwVKsPYeXcgF/out-0.jpg"
+    },
+    {
+      "filename": "trigger-point-1.jpg",
+      "category": "trigger-point",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, maroon athletic shirt) is applying precise thumb pressure to a trigger point on the upper trapezius of a middle-aged female patient named Linda. Linda has short gray hair and glasses and is wearing a high-neck navy athletic top. Tight close-up on the therapist's thumb and the patient's shoulder/neck area, clear hand placement, private treatment room, no other people, fully clothed, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/gnrNOloxMa45MNWjlhfy8py3lhdpNfrcoClEvPOfMU87fFHYB/out-0.jpg"
+    },
+    {
+      "filename": "trigger-point-2.jpg",
+      "category": "trigger-point",
+      "prompt": "A professional website photo, exactly two people: DRMAKS (male, long dark brown hair, beard, charcoal athletic shirt) is performing sustained trigger point release on a male patient named David seated comfortably. David has a blonde buzz-cut and no facial hair and is wearing a dark green athletic shirt. Medium shot showing therapist posture and patient comfort, hands clearly on upper shoulder region, clean clinic background with an anatomy chart, no other people, fully clothed.",
+      "url": "https://replicate.delivery/xezq/2XVsSspSWrJdCNFXtofNNqJ0aHdKsRbVs4NGgf6eZrLRAjDsA/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-1.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, yellow Physica Medica t-shirt) is assessing diaphragmatic excursion with hands placed along the lower ribcage margins (costal margins) of a female patient named Maria lying supine. Maria has a dark bob haircut and is wearing a thick gray athletic t-shirt and joggers. Close-up waist-up framing, clear view of hand placement on ribcage, private treatment room, no other people, fully clothed, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/HDTPybdjMb64DJJbThMQzmjJDBwB9spD4vABIskuC52EYcgF/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-2.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "A professional website photo, exactly two people: DRMAKS (male, long dark brown hair, beard, forest green athletic shirt) is coaching diaphragmatic breathing mechanics to an elderly male patient named Thomas in a semi-reclined position. Thomas has thinning white hair, clean-shaven face, and is wearing a blue long-sleeve shirt. Medium shot with calm clinic background, therapist gesture and patient posture clearly visible, no other people, fully clothed.",
+      "url": "https://replicate.delivery/xezq/sh5qCWvqccqlCFO9feiUDkP2FojCvDaPmjZfqWJfUha6BGHYB/out-0.jpg"
+    },
+    {
+      "filename": "diaphragmatic-rehabilitation-3.jpg",
+      "category": "diaphragmatic-rehabilitation",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, navy Physica Medica t-shirt) is performing a core stabilization assessment related to diaphragm function on a female patient named Jennifer seated upright. Jennifer has long blonde hair and is wearing a black hoodie and leggings. Close-up showing therapist hands on lateral ribcage/abdomen to cue breathing, private clinic room, no other people, fully clothed, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/F1f5fqkDztiEA02Qf3n8ektIDUlp6xu2AAlp5VWKvixhCGHYB/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-1.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, burgundy athletic shirt) is performing manual cross-friction scar mobilization directly over a healed surgical scar on the shoulder of a young male patient named Kevin. Kevin has short red hair and no facial hair and is wearing a sleeveless athletic top. Tight close-up on scar line and therapist fingers, private treatment room, no other people, fully clothed, realistic skin texture.",
+      "url": "https://replicate.delivery/xezq/WAWr3JWpMhKYClekgsdkhpBvgKnLIYmm6WYexNzzQrrzgxBWA/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-2.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, royal blue Physica Medica t-shirt) is using a stainless steel IASTM tool at a 45-degree angle on a female patient named Martha's forearm. Martha is an elderly woman with short silver hair and glasses wearing a long-sleeve pink athletic top. Close-up on tool and forearm, private clinic room, no other people, fully clothed, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/IhyMGbloUpLeHyJAgvQgxidNeUfi3SKX6gVsMLDAeLj5DGHYB/out-0.jpg"
+    },
+    {
+      "filename": "scar-tissue-mobilization-3.jpg",
+      "category": "scar-tissue-mobilization",
+      "prompt": "A professional website photo, exactly two people: DRMAKS (male, long dark brown hair, beard, dark teal athletic shirt) is gently mobilizing scar tissue on a teenage boy named Leo's knee. Leo has short curly brown hair and is wearing a gray hoodie and athletic shorts. Medium shot in a clean clinic room, therapist hands clearly on knee area, no other people, fully clothed, professional medical setting.",
+      "url": "https://replicate.delivery/xezq/qCApCIfGar1VTCSf3FJOeMuoaCGD4Ez4p7aVgxHmRRQgDjDsA/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-1.jpg",
+      "category": "posture-reeducation",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, charcoal Physica Medica polo) is performing a posture assessment on a female patient named Sophie standing side-on against a posture grid. Sophie has short brown hair and is wearing a black athletic top and leggings. Clear full-body side view, realistic anatomy, therapist pointing at shoulder/hip alignment, no other people.",
+      "url": "https://replicate.delivery/xezq/SbzbLfMh2GxECSe4nZmhb7dYtkTzFPDnmmBdh6kWLGv9hxBWA/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-2.jpg",
+      "category": "posture-reeducation",
+      "prompt": "A professional website photo, exactly two people: DRMAKS (male, long dark brown hair, beard, olive athletic shirt) is adjusting seated desk posture for a male patient named Brian. Brian has short blonde hair and no facial hair and is wearing a white polo shirt. Medium shot with ergonomic desk setup, therapist guiding shoulder and spine positioning, clean clinic background, no other people, fully clothed.",
+      "url": "https://replicate.delivery/xezq/OZTcuADPh360E5TeXn4rTN6aInktIb9tg2IDASsreBrKixBWA/out-0.jpg"
+    },
+    {
+      "filename": "posture-reeducation-3.jpg",
+      "category": "posture-reeducation",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, black Physica Medica t-shirt) is demonstrating proper standing posture mechanics to an elderly male patient named William. William is bald, clean-shaven, and is wearing a blue button-up shirt and khaki pants. Medium shot with clear instruction gesture and patient stance, no other people, professional clinic.",
+      "url": "https://replicate.delivery/xezq/9mxM39mVleybTC5x2GwcVPCR5aBUxzrIjAQV7Jmft0jVixBWA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-1.jpg",
+      "category": "neural-tension-release",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, maroon athletic shirt) is performing an upper limb neural tension test (median nerve glide) on a female patient named Chloe lying supine. Chloe has long black hair in a ponytail and is wearing a gray athletic t-shirt. Therapist supports elbow and wrist, arm abducted with wrist extension clearly visible. Close-up waist-up framing, private treatment room, no other people, fully clothed, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/zgOt0ncdiYKtMhzMcveA8WWeFxsUGqBUt6AzqQuRKGngixBWA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-2.jpg",
+      "category": "neural-tension-release",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, navy Physica Medica t-shirt) is performing cervical neural mobilization on a middle-aged male patient named Mark lying supine. Mark has short brown hair, clean-shaven face, and is wearing a black athletic t-shirt. Close-up on therapist hand placement at head/neck with professional technique, no other people, fully clothed.",
+      "url": "https://replicate.delivery/xezq/a4pIM0E0ZbZhPJvyOgf0tnc8W9AUxLhaSf87KDIfYS5VFjDsA/out-0.jpg"
+    },
+    {
+      "filename": "neural-tension-release-3.jpg",
+      "category": "neural-tension-release",
+      "prompt": "A professional website photo, exactly two people: DRMAKS (male, long dark brown hair, beard, teal athletic shirt) is performing sciatic nerve gliding (straight-leg raise with ankle dorsiflexion) on a female patient named Alice. Alice has blonde bob hair and is wearing a purple athletic t-shirt and joggers. Medium shot showing therapist supporting heel and knee, technique clearly visible, clean clinic background, no other people, fully clothed.",
+      "url": "https://replicate.delivery/xezq/Tti7f25ylKWOFKqhwjy9p3cKnOC2LdfEDdiSqXFOkB21ixBWA/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-1.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, yellow Physica Medica t-shirt) is performing gentle laryngeal manual therapy on a female patient named Emily seated upright. Emily has short bright red hair and is wearing a high-neck white athletic top. Close-up on therapist hands at the anterior neck area with clearly professional, clinical technique. Private treatment room, no other people, fully clothed, non-suggestive, realistic anatomy.",
+      "url": "https://replicate.delivery/xezq/9AFd4Ou5T0ZAGBX7fCcsaBdGfyvHlFtt0Kjzsnfe9EICMGHYB/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-2.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "A clinical education photo, exactly two people: DRMAKS (male, long dark brown hair, beard, burgundy athletic shirt) is performing TMJ mobilization on an elderly male patient named Arthur seated comfortably. Arthur has white hair, clean-shaven face, and is wearing a blue button-up shirt. Close-up on hands at jaw hinge area, private clinic room, no other people, fully clothed.",
+      "url": "https://replicate.delivery/xezq/tqDnb6ggHvrKF54hE3UkPKlmBUHdKIV1mX0WH7L6uz5yYcgF/out-0.jpg"
+    },
+    {
+      "filename": "therapy-for-singers-3.jpg",
+      "category": "therapy-for-singers",
+      "prompt": "A professional website photo, exactly two people: DRMAKS (male, long dark brown hair, beard, charcoal Physica Medica polo) is treating neck muscle tension on a female patient named Rachel seated comfortably. Rachel has blonde bob hair and is wearing a modest navy athletic t-shirt. Medium shot with calm clinic background, therapist hands clearly on sternocleidomastoid/scalene region, no other people, fully clothed, professional medical setting.",
+      "url": "https://replicate.delivery/xezq/fjed0tkUKlprB0BCjkM6rPdO4MIUQMqKXiEvzsfjjFtsGjDsA/out-0.jpg"
+    }
+  ]
+}

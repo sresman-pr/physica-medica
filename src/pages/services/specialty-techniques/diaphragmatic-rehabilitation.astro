@@ -1,0 +1,903 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../../components/WatermarkBackground.astro';
+import FAQSection from '../../../components/FAQSection.astro';
+import AuthorByline from '../../../components/AuthorByline.astro';
+import AllServicesGrid from '../../../components/AllServicesGrid.astro';
+import Icon from '../../../components/Icon.astro';
+import { Image } from 'astro:assets';
+
+// Import technique images - unique to this page only
+import ribcageImg from '../../../images/specialty-v3-diaphragm-ribcage.jpg';
+import breathingExerciseImg from '../../../images/specialty-v3-diaphragm-breathing.jpg';
+import coreTherapyImg from '../../../images/specialty-v3-diaphragm-core.jpg';
+
+const pageTitle = "Baltimore Diaphragmatic Rehabilitation | Physical Therapy | Physica Medica";
+const pageDescription = "Expert diaphragmatic rehabilitation in Baltimore. Release your primary breathing engine to improve spinal mobility, decrease tension, and enhance sleep with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
+  { name: "Diaphragmatic Rehabilitation", url: "/services/specialty-techniques/diaphragmatic-rehabilitation" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Diaphragmatic Rehabilitation",
+  "description": "Specialized therapy to release and restore proper diaphragm function, improving breathing, reducing tension, and enhancing overall health",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "What is diaphragmatic breathing and why is it important?",
+    answer: "The diaphragm is your body's primary breathing muscle, responsible for 70-80% of respiratory effort. Proper diaphragmatic breathing reduces stress on accessory muscles (neck, shoulders, chest), improves oxygen delivery, and supports core stability. Most people lose proper diaphragm function due to stress, trauma, and poor posture."
+  },
+  {
+    question: "How do I know if my diaphragm isn't functioning properly?",
+    answer: "Signs include chronic neck and shoulder tension, shallow chest breathing, difficulty taking deep breaths, poor posture, frequent stress or anxiety, sleep difficulties, and low back pain. Dr. Maks performs a comprehensive assessment to identify diaphragm dysfunction."
+  },
+  {
+    question: "What causes diaphragm dysfunction?",
+    answer: "Emotional and physical traumas, chronic stress, poor posture (especially desk work), previous injuries, surgery (especially abdominal), and years of shallow breathing patterns all contribute to diaphragm dysfunction. As we age, these factors compound."
+  },
+  {
+    question: "How long does it take to restore diaphragmatic function?",
+    answer: "Most patients notice improved breathing and reduced tension within 2-3 sessions. Full restoration of optimal diaphragm function typically takes 6-8 sessions, depending on how long the dysfunction has existed. Each session at Physica Medica is a full 60 minutes."
+  },
+  {
+    question: "Can diaphragmatic rehabilitation help with anxiety and stress?",
+    answer: "Absolutely. Proper diaphragmatic breathing activates the parasympathetic nervous system (rest and digest), reducing stress hormones and promoting relaxation. Many patients report significant improvements in stress management and sleep quality."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section - Centered -->
+  <section class="specialty-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Diaphragmatic Rehabilitation</h1>
+        <p class="hero-subtitle">Restore Your Body's Primary Breathing Engine</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Treatment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is Diaphragmatic Rehabilitation?</h2>
+          <p>The diaphragm is your body's primary engine for breathing. As we age and experience emotional and physical traumas, our diaphragm loses proper function. We begin relying on accessory muscles—chest, shoulders, and neck—to breathe.</p>
+          <p>Diaphragmatic rehabilitation releases restrictions in the diaphragm and retrains proper breathing mechanics, with profound effects throughout your entire body.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={ribcageImg}
+            alt="Ribcage and diaphragm therapy technique"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stress Connection - Highlight box -->
+  <section class="content-section-accent">
+    <div class="container-narrow">
+      <div class="stress-highlight">
+        <div class="highlight-icon"><Icon name="brain" size={36} /></div>
+        <div class="highlight-content">
+          <h3>The Stress-Breathing Connection</h3>
+          <p>Diaphragmatic breathing activates your parasympathetic nervous system—the "rest and digest" response. Poor breathing patterns keep you stuck in fight-or-flight mode, contributing to anxiety, tension, and poor sleep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits - Gray with cards -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Benefits of Diaphragmatic Rehabilitation</h2>
+      <div class="benefits-grid-varied">
+        <div class="benefit-card-varied">
+          <div class="benefit-icon-large"><Icon name="bone" size={36} /></div>
+          <h4>Improved Spinal Mobility</h4>
+          <p>The diaphragm attaches to your spine—releasing it improves thoracic and lumbar mobility</p>
+        </div>
+        <div class="benefit-card-varied">
+          <div class="benefit-icon-large"><Icon name="hand" size={36} /></div>
+          <h4>Decreased Tension</h4>
+          <p>Stop overusing accessory breathing muscles that cause chronic neck and shoulder tension</p>
+        </div>
+        <div class="benefit-card-varied">
+          <div class="benefit-icon-large"><Icon name="moon" size={36} /></div>
+          <h4>Better Sleep</h4>
+          <p>Better breathing mechanics and reduced stress lead to deeper, more restorative sleep</p>
+        </div>
+        <div class="benefit-card-varied">
+          <div class="benefit-icon-large"><Icon name="activity" size={36} /></div>
+          <h4>Athletic Performance</h4>
+          <p>Efficient breathing improves endurance and oxygen delivery to working muscles</p>
+        </div>
+        <div class="benefit-card-varied">
+          <div class="benefit-icon-large"><Icon name="leaf" size={36} /></div>
+          <h4>Stress Relief</h4>
+          <p>Activates the parasympathetic nervous system, promoting relaxation</p>
+        </div>
+        <div class="benefit-card-varied">
+          <div class="benefit-icon-large"><Icon name="target" size={36} /></div>
+          <h4>Core Stability</h4>
+          <p>Proper diaphragm function supports core stability and reduces low back strain</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Teal -->
+  <section class="content-section-teal">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
+      <p class="section-intro-light">Unlike assembly-line PT clinics, Dr. Maks provides a full 60 minutes of undivided attention for every session.</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>Comprehensive Assessment</strong>
+          <p>Identify postural, emotional, and biomechanical factors contributing to dysfunction</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Integrated Approach</strong>
+          <p>Combine manual release with breathing retraining, postural correction, and stress management</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>DPT-Level Expertise</strong>
+          <p>Advanced training in anatomy ensures effective diaphragm release techniques</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Self-Care Education</strong>
+          <p>Learn breathing exercises to maintain improvements between sessions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={breathingExerciseImg}
+            alt="Diaphragmatic breathing exercise training"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>Who Benefits Most</h2>
+          <ul class="styled-list">
+            <li><strong>Desk Workers:</strong> Combat chronic neck/shoulder tension from shallow breathing</li>
+            <li><strong>Young Professionals:</strong> Manage work-related stress and anxiety</li>
+            <li><strong>Athletes:</strong> Enhance endurance and recovery</li>
+            <li><strong>Chronic Pain Sufferers:</strong> Reduce tension-related pain</li>
+            <li><strong>Post-Surgical Patients:</strong> Restore function after abdominal or thoracic surgery</li>
+            <li><strong>Anxiety Sufferers:</strong> Learn techniques that activate relaxation responses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Treatment Process</h2>
+      <p class="section-intro">Each 60-minute session at Physica Medica includes:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Breathing Assessment (10-15 min)</strong>
+            <p>Evaluate current patterns, diaphragm excursion, and accessory muscle use</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Manual Diaphragm Release (20-25 min)</strong>
+            <p>Hands-on techniques to release restrictions in the diaphragm</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>Breathing Retraining (15-20 min)</strong>
+            <p>Practice proper diaphragmatic breathing in various positions</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Postural Integration (5-10 min)</strong>
+            <p>Connect improved breathing with optimal posture and movement</p>
+          </div>
+        </div>
+        <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <strong>Home Exercise Program</strong>
+              <p>Daily breathing exercises to reinforce new patterns</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>What to Expect After Treatment</h3>
+        <p>Most patients experience immediate improvements in breathing depth and ease, along with reduced shoulder and neck tension. You may feel more relaxed and notice improved posture. Some patients experience emotional releases as the diaphragm holds stress and trauma. These responses are normal and therapeutic.</p>
+      </div>
+
+      <h2>Common Conditions Treated</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Breathing Issues</h4>
+          <ul>
+            <li>Shallow chest breathing</li>
+            <li>Difficulty taking deep breaths</li>
+            <li>Shortness of breath</li>
+            <li>Breathing pattern disorders</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Pain & Tension</h4>
+          <ul>
+            <li>Chronic neck tension</li>
+            <li>Shoulder pain</li>
+            <li>Low back pain</li>
+            <li>Thoracic spine stiffness</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Stress & Function</h4>
+          <ul>
+            <li>Chronic stress and anxiety</li>
+            <li>Sleep disturbances</li>
+            <li>Poor posture</li>
+            <li>Reduced athletic performance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Breathe Better, Live Better</h3>
+        <p>Stop struggling with shallow breathing and chronic tension. Restore your diaphragm function today.</p>
+        <a href="/schedule" class="cta-button">Schedule Consultation</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          I didn't realize how poorly I was breathing until Dr. Maks worked on my diaphragm. My chronic shoulder tension disappeared and I sleep so much better now.
+        </div>
+        <div class="testimonial-author">
+          <strong>Jennifer M.</strong> - Harbor East Professional
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Diaphragmatic Rehabilitation FAQs" />
+
+  <!-- All Specialty Techniques Grid -->
+  <AllServicesGrid currentPage="diaphragmatic-rehabilitation" type="specialty-techniques" />
+</BaseLayout>
+
+<style>
+  /* ========================================
+     CALM & BREATHE THEME
+     Extra rounded, soft gradients, airy whitespace
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-soft-teal: #5fb3a1;
+    --theme-soft-blue: #5fb3a1;
+    --theme-cream: #fefcf9;
+    --theme-sage: #a8c5b8;
+  }
+
+  /* Hero Section - Soft gradient, centered */
+  .specialty-hero {
+    position: relative;
+    background: linear-gradient(160deg, #4a9b8c 0%, #5fb3a1 50%, #7cc5b5 100%);
+    padding: 3.5rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .specialty-hero .hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 300;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--theme-soft-teal);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content sections - Extra padding, soft backgrounds */
+  .content-section-white {
+    background: var(--theme-cream);
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-gray {
+    background: linear-gradient(180deg, #f5f9f8 0%, #eef4f2 100%);
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-teal {
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-teal h2,
+  .content-section-teal h3 {
+    color: white;
+  }
+
+  /* Stress highlight section - Soft accent */
+  .content-section-accent {
+    background: linear-gradient(135deg, #e8f5f2 0%, #e0f0ed 100%);
+    padding: 2.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stress-highlight {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(95,179,161,0.12);
+  }
+
+  .stress-highlight .highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--theme-soft-teal);
+  }
+
+  .stress-highlight h3 {
+    color: var(--theme-soft-teal);
+    margin: 0 0 0.5rem;
+    font-weight: 500;
+  }
+
+  .stress-highlight p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5a6c66;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Section titles - Softer */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-soft-teal);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: #6b7c75;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  /* Content row */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(95,179,161,0.15);
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: #3d5a50;
+    font-weight: 500;
+  }
+
+  /* Benefits grid - Extra rounded, soft shadows */
+  .benefits-grid-varied {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .benefit-card-varied {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(95,179,161,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .benefit-card-varied:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(95,179,161,0.18);
+  }
+
+  .benefit-icon-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--theme-soft-teal);
+  }
+
+  .benefit-card-varied h4 {
+    color: var(--theme-soft-teal);
+    margin: 0 0 0.6rem;
+    font-weight: 500;
+  }
+
+  .benefit-card-varied p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6b7c75;
+    line-height: 1.6;
+  }
+
+  /* Feature grid - Soft glass effect */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-item-light {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 1.75rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Styled list - Soft separators */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(95,179,161,0.15);
+    line-height: 1.7;
+    color: #4a5d55;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Step cards - Rounded, airy */
+  .step-cards {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.5rem 1.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(95,179,161,0.08);
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step-content strong {
+    color: #3d5a50;
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #6b7c75;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 2rem;
+    }
+
+    .content-section-white,
+    .content-section-gray,
+    .content-section-teal {
+      padding: 3rem 1.5rem;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+
+    .stress-highlight {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  }
+
+  /* Legacy support */
+  .content-section-alt {
+    background: linear-gradient(180deg, #f5f9f8 0%, #eef4f2 100%);
+    margin: 2.5rem -2rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .content-section-alt h2 {
+    margin-top: 0;
+  }
+
+  .image-right {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+    max-width: 320px;
+  }
+
+  .image-right img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-left {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+    max-width: 320px;
+  }
+
+  .image-left img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-inline {
+    margin: 2.5rem auto;
+    text-align: center;
+    max-width: 450px;
+  }
+
+  .image-inline img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .service-hero {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .service-hero h1 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .service-content h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-content ul,
+  .service-content ol {
+    margin: 1rem 0 2rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .service-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box {
+    background: var(--color-background-light);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+  }
+
+  .highlight-box h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .condition-item {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .condition-item li {
+    margin-bottom: 0.25rem;
+  }
+
+  .cta-box {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-accent);
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .related-services {
+    background: var(--color-background-light);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .related-card p {
+    color: var(--color-accent);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .image-right,
+    .image-left {
+      float: none;
+      margin: 2rem auto;
+      max-width: 100%;
+    }
+
+    .image-inline {
+      max-width: 100%;
+    }
+  }
+</style>

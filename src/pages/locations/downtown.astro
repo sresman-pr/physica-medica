@@ -1,0 +1,67 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Downtown Baltimore",
+  slug: "downtown",
+  intro: "Downtown Baltimore workers dealing with the physical toll of office life—chronic neck pain, shoulder tension, low back issues from sitting all day—have a solution just minutes away. Whether you're an attorney at one of the Charles Street firms, a government worker at the State Center or City Hall, or a professional in the downtown office towers, Physica Medica offers the personalized, expert care that busy downtown professionals need. Schedule during lunch, before work, or after hours—Dr. Maks' 60-minute one-on-one sessions provide real results that fit your demanding schedule.",
+  directions: "From downtown Baltimore, head east on Pratt Street, which becomes Eastern Avenue after President Street. Turn left on Bond Street—our clinic at 800 S Bond St is just ahead in the heart of Fells Point. The drive takes approximately 8 minutes from the central business district. You can also walk the waterfront promenade from the Inner Harbor to Fells Point in about 20 minutes. Street parking plentiful in Fells Point.",
+  landmarks: [
+    "8-minute drive from downtown core",
+    "Direct route via Pratt Street to Eastern Avenue",
+    "Walkable via Inner Harbor waterfront promenade",
+    "Perfect for lunch or after-work appointments"
+  ],
+  testimonial: {
+    quote: "Years of desk work had destroyed my posture and given me chronic headaches. Dr. Maks not only relieved my symptoms but taught me how to prevent them. The quick drive from my downtown office is the best investment I make each week.",
+    author: "Lisa T. - Downtown Attorney"
+  },
+  commonConditions: [
+    {
+      condition: "Desk Worker Syndrome",
+      description: "Hours of sitting, screen work, and poor ergonomics create a predictable pattern: forward head posture, tight hip flexors, weak core, and chronic upper back pain. We systematically address all these issues."
+    },
+    {
+      condition: "Attorney & Professional Burnout Pain",
+      description: "High-stress careers manifest physically as jaw clenching, shoulder tension, and chronic headaches. Our combination of manual therapy and dry needling provides effective relief."
+    },
+    {
+      condition: "Government Worker Standing Fatigue",
+      description: "Courthouse workers, security personnel, and others who stand all day deal with lower back pain, plantar fasciitis, and leg fatigue. We treat these issues and provide strategies for managing long shifts."
+    },
+    {
+      condition: "Commuter-Related Strain",
+      description: "Long commutes by car, train, or bus compound the effects of desk work. We address the cumulative toll that daily commuting takes on your spine and hips."
+    }
+  ],
+  faqs: [
+    {
+      question: "Can I schedule appointments during my lunch break?",
+      answer: "Yes! Our Fells Point location is about 8 minutes from downtown. With a 60-minute appointment, you can fit treatment into an extended lunch. Many downtown professionals prefer mid-day appointments."
+    },
+    {
+      question: "Do you offer early morning appointments for downtown workers?",
+      answer: "Yes, we offer appointments starting at 8:00 AM on Monday, Wednesday, and Friday. You can get treatment before heading to the office."
+    },
+    {
+      question: "I've been sitting at a desk for 20 years and have chronic pain. Can you actually help?",
+      answer: "Yes. Chronic desk-related pain responds well to our approach because we address the underlying postural and movement patterns—not just the symptoms. Dr. Maks will assess how years of sitting have affected your body and create a comprehensive plan to restore proper function."
+    },
+    {
+      question: "Is there public transit to your clinic from downtown?",
+      answer: "The Charm City Circulator Purple Route connects downtown to Fells Point. You can also walk the waterfront promenade from the Inner Harbor in about 20 minutes—some patients enjoy this as part of their treatment routine."
+    }
+  ],
+  neighborhoodInfo: `<p>Downtown Baltimore is the region's professional center—home to law firms on Charles Street, government offices at State Center and City Hall, corporate headquarters, and thousands of workers who spend their days in office towers. It's a place of demanding careers, long hours, and high stress.</p>
+  
+  <p>The physical toll of downtown professional life is significant. Desk work creates chronic postural problems. Stress manifests as tension headaches and jaw pain. Long commutes compound the damage. Many downtown workers live with chronic pain, assuming it's just part of the job.</p>
+  
+  <p>It doesn't have to be. Physica Medica is just 8 minutes from downtown, making it easy to access quality physical therapy during lunch, before work, or on your way home. Dr. Maks specializes in treating the specific issues that affect desk-bound professionals: forward head posture, thoracic spine stiffness, hip flexor tightness, and the chronic tension that comes from high-stress work.</p>
+  
+  <p>Unlike corporate PT clinics where you're rushed through 15-minute sessions, we provide 60 minutes of focused treatment every visit. This allows Dr. Maks to address not just your symptoms, but the underlying patterns that create them. Downtown professionals who value efficiency will appreciate our approach: real results in fewer visits, not endless sessions that maintain the status quo.</p>
+  
+  <p>Your career demands peak performance. Don't let chronic pain hold you back. The short trip to Fells Point can transform how you feel at work—and in life.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

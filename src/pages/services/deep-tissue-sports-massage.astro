@@ -1,0 +1,819 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import { Image } from 'astro:assets';
+
+// Import images
+import deepTissueImg from '../../images/Baltimore-Physical-Therapist-deep-tissue-sport-message.jpg';
+import massageImg from '../../images/therapy-hands-treatment.jpg';
+
+const pageTitle = "Deep Tissue Massage Baltimore MD | Sports Recovery Therapy | Physica Medica";
+const pageDescription = "Expert deep tissue and sports massage in Baltimore. Therapeutic massage for athletes and active individuals with Dr. Maksim Birikov, DPT.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Deep Tissue & Sports Massage", url: "/services/deep-tissue-sports-massage" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Deep Tissue & Sports Massage",
+  "description": "Therapeutic deep tissue and sports massage techniques for athletes and active individuals to release tension, improve recovery, and enhance performance",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How is therapeutic massage different from spa massage?",
+    answer: "Therapeutic massage performed by a DPT focuses on addressing specific muscular dysfunction and pain patterns. Dr. Maks uses assessment to identify the root cause of your issues and applies targeted techniques—not just general relaxation."
+  },
+  {
+    question: "Is deep tissue massage painful?",
+    answer: "Effective deep tissue work should feel like 'good pain'—intense but therapeutic. Dr. Maks communicates throughout treatment and adjusts pressure to your tolerance. Some discomfort is normal, but you should never be bracing or holding your breath."
+  },
+  {
+    question: "How often should I get sports massage?",
+    answer: "For active athletes, weekly or bi-weekly sessions optimize performance and recovery. For maintenance, monthly sessions help prevent injury. Dr. Maks will recommend a frequency based on your training load and goals."
+  },
+  {
+    question: "Can massage help with injury recovery?",
+    answer: "Absolutely. Therapeutic massage improves blood flow, reduces scar tissue formation, and restores normal tissue extensibility. It's an essential component of injury rehabilitation and can significantly speed recovery time."
+  },
+  {
+    question: "What should I do before and after a deep tissue session?",
+    answer: "Arrive hydrated and avoid heavy meals. After treatment, drink plenty of water, avoid intense exercise for 24 hours, and expect possible mild soreness similar to post-workout feelings. This is normal and indicates tissue change."
+  },
+  {
+    question: "Why choose a DPT for massage over a massage therapist?",
+    answer: "A Doctor of Physical Therapy brings advanced understanding of anatomy, biomechanics, and pathology. Dr. Maks can assess, diagnose, and integrate massage with corrective exercise and other treatments for comprehensive care."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section - Bold Navy/Gold -->
+  <section class="service-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>DEEP TISSUE & SPORTS MASSAGE</h1>
+        <p class="hero-subtitle">Therapeutic Massage for Peak Performance</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 MIN</span>
+          <span class="value-pill">1-ON-1 WITH DPT</span>
+        </div>
+        <a href="/schedule" class="hero-cta">BOOK SESSION</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <p class="lead-intro">Deep tissue and sports massage goes beyond relaxation—it's a powerful therapeutic tool for releasing chronic tension, improving recovery, and optimizing athletic performance.</p>
+      
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>WHAT IS THERAPEUTIC SPORTS MASSAGE?</h2>
+          <p>Sports and deep tissue massage uses focused pressure and specific techniques to address the deeper layers of muscle and connective tissue. Unlike spa massage, therapeutic massage targets specific dysfunction—tight bands, trigger points, and adhesions that limit your movement and cause pain.</p>
+          <p>Whether you're a competitive athlete, weekend warrior, or simply dealing with chronic muscle tension, therapeutic massage restores normal tissue quality and function.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={deepTissueImg}
+            alt="Deep tissue sports massage therapy"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Techniques - Gold band -->
+  <section class="content-section-gold">
+    <div class="container-narrow">
+      <h2 class="section-title-center">TECHNIQUES USED</h2>
+      
+      <div class="technique-cards">
+        <div class="technique-card">
+          <h4>Deep Tissue Work</h4>
+          <p>Sustained pressure to release chronic tension in deep muscle layers</p>
+        </div>
+        <div class="technique-card">
+          <h4>Myofascial Release</h4>
+          <p>Gentle sustained pressure to stretch and release fascial restrictions</p>
+        </div>
+        <div class="technique-card">
+          <h4>Trigger Point Therapy</h4>
+          <p>Direct pressure on muscle knots to eliminate referred pain</p>
+        </div>
+        <div class="technique-card">
+          <h4>Sports Massage</h4>
+          <p>Pre/post-event techniques to enhance performance and recovery</p>
+        </div>
+        <div class="technique-card">
+          <h4>Cross-Fiber Friction</h4>
+          <p>Break down adhesions and scar tissue in tendons and ligaments</p>
+        </div>
+        <div class="technique-card">
+          <h4>Neuromuscular Therapy</h4>
+          <p>Address the nervous system's role in muscle tension</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Navy -->
+  <section class="content-section-navy">
+    <div class="container-narrow">
+      <h2 class="section-title-center">THE DPT DIFFERENCE</h2>
+      <p class="section-intro-light">Why choose a Doctor of Physical Therapy for therapeutic massage?</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>DIAGNOSTIC EXPERTISE</strong>
+          <p>Identify the root cause of your pain, not just treat symptoms</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>INTEGRATED TREATMENT</strong>
+          <p>Combine massage with corrective exercise for lasting results</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>ANATOMY MASTERY</strong>
+          <p>Advanced understanding of muscle layers and attachments</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>MOVEMENT ASSESSMENT</strong>
+          <p>See how tissue dysfunction affects your movement patterns</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={massageImg}
+            alt="Therapeutic massage treatment"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>WHO BENEFITS MOST</h2>
+          <ul class="styled-list">
+            <li><strong>Competitive Athletes:</strong> Optimize recovery and performance between training and events</li>
+            <li><strong>Runners & Cyclists:</strong> Address IT band, hip flexor, and calf restrictions</li>
+            <li><strong>CrossFit Athletes:</strong> Recover from high-intensity training and improve mobility</li>
+            <li><strong>Desk Workers:</strong> Release chronic neck, shoulder, and upper back tension</li>
+            <li><strong>Active Professionals:</strong> Maintain tissue quality and prevent injury</li>
+            <li><strong>Post-Injury Recovery:</strong> Restore normal tissue function after strains and sprains</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Gray -->
+  <section class="content-section-gray">
+    <div class="container-narrow">
+      <h2 class="section-title-center">THE SESSION</h2>
+      <p class="section-intro">Each 60-minute therapeutic massage session includes:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>ASSESSMENT (10 MIN)</strong>
+            <p>Movement screening and palpation to identify key areas of dysfunction</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>TARGETED MASSAGE (35-40 MIN)</strong>
+            <p>Deep tissue, trigger point, and myofascial techniques applied to problem areas</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>MOVEMENT INTEGRATION (10 MIN)</strong>
+            <p>Light stretching and movements to reinforce tissue changes</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>HOME CARE</strong>
+            <p>Self-massage and stretching recommendations to maintain improvements</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>WHAT TO EXPECT</h3>
+        <p>You may experience mild soreness for 24-48 hours after deep tissue work—this is normal and indicates tissue change. Stay hydrated and avoid intense exercise immediately after your session for best results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions Treated - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2 class="section-title-center">CONDITIONS TREATED</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>ATHLETIC</h4>
+          <ul>
+            <li>Muscle strains</li>
+            <li>Overuse injuries</li>
+            <li>Post-event recovery</li>
+            <li>Performance optimization</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>UPPER BODY</h4>
+          <ul>
+            <li>Neck tension</li>
+            <li>Shoulder tightness</li>
+            <li>Upper back pain</li>
+            <li>Tension headaches</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>LOWER BODY</h4>
+          <ul>
+            <li>Low back pain</li>
+            <li>Hip restrictions</li>
+            <li>Hamstring tightness</li>
+            <li>IT band syndrome</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>GENERAL</h4>
+          <ul>
+            <li>Chronic muscle tension</li>
+            <li>Stress-related pain</li>
+            <li>Poor posture effects</li>
+            <li>Movement restrictions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>READY TO PERFORM BETTER?</h3>
+        <p>Schedule your therapeutic massage session and experience the difference expert care makes.</p>
+        <a href="/schedule" class="cta-button">BOOK NOW</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          Dr. Maks found tension patterns I didn't know I had. The sports massage has become a key part of my training routine—I recover faster and perform better.
+        </div>
+        <div class="testimonial-author">
+          <strong>Mike R.</strong> - Harbor East CrossFit Athlete
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Deep Tissue & Sports Massage FAQs" />
+
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="deep-tissue-sports-massage" type="services" />
+</BaseLayout>
+
+<style>
+  /* ========================================
+     BOLD & STRUCTURED THEME
+     Navy/gold, uppercase titles, strong lines
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-navy: #1a365d;
+    --theme-navy-light: #2d4a6f;
+    --theme-gold: #d69e2e;
+    --theme-gold-light: #f6e05e;
+    --theme-slate: #4a5568;
+  }
+
+  /* Hero Section - Bold navy */
+  .service-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--theme-navy) 0%, var(--theme-navy-light) 100%);
+    padding: 2.5rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(214,158,46,0.1) 100%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
+
+  .service-hero .hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1.25rem;
+    color: var(--theme-gold-light);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .value-pill {
+    background: var(--theme-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    font-size: 0.85rem;
+    color: var(--theme-navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--theme-navy);
+    padding: 14px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 0;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    border: 2px solid white;
+  }
+
+  .hero-cta:hover {
+    background: transparent;
+    color: white;
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content sections */
+  .content-section-white {
+    background: white;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-gray {
+    background: #f7fafc;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+    border-top: 3px solid var(--theme-navy);
+    border-bottom: 3px solid var(--theme-navy);
+  }
+
+  .content-section-navy {
+    background: var(--theme-navy);
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-navy h2 { 
+    color: var(--theme-gold); 
+  }
+
+  .content-section-gold {
+    background: var(--theme-gold);
+    padding: 2.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-gold h2 {
+    color: var(--theme-navy);
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Lead intro */
+  .lead-intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--theme-slate);
+    margin-bottom: 2.5rem;
+    border-left: 4px solid var(--theme-gold);
+    padding-left: 1.5rem;
+  }
+
+  /* Section titles - Bold, uppercase */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-navy);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: var(--theme-slate);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+  }
+
+  /* Content row */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 8px 8px 0 var(--theme-gold);
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: var(--theme-navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+  }
+
+  /* Technique cards - Gold section */
+  .technique-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .technique-card {
+    background: white;
+    padding: 1.25rem;
+    border-left: 4px solid var(--theme-navy);
+  }
+
+  .technique-card h4 {
+    color: var(--theme-navy);
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .technique-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--theme-slate);
+  }
+
+  /* Feature grid - Navy section */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .feature-item-light {
+    background: rgba(255,255,255,0.1);
+    padding: 1.25rem;
+    border-left: 4px solid var(--theme-gold);
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: white;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.95);
+  }
+
+  /* Styled list */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 0.85rem 0;
+    border-bottom: 2px solid #e2e8f0;
+    line-height: 1.5;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  .styled-list li strong {
+    color: var(--theme-navy);
+  }
+
+  /* Step cards */
+  .step-cards {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-left: 4px solid var(--theme-gold);
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    background: var(--theme-navy);
+    color: var(--theme-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .step-content strong {
+    color: var(--theme-navy);
+    display: block;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--theme-slate);
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: white;
+    border: 2px solid var(--theme-navy);
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .highlight-box h3 {
+    color: var(--theme-navy);
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: var(--theme-slate);
+    font-size: 0.95rem;
+  }
+
+  /* Conditions grid */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .condition-item {
+    background: #f7fafc;
+    padding: 1.25rem;
+    border-left: 4px solid var(--theme-gold);
+  }
+
+  .condition-item h4 {
+    color: var(--theme-navy);
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .condition-item li {
+    font-size: 0.9rem;
+    color: var(--theme-slate);
+    margin-bottom: 0.35rem;
+  }
+
+  /* CTA box */
+  .cta-box {
+    background: var(--theme-navy);
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .cta-box h3 {
+    color: var(--theme-gold);
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.9);
+    margin: 0 0 1.25rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--theme-gold);
+    color: var(--theme-navy);
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+
+  .cta-button:hover {
+    background: var(--theme-gold-light);
+  }
+
+  /* Testimonial */
+  .service-testimonial {
+    background: linear-gradient(135deg, var(--theme-navy) 0%, var(--theme-navy-light) 100%);
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .testimonial-quote {
+    color: white;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-quote::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--theme-gold);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.25rem;
+  }
+
+  .testimonial-author {
+    color: var(--theme-gold-light);
+    font-size: 0.9rem;
+  }
+
+  /* Related services */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 1.5rem;
+    text-decoration: none;
+    border: 2px solid #e2e8f0;
+    transition: all 0.2s;
+  }
+
+  .related-card:hover {
+    border-color: var(--theme-gold);
+  }
+
+  .related-card h3 {
+    color: var(--theme-navy);
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .related-card p {
+    color: var(--theme-gold);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 1.75rem;
+      letter-spacing: 2px;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+  }
+</style>

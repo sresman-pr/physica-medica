@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Inner Harbor",
+  slug: "inner-harbor",
+  intro: "Working downtown near the Inner Harbor? Physica Medica offers the perfect solution for busy professionals seeking expert physical therapy without fighting traffic across town. Whether you're at one of the Pratt Street office buildings, working at the World Trade Center, or managing a business along the waterfront, our Fells Point clinic is just minutes away. The personalized, 60-minute sessions provide thorough care that fits your demanding schedule—schedule before work, during lunch, or on your way home.",
+  directions: "From the Inner Harbor, take Pratt Street east—it becomes Eastern Avenue after President Street. Turn left on Bond Street, and our clinic at 800 S Bond St is just ahead. The drive takes about 8 minutes from the Inner Harbor promenade. Alternatively, walk along the waterfront to Fells Point (about 20 minutes) for a scenic route. Street parking plentiful in Fells Point.",
+  landmarks: [
+    "8-minute drive from Pratt Street",
+    "Easy access from downtown office buildings",
+    "Walkable via waterfront promenade",
+    "Convenient for lunch or after-work appointments"
+  ],
+  testimonial: {
+    quote: "Working downtown, I needed a PT close enough for lunch appointments. Physica Medica is perfect—quick drive, no waiting, and Dr. Maks actually fixes problems instead of just managing symptoms.",
+    author: "Robert L. - Inner Harbor Office Worker"
+  },
+  commonConditions: [
+    {
+      condition: "Office Worker Syndrome",
+      description: "Hours at a desk lead to forward head posture, tight hip flexors, and chronic upper back tension. We help downtown workers combat the physical toll of sedentary jobs with targeted treatment and postural correction."
+    },
+    {
+      condition: "Commuter-Related Pain",
+      description: "Long commutes by car, train, or bus contribute to lower back pain and hip stiffness. We treat the cumulative effects of daily commuting and provide strategies to minimize discomfort."
+    },
+    {
+      condition: "Tension Headaches",
+      description: "Stress, poor posture, and screen time combine to create chronic tension headaches for many downtown workers. Our dry needling and manual therapy techniques provide effective relief."
+    },
+    {
+      condition: "Hotel & Tourism Industry Strain",
+      description: "The Inner Harbor's hospitality workers—from hotel staff to convention center employees—face unique physical demands. We help address the repetitive strain and long-shift fatigue common in these roles."
+    }
+  ],
+  faqs: [
+    {
+      question: "Can I make it to an appointment during my lunch break from downtown?",
+      answer: "Yes! Our clinic is about 8 minutes from the Inner Harbor area. With a 60-minute appointment, you can comfortably fit treatment into an extended lunch. Many of our downtown patients schedule mid-day appointments."
+    },
+    {
+      question: "Is there public transit access to your clinic?",
+      answer: "The Charm City Circulator Purple Route runs between the Inner Harbor and Fells Point, stopping near our clinic. You can also take the water taxi from the Inner Harbor to Fells Point in the warmer months. Of course, parking is also easy in Fells Point."
+    },
+    {
+      question: "Do you offer early morning appointments for downtown workers?",
+      answer: "Yes, we offer appointments starting at 8:00 AM on Monday, Wednesday, and Friday. Many downtown workers prefer early appointments before heading to the office."
+    },
+    {
+      question: "I sit at a desk all day and my back is always sore. Can you help?",
+      answer: "Absolutely—this is one of the most common issues we treat. Prolonged sitting causes predictable problems: tight hip flexors, weak glutes, forward head posture, and upper back tension. Dr. Maks will assess your specific patterns and provide treatment plus exercises you can do at your desk to counteract these effects."
+    }
+  ],
+  neighborhoodInfo: `<p>The Inner Harbor area is Baltimore's commercial heart, home to thousands of office workers, hotel employees, and tourism industry professionals. From the towers along Pratt Street to the World Trade Center to the Convention Center, this is where Baltimore does business.</p>
+  
+  <p>The demands of downtown work take a toll on the body. Hours spent at desks create chronic postural problems. Long commutes add lower back strain. The stress of high-pressure jobs manifests as tension headaches and muscle tightness. For hospitality workers, the physical demands are different but equally challenging—long shifts on your feet, repetitive motions, and irregular schedules.</p>
+  
+  <p>Physica Medica is ideally located just 8 minutes from the Inner Harbor, making it easy for downtown workers to access quality physical therapy without fighting traffic across the city. Our flexible scheduling—including early morning and lunch appointments—fits the demanding schedules of Inner Harbor professionals.</p>
+  
+  <p>What sets us apart is the quality of care. While there are corporate PT clinics scattered throughout downtown, they typically offer rushed, impersonal sessions. At Physica Medica, you get 60 focused minutes with Dr. Maks every visit. For busy professionals who value their time and want real results, this boutique approach delivers where assembly-line PT fails.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

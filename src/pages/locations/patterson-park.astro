@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Patterson Park",
+  slug: "patterson-park",
+  intro: "Patterson Park residents and the active community surrounding Baltimore's beloved urban park have a local expert just minutes away. Whether you're recovering from a soccer injury on the park fields, dealing with running-related pain from laps around the reservoir, or experiencing chronic issues from work, Physica Medica provides the thorough, personalized care you deserve. We see many Patterson Park dog walkers, weekend softball players, and families dealing with the active wear-and-tear of life around the park.",
+  directions: "From Patterson Park, head west on Eastern Avenue toward Fells Point. Turn left on Bond Street—our clinic at 800 S Bond St is just a few blocks down. From the Patterson Park Pagoda area, the drive is about 5 minutes. If you're on the Highlandtown side of the park, head west on Fleet Street to Bond. Easy street parking available.",
+  landmarks: [
+    "5-minute drive from Patterson Park Pagoda",
+    "Between Patterson Park and Fells Point waterfront",
+    "Easy access via Eastern Avenue or Fleet Street",
+    "Close to Highlandtown Arts District"
+  ],
+  testimonial: {
+    quote: "I jog around Patterson Park every morning and started having knee issues. Dr. Maks not only fixed my knee but analyzed my running form and showed me how to prevent future injuries. Truly comprehensive care.",
+    author: "Michelle P. - Patterson Park Runner"
+  },
+  commonConditions: [
+    {
+      condition: "Running & Jogging Injuries",
+      description: "The loop around Patterson Park is perfect for runners—but the repetitive impact can lead to knee pain, IT band syndrome, and plantar fasciitis. We help runners get back on the path with proper treatment and gait correction."
+    },
+    {
+      condition: "Soccer & Sports Injuries",
+      description: "Patterson Park's fields host countless soccer games, softball leagues, and pick-up sports. Ankle sprains, hamstring strains, and ACL concerns are common issues we treat for the park's active athletes."
+    },
+    {
+      condition: "Dog Walking Strain",
+      description: "Patterson Park is a dog walker's paradise, but being pulled by an enthusiastic pup can strain shoulders and backs. We treat many neighborhood dog owners dealing with these unique repetitive injuries."
+    },
+    {
+      condition: "Family Activity Injuries",
+      description: "Playing with kids on the playground, pushing strollers, and carrying toddlers all take a toll. We help Patterson Park parents manage the physical demands of active family life."
+    }
+  ],
+  faqs: [
+    {
+      question: "How close is your clinic to Patterson Park?",
+      answer: "We're just about 5 minutes west of Patterson Park by car. Head west on Eastern Avenue and turn left on Bond Street. You can also easily bike from the park to our Fells Point clinic."
+    },
+    {
+      question: "Do you treat sports injuries from the Patterson Park leagues?",
+      answer: "Absolutely! We see plenty of soccer players, softball players, and recreational athletes from Patterson Park. Whether it's an acute injury or chronic overuse, we can help you recover and get back in the game."
+    },
+    {
+      question: "My dog pulls on the leash and my shoulder is always sore. Can you help?",
+      answer: "Yes! This is actually more common than you'd think. Dog walking can cause repetitive strain to the shoulder, neck, and back. We'll treat the immediate issue and provide strategies to reduce strain during walks—plus exercises to strengthen the affected areas."
+    },
+    {
+      question: "Do you work with runners who use the Patterson Park loop?",
+      answer: "Yes, we work with many runners from the Patterson Park area. In addition to treating injuries, Dr. Maks can analyze your running form and identify mechanical issues that may be contributing to your pain. This comprehensive approach helps prevent future injuries."
+    }
+  ],
+  neighborhoodInfo: `<p>Patterson Park is the heart of Southeast Baltimore, a 155-acre oasis that brings together diverse communities from surrounding neighborhoods. The park's running paths, sports fields, playgrounds, and open spaces make it a hub for active residents of all ages.</p>
+  
+  <p>Living near Patterson Park often means living an active lifestyle. Morning joggers circle the lake before work. Soccer leagues fill the fields on evenings and weekends. Dog walkers crisscross the paths throughout the day. Families gather at playgrounds and open spaces. All this activity keeps the community healthy—but it also creates opportunities for injury.</p>
+  
+  <p>Physica Medica is perfectly positioned to serve the Patterson Park community, just a 5-minute drive down Eastern Avenue. We understand the active lifestyle of Patterson Park residents and tailor our treatment accordingly. Dr. Maks doesn't just treat your injury—he considers your activities, goals, and how to get you safely back to enjoying everything the park has to offer.</p>
+  
+  <p>The diverse Patterson Park community deserves accessible, quality healthcare. Our boutique approach—60 minutes of personalized attention—provides the thorough care that chain clinics simply cannot match. Whether you're a competitive athlete or a casual park-goer, you'll receive treatment designed for your specific needs and lifestyle.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

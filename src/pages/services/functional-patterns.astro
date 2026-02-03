@@ -1,0 +1,816 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
+import { Image } from 'astro:assets';
+
+// Import images
+import postureImg from '../../images/specialty-v3-posture-exercise.jpg';
+import postureStandingImg from '../../images/specialty-posture-correction.jpg';
+
+const pageTitle = "Functional Patterns Baltimore MD | Movement Training | Physica Medica";
+const pageDescription = "Functional Patterns training in Baltimore with Dr. Maksim Birikov, DPT. Reprogram your muscles to reposition joints—so they glide, not grind. Skip the guesswork.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Functional Patterns", url: "/services/functional-patterns" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Functional Patterns Training",
+  "description": "Biomechanics-based movement training that reprograms muscles to reposition joints for lasting pain relief and optimal human movement",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "What is Functional Patterns?",
+    answer: "Functional Patterns is a biomechanics-based training system that reprograms your muscles to control your body in space, so your joints glide—not grind and stiffen up. It addresses the underlying reasons why people can't move well without pain by retraining the fundamental movement patterns humans evolved to perform: standing, walking, running, and throwing."
+  },
+  {
+    question: "How is Functional Patterns different from traditional physical therapy?",
+    answer: "Typical approaches don't address the underlying reasons behind why people can't move well without pain. Functional Patterns is designed to be rehab and performance training at the same time—every movement trains your body to be more efficient in everything you do. Dr. Maks combines this methodology with hands-on DPT techniques for faster results."
+  },
+  {
+    question: "Who benefits from Functional Patterns training?",
+    answer: "Functional Patterns has helped over 59,000 people worldwide—from those with chronic pain and Parkinson's Disease to world champion athletes. It's particularly effective for anyone who has tried other methods without lasting relief, as well as athletes wanting to optimize performance without joint compression."
+  },
+  {
+    question: "How long before I see results?",
+    answer: "Many clients notice improvements in posture and movement quality within the first few sessions as we educate your muscles to control your body differently. Significant, lasting changes typically develop over 8-12 weeks. The goal is permanent repositioning of your joints—not just temporary symptom relief."
+  },
+  {
+    question: "Do I need to be athletic to do Functional Patterns?",
+    answer: "Not at all. Functional Patterns is scalable to any fitness level. Dr. Maks meets you where you are and progressively builds proper movement patterns. Whether you're a desk worker with chronic pain or an elite athlete, the training develops fundamental joint control first, then builds from there."
+  },
+  {
+    question: "Why combine Functional Patterns with physical therapy?",
+    answer: "Dr. Maks' DPT training allows him to address tissue restrictions through dry needling and manual therapy while simultaneously reprogramming movement patterns. This combination accelerates results—we release what's tight, then retrain proper movement so the changes stick."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" angle={-5} />
+  
+  <!-- Hero Section - Centered -->
+  <section class="service-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Functional Patterns</h1>
+        <p class="hero-subtitle">Make Your Joints Glide, Not Grind</p>
+        <div class="hero-value-pills">
+          <span class="value-pill">60 Min Sessions</span>
+          <span class="value-pill">1-on-1 with DPT</span>
+        </div>
+        <a href="/schedule" class="hero-cta">Schedule Training</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <p class="lead-intro">Most people try getting out of pain through trial and error. Functional Patterns skips the guesswork—we reprogram your muscles to reposition your joints so they glide smoothly, not grind and stiffen up.</p>
+      
+      <div class="content-row">
+        <div class="content-row-text">
+          <h2>What is Functional Patterns?</h2>
+          <p>Functional Patterns is a biomechanics-based training system that addresses the underlying reasons why people can't move well without pain. Unlike conventional approaches that focus on isolated muscles or passive treatments, FP educates your muscles to control your body in space—creating lasting structural change.</p>
+          <p>The methodology focuses on the four fundamental movements humans evolved to perform: standing, walking, running, and throwing. By correcting dysfunctions in these primal patterns, we eliminate the compensations that compress joints and cause chronic pain.</p>
+        </div>
+        <div class="content-row-image">
+          <Image 
+            src={postureImg}
+            alt="Functional Patterns movement training"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works - Soft gradient -->
+  <section class="content-section-soft">
+    <div class="container-narrow">
+      <h2 class="section-title-center">How Functional Patterns Works</h2>
+      <p class="section-intro">We educate your muscles to control your body in space, repositioning joints so they move smoothly without grinding or stiffening.</p>
+      
+      <div class="benefit-cards">
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="target" size={32} /></div>
+          <h4>Joint Repositioning</h4>
+          <p>Reprogram muscles to position joints where they glide, not grind</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="refresh-cw" size={32} /></div>
+          <h4>Primal Pattern Training</h4>
+          <p>Restore the fundamental movements humans evolved to perform</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="zap" size={32} /></div>
+          <h4>Muscle Re-education</h4>
+          <p>Teach muscles to control your body in space for lasting change</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="activity" size={32} /></div>
+          <h4>Gait Optimization</h4>
+          <p>Improve walking and running mechanics—the foundation of human movement</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="dumbbell" size={32} /></div>
+          <h4>Rehab + Performance</h4>
+          <p>Training designed to heal and build strength simultaneously</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><Icon name="brain" size={32} /></div>
+          <h4>Efficiency Training</h4>
+          <p>Every movement trains your body to be more efficient in daily life</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPT Difference - Teal -->
+  <section class="content-section-teal">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The 60-Minute 1-on-1 DPT Difference</h2>
+      <p class="section-intro-light">Dr. Maks combines Functional Patterns methodology with hands-on physical therapy—releasing tissue restrictions while reprogramming movement for accelerated results.</p>
+      
+      <div class="feature-grid-light">
+        <div class="feature-item-light">
+          <strong>Movement Analysis</strong>
+          <p>Identify exactly why your joints grind instead of glide through detailed assessment</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Tissue Release + Reprogramming</strong>
+          <p>Dry needling and manual therapy combined with corrective training in one session</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Joint Control Development</strong>
+          <p>Hands-on cueing ensures your muscles learn to control your body properly</p>
+        </div>
+        <div class="feature-item-light">
+          <strong>Accelerated Results</strong>
+          <p>DPT expertise addresses restrictions that would otherwise slow your progress</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits - White with image -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <div class="content-row reverse">
+        <div class="content-row-image">
+          <Image 
+            src={postureStandingImg}
+            alt="Posture correction training"
+            width={400}
+            height={300}
+            format="webp"
+            loading="lazy"
+            quality={85}
+          />
+        </div>
+        <div class="content-row-text">
+          <h2>Who Benefits Most</h2>
+          <ul class="styled-list">
+            <li><strong>Chronic Pain Sufferers:</strong> If trial and error hasn't worked, FP addresses the underlying dysfunction</li>
+            <li><strong>Athletes:</strong> Build strength and performance without compressing your joints</li>
+            <li><strong>Desk Workers:</strong> Reposition joints that have adapted to prolonged sitting</li>
+            <li><strong>Post-Rehab Clients:</strong> Make changes stick by reprogramming how you move</li>
+            <li><strong>Active Adults:</strong> Train your body to be more efficient in everything you do</li>
+            <li><strong>Anyone Who's Tried Everything:</strong> This methodology has helped 59,000+ people worldwide</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process - Soft -->
+  <section class="content-section-soft">
+    <div class="container-narrow">
+      <h2 class="section-title-center">The Training Process</h2>
+      <p class="section-intro">Each 60-minute session combines tissue release with movement reprogramming:</p>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Movement Assessment (15 min)</strong>
+            <p>Identify why your joints grind instead of glide through posture and gait analysis</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Tissue Release (10-15 min)</strong>
+            <p>Dry needling and manual therapy to release restrictions limiting proper joint positioning</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>Movement Reprogramming (25-30 min)</strong>
+            <p>FP exercises that educate muscles to control your body in space—rehab and performance together</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Home Program</strong>
+            <p>Specific drills to reinforce new patterns between sessions for lasting joint repositioning</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>The Functional Patterns Philosophy</h3>
+        <p>Typical approaches don't address why people can't move well without pain. FP reprograms your muscles to reposition your joints—so they glide smoothly instead of grinding and stiffening up. Combined with Dr. Maks' hands-on expertise, we accelerate this process for lasting structural change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions Treated - White -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2 class="section-title-center">Common Issues Addressed</h2>
+      <div class="conditions-grid">
+        <div class="condition-item">
+          <h4>Postural Issues</h4>
+          <ul>
+            <li>Forward head posture</li>
+            <li>Rounded shoulders</li>
+            <li>Anterior pelvic tilt</li>
+            <li>Scoliotic patterns</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Chronic Pain</h4>
+          <ul>
+            <li>Low back pain</li>
+            <li>Neck pain</li>
+            <li>Hip pain</li>
+            <li>Knee pain</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Movement Dysfunction</h4>
+          <ul>
+            <li>Poor gait mechanics</li>
+            <li>Limited mobility</li>
+            <li>Muscle imbalances</li>
+            <li>Coordination issues</li>
+          </ul>
+        </div>
+        <div class="condition-item">
+          <h4>Performance Goals</h4>
+          <ul>
+            <li>Running efficiency</li>
+            <li>Athletic performance</li>
+            <li>Injury prevention</li>
+            <li>Functional fitness</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h3>Stop the Guesswork</h3>
+        <p>Skip the trial and error. Reposition your joints to glide, not grind.</p>
+        <a href="/schedule" class="cta-button">Schedule Training</a>
+      </div>
+
+      <div class="service-testimonial">
+        <div class="testimonial-quote">
+          After years of back pain and countless treatments, Dr. Maks showed me the real problem—how I was moving. Functional Patterns combined with his hands-on work finally made changes that stuck.
+        </div>
+        <div class="testimonial-author">
+          <strong>Michael R.</strong> - Federal Hill
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Byline -->
+  <div class="container-narrow">
+    <AuthorByline />
+  </div>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Functional Patterns FAQs" />
+
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="functional-patterns" type="services" />
+</BaseLayout>
+
+<style>
+  /* ========================================
+     CALM & BREATHE THEME
+     Soft teals, rounded cards, airy feel
+     ======================================== */
+  
+  /* Theme colors */
+  :root {
+    --theme-soft-teal: #5fb3a1;
+    --theme-soft-blue: #5fb3a1;
+    --theme-cream: #fefcf9;
+  }
+
+  /* Hero Section - Soft gradient */
+  .service-hero {
+    position: relative;
+    background: linear-gradient(160deg, #4a9b8c 0%, #5fb3a1 50%, #7cc5b5 100%);
+    padding: 3rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-centered h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .service-hero .hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 300;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--theme-soft-teal);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  }
+
+  .related-services {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content sections */
+  .content-section-white {
+    background: var(--theme-cream);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-soft {
+    background: linear-gradient(180deg, #f5f9f8 0%, #eef4f2 100%);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content-section-teal {
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .content-section-teal h2,
+  .content-section-teal h3 {
+    color: white;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Lead intro */
+  .lead-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #5a6c66;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Section titles */
+  .section-title-center {
+    text-align: center;
+    color: var(--theme-soft-teal);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: #6b7c75;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .section-intro-light {
+    text-align: center;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  /* Content row */
+  .content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .content-row.reverse {
+    direction: rtl;
+  }
+
+  .content-row.reverse > * {
+    direction: ltr;
+  }
+
+  .content-row-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(95,179,161,0.15);
+  }
+
+  .content-row-text h2 {
+    margin-top: 0;
+    color: #3d5a50;
+    font-weight: 500;
+  }
+
+  /* Benefit cards - Rounded, soft shadows */
+  .benefit-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(95,179,161,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(95,179,161,0.18);
+  }
+
+  .benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--theme-soft-teal);
+  }
+
+  .benefit-card h4 {
+    color: var(--theme-soft-teal);
+    margin: 0 0 0.5rem;
+    font-weight: 500;
+  }
+
+  .benefit-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6b7c75;
+    line-height: 1.6;
+  }
+
+  /* Feature grid */
+  .feature-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-item-light {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .feature-item-light strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .feature-item-light p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Styled list */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+
+  .styled-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(95,179,161,0.15);
+    line-height: 1.7;
+    color: #4a5d55;
+  }
+
+  .styled-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Step cards */
+  .step-cards {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2rem 0 0;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: white;
+    padding: 1.5rem 1.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(95,179,161,0.08);
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step-content strong {
+    color: #3d5a50;
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+  }
+
+  .step-content p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #6b7c75;
+    line-height: 1.6;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: white;
+    border-radius: 16px;
+    padding: 1.75rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 20px rgba(95,179,161,0.1);
+    border-left: 4px solid var(--theme-soft-teal);
+  }
+
+  .highlight-box h3 {
+    color: #3d5a50;
+    margin: 0 0 0.5rem;
+    font-weight: 500;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    color: #6b7c75;
+    line-height: 1.7;
+  }
+
+  /* Conditions grid */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .condition-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(95,179,161,0.08);
+  }
+
+  .condition-item h4 {
+    color: var(--theme-soft-teal);
+    margin: 0 0 0.75rem;
+    font-weight: 500;
+  }
+
+  .condition-item ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .condition-item li {
+    font-size: 0.9rem;
+    color: #6b7c75;
+    margin-bottom: 0.35rem;
+  }
+
+  /* CTA box */
+  .cta-box {
+    background: linear-gradient(135deg, #e8f5f2 0%, #e0f0ed 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .cta-box h3 {
+    color: #3d5a50;
+    margin: 0 0 0.5rem;
+  }
+
+  .cta-box p {
+    color: #6b7c75;
+    margin: 0 0 1.25rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--theme-soft-teal);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  /* Testimonial */
+  .service-testimonial {
+    background: linear-gradient(135deg, var(--theme-soft-teal) 0%, var(--theme-soft-blue) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+  }
+
+  .testimonial-quote {
+    color: white;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-quote::before {
+    content: '"';
+    font-size: 2rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.25rem;
+  }
+
+  .testimonial-author {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+  }
+
+  /* Related services */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .related-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(95,179,161,0.08);
+    transition: all 0.3s ease;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(95,179,161,0.15);
+  }
+
+  .related-card h3 {
+    color: #3d5a50;
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .related-card p {
+    color: var(--theme-soft-teal);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-centered h1 {
+      font-size: 2rem;
+    }
+
+    .content-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .content-row.reverse {
+      direction: ltr;
+    }
+
+    .content-row-image {
+      order: -1;
+    }
+  }
+</style>

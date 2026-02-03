@@ -1,0 +1,65 @@
+---
+import LocationPageTemplate from '../../components/LocationPageTemplate.astro';
+
+const locationData = {
+  neighborhood: "Roland Park",
+  slug: "roland-park",
+  intro: "Roland Park families and professionals seeking premium physical therapy will find a perfect fit at Physica Medica. We offer the elevated, personalized care that Roland Park residents expect—without the impersonal feel of large hospital-affiliated centers. Whether you're a parent dealing with the physical demands of chasing kids around, a Gilman or Roland Park Country School athlete recovering from a sports injury, a professional managing chronic conditions from years of desk work, or simply optimizing your movement for a better quality of life, Dr. Maks provides expert 60-minute one-on-one sessions.",
+  directions: "From Roland Park, take Roland Avenue south to Cold Spring Lane, head east to Greenmount Avenue, then south to Eastern Avenue. Turn right on Eastern and continue to Bond Street, turning left to reach our clinic at 800 S Bond St. For a faster route, take I-83 South to the Eastern Avenue exit and follow Eastern to Bond Street. The drive takes approximately 18 minutes. Plenty of street parking in Fells Point.",
+  landmarks: [
+    "18-minute drive via Roland Avenue or I-83",
+    "Easy access from Northern Parkway corridor",
+    "Past Johns Hopkins campus to Fells Point",
+    "Abundant street parking near clinic"
+  ],
+  testimonial: {
+    quote: "After trying several physical therapists in the Roland Park area, I finally found Dr. Maks. The drive is worth it for the level of personalized attention and expertise. He actually listens and creates custom treatment plans.",
+    author: "Elizabeth H. - Roland Park Family"
+  },
+  commonConditions: [
+    {
+      condition: "Youth Sports Injuries",
+      description: "Roland Park's excellent schools mean competitive youth athletics. We treat the ACL injuries, growth plate issues, and overuse conditions common in young athletes at Gilman, RPCS, Friends, and other area schools."
+    },
+    {
+      condition: "Golf & Tennis Injuries",
+      description: "Country club memberships mean lots of golf and tennis. We frequently treat golfer's elbow, tennis elbow, rotator cuff issues, and lower back pain from these sports."
+    },
+    {
+      condition: "Active Aging Concerns",
+      description: "Roland Park's established residents want to stay active as they age. We help with balance issues, joint stiffness, arthritis-related pain, and maintaining mobility for quality of life."
+    },
+    {
+      condition: "Parent Strain & Family Activity Injuries",
+      description: "Raising active families is physically demanding. We treat the shoulder, back, and knee issues that come from carrying children, coaching youth sports, and keeping up with busy kids."
+    }
+  ],
+  faqs: [
+    {
+      question: "Is the drive from Roland Park to Fells Point worth it?",
+      answer: "Our Roland Park patients consistently say yes. The 18-minute drive delivers 60 minutes of dedicated, expert care—unlike the 15-minute sessions with rotating therapists at most clinics. You'll spend about the same total time but get dramatically better treatment."
+    },
+    {
+      question: "Do you work with young athletes from Roland Park schools?",
+      answer: "Yes, we see many student athletes from Gilman, Roland Park Country School, Friends, Bryn Mawr, and other area schools. Dr. Maks has experience with youth sports injuries and understands the pressure to return to competition safely."
+    },
+    {
+      question: "Can you help my aging parent maintain mobility?",
+      answer: "Absolutely. We work with many patients in their 60s, 70s, and beyond who want to stay active and independent. Physical therapy can help with balance, joint mobility, pain management, and preventing falls."
+    },
+    {
+      question: "How does your boutique approach compare to hospital-based PT?",
+      answer: "Hospital-affiliated PT clinics typically have you see different therapists, rush through short sessions, and follow standardized protocols. At Physica Medica, you see Dr. Maks every visit for 60 full minutes of personalized treatment. It's the difference between concierge care and assembly-line healthcare."
+    }
+  ],
+  neighborhoodInfo: `<p>Roland Park is one of Baltimore's premier neighborhoods—a place where families put down roots, where residents take pride in their homes and community, and where quality matters in every aspect of life. From the tree-lined streets to the excellent schools to the country club memberships, Roland Park residents expect and receive the best.</p>
+  
+  <p>This expectation of quality should extend to healthcare. Unfortunately, most physical therapy options—even those affiliated with major hospital systems—deliver rushed, impersonal care. Patients see different therapists each visit, receive generic exercise sheets, and spend more time in waiting rooms than in actual treatment.</p>
+  
+  <p>Physica Medica offers Roland Park families a better option. Yes, it's an 18-minute drive to Fells Point. But that drive delivers something extraordinary: 60 minutes of focused, expert care with the same doctor every visit. Dr. Maks takes the time to understand your specific situation, whether you're a youth athlete, an active adult, or someone working to maintain mobility and quality of life.</p>
+  
+  <p>Many Roland Park residents have tried PT elsewhere and been disappointed. They come to Physica Medica and discover what physical therapy should be: thoughtful, thorough, and genuinely effective. The commute is a small investment for results that actually last.</p>`
+};
+---
+
+<LocationPageTemplate {...locationData} />

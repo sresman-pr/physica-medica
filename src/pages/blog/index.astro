@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+
+// Sort posts by published date (newest first)
+const sortedPosts = posts.sort((a, b) => {
+  return new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime();
+});
+
+const title = 'Blog | Physica Medica';
+const description = 'Read the latest articles and insights from Physica Medica about physical therapy, wellness, and postural correction.';
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Watermark Background -->
+  <WatermarkBackground variant="teal" />
+
+  <!-- Hero Section - Solid teal gradient -->
+  <section class="blog-hero">
+    <div class="hero-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Blog</h1>
+        <p class="hero-subtitle">Insights on physical therapy, wellness, and postural correction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid Section - Semi-transparent -->
+  <section class="blog-section">
+    <div class="container">
+      {sortedPosts.length === 0 ? (
+        <div class="no-posts">
+          <p>No blog posts yet. Check back soon!</p>
+        </div>
+      ) : (
+        <div class="blog-grid">
+          {sortedPosts.map((post) => {
+            const slug = post.id.split('/').pop() || post.id;
+            return (
+              <article class="blog-card">
+                <a href={`/blog/${slug}`} class="blog-card-link">
+                  {post.data.coverImage && (
+                    <div class="blog-card-image">
+                      <img 
+                        src={post.data.coverImage} 
+                        alt={post.data.title}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div class="blog-card-content">
+                    <time datetime={post.data.publishedDate.toISOString()}>
+                      {new Date(post.data.publishedDate).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </time>
+                    <h2>{post.data.title}</h2>
+                    {post.data.excerpt && (
+                      <p class="excerpt">{post.data.excerpt}</p>
+                    )}
+                    <span class="read-more">Read More →</span>
+                  </div>
+                </a>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- CTA Section - Teal accent -->
+  <section class="blog-cta-section">
+    <div class="container-narrow">
+      <h2>Ready to Start Your Journey?</h2>
+      <p>Schedule a consultation with Dr. Maks to discuss your treatment plan.</p>
+      <a href="/schedule" class="cta-button">Schedule Your Session</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section - Solid teal gradient for clean header */
+  .blog-hero {
+    position: relative;
+    z-index: 2;
+    padding: 100px 20px 70px;
+    text-align: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2d6d5f 0%, #1f4d42 100%);
+    z-index: 0;
+  }
+
+  .hero-centered {
+    position: relative;
+    z-index: 1;
+  }
+
+  .blog-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Blog Section - Semi-transparent to show watermark through */
+  .blog-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .no-posts {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--color-text-secondary);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .blog-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .blog-card-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+  }
+
+  .blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .blog-card:hover .blog-card-image img {
+    transform: scale(1.08);
+  }
+
+  .blog-card-content {
+    padding: 1.75rem;
+  }
+
+  .blog-card-content time {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    background: var(--color-accent, #3db89f);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+  }
+
+  .blog-card-content h2 {
+    font-size: 1.4rem;
+    color: var(--color-primary, #2d6d5f);
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+
+  .blog-card-content .excerpt {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .blog-card-content .read-more {
+    color: var(--color-accent, #3db89f);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: gap 0.2s ease;
+  }
+
+  .blog-card:hover .read-more {
+    color: var(--color-primary, #2d6d5f);
+    gap: 0.5rem;
+  }
+
+  /* CTA Section - Teal accent band */
+  .blog-cta-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #2d6d5f 0%, #1f4d42 100%);
+    text-align: center;
+  }
+
+  .blog-cta-section h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary, #2d6d5f);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: #f8f8f8;
+  }
+
+  /* Container utilities */
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .blog-hero {
+      padding: 90px 20px 50px;
+    }
+
+    .blog-hero h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+    }
+
+    .blog-section {
+      padding: 3rem 0;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .blog-cta-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .blog-cta-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>

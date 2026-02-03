@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+
+const pageTitle = "Physical Therapy Locations | Baltimore Neighborhoods | Physica Medica";
+const pageDescription = "Physica Medica serves all Baltimore neighborhoods including Fells Point, Canton, Harbor East, Federal Hill, and more. Find physical therapy near you.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Locations", url: "/locations" }
+];
+
+const locations = [
+  {
+    name: "Fells Point",
+    slug: "fells-point",
+    description: "Historic waterfront neighborhood with cobblestone streets and vibrant nightlife",
+    distance: "Located in Fells Point"
+  },
+  {
+    name: "Canton",
+    slug: "canton",
+    description: "Family-friendly neighborhood with waterfront promenade popular with runners",
+    distance: "5 min drive"
+  },
+  {
+    name: "Harbor East",
+    slug: "harbor-east",
+    description: "Upscale dining and shopping district with luxury condos and offices",
+    distance: "7 min drive"
+  },
+  {
+    name: "Federal Hill",
+    slug: "federal-hill",
+    description: "Young professionals and historic rowhouses with scenic park views",
+    distance: "10 min drive"
+  },
+  {
+    name: "Inner Harbor",
+    slug: "inner-harbor",
+    description: "Baltimore's iconic waterfront with attractions, hotels, and downtown offices",
+    distance: "8 min drive"
+  },
+  {
+    name: "Patterson Park",
+    slug: "patterson-park",
+    description: "Diverse community centered around Baltimore's beloved urban park",
+    distance: "5 min drive"
+  },
+  {
+    name: "Locust Point",
+    slug: "locust-point",
+    description: "Quiet peninsula home to Under Armour HQ and young families",
+    distance: "12 min drive"
+  },
+  {
+    name: "Hampden",
+    slug: "hampden",
+    description: "Eclectic arts district known for quirky shops and active lifestyle community",
+    distance: "15 min drive"
+  },
+  {
+    name: "Roland Park",
+    slug: "roland-park",
+    description: "Affluent historic neighborhood with tree-lined streets and top schools",
+    distance: "18 min drive"
+  },
+  {
+    name: "Towson",
+    slug: "towson",
+    description: "Suburban center with Towson University, shopping, and family neighborhoods",
+    distance: "25 min drive"
+  },
+  {
+    name: "Downtown",
+    slug: "downtown",
+    description: "Central business district with offices, courthouse, and government buildings",
+    distance: "8 min drive"
+  },
+  {
+    name: "Highlandtown",
+    slug: "highlandtown",
+    description: "Working-class neighborhood with strong arts scene and Hispanic heritage",
+    distance: "8 min drive"
+  }
+];
+
+const locationSchema = {
+  "@type": "LocalBusiness",
+  "name": "Physica Medica",
+  "description": "Physical Therapy Boutique serving Baltimore neighborhoods",
+  "url": "https://physicamedica.net/locations",
+  "telephone": "443-228-8029",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "800 S Bond St",
+    "addressLocality": "Baltimore",
+    "addressRegion": "MD",
+    "postalCode": "21231",
+    "addressCountry": "US"
+  },
+  "areaServed": locations.map(loc => ({
+    "@type": "Neighborhood",
+    "name": loc.name
+  }))
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={locationSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="gray" />
+  
+  <!-- Hero Section -->
+  <section class="locations-hero">
+    <div class="hero-gradient-bg"></div>
+    <div class="container-narrow">
+      <div class="hero-centered">
+        <h1>Physical Therapy for All Baltimore Neighborhoods</h1>
+        <p class="hero-subtitle">Conveniently located in Fells Point, serving the entire Baltimore metro area</p>
+        <div class="hero-address">
+          <strong>800 S Bond St, Baltimore, MD 21231</strong>
+          <span class="hero-phone"><a href="tel:+14432288029">443-228-8029</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Grid -->
+  <section class="locations-content">
+    <div class="container-narrow">
+      <p class="intro-text">Dr. Maksim Birikov welcomes patients from across Baltimore and the surrounding areas. Whether you're a few blocks away in Fells Point or commuting from Towson, our boutique physical therapy clinic provides the same exceptional 60-minute, one-on-one care for every patient.</p>
+      
+      <h2>Neighborhoods We Serve</h2>
+      
+      <div class="locations-grid">
+        {locations.map(location => (
+          <a href={`/locations/${location.slug}`} class="location-card">
+            <h3>{location.name}</h3>
+            <p class="location-description">{location.description}</p>
+            <span class="location-distance">{location.distance} →</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="cta-section">
+        <h2>Ready to Start Your Recovery?</h2>
+        <p>No matter where you live in Baltimore, you deserve personalized, expert physical therapy care.</p>
+        <a href="/schedule" class="cta-button">Schedule Your Appointment</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .locations-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 4rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .container-narrow {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .hero-centered {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .locations-hero h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+  }
+
+  .hero-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.95);
+  }
+
+  .hero-phone a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hero-phone a:hover {
+    text-decoration: underline;
+  }
+
+  .locations-content {
+    background: white;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.5rem;
+    border-left: 4px solid var(--color-accent);
+    padding-left: 1.5rem;
+  }
+
+  .locations-content h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .location-card {
+    background: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: all 0.2s;
+  }
+
+  .location-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: var(--color-accent);
+  }
+
+  .location-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .location-description {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.5;
+  }
+
+  .location-distance {
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .cta-section {
+    background: var(--color-background-light);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .cta-section h2 {
+    margin-top: 0;
+  }
+
+  .cta-section p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .cta-button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .locations-hero {
+      padding: 3rem 1.5rem;
+    }
+
+    .locations-hero h1 {
+      font-size: 2rem;
+    }
+
+    .locations-content {
+      padding: 3rem 1.5rem;
+    }
+
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

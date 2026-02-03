@@ -1,0 +1,22 @@
+{
+  "trigger_word": "DRMAKS",
+  "training_images_dir": "./training-images-clean",
+  "output_dir": "./generated-images",
+  "flux_model": "fal-ai/flux-pro/v1.1",
+  "lora_training_model": "fal-ai/flux-lora-fast-training",
+  "lora_model_url": "https://v3b.fal.media/files/b/0a8c1c9f/qbIuWugTJRZB75QvckMaV_pytorch_lora_weights.safetensors",
+  "image_settings": {
+    "image_size": {
+      "width": 1024,
+      "height": 768
+    },
+    "num_inference_steps": 28,
+    "guidance_scale": 3.5,
+    "num_images": 1,
+    "enable_safety_checker": true
+  },
+  "training_settings": {
+    "steps": 4000,
+    "learning_rate": 0.0001
+  }
+}
