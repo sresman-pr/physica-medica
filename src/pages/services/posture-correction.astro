@@ -1,25 +1,24 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import WatermarkBackground from '../../../components/WatermarkBackground.astro';
-import FAQSection from '../../../components/FAQSection.astro';
-import AuthorByline from '../../../components/AuthorByline.astro';
-import AllServicesGrid from '../../../components/AllServicesGrid.astro';
-import Icon from '../../../components/Icon.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
-import alignmentImg from '../../../images/specialty-v3-posture-sitting.jpg';
-import spineCorrectImg from '../../../images/specialty-v3-posture-standing.jpg';
-import standingImg from '../../../images/specialty-v3-posture-exercise.jpg';
+import alignmentImg from '../../images/specialty-v3-posture-sitting.jpg';
+import spineCorrectImg from '../../images/specialty-v3-posture-standing.jpg';
+import standingImg from '../../images/specialty-v3-posture-exercise.jpg';
 
-const pageTitle = "Baltimore Posture Re-education | Physical Therapy | Physica Medica";
-const pageDescription = "Expert posture re-education in Baltimore. Stand taller, decrease forward head posture, improve daily function with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Posture Correction Baltimore | Physical Therapy | Physica Medica";
+const pageDescription = "Expert posture correction in Baltimore. Stand taller, decrease forward head posture, improve daily function with Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
-  { name: "Posture Re-education", url: "/services/specialty-techniques/posture-reeducation" }
+  { name: "Treatments", url: "/services" },
+  { name: "Posture Correction", url: "/services/posture-correction" }
 ];
 
 const serviceSchema = {
@@ -310,7 +309,7 @@ const faqs = [
   <FAQSection faqs={faqs} title="Posture Re-education FAQs" />
 
   <!-- All Specialty Techniques Grid -->
-  <AllServicesGrid currentPage="posture-reeducation" type="specialty-techniques" />
+  <AllServicesGrid currentPage="posture-correction" />
 </BaseLayout>
 
 <style>

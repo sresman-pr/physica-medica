@@ -1,66 +1,43 @@
 ---
-// AllServicesGrid.astro - Bottom grid showing all services/specialty techniques
+// AllServicesGrid.astro - Bottom grid showing all treatments
 
 interface Props {
   currentPage: string;
-  type: "services" | "specialty-techniques";
 }
 
-const { currentPage, type } = Astro.props;
+const { currentPage } = Astro.props;
 
-// Service pages data
-const services = [
+// All treatment pages data (flattened structure)
+const treatments = [
   { name: "Dry Needling", slug: "dry-needling", description: "Release muscle knots & trigger points" },
   { name: "Myofascial Cupping", slug: "myofascial-cupping", description: "Release fascial restrictions" },
   { name: "Deep Tissue/Sports Massage", slug: "deep-tissue-sports-massage", description: "Therapeutic massage for recovery" },
-  { name: "Instrument Assisted Mobilization", slug: "instrument-assisted-tissue-mobilization", description: "Break down scar tissue" },
+  { name: "IASTM / Graston Technique", slug: "instrument-assisted-tissue-mobilization", description: "Break down scar tissue" },
   { name: "Pregnancy Physical Therapy", slug: "pregnancy-physical-therapy", description: "Expert care for expecting mothers" },
-  { name: "Pancafit Class", slug: "pancafit-class", description: "Group posture training" },
   { name: "Scoliosis Treatment", slug: "scoliosis", description: "Specialized spinal care" },
   { name: "Functional Patterns", slug: "functional-patterns", description: "Movement training & optimization" },
+  { name: "Posture Correction", slug: "posture-correction", description: "Improve alignment & function" },
   { name: "Therapy for Singers", slug: "therapy-for-singers", description: "Vocal performance optimization" },
-];
-
-// Specialty technique pages data
-const specialtyTechniques = [
-  { name: "Posture Re-education", slug: "posture-reeducation", description: "Improve alignment & function" },
+  { name: "Pancafit", slug: "pancafit", description: "Postural correction therapy" },
   { name: "Scar Tissue Mobilization", slug: "scar-tissue-mobilization", description: "Release adhesions & restrictions" },
   { name: "Neural Tension Release", slug: "neural-tension-release", description: "Free restricted nerves" },
   { name: "Diaphragmatic Rehabilitation", slug: "diaphragmatic-rehabilitation", description: "Restore proper breathing" },
 ];
 
-const items = type === "services" ? services : specialtyTechniques;
-const basePath = type === "services" ? "/services" : "/services/specialty-techniques";
-const filteredItems = items.filter(item => item.slug !== currentPage);
+const filteredTreatments = treatments.filter(item => item.slug !== currentPage);
 ---
 
 <section class="all-services-grid">
   <div class="container-narrow">
-    {type === "specialty-techniques" && (
-      <div class="back-navigation">
-        <a href="/services" class="back-link">← Back to All Services</a>
-        <a href="/services/specialty-techniques" class="back-link">← Specialty Techniques Overview</a>
-      </div>
-    )}
-    
-    <h2 class="grid-title">
-      {type === "services" ? "Explore Our Services" : "More Specialty Techniques"}
-    </h2>
+    <h2 class="grid-title">Explore Our Treatments</h2>
     
     <div class="services-grid">
-      {filteredItems.map((item) => (
-        <a href={`${basePath}/${item.slug}`} class="service-card">
+      {filteredTreatments.map((item) => (
+        <a href={`/services/${item.slug}`} class="service-card">
           <h3>{item.name}</h3>
           <p>{item.description} →</p>
         </a>
       ))}
-      
-      {type === "services" && (
-        <a href="/services/specialty-techniques" class="service-card">
-          <h3>Specialty Techniques</h3>
-          <p>Advanced therapeutic methods →</p>
-        </a>
-      )}
     </div>
     
     <div class="grid-cta">

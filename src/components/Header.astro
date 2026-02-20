@@ -25,40 +25,43 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
         <ul>
           <li><a href="/">HOME</a></li>
           <li class="has-dropdown">
+            <a href="/services">TREATMENTS</a>
+            <ul class="dropdown">
+              <li><a href="/services/dry-needling">Dry Needling</a></li>
+              <li><a href="/services/myofascial-cupping">Cupping Therapy</a></li>
+              <li><a href="/services/deep-tissue-sports-massage">Deep Tissue & Sports Massage</a></li>
+              <li><a href="/services/instrument-assisted-tissue-mobilization">IASTM / Graston Technique</a></li>
+              <li><a href="/services/pregnancy-physical-therapy">Pregnancy & Postpartum PT</a></li>
+              <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
+              <li><a href="/services/therapy-for-singers">Therapy for Singers</a></li>
+              <li><a href="/services" class="view-all-link">→ View All Treatments</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="/conditions">CONDITIONS</a>
+            <ul class="dropdown">
+              <li><a href="/conditions/tmj">TMJ & Jaw Pain</a></li>
+              <li><a href="/conditions/back-pain">Back Pain & Sciatica</a></li>
+              <li><a href="/conditions/neck-pain">Neck Pain</a></li>
+              <li><a href="/conditions/shoulder-pain">Shoulder Pain</a></li>
+              <li><a href="/conditions/knee-pain">Knee Pain</a></li>
+              <li><a href="/conditions/hip-pain">Hip Pain</a></li>
+              <li><a href="/conditions/headaches-migraines">Headaches & Migraines</a></li>
+              <li><a href="/conditions/foot-ankle-pain">Foot & Ankle Pain</a></li>
+            </ul>
+          </li>
+          <li><a href="/wim-hof-method">WIM HOF</a></li>
+          <li class="has-dropdown">
             <a href="/about">ABOUT</a>
             <ul class="dropdown">
               <li><a href="/about">About Dr. Maks</a></li>
+              <li><a href="/concierge-physical-therapy">Concierge PT</a></li>
+              <li><a href="/cash-based-physical-therapy">Rates & Reimbursement</a></li>
               <li><a href="/about/your-first-visit">Your First Visit</a></li>
+              <li><a href="/reviews">Reviews</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </li>
-          <li><a href="/blog">BLOG</a></li>
-          <li class="has-dropdown">
-            <a href="/services">SERVICES</a>
-            <ul class="dropdown">
-              <li><a href="/services/dry-needling">Dry Needling</a></li>
-              <li><a href="/services/myofascial-cupping">Myofascial Cupping</a></li>
-              <li><a href="/services/deep-tissue-sports-massage">Deep Tissue/Sports Massage</a></li>
-              <li><a href="/services/instrument-assisted-tissue-mobilization">Instrument Assisted Mobilization</a></li>
-              <li><a href="/services/pregnancy-physical-therapy">Pregnancy Care</a></li>
-              <li><a href="/services/pancafit-class">Pancafit Class</a></li>
-              <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
-              <li><a href="/services/functional-patterns">Functional Patterns</a></li>
-              <li class="has-nested-dropdown">
-                <a href="/services/specialty-techniques">Specialty Techniques →</a>
-                <ul class="nested-dropdown">
-                  <li><a href="/services/specialty-techniques/posture-reeducation">Posture Re-education</a></li>
-                  <li><a href="/services/specialty-techniques/scar-tissue-mobilization">Scar Tissue Mobilization</a></li>
-                  <li><a href="/services/specialty-techniques/neural-tension-release">Neural Tension Release</a></li>
-                  <li><a href="/services/specialty-techniques/diaphragmatic-rehabilitation">Diaphragmatic Rehabilitation</a></li>
-                  <li><a href="/services/specialty-techniques/therapy-for-singers">Therapy for Singers</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="/wim-hof-method">WIM HOF METHOD</a></li>
-          <li><a href="/reviews">REVIEWS</a></li>
-          <li><a href="/insurance">RATES & REIMBURSEMENT</a></li>
-          <li><a href="/contact">CONTACT</a></li>
           <li><a href="/schedule" class="schedule-link">SCHEDULE</a></li>
         </ul>
       </nav>
@@ -76,6 +79,39 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
       <nav class="mobile-nav">
         <ul>
           <li><a href="/">HOME</a></li>
+          <li class="mobile-accordion" id="treatments-accordion">
+            <div class="accordion-header">
+              <a href="/services">TREATMENTS</a>
+              <button class="accordion-toggle" aria-label="Toggle treatments menu" id="treatments-toggle">▼</button>
+            </div>
+            <ul class="accordion-content">
+              <li><a href="/services/dry-needling">Dry Needling</a></li>
+              <li><a href="/services/myofascial-cupping">Cupping Therapy</a></li>
+              <li><a href="/services/deep-tissue-sports-massage">Deep Tissue & Sports Massage</a></li>
+              <li><a href="/services/instrument-assisted-tissue-mobilization">IASTM / Graston Technique</a></li>
+              <li><a href="/services/pregnancy-physical-therapy">Pregnancy & Postpartum PT</a></li>
+              <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
+              <li><a href="/services/therapy-for-singers">Therapy for Singers</a></li>
+              <li><a href="/services" class="view-all-link">→ View All Treatments</a></li>
+            </ul>
+          </li>
+          <li class="mobile-accordion" id="conditions-accordion">
+            <div class="accordion-header">
+              <a href="/conditions">CONDITIONS</a>
+              <button class="accordion-toggle" aria-label="Toggle conditions menu" id="conditions-toggle">▼</button>
+            </div>
+            <ul class="accordion-content">
+              <li><a href="/conditions/tmj">TMJ & Jaw Pain</a></li>
+              <li><a href="/conditions/back-pain">Back Pain & Sciatica</a></li>
+              <li><a href="/conditions/neck-pain">Neck Pain</a></li>
+              <li><a href="/conditions/shoulder-pain">Shoulder Pain</a></li>
+              <li><a href="/conditions/knee-pain">Knee Pain</a></li>
+              <li><a href="/conditions/hip-pain">Hip Pain</a></li>
+              <li><a href="/conditions/headaches-migraines">Headaches & Migraines</a></li>
+              <li><a href="/conditions/foot-ankle-pain">Foot & Ankle Pain</a></li>
+            </ul>
+          </li>
+          <li><a href="/wim-hof-method">WIM HOF</a></li>
           <li class="mobile-accordion" id="about-accordion">
             <div class="accordion-header">
               <a href="/about">ABOUT</a>
@@ -83,36 +119,13 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
             </div>
             <ul class="accordion-content">
               <li><a href="/about">About Dr. Maks</a></li>
+              <li><a href="/concierge-physical-therapy">Concierge PT</a></li>
+              <li><a href="/cash-based-physical-therapy">Rates & Reimbursement</a></li>
               <li><a href="/about/your-first-visit">Your First Visit</a></li>
+              <li><a href="/reviews">Reviews</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </li>
-          <li><a href="/blog">BLOG</a></li>
-          <li class="mobile-accordion" id="services-accordion">
-            <div class="accordion-header">
-              <a href="/services">SERVICES</a>
-              <button class="accordion-toggle" aria-label="Toggle services menu" id="services-toggle">▼</button>
-            </div>
-            <ul class="accordion-content">
-              <li><a href="/services/dry-needling">Dry Needling</a></li>
-              <li><a href="/services/myofascial-cupping">Myofascial Cupping</a></li>
-              <li><a href="/services/deep-tissue-sports-massage">Deep Tissue/Sports Massage</a></li>
-              <li><a href="/services/instrument-assisted-tissue-mobilization">Instrument Assisted Mobilization</a></li>
-              <li><a href="/services/pregnancy-physical-therapy">Pregnancy Care</a></li>
-              <li><a href="/services/pancafit-class">Pancafit Class</a></li>
-              <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
-              <li><a href="/services/functional-patterns">Functional Patterns</a></li>
-              <li><a href="/services/specialty-techniques">Specialty Techniques</a></li>
-              <li class="nested-item"><a href="/services/specialty-techniques/posture-reeducation">• Posture Re-education</a></li>
-              <li class="nested-item"><a href="/services/specialty-techniques/scar-tissue-mobilization">• Scar Tissue Mobilization</a></li>
-              <li class="nested-item"><a href="/services/specialty-techniques/neural-tension-release">• Neural Tension Release</a></li>
-              <li class="nested-item"><a href="/services/specialty-techniques/diaphragmatic-rehabilitation">• Diaphragmatic Rehabilitation</a></li>
-              <li class="nested-item"><a href="/services/specialty-techniques/therapy-for-singers">• Therapy for Singers</a></li>
-            </ul>
-          </li>
-          <li><a href="/wim-hof-method">WIM HOF METHOD</a></li>
-          <li><a href="/reviews">REVIEWS</a></li>
-          <li><a href="/insurance">RATES & REIMBURSEMENT</a></li>
-          <li><a href="/contact">CONTACT</a></li>
           <li><a href="/schedule" class="schedule-link">SCHEDULE</a></li>
         </ul>
       </nav>
@@ -167,6 +180,24 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     }
   });
 
+  // Treatments accordion toggle
+  const treatmentsAccordion = document.getElementById('treatments-accordion');
+  const treatmentsToggle = document.getElementById('treatments-toggle');
+  
+  treatmentsToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    treatmentsAccordion?.classList.toggle('expanded');
+  });
+
+  // Conditions accordion toggle
+  const conditionsAccordion = document.getElementById('conditions-accordion');
+  const conditionsToggle = document.getElementById('conditions-toggle');
+  
+  conditionsToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    conditionsAccordion?.classList.toggle('expanded');
+  });
+
   // About accordion toggle
   const aboutAccordion = document.getElementById('about-accordion');
   const aboutToggle = document.getElementById('about-toggle');
@@ -174,15 +205,6 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
   aboutToggle?.addEventListener('click', (e) => {
     e.preventDefault();
     aboutAccordion?.classList.toggle('expanded');
-  });
-
-  // Services accordion toggle
-  const servicesAccordion = document.getElementById('services-accordion');
-  const servicesToggle = document.getElementById('services-toggle');
-  
-  servicesToggle?.addEventListener('click', (e) => {
-    e.preventDefault();
-    servicesAccordion?.classList.toggle('expanded');
   });
 </script>
 
@@ -310,54 +332,12 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     padding-left: 1.75rem;
   }
 
-  /* Nested Dropdown for Specialty Techniques */
-  .has-nested-dropdown {
-    position: relative;
-  }
-
-  .nested-dropdown {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    background: white;
-    border: 1px solid var(--color-border);
-    border-radius: 0.5rem;
-    padding: 0.5rem 0;
-    min-width: 220px;
-    box-shadow: var(--shadow-lg);
-    display: none;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all var(--transition-normal);
-    list-style: none;
-    margin: 0;
-  }
-
-  .has-nested-dropdown:hover .nested-dropdown {
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .nested-dropdown li {
-    margin: 0;
-  }
-
-  .nested-dropdown a {
-    padding: 0.75rem 1.5rem;
-    display: block;
-    white-space: nowrap;
-    transition: all var(--transition-fast);
-  }
-
-  .nested-dropdown a::after {
-    display: none;
-  }
-
-  .nested-dropdown a:hover {
-    background: var(--color-background-light);
-    padding-left: 1.75rem;
+  .view-all-link {
+    color: var(--color-accent) !important;
+    font-weight: 600 !important;
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.5rem;
+    padding-top: 1rem !important;
   }
 
   /* Mobile Menu Toggle */

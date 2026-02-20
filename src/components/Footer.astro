@@ -51,6 +51,52 @@ import mapImg from '../images/physica-medica-map.png';
       </div>
     </div>
   </div>
+  
+  <!-- Treatments & Conditions Links Section -->
+  <div class="footer-links-section">
+    <div class="footer-links-wrapper">
+      <div class="footer-links-column">
+        <h3>Treatments</h3>
+        <ul>
+          <li><a href="/services/dry-needling">Dry Needling</a></li>
+          <li><a href="/services/myofascial-cupping">Cupping Therapy</a></li>
+          <li><a href="/services/deep-tissue-sports-massage">Deep Tissue & Sports Massage</a></li>
+          <li><a href="/services/instrument-assisted-tissue-mobilization">IASTM / Graston Technique</a></li>
+          <li><a href="/services/pregnancy-physical-therapy">Pregnancy & Postpartum PT</a></li>
+          <li><a href="/services/scoliosis">Scoliosis Treatment</a></li>
+          <li><a href="/services/functional-patterns">Functional Patterns</a></li>
+          <li><a href="/services/posture-correction">Posture Correction</a></li>
+          <li><a href="/services/therapy-for-singers">Therapy for Singers</a></li>
+          <li><a href="/services/pancafit">Pancafit</a></li>
+          <li><a href="/services/scar-tissue-mobilization">Scar Tissue Mobilization</a></li>
+          <li><a href="/services/neural-tension-release">Neural Tension Release</a></li>
+          <li><a href="/services/diaphragmatic-rehabilitation">Diaphragmatic Rehabilitation</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-column">
+        <h3>Conditions We Treat</h3>
+        <ul>
+          <li><a href="/conditions/tmj">TMJ & Jaw Pain</a></li>
+          <li><a href="/conditions/back-pain">Back Pain & Sciatica</a></li>
+          <li><a href="/conditions/neck-pain">Neck Pain</a></li>
+          <li><a href="/conditions/shoulder-pain">Shoulder Pain</a></li>
+          <li><a href="/conditions/knee-pain">Knee Pain</a></li>
+          <li><a href="/conditions/hip-pain">Hip Pain</a></li>
+          <li><a href="/conditions/headaches-migraines">Headaches & Migraines</a></li>
+          <li><a href="/conditions/foot-ankle-pain">Foot & Ankle Pain</a></li>
+        </ul>
+        <h3 style="margin-top: 1.5rem;">More</h3>
+        <ul>
+          <li><a href="/wim-hof-method">Wim Hof Method</a></li>
+          <li><a href="/concierge-physical-therapy">Concierge PT</a></li>
+          <li><a href="/cash-based-physical-therapy">Rates & Reimbursement</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
   <div class="footer-service-areas">
     <div class="service-areas-wrapper">
       <span class="service-areas-label">Serving Baltimore:</span>
@@ -267,6 +313,51 @@ import mapImg from '../images/physica-medica-map.png';
     color: white;
   }
 
+  .footer-links-section {
+    background: var(--color-primary);
+    padding: 3rem 20px;
+  }
+
+  .footer-links-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .footer-links-column h3 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links-column li {
+    margin: 0;
+  }
+
+  .footer-links-column a {
+    display: block;
+    padding: 0.4rem 0;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+
+  .footer-links-column a:hover {
+    color: white;
+    padding-left: 0.5rem;
+  }
+
   .footer-service-areas {
     background: var(--color-background-light);
     padding: 1rem 20px;
@@ -353,6 +444,11 @@ import mapImg from '../images/physica-medica-map.png';
     .footer-wrapper {
       grid-template-columns: 1fr;
       gap: 40px;
+    }
+
+    .footer-links-wrapper {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
     .form-row {

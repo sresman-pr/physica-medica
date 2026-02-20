@@ -1,25 +1,24 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import WatermarkBackground from '../../../components/WatermarkBackground.astro';
-import FAQSection from '../../../components/FAQSection.astro';
-import AuthorByline from '../../../components/AuthorByline.astro';
-import AllServicesGrid from '../../../components/AllServicesGrid.astro';
-import Icon from '../../../components/Icon.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
-import gentleStretchImg from '../../../images/specialty-v3-neural-nerve-glide.jpg';
-import armTherapyImg from '../../../images/specialty-v3-neural-arm-stretch.jpg';
-import mobilizationImg from '../../../images/specialty-v3-neural-mobilization.jpg';
+import gentleStretchImg from '../../images/specialty-v3-neural-nerve-glide.jpg';
+import armTherapyImg from '../../images/specialty-v3-neural-arm-stretch.jpg';
+import mobilizationImg from '../../images/specialty-v3-neural-mobilization.jpg';
 
-const pageTitle = "Baltimore Neural Tension Release | Physical Therapy | Physica Medica";
+const pageTitle = "Neural Tension Release Baltimore | Physical Therapy | Physica Medica";
 const pageDescription = "Expert neural tension release therapy in Baltimore. Italian-developed technique combining Eastern holistic care to release nerve tension with Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
-  { name: "Neural Tension Release", url: "/services/specialty-techniques/neural-tension-release" }
+  { name: "Treatments", url: "/services" },
+  { name: "Neural Tension Release", url: "/services/neural-tension-release" }
 ];
 
 const serviceSchema = {
@@ -325,7 +324,7 @@ const faqs = [
   <FAQSection faqs={faqs} title="Neural Tension Release FAQs" />
 
   <!-- All Specialty Techniques Grid -->
-  <AllServicesGrid currentPage="neural-tension-release" type="specialty-techniques" />
+  <AllServicesGrid currentPage="neural-tension-release" />
 </BaseLayout>
 
 <style>

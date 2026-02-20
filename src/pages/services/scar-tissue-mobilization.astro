@@ -1,25 +1,24 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import WatermarkBackground from '../../../components/WatermarkBackground.astro';
-import FAQSection from '../../../components/FAQSection.astro';
-import AuthorByline from '../../../components/AuthorByline.astro';
-import AllServicesGrid from '../../../components/AllServicesGrid.astro';
-import Icon from '../../../components/Icon.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
-import scarTreatmentImg from '../../../images/specialty-v3-scar-treatment.jpg';
-import scarMobilizationImg from '../../../images/specialty-v3-scar-manual.jpg';
-import scarHealingImg from '../../../images/specialty-v3-scar-mobilization.jpg';
+import scarTreatmentImg from '../../images/specialty-v3-scar-treatment.jpg';
+import scarMobilizationImg from '../../images/specialty-v3-scar-manual.jpg';
+import scarHealingImg from '../../images/specialty-v3-scar-mobilization.jpg';
 
-const pageTitle = "Baltimore Scar Tissue Mobilization | Physical Therapy | Physica Medica";
+const pageTitle = "Scar Tissue Mobilization Baltimore | Physical Therapy | Physica Medica";
 const pageDescription = "Expert scar tissue mobilization and remodeling in Baltimore. Restore mobility, eliminate pain, and maximize range of motion with Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
-  { name: "Scar Tissue Mobilization", url: "/services/specialty-techniques/scar-tissue-mobilization" }
+  { name: "Treatments", url: "/services" },
+  { name: "Scar Tissue Mobilization", url: "/services/scar-tissue-mobilization" }
 ];
 
 const serviceSchema = {
@@ -306,7 +305,7 @@ const faqs = [
   <FAQSection faqs={faqs} title="Scar Tissue Mobilization FAQs" />
 
   <!-- All Specialty Techniques Grid -->
-  <AllServicesGrid currentPage="scar-tissue-mobilization" type="specialty-techniques" />
+  <AllServicesGrid currentPage="scar-tissue-mobilization" />
 </BaseLayout>
 
 <style>

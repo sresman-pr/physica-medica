@@ -54,6 +54,11 @@ export default defineConfig({
           item.priority = 0.9;
           item.changefreq = 'monthly';
         }
+        // Condition pages - high priority (SEO targets)
+        else if (url.includes('/conditions/')) {
+          item.priority = 0.9;
+          item.changefreq = 'monthly';
+        }
         // Specialty technique pages - high priority
         else if (url.includes('/specialty-techniques/')) {
           item.priority = 0.9;

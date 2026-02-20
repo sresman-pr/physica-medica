@@ -1,25 +1,24 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import WatermarkBackground from '../../../components/WatermarkBackground.astro';
-import FAQSection from '../../../components/FAQSection.astro';
-import AuthorByline from '../../../components/AuthorByline.astro';
-import AllServicesGrid from '../../../components/AllServicesGrid.astro';
-import Icon from '../../../components/Icon.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
-import ribcageImg from '../../../images/specialty-v3-diaphragm-ribcage.jpg';
-import breathingExerciseImg from '../../../images/specialty-v3-diaphragm-breathing.jpg';
-import coreTherapyImg from '../../../images/specialty-v3-diaphragm-core.jpg';
+import ribcageImg from '../../images/specialty-v3-diaphragm-ribcage.jpg';
+import breathingExerciseImg from '../../images/specialty-v3-diaphragm-breathing.jpg';
+import coreTherapyImg from '../../images/specialty-v3-diaphragm-core.jpg';
 
-const pageTitle = "Baltimore Diaphragmatic Rehabilitation | Physical Therapy | Physica Medica";
+const pageTitle = "Diaphragmatic Rehabilitation Baltimore | Physical Therapy | Physica Medica";
 const pageDescription = "Expert diaphragmatic rehabilitation in Baltimore. Release your primary breathing engine to improve spinal mobility, decrease tension, and enhance sleep with Dr. Maksim Birikov, DPT.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
-  { name: "Diaphragmatic Rehabilitation", url: "/services/specialty-techniques/diaphragmatic-rehabilitation" }
+  { name: "Treatments", url: "/services" },
+  { name: "Diaphragmatic Rehabilitation", url: "/services/diaphragmatic-rehabilitation" }
 ];
 
 const serviceSchema = {
@@ -316,7 +315,7 @@ const faqs = [
   <FAQSection faqs={faqs} title="Diaphragmatic Rehabilitation FAQs" />
 
   <!-- All Specialty Techniques Grid -->
-  <AllServicesGrid currentPage="diaphragmatic-rehabilitation" type="specialty-techniques" />
+  <AllServicesGrid currentPage="diaphragmatic-rehabilitation" />
 </BaseLayout>
 
 <style>
