@@ -21,11 +21,6 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
         </a>
       </div>
       
-      <a href="tel:443-228-8029" class="header-phone">
-        <span class="phone-icon">📞</span>
-        <span class="phone-number">(443) 228-8029</span>
-      </a>
-      
       <nav class="main-nav">
         <ul>
           <li><a href="/">HOME</a></li>
@@ -70,6 +65,11 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
           <li><a href="/schedule" class="schedule-link">SCHEDULE</a></li>
         </ul>
       </nav>
+      
+      <a href="tel:443-228-8029" class="header-phone">
+        <span class="phone-icon">📞</span>
+        <span class="phone-number">(443) 228-8029</span>
+      </a>
       
       <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
         ☰
@@ -231,9 +231,18 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
 
   .header-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 2rem;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   .header-phone {
@@ -243,9 +252,10 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     text-decoration: none;
     color: var(--color-primary);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.05rem;
     transition: color var(--transition-fast);
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .header-phone:hover {
@@ -253,7 +263,7 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
   }
 
   .phone-icon {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .phone-number {
