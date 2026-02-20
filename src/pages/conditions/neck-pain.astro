@@ -1,0 +1,386 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+
+const pageTitle = "Neck Pain Physical Therapy Baltimore | Cervical Specialist | Physica Medica";
+const pageDescription = "Neck pain treatment in Fells Point, Baltimore. Dr. Maks Birikov DPT treats cervical pain, text neck & whiplash with dry needling & manual therapy. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions", url: "/conditions" },
+  { name: "Neck Pain", url: "/conditions/neck-pain" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Neck Pain Physical Therapy",
+  "description": "Specialized physical therapy for neck pain, cervical pain, text neck, whiplash, and cervicogenic headaches",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How many PT sessions does neck pain need?",
+    answer: "Acute neck pain often improves in 3-5 sessions. Chronic neck pain typically requires 6-10 sessions. Text neck and forward head posture take longer because they require postural retraining, not just pain relief. One-on-one care produces faster results."
+  },
+  {
+    question: "Can PT help a herniated disc in the neck?",
+    answer: "Yes. Most cervical disc herniations improve with physical therapy. Treatment focuses on reducing nerve irritation, improving spinal mobility, and correcting posture. Surgery is rarely necessary. Dr. Maks uses manual therapy, dry needling, and traction techniques to decompress the disc."
+  },
+  {
+    question: "What is text neck and can PT fix it?",
+    answer: "Text neck is forward head posture caused by prolonged phone and computer use. Your head weighs 10-12 pounds—when it's forward, it creates 40-60 pounds of force on your neck. PT fixes text neck by releasing tight muscles, strengthening weak postural muscles, and retraining proper alignment."
+  },
+  {
+    question: "Can neck problems cause headaches?",
+    answer: "Absolutely. Cervicogenic headaches originate from neck dysfunction. Trigger points in the upper cervical muscles refer pain to the temples, behind the eyes, and base of the skull. Treating the neck often eliminates the headaches completely."
+  },
+  {
+    question: "Is dry needling effective for neck pain?",
+    answer: "Extremely effective. Dry needling releases trigger points in the upper trap, levator scapulae, and suboccipital muscles causing chronic neck tension. Many patients experience immediate relief. Combined with manual therapy and posture correction, it addresses both symptoms and root causes."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="condition-hero">
+    <div class="container-narrow">
+      <h1>Neck Pain Physical Therapy in Baltimore</h1>
+      <p class="hero-subtitle">Cervical pain, text neck & whiplash specialist</p>
+      <div class="hero-stats">
+        <span class="stat">60-Min Sessions</span>
+        <span class="stat">Dr. Maks Birikov DPT</span>
+        <span class="stat">No Referral Needed</span>
+      </div>
+      <a href="/schedule" class="hero-cta">Schedule Appointment</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>Why Neck Pain Becomes Chronic</h2>
+      <p>Neck pain is epidemic in desk workers and phone users. Your head weighs 10-12 pounds. When it's forward (text neck), it creates 40-60 pounds of force on your cervical spine. Muscles tighten to support the load, trigger points develop, and pain becomes constant.</p>
+      <p>Stretching doesn't fix it because the problem isn't tight muscles—it's weak postural muscles and forward head posture. Dr. Maks Birikov addresses both: releases the tight muscles with dry needling and manual therapy, then retrains proper posture.</p>
+
+      <h2>Conditions We Treat</h2>
+      <ul class="condition-list">
+        <li><strong>Cervical Strain:</strong> Acute and chronic neck muscle pain</li>
+        <li><strong>Disc Herniation:</strong> Cervical disc bulges causing arm pain</li>
+        <li><strong>Text Neck:</strong> Forward head posture from phone/computer use</li>
+        <li><strong>Forward Head Posture:</strong> Postural dysfunction causing chronic tension</li>
+        <li><strong>Whiplash:</strong> Neck injury from car accidents or trauma</li>
+        <li><strong>Cervicogenic Headaches:</strong> Headaches originating from the neck</li>
+        <li><strong>Upper Cervical Dysfunction:</strong> C1-C2 joint restrictions</li>
+        <li><strong>Thoracic Outlet Syndrome:</strong> Nerve compression causing arm symptoms</li>
+      </ul>
+
+      <h2>Text Neck & Forward Head Posture</h2>
+      <p>Text neck is the modern epidemic. Hours spent looking down at phones and computers pulls your head forward, straining cervical muscles and compressing discs. Over time, this becomes structural—your body adapts to the poor posture.</p>
+      <p>Fixing text neck requires more than stretching. Dr. Maks uses:</p>
+      <ul class="treatment-approach">
+        <li>Dry needling to release chronically tight upper trap and levator scapulae</li>
+        <li>Manual therapy to restore cervical spine mobility</li>
+        <li>Postural retraining to correct forward head position</li>
+        <li>Strengthening of deep neck flexors (the muscles that hold your head back)</li>
+        <li>Workstation ergonomics and self-care strategies</li>
+      </ul>
+      <p>Learn more about <a href="/services/specialty-techniques/posture-reeducation">posture correction</a>.</p>
+
+      <h2>Cervicogenic Headaches</h2>
+      <p>Cervicogenic headaches originate from neck dysfunction. Trigger points in the upper cervical muscles refer pain to the temples, behind the eyes, and base of the skull. Many patients are told they have migraines when the problem is actually their neck.</p>
+      <p>Treating the neck often eliminates the headaches completely. Dr. Maks addresses cervical spine mobility, trigger points, and posture—not just symptoms.</p>
+      <p>Also treating <a href="/conditions/headaches-migraines">headaches and migraines</a>.</p>
+
+      <h2>Treatment Methods</h2>
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <h3>Dry Needling for Neck Pain</h3>
+          <p>Release trigger points in upper trap, levator scapulae, and suboccipital muscles. Fast relief for chronic neck tension.</p>
+          <a href="/services/dry-needling">Learn about dry needling →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Myofascial Cupping</h3>
+          <p>Release fascial restrictions in the neck and upper back. Increase blood flow and reduce inflammation.</p>
+          <a href="/services/myofascial-cupping">Learn about cupping →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Manual Therapy</h3>
+          <p>Cervical spine mobilization, soft tissue release, and upper cervical manipulation to restore normal movement.</p>
+        </div>
+        <div class="treatment-card">
+          <h3>Posture Re-education</h3>
+          <p>Correct forward head posture and text neck through postural retraining and strengthening.</p>
+          <a href="/services/specialty-techniques/posture-reeducation">Learn about posture correction →</a>
+        </div>
+      </div>
+
+      <h2>Connection to TMJ and Headaches</h2>
+      <p>Neck pain rarely exists alone. The jaw, neck, and upper back are biomechanically connected. Neck dysfunction often causes TMJ pain and headaches. Dr. Maks treats all three simultaneously when needed.</p>
+      <p>If you have neck pain plus jaw pain or headaches, addressing the cervical spine is essential. This is why 60-minute one-on-one sessions matter—there's time to treat the whole system.</p>
+      <p>Also treating <a href="/conditions/tmj">TMJ and jaw pain</a> and <a href="/conditions/headaches-migraines">headaches and migraines</a>.</p>
+
+      <div class="location-box">
+        <h3>Neck Pain Specialist in Fells Point, Baltimore</h3>
+        <p>Physica Medica is located at <strong>800 S Bond St, Baltimore, MD 21231</strong> in Fells Point.</p>
+        <p><strong>No referral needed.</strong> Maryland allows direct access to physical therapy. Schedule directly and start treatment immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Neck Pain FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Fix Your Neck Pain</h3>
+        <p>Schedule your first session with Dr. Maks Birikov, DPT</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-links">
+          <a href="/services/dry-needling">Dry Needling</a> | 
+          <a href="/conditions/tmj">TMJ Treatment</a> | 
+          <a href="/conditions/headaches-migraines">Headache Treatment</a> | 
+          <a href="/contact">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .condition-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  .condition-list, .treatment-approach {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .condition-list li, .treatment-approach li {
+    margin-bottom: 0.75rem;
+  }
+
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .treatment-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .treatment-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .treatment-card p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .treatment-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .treatment-card a:hover {
+    text-decoration: underline;
+  }
+
+  .location-box {
+    background: #e8f5f2;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .location-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .location-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .location-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .location-box a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .location-box a:hover {
+    text-decoration: underline;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .condition-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>

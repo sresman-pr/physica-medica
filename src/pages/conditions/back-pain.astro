@@ -1,0 +1,398 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+
+const pageTitle = "Back Pain & Sciatica Physical Therapy Baltimore | Physica Medica";
+const pageDescription = "Back pain & sciatica treatment in Fells Point, Baltimore. Dr. Maks Birikov DPT offers dry needling, cupping & manual therapy for lower back pain. One-on-one 60-min sessions. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions", url: "/conditions" },
+  { name: "Back Pain & Sciatica", url: "/conditions/back-pain" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Back Pain & Sciatica Physical Therapy",
+  "description": "Specialized physical therapy treatment for lower back pain, sciatica, disc herniation, and chronic back pain using dry needling, cupping, and manual therapy",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How many PT sessions does back pain typically need?",
+    answer: "Acute back pain often improves in 3-5 sessions. Chronic lower back pain typically requires 6-10 sessions. The advantage of one-on-one care is faster progress—Dr. Maks spends the full hour treating you, not rotating between multiple patients."
+  },
+  {
+    question: "Can dry needling help lower back pain?",
+    answer: "Yes. Dry needling is highly effective for lower back pain by releasing trigger points in the paraspinal muscles, quadratus lumborum, and glutes. Many patients experience 40-60% pain reduction after the first session. Combined with manual therapy and movement correction, it addresses both symptoms and root causes."
+  },
+  {
+    question: "What is sciatica and how is it treated with PT?",
+    answer: "Sciatica is leg pain caused by irritation of the sciatic nerve, often from disc herniation, piriformis syndrome, or spinal stenosis. PT treats sciatica by releasing muscle tension compressing the nerve, improving spinal mobility, and correcting movement patterns. Most sciatica cases resolve without surgery."
+  },
+  {
+    question: "Is physical therapy better than chiropractic for back pain?",
+    answer: "Physical therapy addresses the muscular and movement dysfunction causing back pain, not just spinal alignment. PT includes hands-on manual therapy, dry needling, therapeutic exercise, and education for lasting results. Many patients try chiropractic first and find PT more effective for chronic cases."
+  },
+  {
+    question: "Do I need a referral for back pain PT in Maryland?",
+    answer: "No. Maryland allows direct access to physical therapy. You can schedule directly with Dr. Maks without a physician referral and begin treatment immediately."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="condition-hero">
+    <div class="container-narrow">
+      <h1>Back Pain Physical Therapy in Baltimore</h1>
+      <p class="hero-subtitle">Lower back pain & sciatica specialist</p>
+      <div class="hero-stats">
+        <span class="stat">60-Min Sessions</span>
+        <span class="stat">Dr. Maks Birikov DPT</span>
+        <span class="stat">No Referral Needed</span>
+      </div>
+      <a href="/schedule" class="hero-cta">Schedule Appointment</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>Why Back Pain Becomes Chronic</h2>
+      <p>Most back pain starts as a simple muscle strain or disc irritation. It becomes chronic when the underlying movement dysfunction isn't addressed. You compensate, other muscles tighten, and the pain cycle continues.</p>
+      <p>Pain management approaches (medication, injections) mask symptoms. Physical therapy fixes the root cause: muscle imbalances, trigger points, poor movement patterns, and spinal mobility restrictions.</p>
+      <p>Dr. Maks Birikov treats back pain with a comprehensive approach in 60-minute one-on-one sessions at Physica Medica in Fells Point, Baltimore. No referral needed.</p>
+
+      <h2>Conditions We Treat</h2>
+      <ul class="condition-list">
+        <li><strong>Lower Back Pain:</strong> Acute and chronic lumbar pain</li>
+        <li><strong>Sciatica:</strong> Leg pain from nerve irritation</li>
+        <li><strong>Disc Herniation:</strong> Bulging or herniated discs</li>
+        <li><strong>SI Joint Dysfunction:</strong> Sacroiliac joint pain</li>
+        <li><strong>Muscle Strain:</strong> Lumbar strain and spasm</li>
+        <li><strong>Spinal Stenosis:</strong> Narrowing causing nerve compression</li>
+        <li><strong>Degenerative Disc Disease:</strong> Age-related disc changes</li>
+        <li><strong>Post-Surgical Rehab:</strong> Recovery after back surgery</li>
+      </ul>
+
+      <h2>Sciatica Treatment</h2>
+      <p>Sciatica causes shooting pain down the leg, often with numbness or tingling. It's caused by compression or irritation of the sciatic nerve, typically from:</p>
+      <ul class="sciatica-causes">
+        <li>Disc herniation pressing on the nerve root</li>
+        <li>Piriformis syndrome (muscle compressing the nerve)</li>
+        <li>Spinal stenosis (narrowing of the spinal canal)</li>
+        <li>SI joint dysfunction referring pain down the leg</li>
+      </ul>
+      <p>Physical therapy treats sciatica by releasing muscle tension compressing the nerve, improving spinal mobility, and correcting movement patterns that caused the problem. Most sciatica cases resolve without surgery when treated properly.</p>
+      <p>Dr. Maks uses dry needling to release piriformis and gluteal trigger points, manual therapy to improve spinal mobility, and functional movement training to prevent recurrence.</p>
+
+      <h2>Treatment Methods</h2>
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <h3>Dry Needling for Back Pain</h3>
+          <p>Release trigger points in paraspinal muscles, quadratus lumborum, and glutes. Fast pain relief by addressing muscle knots contributing to back pain and sciatica.</p>
+          <a href="/services/dry-needling">Learn about dry needling →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Myofascial Cupping</h3>
+          <p>Increase blood flow, release fascial restrictions, and reduce inflammation in the lower back. Particularly effective for chronic back pain.</p>
+          <a href="/services/myofascial-cupping">Learn about cupping →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>IASTM / Graston Technique</h3>
+          <p>Break down scar tissue and adhesions limiting spinal mobility. Effective for post-injury back pain and chronic restrictions.</p>
+          <a href="/services/instrument-assisted-tissue-mobilization">Learn about IASTM →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Manual Therapy</h3>
+          <p>Hands-on spinal mobilization, soft tissue release, and joint manipulation to restore normal movement and reduce pain.</p>
+        </div>
+        <div class="treatment-card">
+          <h3>Functional Movement Training</h3>
+          <p>Correct the movement patterns causing your back pain. Learn to lift, bend, and move without triggering pain.</p>
+          <a href="/services/functional-patterns">Learn about Functional Patterns →</a>
+        </div>
+      </div>
+
+      <h2>Why One-on-One Matters for Back Rehab</h2>
+      <p>Back pain is complex. It requires thorough assessment, hands-on treatment, and movement retraining. Insurance-based PT clinics split therapists between 2-4 patients—you do exercises alone while the therapist sees someone else.</p>
+      <p>Dr. Maks treats one patient at a time for the full hour. This means 30-40 minutes of hands-on manual therapy, dry needling, and cupping—not 10 minutes while you're rushed through generic exercises.</p>
+      <p>Your treatment plan isn't dictated by insurance visit limits. It's dictated by your recovery.</p>
+
+      <h2>What to Expect</h2>
+      <p>Your first 60-minute session includes:</p>
+      <ul class="expectation-list">
+        <li>Comprehensive evaluation of spine, hips, and movement patterns</li>
+        <li>Identification of muscle trigger points and joint restrictions</li>
+        <li>Hands-on treatment (dry needling, cupping, manual therapy)</li>
+        <li>Functional movement assessment</li>
+        <li>Customized home exercise program</li>
+        <li>Education on what's causing your pain and how to prevent recurrence</li>
+      </ul>
+
+      <div class="location-box">
+        <h3>Back Pain Specialist in Fells Point, Baltimore</h3>
+        <p>Physica Medica is located at <strong>800 S Bond St, Baltimore, MD 21231</strong> in Fells Point. Convenient parking available.</p>
+        <p><strong>No referral needed.</strong> Maryland allows direct access to physical therapy. Schedule directly and start treatment immediately.</p>
+        <p>Also treating <a href="/conditions/hip-pain">hip pain</a> and <a href="/conditions/knee-pain">knee pain</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Back Pain & Sciatica FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Fix Your Back Pain</h3>
+        <p>Stop suffering. Schedule your first session with Dr. Maks Birikov, DPT.</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-links">
+          <a href="/services/dry-needling">Dry Needling</a> | 
+          <a href="/services/myofascial-cupping">Cupping Therapy</a> | 
+          <a href="/conditions/hip-pain">Hip Pain</a> | 
+          <a href="/contact">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .condition-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  .condition-list, .sciatica-causes, .expectation-list {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .condition-list li, .sciatica-causes li, .expectation-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .treatment-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .treatment-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .treatment-card p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .treatment-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .treatment-card a:hover {
+    text-decoration: underline;
+  }
+
+  .location-box {
+    background: #e8f5f2;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .location-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .location-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .location-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .location-box a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .location-box a:hover {
+    text-decoration: underline;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .condition-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>

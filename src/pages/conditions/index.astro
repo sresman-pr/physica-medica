@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+
+const pageTitle = "Conditions We Treat | Baltimore Physical Therapy | Physica Medica";
+const pageDescription = "Physical therapy for back pain, neck pain, TMJ, knee pain, shoulder pain & more in Fells Point, Baltimore. Dr. Maks Birikov DPT. One-on-one 60-min sessions. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions We Treat", url: "/conditions" }
+];
+
+const conditions = [
+  {
+    name: "TMJ & Jaw Pain",
+    slug: "tmj",
+    description: "TMJ specialist treating jaw pain, clicking, limited opening, and TMJ disorder with dry needling and manual therapy.",
+    keywords: "TMJ, jaw pain, TMJ specialist"
+  },
+  {
+    name: "Back Pain & Sciatica",
+    slug: "back-pain",
+    description: "Treatment for lower back pain, sciatica, disc herniation, SI joint dysfunction, and chronic back pain.",
+    keywords: "back pain, sciatica, lower back pain"
+  },
+  {
+    name: "Shoulder Pain",
+    slug: "shoulder-pain",
+    description: "Rotator cuff injuries, frozen shoulder, shoulder impingement, and post-surgical shoulder rehabilitation.",
+    keywords: "shoulder pain, rotator cuff, frozen shoulder"
+  },
+  {
+    name: "Knee Pain",
+    slug: "knee-pain",
+    description: "IT band syndrome, patellofemoral pain, meniscus injuries, and post-surgical knee rehabilitation.",
+    keywords: "knee pain, IT band, runner's knee"
+  },
+  {
+    name: "Neck Pain",
+    slug: "neck-pain",
+    description: "Cervical pain, text neck, whiplash, forward head posture, and cervicogenic headaches.",
+    keywords: "neck pain, text neck, cervical pain"
+  },
+  {
+    name: "Hip Pain",
+    slug: "hip-pain",
+    description: "Hip bursitis, labral tears, hip flexor strain, IT band syndrome, and piriformis syndrome.",
+    keywords: "hip pain, hip bursitis, IT band"
+  },
+  {
+    name: "Headaches & Migraines",
+    slug: "headaches-migraines",
+    description: "Cervicogenic headaches, tension headaches, and migraine treatment with physical therapy.",
+    keywords: "headaches, migraines, cervicogenic headaches"
+  },
+  {
+    name: "Plantar Fasciitis & Foot Pain",
+    slug: "foot-ankle-pain",
+    description: "Plantar fasciitis, heel pain, Achilles tendinopathy, and ankle sprains.",
+    keywords: "plantar fasciitis, heel pain, foot pain"
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="conditions-hero">
+    <div class="container-narrow">
+      <h1>Conditions We Treat in Baltimore</h1>
+      <p class="hero-subtitle">One-on-one physical therapy for pain relief and lasting results</p>
+      <p class="hero-text">Dr. Maks Birikov, DPT treats a wide range of musculoskeletal conditions at Physica Medica in Fells Point, Baltimore. Sixty-minute one-on-one sessions, every time. Direct access—no referral needed.</p>
+    </div>
+  </section>
+
+  <!-- Conditions Grid -->
+  <section class="conditions-grid-section">
+    <div class="container">
+      <div class="conditions-grid">
+        {conditions.map((condition) => (
+          <a href={`/conditions/${condition.slug}`} class="condition-card">
+            <h2>{condition.name}</h2>
+            <p>{condition.description}</p>
+            <span class="condition-link">Learn More & Schedule →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="why-choose-section">
+    <div class="container-narrow">
+      <h2>Why Choose Physica Medica for Your Condition</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>60-Minute Sessions</h3>
+          <p>Full hour one-on-one with Dr. Maks Birikov, DPT—not 15 minutes split between multiple patients.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Advanced Techniques</h3>
+          <p>Dry needling, cupping, IASTM, manual therapy—whatever your condition needs.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Direct Access</h3>
+          <p>No referral required in Maryland. Schedule directly and start treatment immediately.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Your Recovery, Your Timeline</h3>
+          <p>Treatment plans based on your needs, not insurance company limits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Ready to Fix Your Pain?</h3>
+        <p>Schedule your first session with Dr. Maks Birikov, DPT in Fells Point, Baltimore.</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-note">Located at 800 S Bond St, Baltimore, MD 21231 | Call <a href="tel:443-228-8029">443-228-8029</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .conditions-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .conditions-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+  }
+
+  .hero-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+
+  .conditions-grid-section {
+    background: white;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .condition-card {
+    background: var(--color-background-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e9ecef;
+    border-left: 4px solid var(--color-accent);
+    transition: all 0.2s;
+  }
+
+  .condition-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-left-color: var(--color-primary);
+  }
+
+  .condition-card h2 {
+    color: var(--color-primary);
+    margin: 0 0 1rem;
+    font-size: 1.35rem;
+  }
+
+  .condition-card p {
+    color: var(--color-text-secondary);
+    margin: 0 0 1rem;
+    line-height: 1.6;
+  }
+
+  .condition-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .condition-card:hover .condition-link {
+    text-decoration: underline;
+  }
+
+  .why-choose-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .why-choose-section h2 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 2.5rem;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .benefit-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .benefit-card p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .cta-section {
+    background: var(--color-background-light);
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-note {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+  }
+
+  .cta-note a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .conditions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

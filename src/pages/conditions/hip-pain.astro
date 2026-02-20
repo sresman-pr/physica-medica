@@ -1,0 +1,384 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+
+const pageTitle = "Hip Pain Physical Therapy Baltimore | Physica Medica";
+const pageDescription = "Hip pain treatment in Fells Point, Baltimore. Dr. Maks Birikov DPT treats hip pain, bursitis & labral tears with dry needling & manual therapy. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions", url: "/conditions" },
+  { name: "Hip Pain", url: "/conditions/hip-pain" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Hip Pain Physical Therapy",
+  "description": "Specialized physical therapy for hip pain, hip bursitis, labral tears, and hip impingement",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How long does hip pain physical therapy take?",
+    answer: "Acute hip pain often improves in 4-6 sessions. Chronic hip pain typically requires 8-12 sessions. Hip labral tears and impingement take longer because they require movement retraining, not just pain relief. One-on-one care produces faster results."
+  },
+  {
+    question: "Can PT help hip bursitis?",
+    answer: "Yes. Hip bursitis is inflammation of the bursa on the outside of the hip. PT treats bursitis by releasing tight IT band and glute muscles, correcting gait patterns, and strengthening hip stabilizers. Most cases resolve without injections or surgery."
+  },
+  {
+    question: "What is hip impingement and can PT fix it?",
+    answer: "Hip impingement (FAI) occurs when the hip bones pinch during movement. PT can't change bone structure, but it can improve hip mechanics, strengthen stabilizers, and reduce compensatory patterns. Many patients become pain-free without surgery."
+  },
+  {
+    question: "Is dry needling effective for hip pain?",
+    answer: "Extremely effective. Dry needling releases trigger points in the glutes, hip flexors, and IT band causing hip pain. Combined with manual therapy and movement correction, it addresses both symptoms and root causes."
+  },
+  {
+    question: "Do I need a referral for hip pain PT in Maryland?",
+    answer: "No. Maryland allows direct access to physical therapy. You can schedule directly with Dr. Maks without a physician referral and begin treatment immediately."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="condition-hero">
+    <div class="container-narrow">
+      <h1>Hip Pain Physical Therapy in Baltimore</h1>
+      <p class="hero-subtitle">Hip bursitis, labral tears & impingement specialist</p>
+      <div class="hero-stats">
+        <span class="stat">60-Min Sessions</span>
+        <span class="stat">Dr. Maks Birikov DPT</span>
+        <span class="stat">No Referral Needed</span>
+      </div>
+      <a href="/schedule" class="hero-cta">Schedule Appointment</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>Common Hip Conditions We Treat</h2>
+      <ul class="condition-list">
+        <li><strong>Hip Bursitis:</strong> Trochanteric bursitis causing lateral hip pain</li>
+        <li><strong>Hip Labral Tears:</strong> Cartilage damage in the hip socket</li>
+        <li><strong>Hip Impingement (FAI):</strong> Femoroacetabular impingement</li>
+        <li><strong>Hip Flexor Strain:</strong> Iliopsoas tendinopathy and pain</li>
+        <li><strong>Piriformis Syndrome:</strong> Deep gluteal pain and sciatica</li>
+        <li><strong>IT Band Syndrome:</strong> Lateral hip and knee pain</li>
+        <li><strong>Hip Osteoarthritis:</strong> Degenerative joint disease</li>
+        <li><strong>Post-Surgical Rehab:</strong> Recovery after hip surgery</li>
+      </ul>
+
+      <h2>Why Hip Pain is Complex</h2>
+      <p>Your hip is a ball-and-socket joint that must be both stable and mobile. It supports your entire body weight during walking and running. When hip muscles are weak or tight, the joint compensates—and pain develops.</p>
+      <p>Hip pain rarely exists in isolation. Weak hips cause knee pain. Tight hip flexors cause back pain. Dr. Maks Birikov evaluates your entire kinetic chain and treats all the dysfunction in 60-minute one-on-one sessions.</p>
+
+      <h2>Hip Bursitis Treatment</h2>
+      <p>Hip bursitis causes pain on the outside of the hip, especially when lying on that side or walking. It's caused by friction between the IT band and the bursa (a fluid-filled sac that reduces friction).</p>
+      <p>Physical therapy treats hip bursitis by:</p>
+      <ul class="treatment-approach">
+        <li>Releasing tight IT band and glute muscles with dry needling and cupping</li>
+        <li>Correcting gait patterns that cause excessive friction</li>
+        <li>Strengthening hip abductors to stabilize the pelvis</li>
+        <li>Addressing lumbar spine and SI joint dysfunction</li>
+      </ul>
+      <p>Most hip bursitis cases resolve in 6-8 weeks without injections or surgery.</p>
+
+      <h2>Hip Labral Tears & Impingement</h2>
+      <p>The labrum is cartilage lining the hip socket. Tears cause deep hip pain, clicking, and limited range of motion. Hip impingement (FAI) occurs when hip bones pinch during movement, often causing labral tears.</p>
+      <p>PT can't change bone structure, but it can improve hip mechanics, strengthen stabilizers, and reduce compensatory patterns. Many patients become pain-free without surgery. Even post-surgical cases require PT to restore full function.</p>
+
+      <h2>Treatment Methods</h2>
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <h3>Dry Needling</h3>
+          <p>Release trigger points in glutes, hip flexors, and IT band. Fast pain relief and improved mobility.</p>
+          <a href="/services/dry-needling">Learn about dry needling →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Myofascial Cupping</h3>
+          <p>Release IT band restrictions and improve blood flow to hip muscles. Particularly effective for hip bursitis.</p>
+          <a href="/services/myofascial-cupping">Learn about cupping →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Manual Therapy</h3>
+          <p>Hip joint mobilization, soft tissue release, and lumbar/SI joint treatment to restore normal mechanics.</p>
+        </div>
+        <div class="treatment-card">
+          <h3>Functional Movement</h3>
+          <p>Correct the movement patterns causing your hip pain. Address gait dysfunction and compensatory patterns.</p>
+          <a href="/services/functional-patterns">Learn about Functional Patterns →</a>
+        </div>
+      </div>
+
+      <h2>Connection to Back and Knee Pain</h2>
+      <p>Hip pain rarely exists alone. Weak hips cause knee pain and back pain. Tight hip flexors pull on the lumbar spine. Dr. Maks treats the whole kinetic chain, not just the painful hip.</p>
+      <p>If you have hip pain plus back or knee issues, addressing all three simultaneously produces faster results. This is why 60-minute one-on-one sessions matter—there's time to treat the whole system.</p>
+      <p>Also treating <a href="/conditions/back-pain">back pain</a> and <a href="/conditions/knee-pain">knee pain</a>.</p>
+
+      <div class="location-box">
+        <h3>Hip Pain Specialist in Fells Point, Baltimore</h3>
+        <p>Physica Medica is located at <strong>800 S Bond St, Baltimore, MD 21231</strong> in Fells Point.</p>
+        <p><strong>No referral needed.</strong> Maryland allows direct access to physical therapy. Schedule directly and start treatment immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Hip Pain FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Fix Your Hip Pain</h3>
+        <p>Schedule your first session with Dr. Maks Birikov, DPT</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-links">
+          <a href="/services/dry-needling">Dry Needling</a> | 
+          <a href="/conditions/back-pain">Back Pain</a> | 
+          <a href="/conditions/knee-pain">Knee Pain</a> | 
+          <a href="/contact">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .condition-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  .condition-list, .treatment-approach {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .condition-list li, .treatment-approach li {
+    margin-bottom: 0.75rem;
+  }
+
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .treatment-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .treatment-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .treatment-card p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .treatment-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .treatment-card a:hover {
+    text-decoration: underline;
+  }
+
+  .location-box {
+    background: #e8f5f2;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .location-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .location-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .location-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .location-box a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .location-box a:hover {
+    text-decoration: underline;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .condition-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>

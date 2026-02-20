@@ -1,0 +1,393 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+
+const pageTitle = "Foot & Ankle Pain Physical Therapy Baltimore | Plantar Fasciitis | Physica Medica";
+const pageDescription = "Foot & ankle pain treatment in Fells Point, Baltimore. Dr. Maks Birikov DPT treats plantar fasciitis, Achilles tendinopathy & ankle sprains. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions", url: "/conditions" },
+  { name: "Foot & Ankle Pain", url: "/conditions/foot-ankle-pain" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Foot & Ankle Pain Physical Therapy",
+  "description": "Specialized physical therapy for plantar fasciitis, Achilles tendinopathy, ankle sprains, and foot pain",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How long does plantar fasciitis take to heal with PT?",
+    answer: "Acute plantar fasciitis often improves in 4-6 weeks. Chronic cases typically require 8-12 weeks. The key is addressing the root cause: tight calf muscles, weak foot intrinsics, and poor ankle mobility. One-on-one PT produces faster results because Dr. Maks spends 30-40 minutes per session on hands-on treatment."
+  },
+  {
+    question: "Can PT help chronic Achilles tendinopathy?",
+    answer: "Yes. Achilles tendinopathy requires progressive loading and eccentric strengthening, not just rest. PT treats Achilles pain by releasing calf trigger points, improving ankle mobility, and implementing a structured loading program. Most cases improve significantly within 8-12 weeks."
+  },
+  {
+    question: "Is dry needling effective for plantar fasciitis?",
+    answer: "Extremely effective. Dry needling releases trigger points in the calf muscles (gastrocnemius and soleus) that contribute to plantar fascia tension. It also treats the plantar fascia directly. Many patients experience 40-60% pain reduction after the first session."
+  },
+  {
+    question: "What causes chronic foot and ankle pain?",
+    answer: "Chronic foot pain usually results from poor ankle mobility, weak foot muscles, and compensatory gait patterns. Your foot and ankle must absorb force with every step. When ankle mobility is limited or foot muscles are weak, structures like the plantar fascia compensate—and pain develops."
+  },
+  {
+    question: "Do I need a referral for foot pain PT in Maryland?",
+    answer: "No. Maryland allows direct access to physical therapy. You can schedule directly with Dr. Maks without a physician referral and begin treatment immediately."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="condition-hero">
+    <div class="container-narrow">
+      <h1>Foot & Ankle Pain Physical Therapy in Baltimore</h1>
+      <p class="hero-subtitle">Plantar fasciitis, Achilles tendinopathy & ankle sprains</p>
+      <div class="hero-stats">
+        <span class="stat">60-Min Sessions</span>
+        <span class="stat">Dr. Maks Birikov DPT</span>
+        <span class="stat">No Referral Needed</span>
+      </div>
+      <a href="/schedule" class="hero-cta">Schedule Appointment</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>Common Foot & Ankle Conditions We Treat</h2>
+      <ul class="condition-list">
+        <li><strong>Plantar Fasciitis:</strong> Heel pain and arch pain</li>
+        <li><strong>Achilles Tendinopathy:</strong> Achilles tendon pain and stiffness</li>
+        <li><strong>Ankle Sprains:</strong> Acute and chronic ankle instability</li>
+        <li><strong>Posterior Tibial Tendinopathy:</strong> Medial ankle pain</li>
+        <li><strong>Peroneal Tendinopathy:</strong> Lateral ankle pain</li>
+        <li><strong>Morton's Neuroma:</strong> Nerve pain in forefoot</li>
+        <li><strong>Metatarsalgia:</strong> Ball of foot pain</li>
+        <li><strong>Post-Surgical Rehab:</strong> Recovery after foot/ankle surgery</li>
+      </ul>
+
+      <h2>Plantar Fasciitis Treatment</h2>
+      <p>Plantar fasciitis causes heel pain, especially with the first steps in the morning. The plantar fascia is a thick band of tissue running from your heel to your toes. When it's overloaded, it becomes inflamed and painful.</p>
+      <p>Stretching and orthotics provide temporary relief but don't fix the root cause. Dr. Maks Birikov treats plantar fasciitis by:</p>
+      <ul class="treatment-approach">
+        <li>Releasing tight calf muscles (gastrocnemius and soleus) with dry needling</li>
+        <li>Treating the plantar fascia directly with dry needling and IASTM</li>
+        <li>Improving ankle dorsiflexion mobility</li>
+        <li>Strengthening weak foot intrinsic muscles</li>
+        <li>Correcting gait patterns that overload the plantar fascia</li>
+      </ul>
+      <p>Most plantar fasciitis cases improve significantly within 4-6 weeks when treated properly.</p>
+
+      <h2>Achilles Tendinopathy Treatment</h2>
+      <p>Achilles tendinopathy causes pain and stiffness in the Achilles tendon, especially after rest or at the start of activity. It's common in runners and athletes but also affects sedentary people with poor ankle mobility.</p>
+      <p>Rest doesn't fix Achilles tendinopathy—progressive loading does. Dr. Maks uses:</p>
+      <ul class="achilles-approach">
+        <li>Dry needling to release calf trigger points</li>
+        <li>IASTM to improve Achilles tendon tissue quality</li>
+        <li>Eccentric strengthening (the gold standard for tendinopathy)</li>
+        <li>Progressive loading to rebuild tendon capacity</li>
+        <li>Gait analysis and correction</li>
+      </ul>
+      <p>Achilles tendinopathy takes 8-12 weeks to resolve, but PT significantly reduces pain and speeds recovery.</p>
+
+      <h2>Ankle Sprains & Chronic Instability</h2>
+      <p>Ankle sprains are common, but chronic ankle instability is the real problem. After a sprain, if you don't restore full mobility and strength, the ankle remains weak—and you keep spraining it.</p>
+      <p>PT treats ankle sprains by restoring full range of motion, strengthening ankle stabilizers, and retraining balance and proprioception. This prevents chronic instability and future sprains.</p>
+
+      <h2>Treatment Methods</h2>
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <h3>Dry Needling</h3>
+          <p>Release trigger points in calf muscles and treat the plantar fascia directly. Fast pain relief for plantar fasciitis and Achilles pain.</p>
+          <a href="/services/dry-needling">Learn about dry needling →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>IASTM / Graston</h3>
+          <p>Break down scar tissue in the Achilles tendon and plantar fascia. Improve tissue quality and mobility.</p>
+          <a href="/services/instrument-assisted-tissue-mobilization">Learn about IASTM →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Manual Therapy</h3>
+          <p>Ankle joint mobilization, soft tissue release, and calf stretching to restore normal mechanics.</p>
+        </div>
+        <div class="treatment-card">
+          <h3>Functional Movement</h3>
+          <p>Correct the gait patterns causing your foot and ankle pain. Address compensatory patterns and rebuild strength.</p>
+          <a href="/services/functional-patterns">Learn about Functional Patterns →</a>
+        </div>
+      </div>
+
+      <h2>Connection to Knee and Hip Pain</h2>
+      <p>Foot and ankle pain rarely exists alone. Limited ankle mobility forces the knee to compensate. Weak feet cause hip and knee pain. Dr. Maks treats the whole kinetic chain, not just the painful foot.</p>
+      <p>If you have foot pain plus knee or hip issues, addressing all three simultaneously produces faster results. This is why 60-minute one-on-one sessions matter—there's time to treat the whole system.</p>
+      <p>Also treating <a href="/conditions/knee-pain">knee pain</a> and <a href="/conditions/hip-pain">hip pain</a>.</p>
+
+      <div class="location-box">
+        <h3>Foot & Ankle Pain Specialist in Fells Point, Baltimore</h3>
+        <p>Physica Medica is located at <strong>800 S Bond St, Baltimore, MD 21231</strong> in Fells Point.</p>
+        <p><strong>No referral needed.</strong> Maryland allows direct access to physical therapy. Schedule directly and start treatment immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Foot & Ankle Pain FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Fix Your Foot & Ankle Pain</h3>
+        <p>Schedule your first session with Dr. Maks Birikov, DPT</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-links">
+          <a href="/services/dry-needling">Dry Needling</a> | 
+          <a href="/services/instrument-assisted-tissue-mobilization">IASTM</a> | 
+          <a href="/conditions/knee-pain">Knee Pain</a> | 
+          <a href="/contact">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .condition-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  .condition-list, .treatment-approach, .achilles-approach {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .condition-list li, .treatment-approach li, .achilles-approach li {
+    margin-bottom: 0.75rem;
+  }
+
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .treatment-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .treatment-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .treatment-card p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .treatment-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .treatment-card a:hover {
+    text-decoration: underline;
+  }
+
+  .location-box {
+    background: #e8f5f2;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .location-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .location-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .location-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .location-box a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .location-box a:hover {
+    text-decoration: underline;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .condition-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>

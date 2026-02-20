@@ -1,0 +1,383 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+
+const pageTitle = "Headache & Migraine Physical Therapy Baltimore | Physica Medica";
+const pageDescription = "Headache & migraine treatment in Fells Point, Baltimore. Dr. Maks Birikov DPT treats cervicogenic headaches, tension headaches & migraines. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions", url: "/conditions" },
+  { name: "Headaches & Migraines", url: "/conditions/headaches-migraines" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Headache & Migraine Physical Therapy",
+  "description": "Specialized physical therapy for cervicogenic headaches, tension headaches, and migraines",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "Can physical therapy help migraines?",
+    answer: "Yes. Many migraines have a cervicogenic component—meaning neck dysfunction contributes to or triggers the headache. PT treats cervicogenic migraines by releasing trigger points in the neck and upper back, improving cervical spine mobility, and correcting posture. Even true migraines often improve when neck dysfunction is addressed."
+  },
+  {
+    question: "What is a cervicogenic headache?",
+    answer: "A cervicogenic headache originates from the neck. Trigger points in the upper cervical muscles refer pain to the temples, behind the eyes, and base of the skull. Many patients are told they have migraines when the problem is actually their neck. PT treats cervicogenic headaches by addressing cervical spine dysfunction."
+  },
+  {
+    question: "How many PT sessions do headaches need?",
+    answer: "Cervicogenic headaches often improve in 4-6 sessions. Chronic tension headaches typically require 6-10 sessions. Migraines with a cervical component take longer because they require postural retraining and trigger point release. One-on-one care produces faster results."
+  },
+  {
+    question: "Is dry needling effective for headaches?",
+    answer: "Extremely effective. Dry needling releases trigger points in the suboccipital muscles, upper trap, and levator scapulae that refer pain to the head. Many patients experience immediate relief. Combined with manual therapy and posture correction, it addresses both symptoms and root causes."
+  },
+  {
+    question: "Do I need a referral for headache PT in Maryland?",
+    answer: "No. Maryland allows direct access to physical therapy. You can schedule directly with Dr. Maks without a physician referral and begin treatment immediately."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="condition-hero">
+    <div class="container-narrow">
+      <h1>Headache & Migraine Physical Therapy in Baltimore</h1>
+      <p class="hero-subtitle">Cervicogenic headaches, tension headaches & migraines</p>
+      <div class="hero-stats">
+        <span class="stat">60-Min Sessions</span>
+        <span class="stat">Dr. Maks Birikov DPT</span>
+        <span class="stat">No Referral Needed</span>
+      </div>
+      <a href="/schedule" class="hero-cta">Schedule Appointment</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>Types of Headaches We Treat</h2>
+      <ul class="condition-list">
+        <li><strong>Cervicogenic Headaches:</strong> Headaches originating from the neck</li>
+        <li><strong>Tension Headaches:</strong> Muscle tension causing head pain</li>
+        <li><strong>Migraines with Cervical Component:</strong> Migraines triggered by neck dysfunction</li>
+        <li><strong>Occipital Neuralgia:</strong> Nerve pain at base of skull</li>
+        <li><strong>TMJ-Related Headaches:</strong> Jaw dysfunction causing temple pain</li>
+        <li><strong>Post-Concussion Headaches:</strong> Persistent headaches after head injury</li>
+      </ul>
+
+      <h2>Cervicogenic Headaches</h2>
+      <p>Cervicogenic headaches originate from the neck. Trigger points in the upper cervical muscles (suboccipitals, upper trap, levator scapulae) refer pain to the temples, behind the eyes, and base of the skull.</p>
+      <p>Many patients are told they have migraines when the problem is actually their neck. The key difference: cervicogenic headaches respond to neck treatment. Migraines don't—unless there's a cervical component.</p>
+      <p>Dr. Maks Birikov treats cervicogenic headaches by:</p>
+      <ul class="treatment-approach">
+        <li>Releasing trigger points in upper cervical muscles with dry needling</li>
+        <li>Improving cervical spine mobility with manual therapy</li>
+        <li>Correcting forward head posture (text neck)</li>
+        <li>Addressing upper cervical restrictions (C1-C2)</li>
+      </ul>
+      <p>Most cervicogenic headaches improve significantly within 4-6 sessions.</p>
+
+      <h2>Migraines and the Cervical Spine</h2>
+      <p>Not all migraines are cervicogenic, but many have a cervical component. Neck dysfunction can trigger migraines or make them worse. Even true migraines often improve when neck dysfunction is addressed.</p>
+      <p>If your migraines are worse with neck movement, worse after prolonged sitting, or accompanied by neck pain, there's likely a cervical component. PT won't cure migraines, but it can reduce frequency and intensity.</p>
+
+      <h2>Connection to TMJ and Neck Pain</h2>
+      <p>Headaches rarely exist alone. The jaw, neck, and upper back are biomechanically connected. TMJ dysfunction and neck pain both cause headaches. Dr. Maks treats all three simultaneously when needed.</p>
+      <p>If you have headaches plus jaw pain or neck pain, addressing the whole system is essential. This is why 60-minute one-on-one sessions matter—there's time to treat everything.</p>
+      <p>Also treating <a href="/conditions/tmj">TMJ and jaw pain</a> and <a href="/conditions/neck-pain">neck pain</a>.</p>
+
+      <h2>Treatment Methods</h2>
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <h3>Dry Needling</h3>
+          <p>Release trigger points in suboccipital muscles, upper trap, and levator scapulae that refer pain to the head. Fast relief for cervicogenic headaches.</p>
+          <a href="/services/dry-needling">Learn about dry needling →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Manual Therapy</h3>
+          <p>Upper cervical mobilization, soft tissue release, and craniosacral techniques to reduce headache frequency and intensity.</p>
+        </div>
+        <div class="treatment-card">
+          <h3>Myofascial Cupping</h3>
+          <p>Release fascial restrictions in the neck and upper back. Reduce muscle tension contributing to headaches.</p>
+          <a href="/services/myofascial-cupping">Learn about cupping →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Posture Re-education</h3>
+          <p>Correct forward head posture and text neck to prevent headache triggers.</p>
+          <a href="/services/specialty-techniques/posture-reeducation">Learn about posture correction →</a>
+        </div>
+      </div>
+
+      <h2>Why One-on-One Matters for Headache Treatment</h2>
+      <p>Headaches require thorough assessment. Dr. Maks evaluates your cervical spine, jaw, posture, and upper back to identify all contributing factors. Then treats everything in 60-minute one-on-one sessions.</p>
+      <p>Insurance-based PT clinics have therapists rotating between multiple patients. That doesn't work for complex headache cases where multiple systems need treatment.</p>
+
+      <div class="location-box">
+        <h3>Headache Specialist in Fells Point, Baltimore</h3>
+        <p>Physica Medica is located at <strong>800 S Bond St, Baltimore, MD 21231</strong> in Fells Point.</p>
+        <p><strong>No referral needed.</strong> Maryland allows direct access to physical therapy. Schedule directly and start treatment immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Headache & Migraine FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Fix Your Headaches</h3>
+        <p>Schedule your first session with Dr. Maks Birikov, DPT</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-links">
+          <a href="/services/dry-needling">Dry Needling</a> | 
+          <a href="/conditions/neck-pain">Neck Pain</a> | 
+          <a href="/conditions/tmj">TMJ Treatment</a> | 
+          <a href="/contact">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .condition-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  .condition-list, .treatment-approach {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .condition-list li, .treatment-approach li {
+    margin-bottom: 0.75rem;
+  }
+
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .treatment-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .treatment-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .treatment-card p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .treatment-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .treatment-card a:hover {
+    text-decoration: underline;
+  }
+
+  .location-box {
+    background: #e8f5f2;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .location-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .location-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .location-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .location-box a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .location-box a:hover {
+    text-decoration: underline;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .condition-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,466 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WatermarkBackground from '../components/WatermarkBackground.astro';
+import FAQSection from '../components/FAQSection.astro';
+
+const pageTitle = "Concierge Physical Therapy Baltimore | In-Home PT | Physica Medica";
+const pageDescription = "Concierge physical therapy in Baltimore. Dr. Maks Birikov DPT provides in-home and in-office treatment. One-on-one care, flexible scheduling. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Concierge Physical Therapy", url: "/concierge-physical-therapy" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Concierge Physical Therapy",
+  "description": "Premium concierge physical therapy services including in-home treatment, flexible scheduling, and personalized one-on-one care",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "What is concierge physical therapy?",
+    answer: "Concierge physical therapy is premium, personalized PT service with flexible scheduling, extended session times, and optional in-home treatment. You receive Dr. Maks Birikov's direct cell number, same-day or next-day appointments, and treatment tailored entirely to your schedule and needs."
+  },
+  {
+    question: "Do you provide in-home physical therapy?",
+    answer: "Yes. Dr. Maks provides in-home physical therapy for concierge clients in Baltimore and surrounding areas. In-home PT is ideal for post-surgical recovery, mobility limitations, or convenience. All equipment is brought to your home."
+  },
+  {
+    question: "What does concierge PT cost?",
+    answer: "Concierge physical therapy rates vary based on frequency, location, and services. Contact us for a customized quote. All concierge services are out-of-network; superbills are provided for insurance reimbursement."
+  },
+  {
+    question: "Who is concierge PT for?",
+    answer: "Concierge PT is ideal for busy professionals, executives, athletes, and anyone who values convenience, privacy, and personalized care. It's also perfect for post-surgical patients who prefer in-home recovery or those with mobility limitations."
+  },
+  {
+    question: "What areas do you serve for in-home PT?",
+    answer: "In-home concierge PT is available throughout Baltimore City and select surrounding areas including Towson, Lutherville, Ruxton, Roland Park, and Homeland. Contact us to confirm availability in your area."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="concierge-hero">
+    <div class="container-narrow">
+      <h1>Concierge Physical Therapy in Baltimore</h1>
+      <p class="hero-subtitle">Premium in-home and in-office treatment with Dr. Maks Birikov, DPT</p>
+      <div class="hero-value-pills">
+        <span class="value-pill">In-Home Available</span>
+        <span class="value-pill">Flexible Scheduling</span>
+        <span class="value-pill">Direct Cell Access</span>
+      </div>
+      <a href="/contact" class="hero-cta">Inquire About Concierge Services</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>What is Concierge Physical Therapy?</h2>
+      <p>Concierge physical therapy is premium, personalized PT service designed for people who value convenience, privacy, and exceptional care. You receive Dr. Maks Birikov's direct attention with flexible scheduling, extended sessions, and optional in-home treatment.</p>
+      <p>Unlike standard PT where you're one of many patients, concierge service means you're the priority. Same-day or next-day appointments. Treatment at your home, office, or our Fells Point clinic. Direct cell number for questions between sessions.</p>
+
+      <h2>Concierge Services Include</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>In-Home Physical Therapy</h3>
+          <p>Dr. Maks brings all necessary equipment to your home. Ideal for post-surgical recovery, mobility limitations, or convenience. Available throughout Baltimore City and select surrounding areas.</p>
+        </div>
+        <div class="service-card">
+          <h3>Flexible Scheduling</h3>
+          <p>Early morning, evening, and weekend appointments available. Same-day or next-day scheduling for urgent needs. Treatment times that fit your schedule, not ours.</p>
+        </div>
+        <div class="service-card">
+          <h3>Extended Sessions</h3>
+          <p>Standard sessions are 60 minutes. Concierge clients can request 75 or 90-minute sessions for complex cases or comprehensive treatment.</p>
+        </div>
+        <div class="service-card">
+          <h3>Direct Access to Dr. Maks</h3>
+          <p>Receive Dr. Maks's direct cell number. Text or call with questions between sessions. No waiting for callbacks or navigating office staff.</p>
+        </div>
+        <div class="service-card">
+          <h3>Priority Booking</h3>
+          <p>Concierge clients receive priority scheduling. Need an appointment this week? You get it. No waiting 2-3 weeks like standard PT clinics.</p>
+        </div>
+        <div class="service-card">
+          <h3>Personalized Treatment Plans</h3>
+          <p>Treatment plans designed entirely around your goals, schedule, and lifestyle. No insurance restrictions on techniques, frequency, or duration.</p>
+        </div>
+      </div>
+
+      <h2>Who is Concierge PT For?</h2>
+      <p>Concierge physical therapy is ideal for:</p>
+      <ul class="ideal-for-list">
+        <li><strong>Busy Professionals & Executives:</strong> Limited time, need flexible scheduling and efficient treatment</li>
+        <li><strong>Athletes:</strong> Require rapid recovery and performance optimization</li>
+        <li><strong>Post-Surgical Patients:</strong> Prefer in-home recovery or have mobility limitations</li>
+        <li><strong>Privacy-Conscious Individuals:</strong> Value one-on-one treatment without other patients present</li>
+        <li><strong>Complex Cases:</strong> Need extended sessions and comprehensive treatment</li>
+        <li><strong>Anyone Who Values Convenience:</strong> Want treatment at home, office, or gym</li>
+      </ul>
+
+      <h2>In-Home Physical Therapy</h2>
+      <p>Dr. Maks provides in-home physical therapy throughout Baltimore City and select surrounding areas including Towson, Lutherville, Ruxton, Roland Park, and Homeland.</p>
+      <p>In-home PT includes:</p>
+      <ul class="home-pt-list">
+        <li>All equipment brought to your location (treatment table, dry needling supplies, cupping, IASTM tools)</li>
+        <li>Full 60-minute one-on-one sessions (or longer if requested)</li>
+        <li>Same comprehensive treatment as in-office visits</li>
+        <li>Ideal for post-surgical recovery, mobility limitations, or convenience</li>
+      </ul>
+
+      <h2>Concierge vs Standard Physical Therapy</h2>
+      <div class="comparison-table">
+        <div class="comparison-row header">
+          <div class="comparison-cell"></div>
+          <div class="comparison-cell">Standard PT</div>
+          <div class="comparison-cell highlight">Concierge PT</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Scheduling</div>
+          <div class="comparison-cell">2-3 week wait</div>
+          <div class="comparison-cell highlight">Same-day or next-day</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Session Length</div>
+          <div class="comparison-cell">60 minutes</div>
+          <div class="comparison-cell highlight">60-90 minutes</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Location</div>
+          <div class="comparison-cell">Clinic only</div>
+          <div class="comparison-cell highlight">Clinic, home, office, or gym</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Communication</div>
+          <div class="comparison-cell">Office phone</div>
+          <div class="comparison-cell highlight">Direct cell access</div>
+        </div>
+        <div class="comparison-row">
+          <div class="comparison-cell label">Appointment Times</div>
+          <div class="comparison-cell">Business hours</div>
+          <div class="comparison-cell highlight">Early morning, evening, weekends</div>
+        </div>
+      </div>
+
+      <h2>Payment & Insurance</h2>
+      <p>Concierge physical therapy is out-of-network. You pay directly for services, and Dr. Maks provides detailed superbills for insurance reimbursement.</p>
+      <p>Rates vary based on frequency, location (in-home vs in-office), and services. Contact us for a customized quote tailored to your needs.</p>
+      <p>Learn more about <a href="/cash-based-physical-therapy">out-of-network physical therapy</a> and insurance reimbursement.</p>
+
+      <div class="cta-box-inline">
+        <h3>Interested in Concierge Physical Therapy?</h3>
+        <p>Contact us to discuss your needs and receive a customized quote.</p>
+        <a href="/contact" class="cta-button-inline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Concierge Physical Therapy FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Experience Concierge Physical Therapy</h3>
+        <p>Premium care, flexible scheduling, and personalized treatment with Dr. Maks Birikov, DPT</p>
+        <a href="/contact" class="cta-button">Inquire Now</a>
+        <p class="cta-links">
+          <a href="/about">About Dr. Maks</a> | 
+          <a href="/services">All Services</a> | 
+          <a href="/cash-based-physical-therapy">Out-of-Network PT</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .concierge-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .concierge-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-value-pills {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-pill {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .service-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .service-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .service-card p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .ideal-for-list, .home-pt-list {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .ideal-for-list li, .home-pt-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .comparison-table {
+    margin: 2rem 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .comparison-row:last-child {
+    border-bottom: none;
+  }
+
+  .comparison-row.header {
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+  }
+
+  .comparison-cell {
+    padding: 1rem;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .comparison-cell:last-child {
+    border-right: none;
+  }
+
+  .comparison-cell.label {
+    font-weight: 600;
+    background: #f8f9fa;
+  }
+
+  .comparison-cell.highlight {
+    background: #e8f5f2;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .cta-box-inline {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    margin: 3rem 0;
+  }
+
+  .cta-box-inline h3 {
+    color: white;
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+  }
+
+  .cta-box-inline p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .cta-button-inline {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.05rem;
+  }
+
+  .cta-button-inline:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .concierge-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-cell {
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .comparison-cell:last-child {
+      border-bottom: none;
+    }
+
+    .hero-value-pills {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>

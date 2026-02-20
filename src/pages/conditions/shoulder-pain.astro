@@ -1,0 +1,387 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+
+const pageTitle = "Shoulder Pain Physical Therapy Baltimore | Rotator Cuff & Frozen Shoulder | Physica Medica";
+const pageDescription = "Shoulder pain & rotator cuff treatment in Fells Point, Baltimore. One-on-one dry needling, cupping & manual therapy with Dr. Maks Birikov DPT. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions", url: "/conditions" },
+  { name: "Shoulder Pain", url: "/conditions/shoulder-pain" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "Shoulder Pain Physical Therapy",
+  "description": "Specialized physical therapy for shoulder pain, rotator cuff injuries, frozen shoulder, and shoulder impingement",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "How long does it take to recover from rotator cuff injury with PT?",
+    answer: "Mild rotator cuff strains often improve in 4-6 weeks. Partial tears typically require 8-12 weeks. Full tears may need 3-6 months if treated conservatively. One-on-one PT produces faster results because Dr. Maks spends 30-40 minutes per session on hands-on treatment, not 10 minutes while you do exercises alone."
+  },
+  {
+    question: "Can PT fix frozen shoulder without surgery?",
+    answer: "Yes. Most frozen shoulder cases resolve with physical therapy. Treatment focuses on restoring capsular mobility through manual therapy, dry needling, and progressive stretching. It takes 6-12 months, but surgery is rarely necessary. Early intervention produces faster results."
+  },
+  {
+    question: "Is dry needling effective for shoulder pain?",
+    answer: "Extremely effective. Dry needling releases trigger points in the rotator cuff, upper trap, and scapular muscles causing shoulder pain. Many patients experience 40-60% pain reduction after the first session. Combined with manual therapy, it addresses both muscle tension and joint restrictions."
+  },
+  {
+    question: "What is shoulder impingement and how is it treated?",
+    answer: "Shoulder impingement occurs when the rotator cuff tendons get pinched between shoulder bones during arm movement. PT treats impingement by releasing tight muscles, improving scapular mechanics, and restoring normal shoulder rhythm. Most cases resolve without surgery."
+  },
+  {
+    question: "Do I need a referral for shoulder pain PT in Maryland?",
+    answer: "No. Maryland allows direct access to physical therapy. You can schedule directly with Dr. Maks without a physician referral and begin treatment immediately."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="condition-hero">
+    <div class="container-narrow">
+      <h1>Shoulder Pain Physical Therapy in Baltimore</h1>
+      <p class="hero-subtitle">Rotator cuff, frozen shoulder & impingement specialist</p>
+      <div class="hero-stats">
+        <span class="stat">60-Min Sessions</span>
+        <span class="stat">Dr. Maks Birikov DPT</span>
+        <span class="stat">No Referral Needed</span>
+      </div>
+      <a href="/schedule" class="hero-cta">Schedule Appointment</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>Why Shoulder Pain is Stubborn</h2>
+      <p>Shoulder pain is complex because the shoulder is the most mobile joint in your body. It requires precise coordination between four rotator cuff muscles, the scapula, and the thoracic spine. When one component fails, the whole system compensates—and pain becomes chronic.</p>
+      <p>Generic exercises don't work because they don't address your specific dysfunction. Dr. Maks Birikov identifies exactly which muscles are weak, which are tight, and which movement patterns are causing your pain. Then treats all of it in 60-minute one-on-one sessions.</p>
+
+      <h2>Common Shoulder Conditions We Treat</h2>
+      <ul class="condition-list">
+        <li><strong>Rotator Cuff Tears:</strong> Partial and full-thickness tears</li>
+        <li><strong>Frozen Shoulder (Adhesive Capsulitis):</strong> Severe stiffness and pain</li>
+        <li><strong>Shoulder Impingement:</strong> Pinching of rotator cuff tendons</li>
+        <li><strong>Bursitis:</strong> Inflammation of shoulder bursa</li>
+        <li><strong>Post-Surgical Rehab:</strong> Recovery after shoulder surgery</li>
+        <li><strong>AC Joint Injuries:</strong> Separation or arthritis</li>
+        <li><strong>Labral Tears:</strong> Cartilage damage in shoulder socket</li>
+        <li><strong>Biceps Tendinopathy:</strong> Tendon inflammation or tears</li>
+      </ul>
+
+      <h2>Rotator Cuff Treatment</h2>
+      <p>The rotator cuff is a group of four muscles stabilizing your shoulder. Tears, strains, and tendinopathy are common—especially in overhead athletes and manual workers.</p>
+      <p>Physical therapy treats rotator cuff injuries by:</p>
+      <ul class="treatment-approach">
+        <li>Releasing compensatory muscle tension with dry needling</li>
+        <li>Restoring scapular mechanics (the foundation of shoulder function)</li>
+        <li>Strengthening weak rotator cuff muscles with progressive loading</li>
+        <li>Improving thoracic spine mobility (often overlooked but critical)</li>
+        <li>Correcting movement patterns causing the injury</li>
+      </ul>
+      <p>Many rotator cuff tears heal without surgery when treated properly. Even full-thickness tears can become pain-free with the right rehab.</p>
+
+      <h2>Frozen Shoulder Treatment</h2>
+      <p>Frozen shoulder (adhesive capsulitis) causes severe stiffness and pain. It progresses through three stages: freezing (increasing pain and stiffness), frozen (stiff but less painful), and thawing (gradual improvement).</p>
+      <p>PT is most effective in the freezing and frozen stages. Treatment includes:</p>
+      <ul class="frozen-approach">
+        <li>Aggressive manual therapy to restore capsular mobility</li>
+        <li>Dry needling to reduce muscle guarding</li>
+        <li>Progressive stretching and mobilization</li>
+        <li>Pain management strategies</li>
+      </ul>
+      <p>Frozen shoulder takes 6-12 months to resolve, but PT significantly reduces pain and speeds recovery. Surgery is rarely necessary.</p>
+
+      <h2>Treatment Methods</h2>
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <h3>Dry Needling</h3>
+          <p>Release trigger points in rotator cuff, upper trap, and scapular muscles. Fast pain relief and improved range of motion.</p>
+          <a href="/services/dry-needling">Learn about dry needling →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>IASTM / Graston Technique</h3>
+          <p>Break down scar tissue in rotator cuff tendons and restore tissue quality. Particularly effective for chronic tendinopathy.</p>
+          <a href="/services/instrument-assisted-tissue-mobilization">Learn about IASTM →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Myofascial Cupping</h3>
+          <p>Increase blood flow to rotator cuff, release fascial restrictions, and reduce inflammation.</p>
+          <a href="/services/myofascial-cupping">Learn about cupping →</a>
+        </div>
+        <div class="treatment-card">
+          <h3>Manual Therapy</h3>
+          <p>Joint mobilization, soft tissue release, and scapular mobilization to restore normal shoulder mechanics.</p>
+        </div>
+      </div>
+
+      <h2>Why One-on-One Matters for Shoulder Rehab</h2>
+      <p>Shoulder rehab requires constant assessment and adjustment. Dr. Maks evaluates your shoulder mechanics throughout the session and modifies treatment in real-time. This isn't possible when a therapist is rotating between multiple patients.</p>
+      <p>Sixty minutes one-on-one means time for thorough manual therapy, dry needling, corrective exercise, and education—not rushed through generic protocols.</p>
+
+      <div class="location-box">
+        <h3>Shoulder Pain Specialist in Fells Point, Baltimore</h3>
+        <p>Physica Medica is located at <strong>800 S Bond St, Baltimore, MD 21231</strong> in Fells Point.</p>
+        <p><strong>No referral needed.</strong> Maryland allows direct access to physical therapy. Schedule directly and start treatment immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Shoulder Pain FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Fix Your Shoulder Pain</h3>
+        <p>Schedule your first session with Dr. Maks Birikov, DPT</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-links">
+          <a href="/services/dry-needling">Dry Needling</a> | 
+          <a href="/services/instrument-assisted-tissue-mobilization">IASTM</a> | 
+          <a href="/conditions/neck-pain">Neck Pain</a> | 
+          <a href="/contact">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .condition-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  h3 {
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .condition-list, .treatment-approach, .frozen-approach {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .condition-list li, .treatment-approach li, .frozen-approach li {
+    margin-bottom: 0.75rem;
+  }
+
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .treatment-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .treatment-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .treatment-card p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .treatment-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .treatment-card a:hover {
+    text-decoration: underline;
+  }
+
+  .location-box {
+    background: #e8f5f2;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .location-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .location-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .location-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .condition-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .treatment-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>

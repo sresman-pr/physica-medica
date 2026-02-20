@@ -11,8 +11,8 @@ import { Image } from 'astro:assets';
 import dryNeedlingImg from '../../images/specialty-v3-dry-needling-actual.jpg';
 import dryNeedlingActionImg from '../../images/specialty-v2-dry-needling-action.jpg';
 
-const pageTitle = "Dry Needling Baltimore MD | Trigger Point Therapy | Physica Medica";
-const pageDescription = "Expert dry needling therapy in Baltimore. Release muscle knots, trigger points, and relieve pain with Dr. Maksim Birikov, DPT.";
+const pageTitle = "Dry Needling Baltimore | Trigger Point Therapy | Physica Medica";
+const pageDescription = "Dry needling in Fells Point, Baltimore. Dr. Maks Birikov DPT treats pain, muscle tension & sports injuries. One-on-one 60-min sessions. No referral needed.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -68,7 +68,7 @@ const faqs = [
     <div class="hero-gradient-bg"></div>
     <div class="container-narrow">
       <div class="hero-centered">
-        <h1>Dry Needling</h1>
+        <h1>Dry Needling in Baltimore</h1>
         <p class="hero-subtitle">Release Muscle Knots & Trigger Points</p>
         <div class="hero-value-pills">
           <span class="value-pill">60 Min Sessions</span>
@@ -88,7 +88,8 @@ const faqs = [
         <div class="content-row-text">
           <h2>What is Dry Needling?</h2>
           <p>Dry needling is a therapeutic technique where thin, sterile needles are inserted directly into myofascial trigger points—those painful "knots" in your muscles that cause local and referred pain.</p>
-          <p>Research indicates that this method helps reduce muscle tension and normalizes dysfunction of the motor endplates: the sites at which nerve impulses are transmitted to the muscle. Unlike surface-level treatments, dry needling addresses the root cause of myofascial pain.</p>
+          <p>Also known as intramuscular stimulation (IMS), this method helps reduce muscle tension and normalizes dysfunction of the motor endplates: the sites at which nerve impulses are transmitted to the muscle. Unlike surface-level treatments, dry needling addresses the root cause of myofascial pain.</p>
+          <p>Located in Fells Point, Baltimore at 800 S Bond St. Dr. Maks Birikov, DPT treats every patient personally in 60-minute one-on-one sessions. No referral needed.</p>
         </div>
         <div class="content-row-image">
           <Image 
@@ -238,22 +239,22 @@ const faqs = [
   <!-- Conditions Treated - White -->
   <section class="content-section-white">
     <div class="container-narrow">
-      <h2 class="section-title-center">Common Conditions Treated</h2>
+      <h2 class="section-title-center">Common Conditions Treated with Dry Needling</h2>
       <div class="conditions-grid">
         <div class="condition-item">
           <h4>Head & Neck</h4>
           <ul>
-            <li>Tension headaches</li>
-            <li>Neck pain</li>
-            <li>TMJ dysfunction</li>
+            <li><a href="/conditions/headaches-migraines">Tension headaches & migraines</a></li>
+            <li><a href="/conditions/neck-pain">Neck pain</a></li>
+            <li><a href="/conditions/tmj">TMJ dysfunction & jaw pain</a></li>
             <li>Upper trap tension</li>
           </ul>
         </div>
         <div class="condition-item">
           <h4>Shoulder & Arm</h4>
           <ul>
-            <li>Shoulder impingement</li>
-            <li>Rotator cuff pain</li>
+            <li><a href="/conditions/shoulder-pain">Shoulder impingement</a></li>
+            <li><a href="/conditions/shoulder-pain">Rotator cuff pain</a></li>
             <li>Tennis elbow</li>
             <li>Golfer's elbow</li>
           </ul>
@@ -261,20 +262,45 @@ const faqs = [
         <div class="condition-item">
           <h4>Back & Hip</h4>
           <ul>
-            <li>Low back pain</li>
+            <li><a href="/conditions/back-pain">Low back pain</a></li>
             <li>SI joint dysfunction</li>
-            <li>Hip flexor pain</li>
-            <li>Sciatica</li>
+            <li><a href="/conditions/hip-pain">Hip flexor pain</a></li>
+            <li><a href="/conditions/back-pain">Sciatica</a></li>
           </ul>
         </div>
         <div class="condition-item">
           <h4>Leg & Foot</h4>
           <ul>
-            <li>IT band syndrome</li>
+            <li><a href="/conditions/knee-pain">IT band syndrome</a></li>
             <li>Hamstring strains</li>
             <li>Calf tightness</li>
-            <li>Plantar fasciitis</li>
+            <li><a href="/conditions/foot-ankle-pain">Plantar fasciitis</a></li>
           </ul>
+        </div>
+      </div>
+      
+      <h2 class="section-title-center" style="margin-top: 3rem;">Dry Needling for Specific Conditions</h2>
+      <p style="text-align: center; margin-bottom: 2rem;">Dry needling is particularly effective for these common pain patterns:</p>
+      <div class="specific-conditions">
+        <div class="specific-condition-card">
+          <h4>Dry Needling for TMJ & Jaw Pain</h4>
+          <p>Release masseter and temporalis trigger points causing jaw pain, clicking, and limited opening. <a href="/conditions/tmj">Learn more about TMJ treatment</a></p>
+        </div>
+        <div class="specific-condition-card">
+          <h4>Dry Needling for Back Pain & Sciatica</h4>
+          <p>Target paraspinal and gluteal trigger points contributing to lower back pain and sciatic nerve irritation. <a href="/conditions/back-pain">Learn more about back pain treatment</a></p>
+        </div>
+        <div class="specific-condition-card">
+          <h4>Dry Needling for Neck Pain</h4>
+          <p>Release upper trap, levator scapulae, and suboccipital trigger points causing chronic neck tension. <a href="/conditions/neck-pain">Learn more about neck pain treatment</a></p>
+        </div>
+        <div class="specific-condition-card">
+          <h4>Dry Needling for Headaches & Migraines</h4>
+          <p>Address cervicogenic headaches by treating neck and shoulder trigger points that refer pain to the head. <a href="/conditions/headaches-migraines">Learn more about headache treatment</a></p>
+        </div>
+        <div class="specific-condition-card">
+          <h4>Dry Needling for Plantar Fasciitis</h4>
+          <p>Release calf and foot trigger points contributing to heel pain and plantar fascia tension. <a href="/conditions/foot-ankle-pain">Learn more about plantar fasciitis treatment</a></p>
         </div>
       </div>
 
@@ -688,6 +714,55 @@ const faqs = [
     font-size: 0.9rem;
     color: #6c757d;
     margin-bottom: 0.35rem;
+  }
+  
+  .condition-item a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .condition-item a:hover {
+    color: var(--theme-accent);
+    text-decoration: underline;
+  }
+  
+  .specific-conditions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  
+  .specific-condition-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--theme-accent);
+  }
+  
+  .specific-condition-card h4 {
+    color: var(--theme-dark);
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .specific-condition-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.6;
+  }
+  
+  .specific-condition-card a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .specific-condition-card a:hover {
+    color: var(--theme-accent);
+    text-decoration: underline;
   }
 
   /* CTA box */

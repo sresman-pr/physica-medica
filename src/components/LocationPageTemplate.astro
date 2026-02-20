@@ -17,6 +17,7 @@ interface Props {
   intro: string;
   directions: string;
   landmarks: string[];
+  customDescription?: string;
   testimonial?: {
     quote: string;
     author: string;
@@ -26,14 +27,14 @@ interface Props {
   neighborhoodInfo?: string;
 }
 
-const { neighborhood, slug, intro, directions, landmarks, testimonial, faqs, commonConditions, neighborhoodInfo } = Astro.props;
+const { neighborhood, slug, intro, directions, landmarks, customDescription, testimonial, faqs, commonConditions, neighborhoodInfo } = Astro.props;
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WatermarkBackground from './WatermarkBackground.astro';
 import Icon from './Icon.astro';
 
 const pageTitle = `Physical Therapy Near ${neighborhood} | Baltimore PT | Physica Medica`;
-const pageDescription = `Expert physical therapy near ${neighborhood}, Baltimore. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT. Dry needling, manual therapy, and specialty techniques.`;
+const pageDescription = customDescription || `Expert physical therapy near ${neighborhood}, Baltimore. 60-minute 1-on-1 sessions with Dr. Maksim Birikov, DPT. Dry needling, manual therapy, and specialty techniques.`;
 
 const breadcrumbs = [
   { name: "Home", url: "/" },

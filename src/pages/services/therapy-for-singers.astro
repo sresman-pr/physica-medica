@@ -1,16 +1,16 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import WatermarkBackground from '../../../components/WatermarkBackground.astro';
-import FAQSection from '../../../components/FAQSection.astro';
-import AuthorByline from '../../../components/AuthorByline.astro';
-import AllServicesGrid from '../../../components/AllServicesGrid.astro';
-import Icon from '../../../components/Icon.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AllServicesGrid from '../../components/AllServicesGrid.astro';
+import Icon from '../../components/Icon.astro';
 import { Image } from 'astro:assets';
 
 // Import technique images - unique to this page only
-import neckTherapyImg from '../../../images/specialty-v3-singers-neck.jpg';
-import jawTreatmentImg from '../../../images/specialty-v3-singers-jaw.jpg';
-import vocalPerformerImg from '../../../images/specialty-v3-singers-vocal.jpg';
+import neckTherapyImg from '../../images/specialty-v3-singers-neck.jpg';
+import jawTreatmentImg from '../../images/specialty-v3-singers-jaw.jpg';
+import vocalPerformerImg from '../../images/specialty-v3-singers-vocal.jpg';
 
 const pageTitle = "Baltimore Physical Therapy for Singers | Vocal Performance | Physica Medica";
 const pageDescription = "Unique Italian-developed physical therapy for singers in Baltimore. Improve voice, decrease tension, enhance performance. No other professionals in the US offer this technique. Dr. Maksim Birikov, DPT.";
@@ -18,8 +18,7 @@ const pageDescription = "Unique Italian-developed physical therapy for singers i
 const breadcrumbs = [
   { name: "Home", url: "/" },
   { name: "Services", url: "/services" },
-  { name: "Specialty Techniques", url: "/services/specialty-techniques" },
-  { name: "Therapy for Singers", url: "/services/specialty-techniques/therapy-for-singers" }
+  { name: "Therapy for Singers", url: "/services/therapy-for-singers" }
 ];
 
 const serviceSchema = {
@@ -316,8 +315,8 @@ const faqs = [
   <!-- FAQ Section -->
   <FAQSection faqs={faqs} title="Physical Therapy for Singers FAQs" />
 
-  <!-- All Specialty Techniques Grid -->
-  <AllServicesGrid currentPage="therapy-for-singers" type="specialty-techniques" />
+  <!-- All Services Grid -->
+  <AllServicesGrid currentPage="therapy-for-singers" type="services" />
 </BaseLayout>
 
 <style>

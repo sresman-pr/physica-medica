@@ -1,0 +1,373 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatermarkBackground from '../../components/WatermarkBackground.astro';
+import FAQSection from '../../components/FAQSection.astro';
+
+const pageTitle = "TMJ Physical Therapy Baltimore | TMJ Specialist | Physica Medica";
+const pageDescription = "TMJ specialist in Fells Point, Baltimore. Dr. Maks Birikov DPT treats jaw pain & TMJ disorder with dry needling & manual therapy. One-on-one 60-min sessions. No referral needed.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Conditions", url: "/conditions" },
+  { name: "TMJ & Jaw Pain", url: "/conditions/tmj" }
+];
+
+const serviceSchema = {
+  "@type": "MedicalTherapy",
+  "name": "TMJ Physical Therapy",
+  "description": "Specialized physical therapy treatment for TMJ disorder and jaw pain using dry needling, manual therapy, and therapeutic exercises",
+  "provider": { "@id": "https://physicamedica.net/#business" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Baltimore",
+    "containedInPlace": "Maryland"
+  }
+};
+
+const faqs = [
+  {
+    question: "Can physical therapy cure TMJ disorder?",
+    answer: "Physical therapy can significantly reduce or eliminate TMJ symptoms for most patients. By addressing muscle tension, joint dysfunction, and cervical spine issues contributing to jaw pain, PT treats the root cause—not just symptoms. Many patients achieve lasting relief without surgery or medication."
+  },
+  {
+    question: "How does dry needling help TMJ pain?",
+    answer: "Dry needling releases trigger points in the masseter, temporalis, and pterygoid muscles that cause jaw pain and restricted opening. It's one of the fastest ways to reduce muscle tension around the TMJ. Dr. Maks combines dry needling with manual therapy for comprehensive treatment."
+  },
+  {
+    question: "How many sessions does TMJ physical therapy take?",
+    answer: "Most patients notice improvement within 2-3 sessions. Significant relief typically occurs within 4-6 treatments. Chronic TMJ cases may require 8-10 sessions. Unlike insurance-based PT where you're split between multiple patients, one-on-one care produces faster results."
+  },
+  {
+    question: "What is the difference between a TMJ specialist and a dentist?",
+    answer: "Dentists focus on dental causes (bite alignment, teeth grinding). A TMJ specialist physical therapist addresses the musculoskeletal causes: muscle tension, trigger points, cervical spine dysfunction, and joint mechanics. Many TMJ cases are muscular, not dental, which is why PT is often more effective."
+  },
+  {
+    question: "Can TMJ cause headaches and neck pain?",
+    answer: "Yes. TMJ dysfunction often causes referred pain to the temples, behind the eyes, and down the neck. The jaw, neck, and upper back are biomechanically connected. Treating TMJ often resolves associated headaches and neck pain simultaneously."
+  },
+  {
+    question: "Do I need a referral for TMJ physical therapy in Maryland?",
+    answer: "No. Maryland has direct access laws allowing you to see a physical therapist without a physician referral. You can schedule directly with Dr. Maks and begin treatment immediately."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={serviceSchema} breadcrumbs={breadcrumbs}>
+  <WatermarkBackground variant="teal" />
+  
+  <!-- Hero Section -->
+  <section class="condition-hero">
+    <div class="container-narrow">
+      <h1>TMJ Physical Therapy & Jaw Pain Treatment in Baltimore</h1>
+      <p class="hero-subtitle">TMJ specialist treating jaw pain, clicking, and limited opening</p>
+      <div class="hero-stats">
+        <span class="stat">60-Min Sessions</span>
+        <span class="stat">Dr. Maks Birikov DPT</span>
+        <span class="stat">No Referral Needed</span>
+      </div>
+      <a href="/schedule" class="hero-cta">Schedule Appointment</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section-white">
+    <div class="container-narrow">
+      <h2>What is TMJ Disorder?</h2>
+      <p>TMJ (temporomandibular joint) disorder causes jaw pain, clicking or popping sounds, limited mouth opening, and pain when chewing. The TMJ connects your jaw to your skull, and when the muscles, ligaments, or joint mechanics become dysfunctional, it creates pain and restriction.</p>
+      <p>Unlike dental approaches that focus on bite alignment, physical therapy addresses the musculoskeletal causes: muscle tension, trigger points, cervical spine dysfunction, and joint mechanics. Many TMJ cases are muscular, not dental, which is why PT is often more effective than a mouthguard alone.</p>
+
+      <h2>Symptoms We Treat</h2>
+      <ul class="symptom-list">
+        <li>Jaw pain (one or both sides)</li>
+        <li>Clicking, popping, or grinding sounds</li>
+        <li>Limited mouth opening</li>
+        <li>Pain when chewing or talking</li>
+        <li>Jaw locking (open or closed)</li>
+        <li>Ear pain or fullness</li>
+        <li>Headaches (especially temples)</li>
+        <li>Neck pain and upper back tension</li>
+      </ul>
+
+      <h2>How Physical Therapy Treats TMJ</h2>
+      <p>Dr. Maks Birikov uses a comprehensive approach combining multiple techniques in each 60-minute one-on-one session:</p>
+
+      <div class="treatment-methods">
+        <div class="method-card">
+          <h3>Dry Needling for TMJ</h3>
+          <p>Release trigger points in the masseter, temporalis, and pterygoid muscles causing jaw pain and restricted opening. Dry needling is one of the fastest ways to reduce muscle tension around the TMJ.</p>
+          <a href="/services/dry-needling">Learn about dry needling →</a>
+        </div>
+        <div class="method-card">
+          <h3>Intraoral Manual Therapy</h3>
+          <p>Gentle manual techniques inside the mouth to release pterygoid muscles and mobilize the TMJ. This addresses restrictions that external techniques can't reach.</p>
+        </div>
+        <div class="method-card">
+          <h3>Cervical Spine Treatment</h3>
+          <p>The jaw and neck are biomechanically connected. Treating cervical spine dysfunction often resolves TMJ pain. We address forward head posture and upper cervical restrictions.</p>
+          <a href="/conditions/neck-pain">Learn about neck pain treatment →</a>
+        </div>
+        <div class="method-card">
+          <h3>Therapeutic Exercise</h3>
+          <p>Jaw mobility exercises, postural correction, and relaxation techniques to maintain improvements and prevent recurrence.</p>
+        </div>
+      </div>
+
+      <h2>TMJ and the Cervical Spine Connection</h2>
+      <p>Most TMJ cases involve cervical spine dysfunction. Forward head posture, upper cervical restrictions, and neck muscle tension all contribute to jaw pain. Dr. Maks treats both the jaw and neck simultaneously for lasting results.</p>
+      <p>If you have TMJ pain plus headaches or neck pain, addressing the cervical spine is essential. This is why one-on-one 60-minute sessions produce better outcomes—there's time to treat the whole system, not just the jaw.</p>
+
+      <h2>What to Expect at Your First Visit</h2>
+      <p>Your initial 60-minute evaluation includes:</p>
+      <ul class="expectation-list">
+        <li>Detailed assessment of jaw mechanics, cervical spine, and posture</li>
+        <li>Identification of muscle trigger points and joint restrictions</li>
+        <li>Hands-on treatment (dry needling, manual therapy, mobilization)</li>
+        <li>Customized exercise program</li>
+        <li>Education on jaw mechanics and self-care strategies</li>
+      </ul>
+      <p>Most patients notice improvement after the first session. Dr. Maks treats every patient personally—no aides, no handoffs.</p>
+
+      <div class="location-box">
+        <h3>TMJ Specialist in Fells Point, Baltimore</h3>
+        <p>Physica Medica is located at <strong>800 S Bond St, Baltimore, MD 21231</strong> in Fells Point. Convenient parking available. Serving Baltimore, Canton, Harbor East, Federal Hill, and surrounding neighborhoods.</p>
+        <p><strong>No referral needed.</strong> Maryland allows direct access to physical therapy. Schedule directly and start treatment immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="TMJ Physical Therapy FAQs" />
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container-narrow">
+      <div class="cta-box">
+        <h3>Fix Your TMJ Pain</h3>
+        <p>Schedule your first session with Dr. Maks Birikov, DPT</p>
+        <a href="/schedule" class="cta-button">Schedule Appointment</a>
+        <p class="cta-links">
+          <a href="/services/dry-needling">Dry Needling for TMJ</a> | 
+          <a href="/conditions/neck-pain">Neck Pain Treatment</a> | 
+          <a href="/conditions/headaches-migraines">Headache Treatment</a> | 
+          <a href="/contact">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .condition-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .content-section-white {
+    background: white;
+    padding: 3.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  .symptom-list, .expectation-list {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+  }
+
+  .symptom-list li, .expectation-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .treatment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .method-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .method-card h3 {
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .method-card p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+  }
+
+  .method-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .method-card a:hover {
+    text-decoration: underline;
+  }
+
+  .location-box {
+    background: #e8f5f2;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .location-box h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .location-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .location-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d35 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .cta-box p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+  }
+
+  .cta-button:hover {
+    background: #4a9b8c;
+    transform: translateY(-2px);
+  }
+
+  .cta-links {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-links a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .condition-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .treatment-methods {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>
