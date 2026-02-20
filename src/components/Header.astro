@@ -21,6 +21,11 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
         </a>
       </div>
       
+      <a href="tel:443-228-8029" class="header-phone">
+        <span class="phone-icon">📞</span>
+        <span class="phone-number">(443) 228-8029</span>
+      </a>
+      
       <nav class="main-nav">
         <ul>
           <li><a href="/">HOME</a></li>
@@ -228,6 +233,31 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+  }
+
+  .header-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .header-phone:hover {
+    color: var(--color-accent);
+  }
+
+  .phone-icon {
+    font-size: 1.1rem;
+  }
+
+  .phone-number {
+    letter-spacing: 0.02em;
   }
 
   .logo img,
@@ -502,6 +532,18 @@ import logoImg from '../images/Physica-Medica-logo.jpg';
 
     .mobile-menu-toggle {
       display: block;
+    }
+
+    .header-phone {
+      font-size: 0.9rem;
+    }
+
+    .phone-number {
+      display: none;
+    }
+
+    .phone-icon {
+      font-size: 1.3rem;
     }
   }
 
